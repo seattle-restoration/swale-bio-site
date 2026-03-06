@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SWALE — Bioswale Design, Construction & Maintenance | Seattle</title>
+<title>SWALE  -  Bioswale Design, Construction & Maintenance | Seattle</title>
 <meta name="description" content="Seattle's premier bioswale company. We design, build, and maintain living infrastructure that settles stormwater, tames torrents, and filters filth. Join our residential waitlist.">
 <meta name="keywords" content="bioswale, bioswale Seattle, bioswale installation, bioswale design, green infrastructure Seattle, stormwater management, rain garden, green factor, sustainable landscaping, bioswale waitlist, residential bioswale, commercial bioswale, hori hori, swale maintenance, beehive grate, Alderwood soil, check dam, bioretention, RainBird irrigation, smart irrigation Seattle, low maintenance landscaping, Piet Oudolf, naturalistic planting">
 <meta name="author" content="Swale LLC">
 <link rel="canonical" href="https://swale.bio">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><g fill='%2316a34a'><path d='M34 62Q33 58 32 52Q31 46 31 40Q30 34 30 28Q30 22 31 16Q31.5 12 32 8Q32.2 6 32.5 4L33 4Q33.5 6 33.8 8Q34 12 34.5 16Q35 22 35 28Q35 34 34.5 40Q34 46 33.5 52Q33 58 32.5 62Z' fill='%230d5e2e'/><path d='M31 10Q27 7 22 5Q26 5 28 7Q30 9 31 12Z'/><path d='M34 10Q38 7 43 5Q39 5 37 7Q35 9 34 12Z'/><path d='M30.5 14Q25 10 18 8Q22 9 25 11Q28 13 30 16Z'/><path d='M34.5 14Q40 10 47 8Q43 9 40 11Q37 13 35 16Z'/><path d='M30 18Q23 14 15 13Q19 14 23 16Q27 18 29 21Z'/><path d='M35 18Q42 14 50 13Q46 14 42 16Q38 18 36 21Z'/><path d='M30 22Q22 18 13 18Q17 19 21 21Q26 23 29 26Z'/><path d='M35 22Q43 18 52 18Q48 19 44 21Q39 23 36 26Z'/><path d='M30 27Q21 23 11 24Q16 24 20 26Q25 28 29 31Z'/><path d='M35 27Q44 23 54 24Q49 24 45 26Q40 28 36 31Z'/><path d='M30 32Q22 29 13 30Q17 30 21 32Q26 34 29 36Z'/><path d='M35 32Q43 29 52 30Q48 30 44 32Q39 34 36 36Z'/><path d='M30 37Q23 34 16 36Q20 35 24 37Q28 39 30 41Z'/><path d='M35 37Q42 34 49 36Q45 35 41 37Q37 39 35 41Z'/><path d='M31 42Q25 40 19 42Q23 41 26 42Q29 44 31 46Z'/><path d='M34 42Q40 40 46 42Q42 41 39 42Q36 44 34 46Z'/><path d='M31 48Q27 46 22 48Q25 47 28 48Q30 49 31 51Z'/><path d='M34 48Q38 46 43 48Q40 47 37 48Q35 49 34 51Z'/></g></svg>">
-<meta property="og:title" content="SWALE — Seattle's Premier Infrastructure Company | Residential Waitlist Open">
-<meta property="og:description" content="Bioswale design, construction & maintenance. Settle stormwater. Tame torrents. Filter filth. Join the residential waitlist — August 2026 launch.">
+<meta property="og:title" content="SWALE  -  Seattle's Premier Infrastructure Company | Residential Waitlist Open">
+<meta property="og:description" content="Bioswale design, construction & maintenance. Settle stormwater. Tame torrents. Filter filth. Join the residential waitlist  -  August 2026 launch.">
 <meta property="og:url" content="https://swale.bio">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -25,27 +25,27 @@ html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
 body{font-family:var(--font-body);background:var(--black);color:var(--white);overflow-x:hidden;line-height:1.6}
 h1,h2,h3,h4{font-family:var(--font-heading)}
 
-/* ═══ HERO SCENE ═══ */
+/* === HERO SCENE === */
 .hero-wrap{position:relative;height:200vh}
 .hero-scene{position:sticky;top:0;width:100%;height:100vh;overflow:hidden}
 
 /* Layer 0: Mountain illustration background */
 .hero-mountains{position:absolute;inset:0;z-index:0;background:url('hero-mountains.png') center 55%/cover no-repeat;filter:brightness(0.3)}
 
-/* Layer 1: Video frame canvas — revealed when grass parts */
+/* Layer 1: Video frame canvas  -  revealed when grass parts */
 .hero-video-canvas{position:absolute;inset:0;z-index:1;opacity:0}
 .hero-video-canvas canvas{width:100%;height:100%;display:block;object-fit:cover}
 
-/* Layer 2: Canvas grass — foreground, parts on scroll */
+/* Layer 2: Canvas grass  -  foreground, parts on scroll */
 .hero-grass{position:absolute;bottom:0;left:0;right:0;height:42vh;z-index:5;pointer-events:none;transition:none;transform-origin:center bottom}
 .hero-grass canvas{width:100%;height:100%;display:block}
 
-/* Reveal layer — logo rises from grass, no dark background */
+/* Reveal layer  -  logo rises from grass, no dark background */
 .hero-reveal{position:absolute;inset:0;z-index:15;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;opacity:0;pointer-events:none}
 .hero-reveal-logo{width:clamp(200px,35vw,400px);height:auto;margin-bottom:16px;filter:brightness(0) invert(1);transition:none}
 .hero-reveal-sub{font-size:clamp(1rem,2vw,1.4rem);font-weight:300;color:#e7e5e4;letter-spacing:.04em;max-width:500px;text-shadow:0 1px 10px rgba(0,0,0,.5)}
 
-/* Dark overlay — final transition to content */
+/* Dark overlay  -  final transition to content */
 .hero-dark-overlay{position:absolute;inset:0;background:var(--black);opacity:0;z-index:20;pointer-events:none}
 
 
@@ -75,7 +75,7 @@ nav.scrolled{background:rgba(10,10,10,.85);backdrop-filter:blur(20px);-webkit-ba
 @keyframes fl{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
 #below{position:relative;z-index:50}
 
-/* Mississippi meander map — scrolling background */
+/* Mississippi meander map  -  scrolling background */
 .meander-bg{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100vw;height:100vh;z-index:9999;pointer-events:none;opacity:0;transition:opacity .4s}
 .meander-bg.vis{opacity:1}
 .meander-bg img{position:absolute;left:50%;transform:translateX(-50%);width:120%;max-width:none;filter:sepia(.2) saturate(.3);opacity:.1}
@@ -378,19 +378,19 @@ footer .flinks a:hover{color:var(--white)}
   <a href="#contact" class="nav-cta" onclick="closeMobile()">Get Started</a>
 </div>
 
-<!-- ═══ HERO SCENE — Scroll-through grass field ═══ -->
+<!-- === HERO SCENE  -  Scroll-through grass field === -->
 <div class="hero-wrap" id="heroWrap">
 <div class="hero-scene" id="heroScene">
   <!-- Layer 0: Mountain illustration -->
   <div class="hero-mountains"></div>
 
-  <!-- Layer 1: Video frames — revealed when grass parts (placeholder until real footage) -->
+  <!-- Layer 1: Video frames  -  revealed when grass parts (placeholder until real footage) -->
   <div class="hero-video-canvas" id="heroVideoCanvas"></div>
 
   <!-- Layer 2: Canvas grass foreground -->
   <div class="hero-grass" id="heroGrass"></div>
 
-  <!-- Reveal layer — logo after video -->
+  <!-- Reveal layer  -  logo after video -->
   <div class="hero-reveal" id="heroReveal">
     <img src="swale-logo-white.png" alt="SWALE" class="hero-reveal-logo">
     <div class="hero-reveal-sub">Welcome to your new backyard.</div>
@@ -403,7 +403,7 @@ footer .flinks a:hover{color:var(--white)}
   <div id="hero">
     <div class="hero-badge">Seattle's Premier Infrastructure Company</div>
     <h1>Grass is <span class="accent">ugly.</span></h1>
-    <p class="hero-sub">We augment lawns with living infrastructure — the trim that settles stormwater, tames torrents, and filters filth.</p>
+    <p class="hero-sub">We augment lawns with living infrastructure  -  the trim that settles stormwater, tames torrents, and filters filth.</p>
     <div class="cta-group">
       <a href="#waitlist" class="btn-p">Join the Waitlist <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       <a href="#pillars" class="btn-g">See How It Works</a>
@@ -444,7 +444,7 @@ footer .flinks a:hover{color:var(--white)}
       <div class="pico" style="background:rgba(202,138,4,.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#ca8a04" stroke-width="1.5" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
       <div class="tag">Filter Filth</div>
       <h3>Strip It Clean</h3>
-      <p>Heavy metals, oils, petroleum compounds, sediment — gone. 99% pollutant removal before it reaches the creek.</p>
+      <p>Heavy metals, oils, petroleum compounds, sediment  -  gone. 99% pollutant removal before it reaches the creek.</p>
     </div>
   </div>
 </section>
@@ -493,13 +493,13 @@ footer .flinks a:hover{color:var(--white)}
         <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg">
           <!-- Naturalistic drift planting plan view -->
           <g opacity=".4">
-            <!-- Drift 1 — grasses -->
+            <!-- Drift 1  -  grasses -->
             <path d="M80 180Q120 140 180 160Q220 175 200 200Q170 220 120 210Q80 200 80 180Z" fill="none" stroke="#1a9e48" stroke-width="1.5"/>
             <circle cx="120" cy="175" r="2.5" fill="#1a9e48"/><circle cx="140" cy="170" r="2" fill="#1a9e48"/><circle cx="155" cy="180" r="2.5" fill="#1a9e48"/><circle cx="130" cy="190" r="2" fill="#1a9e48"/><circle cx="160" cy="195" r="2" fill="#1a9e48"/><circle cx="110" cy="185" r="1.5" fill="#1a9e48"/>
-            <!-- Drift 2 — salal mass -->
+            <!-- Drift 2  -  salal mass -->
             <path d="M280 120Q330 100 380 115Q410 130 395 160Q370 180 320 175Q280 165 275 140Z" fill="none" stroke="#0f7a36" stroke-width="1.5"/>
             <line x1="300" y1="135" x2="305" y2="128" stroke="#0f7a36" stroke-width="1.2"/><line x1="320" y1="140" x2="325" y2="133" stroke="#0f7a36" stroke-width="1.2"/><line x1="340" y1="135" x2="345" y2="128" stroke="#0f7a36" stroke-width="1.2"/><line x1="360" y1="140" x2="365" y2="133" stroke="#0f7a36" stroke-width="1.2"/><line x1="310" y1="155" x2="315" y2="148" stroke="#0f7a36" stroke-width="1.2"/><line x1="350" y1="155" x2="355" y2="148" stroke="#0f7a36" stroke-width="1.2"/>
-            <!-- Drift 3 — ferns -->
+            <!-- Drift 3  -  ferns -->
             <path d="M440 170Q490 150 530 170Q550 195 520 215Q480 225 450 210Q430 195 440 170Z" fill="none" stroke="#0a5c28" stroke-width="1.5"/>
             <circle cx="470" cy="185" r="8" fill="none" stroke="#0a5c28" stroke-width="1"/><line x1="470" y1="177" x2="470" y2="193" stroke="#0a5c28" stroke-width=".8"/><line x1="462" y1="185" x2="478" y2="185" stroke="#0a5c28" stroke-width=".8"/>
             <circle cx="505" cy="190" r="7" fill="none" stroke="#0a5c28" stroke-width="1"/><line x1="505" y1="183" x2="505" y2="197" stroke="#0a5c28" stroke-width=".8"/><line x1="498" y1="190" x2="512" y2="190" stroke="#0a5c28" stroke-width=".8"/>
@@ -513,7 +513,7 @@ footer .flinks a:hover{color:var(--white)}
       <div class="oudolf-card-body">
         <div class="loc">Design Principle</div>
         <h3>Naturalistic Drifts</h3>
-        <p>Piet Oudolf's signature approach — large sweeps of single species that create movement and seasonal rhythm. Every Swale installation uses drift planting, never rows. Your property becomes a living painting that changes with the seasons.</p>
+        <p>Piet Oudolf's signature approach  -  large sweeps of single species that create movement and seasonal rhythm. Every Swale installation uses drift planting, never rows. Your property becomes a living painting that changes with the seasons.</p>
       </div>
     </div>
     <div class="oudolf-card rv">
@@ -563,13 +563,13 @@ footer .flinks a:hover{color:var(--white)}
       <div class="oudolf-card-body">
         <div class="loc">Inspiration</div>
         <h3>Chelsea & the High Line</h3>
-        <p>The High Line proved that infrastructure can become a garden. Chelsea Flower Show proved that gardens can be art. We bring both to your front yard — elevated plantings, boardwalk elements, and the wild elegance that made these places famous.</p>
+        <p>The High Line proved that infrastructure can become a garden. Chelsea Flower Show proved that gardens can be art. We bring both to your front yard  -  elevated plantings, boardwalk elements, and the wild elegance that made these places famous.</p>
       </div>
     </div>
   </div>
   <div class="oudolf-quote rv">
     <blockquote>"A garden is not nature. It is an interpretation of nature."</blockquote>
-    <cite>— Piet Oudolf, designer of the High Line</cite>
+    <cite> -  Piet Oudolf, designer of the High Line</cite>
   </div>
 </section>
 
@@ -579,7 +579,7 @@ footer .flinks a:hover{color:var(--white)}
     <div class="mix-content rv">
       <div class="mix-label">Proprietary Formulation</div>
       <h2>The <em>Swale Mix.</em></h2>
-      <p>Three Pacific Northwest natives, engineered to work together. Planted in naturalistic drifts — seasonal structure that performs year-round.</p>
+      <p>Three Pacific Northwest natives, engineered to work together. Planted in naturalistic drifts  -  seasonal structure that performs year-round.</p>
     </div>
   </div>
   <div class="mix-grid">
@@ -620,7 +620,7 @@ footer .flinks a:hover{color:var(--white)}
         </svg>
         <div class="tag">Primary Method</div>
         <h4>Matrix Planting</h4>
-        <p>Interwoven species at ground level — a living tapestry where each plant supports its neighbors. No gaps, no mulch, no maintenance. The bioswale fills itself in.</p>
+        <p>Interwoven species at ground level  -  a living tapestry where each plant supports its neighbors. No gaps, no mulch, no maintenance. The bioswale fills itself in.</p>
       </div>
       <div class="matrix-method rv">
         <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -632,7 +632,7 @@ footer .flinks a:hover{color:var(--white)}
         </svg>
         <div class="tag">Accent Method</div>
         <h4>Naturalistic Drifts</h4>
-        <p>Large sweeps of single species — Piet Oudolf's signature. Creates movement and seasonal rhythm across the swale's contours.</p>
+        <p>Large sweeps of single species  -  Piet Oudolf's signature. Creates movement and seasonal rhythm across the swale's contours.</p>
       </div>
       <div class="matrix-method rv">
         <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -681,12 +681,12 @@ footer .flinks a:hover{color:var(--white)}
   </div>
 </section>
 
-<!-- SWM FEE SAVINGS — PROPERTY TAX VALUE PITCH -->
+<!-- SWM FEE SAVINGS  -  PROPERTY TAX VALUE PITCH -->
 <section class="savings-sec sec-line" id="savings">
   <div class="savings-inner">
     <div class="savings-text rv">
       <h2>Your bioswale <em>pays for itself.</em></h2>
-      <p>King County charges a Surface Water Management fee based on your property's impervious surface percentage. More pavement and roof = higher fee. A bioswale converts impervious area into permeable, living infrastructure — dropping you into a lower rate class and saving real money every year.</p>
+      <p>King County charges a Surface Water Management fee based on your property's impervious surface percentage. More pavement and roof = higher fee. A bioswale converts impervious area into permeable, living infrastructure  -  dropping you into a lower rate class and saving real money every year.</p>
       <div style="display:flex;flex-direction:column;gap:12px;margin-top:24px">
         <div style="display:flex;justify-content:space-between;padding:12px 16px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05)">
           <span style="color:var(--gray-400);font-size:.85rem">Very Heavy (85-100%)</span>
@@ -705,7 +705,7 @@ footer .flinks a:hover{color:var(--white)}
           <span style="font-weight:700;color:var(--green)">$1,879<span style="font-size:.75rem;color:var(--green);opacity:.6">/acre/yr</span></span>
         </div>
       </div>
-      <p class="savings-source">Source: <a href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/environment-ecology-conservation/stormwater-surface-water-management/surface-water-management-fee/rates" target="_blank" rel="noopener">King County DNRP — 2025 SWM Fee Rates</a></p>
+      <p class="savings-source">Source: <a href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/environment-ecology-conservation/stormwater-surface-water-management/surface-water-management-fee/rates" target="_blank" rel="noopener">King County DNRP  -  2025 SWM Fee Rates</a></p>
     </div>
     <div class="savings-calc rv">
       <h3>Estimate Your Annual Savings</h3>
@@ -716,20 +716,20 @@ footer .flinks a:hover{color:var(--white)}
       <div class="calc-field">
         <label>Current Impervious Surface</label>
         <select id="calcCurrent">
-          <option value="7">Very Heavy (85-100%) — $5,495/acre</option>
-          <option value="6" selected>Heavy (65-85%) — $4,466/acre</option>
-          <option value="5">Mod. Heavy (45-65%) — $3,206/acre</option>
-          <option value="4">Moderate (20-45%) — $1,879/acre</option>
-          <option value="3">Light (10-20%) — $1,004/acre</option>
+          <option value="7">Very Heavy (85-100%)  -  $5,495/acre</option>
+          <option value="6" selected>Heavy (65-85%)  -  $4,466/acre</option>
+          <option value="5">Mod. Heavy (45-65%)  -  $3,206/acre</option>
+          <option value="4">Moderate (20-45%)  -  $1,879/acre</option>
+          <option value="3">Light (10-20%)  -  $1,004/acre</option>
         </select>
       </div>
       <div class="calc-field">
         <label>After Bioswale Installation</label>
         <select id="calcAfter">
-          <option value="5">Mod. Heavy (45-65%) — $3,206/acre</option>
-          <option value="4" selected>Moderate (20-45%) — $1,879/acre</option>
-          <option value="3">Light (10-20%) — $1,004/acre</option>
-          <option value="2">Very Light (≤10%) — $361/parcel</option>
+          <option value="5">Mod. Heavy (45-65%)  -  $3,206/acre</option>
+          <option value="4" selected>Moderate (20-45%)  -  $1,879/acre</option>
+          <option value="3">Light (10-20%)  -  $1,004/acre</option>
+          <option value="2">Very Light (<=10%)  -  $361/parcel</option>
         </select>
       </div>
       <div class="calc-result" id="calcResult">
@@ -753,7 +753,7 @@ footer .flinks a:hover{color:var(--white)}
         </div>
         <div class="hori-feat">
           <div class="hori-feat-icon" style="background:rgba(15,122,54,.1)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f7a36" stroke-width="1.5" stroke-linecap="round"><path d="M3 21h18M9 8h6M12 3v18"/><circle cx="12" cy="8" r="3"/></svg></div>
-          <div><h4>Curated Subdrainage</h4><p>Engineered subsurface channels with optional submetering — track every gallon.</p></div>
+          <div><h4>Curated Subdrainage</h4><p>Engineered subsurface channels with optional submetering  -  track every gallon.</p></div>
         </div>
         <div class="hori-feat">
           <div class="hori-feat-icon" style="background:rgba(59,130,246,.1)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/><path d="M12 9v4M10 11h4"/></svg></div>
@@ -764,10 +764,10 @@ footer .flinks a:hover{color:var(--white)}
     <div class="hori-graphic">
       <div class="hori-glow"></div>
       <div class="hori-knife rv">
-      <!-- HORI HORI — premium illustration, real 57/43 blade-to-handle ratio -->
+      <!-- HORI HORI  -  premium illustration, real 57/43 blade-to-handle ratio -->
       <svg viewBox="0 0 340 680" width="300" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <!-- 7-stop steel gradient — realistic metallic sheen -->
+          <!-- 7-stop steel gradient  -  realistic metallic sheen -->
           <linearGradient id="steelGrad" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stop-color="#606060"/>
             <stop offset="15%" stop-color="#909090"/>
@@ -777,7 +777,7 @@ footer .flinks a:hover{color:var(--white)}
             <stop offset="80%" stop-color="#909090"/>
             <stop offset="100%" stop-color="#707070"/>
           </linearGradient>
-          <!-- Concave blade highlight — simulates the U-trough -->
+          <!-- Concave blade highlight  -  simulates the U-trough -->
           <linearGradient id="concaveHighlight" x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stop-color="rgba(255,255,255,0)"/>
             <stop offset="35%" stop-color="rgba(255,255,255,0.12)"/>
@@ -809,21 +809,21 @@ footer .flinks a:hover{color:var(--white)}
           </filter>
         </defs>
 
-        <!-- ═══ BLADE (57% = ~388px of 680) ═══ -->
-        <!-- Main blade shape — asymmetric taper, offset tip toward serrated side -->
+        <!-- === BLADE (57% = ~388px of 680) === -->
+        <!-- Main blade shape  -  asymmetric taper, offset tip toward serrated side -->
         <path d="M155 380 L175 380 Q182 310 179 240 Q176 170 173 110 Q170 60 166 30 Q162 10 158 2 Q154 0 150 4 Q146 12 142 35 Q138 65 135 115 Q132 175 130 245 Q127 315 135 380 Z" fill="url(#steelGrad)" stroke="#777" stroke-width=".6"/>
 
         <!-- Concave cross-section highlight (the U-trough shine) -->
         <path d="M155 380 L175 380 Q182 310 179 240 Q176 170 173 110 Q170 60 166 30 Q162 10 158 2 Q154 0 150 4 Q146 12 142 35 Q138 65 135 115 Q132 175 130 245 Q127 315 135 380 Z" fill="url(#concaveHighlight)"/>
 
-        <!-- Specular highlight strip — runs along the spine -->
+        <!-- Specular highlight strip  -  runs along the spine -->
         <path d="M162 15 Q164 80 166 160 Q167 240 165 320 Q164 360 163 378" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
         <path d="M162 15 Q164 80 166 160 Q167 240 165 320 Q164 360 163 378" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="6"/>
 
-        <!-- Cutting edge highlight — right side, the sharp bevel -->
+        <!-- Cutting edge highlight  -  right side, the sharp bevel -->
         <path d="M175 375 Q178 300 179 240 Q176 170 173 110 Q170 60 166 30" fill="none" stroke="rgba(255,255,255,.18)" stroke-width=".6"/>
 
-        <!-- Serrated edge — left side, scalloped semicircles -->
+        <!-- Serrated edge  -  left side, scalloped semicircles -->
         <g stroke="#6a6a6a" stroke-width="1" fill="none">
           <path d="M134 360 Q130 356 134 352"/>
           <path d="M133 352 Q129 348 133 344"/>
@@ -841,7 +841,7 @@ footer .flinks a:hover{color:var(--white)}
           <path d="M133 256 Q129 252 134 248"/>
         </g>
 
-        <!-- Depth measurement marks — etched at 1" intervals -->
+        <!-- Depth measurement marks  -  etched at 1" intervals -->
         <g stroke="rgba(255,255,255,.12)" stroke-width=".4">
           <line x1="168" y1="340" x2="178" y2="340"/>
           <line x1="168" y1="300" x2="178" y2="300"/>
@@ -857,20 +857,20 @@ footer .flinks a:hover{color:var(--white)}
           <text x="180" y="102">7</text>
         </g>
 
-        <!-- Tip highlight — catches light -->
+        <!-- Tip highlight  -  catches light -->
         <path d="M158 2 Q155 15 152 32 L164 32 Q161 15 158 2Z" fill="rgba(255,255,255,.12)"/>
 
         <!-- SWALE engraving on ricasso (near bolster, display side) -->
         <text x="155" y="130" fill="rgba(255,255,255,.09)" font-size="14" font-family="Inter,sans-serif" font-weight="900" text-anchor="middle" letter-spacing=".2em">SWALE</text>
 
-        <!-- ═══ BOLSTER / GUARD — brass ═══ -->
+        <!-- === BOLSTER / GUARD  -  brass === -->
         <rect x="122" y="380" width="66" height="18" rx="5" fill="#b0a068"/>
         <rect x="124" y="382" width="62" height="14" rx="4" fill="#c4b478"/>
         <line x1="128" y1="389" x2="182" y2="389" stroke="#9a8a58" stroke-width=".5"/>
         <!-- Bolster edge highlights -->
         <line x1="124" y1="383" x2="186" y2="383" stroke="rgba(255,255,255,.15)" stroke-width=".5"/>
 
-        <!-- ═══ HANDLE (43% = ~292px) — full-tang walnut ═══ -->
+        <!-- === HANDLE (43% = ~292px)  -  full-tang walnut === -->
         <rect x="130" y="398" width="50" height="210" rx="8" fill="url(#walnut)" filter="url(#woodNoise)"/>
 
         <!-- Visible tang edges (full-tang construction) -->
@@ -887,7 +887,7 @@ footer .flinks a:hover{color:var(--white)}
           <line x1="150" y1="400" x2="150" y2="605" stroke-width=".3"/>
         </g>
 
-        <!-- Brass rivets — 3 pins through tang -->
+        <!-- Brass rivets  -  3 pins through tang -->
         <circle cx="155" cy="425" r="4" fill="url(#rivet)" stroke="#7a6020" stroke-width=".5"/>
         <circle cx="155" cy="480" r="4" fill="url(#rivet)" stroke="#7a6020" stroke-width=".5"/>
         <circle cx="155" cy="535" r="4" fill="url(#rivet)" stroke="#7a6020" stroke-width=".5"/>
@@ -896,11 +896,11 @@ footer .flinks a:hover{color:var(--white)}
         <circle cx="154" cy="479" r="1.2" fill="rgba(255,255,255,.2)"/>
         <circle cx="154" cy="534" r="1.2" fill="rgba(255,255,255,.2)"/>
 
-        <!-- Handle comfort contour — subtle shadow -->
+        <!-- Handle comfort contour  -  subtle shadow -->
         <path d="M130 440 Q128 500 130 560" fill="none" stroke="rgba(0,0,0,.15)" stroke-width="2"/>
         <path d="M180 440 Q182 500 180 560" fill="none" stroke="rgba(0,0,0,.15)" stroke-width="2"/>
 
-        <!-- ═══ POMMEL ═══ -->
+        <!-- === POMMEL === -->
         <rect x="126" y="605" width="58" height="16" rx="6" fill="#5a3a10"/>
         <rect x="128" y="607" width="54" height="12" rx="5" fill="#6a4a18"/>
         <!-- Lanyard hole -->
@@ -910,7 +910,7 @@ footer .flinks a:hover{color:var(--white)}
         <!-- Lanyard loop hint -->
         <path d="M155 646 Q145 660 148 670 Q152 678 155 670 Q158 678 162 670 Q165 660 155 646" fill="none" stroke="#6a4a20" stroke-width="1.5" opacity=".4"/>
 
-        <!-- ═══ ANNOTATIONS — fly in from right ═══ -->
+        <!-- === ANNOTATIONS  -  fly in from right === -->
         <g class="hori-annot" data-d="200">
           <line x1="185" y1="180" x2="220" y2="180" stroke="#57534e" stroke-width=".5" stroke-dasharray="3 3"/>
           <text x="225" y="177" fill="#a8a29e" font-size="9" font-family="Inter,sans-serif" font-weight="500">7" stainless blade</text>
@@ -942,7 +942,7 @@ footer .flinks a:hover{color:var(--white)}
   </div>
 </section>
 
-<!-- SUPPLY CHAIN — materials that matter -->
+<!-- SUPPLY CHAIN  -  materials that matter -->
 <section class="supply-sec sec-line" id="materials">
   <div class="shdr rv"><h2>Materials we control.</h2><p>We don't outsource the critical stuff. Our supply chain is purpose-built for Seattle bioswales.</p></div>
   <div class="supply-grid">
@@ -972,7 +972,7 @@ footer .flinks a:hover{color:var(--white)}
       </div>
       <div class="supply-card-body">
         <h3>Beehive Grates</h3>
-        <div class="spec">Cast Iron — Municipal Grade</div>
+        <div class="spec">Cast Iron  -  Municipal Grade</div>
         <p>J.R. Hoe MCB-350BH round manhole beehive grates. The most beautiful drain cover ever cast. Connects your swale to the municipal system with style. We source direct.</p>
       </div>
     </div>
@@ -982,13 +982,13 @@ footer .flinks a:hover{color:var(--white)}
         <svg viewBox="0 0 200 180" width="180" xmlns="http://www.w3.org/2000/svg">
           <!-- Soil layers -->
           <rect x="20" y="20" width="160" height="35" rx="2" fill="#3a3020" stroke="#57534e" stroke-width=".5"/>
-          <text x="30" y="42" fill="#a8a29e" font-size="7" font-family="Inter,sans-serif" font-weight="500">A — Topsoil</text>
+          <text x="30" y="42" fill="#a8a29e" font-size="7" font-family="Inter,sans-serif" font-weight="500">A  -  Topsoil</text>
           <rect x="20" y="57" width="160" height="30" rx="2" fill="#4a3a25" stroke="#57534e" stroke-width=".5"/>
-          <text x="30" y="76" fill="#a8a29e" font-size="7" font-family="Inter,sans-serif" font-weight="500">Bw — Subsoil</text>
+          <text x="30" y="76" fill="#a8a29e" font-size="7" font-family="Inter,sans-serif" font-weight="500">Bw  -  Subsoil</text>
           <rect x="20" y="89" width="160" height="25" rx="2" fill="#3a3520" stroke="#57534e" stroke-width=".5"/>
-          <text x="30" y="106" fill="#a8a29e" font-size="7" font-family="Inter,sans-serif" font-weight="500">2Bg — Glacial transition</text>
+          <text x="30" y="106" fill="#a8a29e" font-size="7" font-family="Inter,sans-serif" font-weight="500">2Bg  -  Glacial transition</text>
           <rect x="20" y="116" width="160" height="30" rx="2" fill="#2a2518" stroke="#57534e" stroke-width=".5"/>
-          <text x="30" y="135" fill="#a8a29e" font-size="7" font-family="Inter,sans-serif" font-weight="500">2Cd — Dense glacial till</text>
+          <text x="30" y="135" fill="#a8a29e" font-size="7" font-family="Inter,sans-serif" font-weight="500">2Cd  -  Dense glacial till</text>
           <!-- Roots -->
           <path d="M80 20 Q78 40 75 55" fill="none" stroke="#0f7a36" stroke-width="1" opacity=".4"/>
           <path d="M120 20 Q122 35 125 50" fill="none" stroke="#0f7a36" stroke-width="1" opacity=".3"/>
@@ -1001,7 +1001,7 @@ footer .flinks a:hover{color:var(--white)}
       <div class="supply-card-body">
         <h3>Alderwood Soil</h3>
         <div class="spec">Seattle's Native Glacial Till</div>
-        <p>Every Puget Sound bioswale sits on Alderwood series soil — glacial till with a dense layer at 20-40". We engineer our bioretention mix to work with it, not against it. The same soil that grows western red cedar and sword fern.</p>
+        <p>Every Puget Sound bioswale sits on Alderwood series soil  -  glacial till with a dense layer at 20-40". We engineer our bioretention mix to work with it, not against it. The same soil that grows western red cedar and sword fern.</p>
       </div>
     </div>
     <div class="supply-card rv">
@@ -1040,7 +1040,7 @@ footer .flinks a:hover{color:var(--white)}
       </div>
       <div class="supply-card-body">
         <h3>Check Dam Timber</h3>
-        <div class="spec">Your Choice — Three Species</div>
+        <div class="spec">Your Choice  -  Three Species</div>
         <p>Western red cedar (PNW native, rot-resistant, brands beautifully), white oak (hardest, longest-lasting), or juniper (dense, aromatic, weathers to silver). Branded by Estate Iron Work with your swale's mark.</p>
       </div>
     </div>
@@ -1050,7 +1050,7 @@ footer .flinks a:hover{color:var(--white)}
 <!-- LOW MAINTENANCE PITCH -->
 <section class="maint-sec">
   <h3 class="rv">Designed for <em>almost zero</em> maintenance.</h3>
-  <p class="rv">Native plants. Engineered drainage. No mowing, no fertilizing, no irrigation battles. Your swale gets healthier on its own. We check in quarterly — that's it.</p>
+  <p class="rv">Native plants. Engineered drainage. No mowing, no fertilizing, no irrigation battles. Your swale gets healthier on its own. We check in quarterly  -  that's it.</p>
   <div class="maint-pills rv">
     <span class="maint-pill">No mowing</span>
     <span class="maint-pill">No fertilizer</span>
@@ -1061,12 +1061,12 @@ footer .flinks a:hover{color:var(--white)}
   </div>
 </section>
 
-<!-- ECOSYSTEM — App + Knowledge Library + RainBird -->
+<!-- ECOSYSTEM  -  App + Knowledge Library + RainBird -->
 <section class="eco-sec" id="ecosystem">
   <div class="eco-inner">
     <div class="eco-text rv">
       <h2>The Swale <em>ecosystem.</em></h2>
-      <p>A dedicated app, a knowledge library for subscribers, and smart irrigation integration. Your swale doesn't just sit there — it reports back.</p>
+      <p>A dedicated app, a knowledge library for subscribers, and smart irrigation integration. Your swale doesn't just sit there  -  it reports back.</p>
       <div class="eco-features">
         <div class="eco-feat">
           <div class="dot" style="background:var(--green)"></div>
@@ -1078,7 +1078,7 @@ footer .flinks a:hover{color:var(--white)}
         </div>
         <div class="eco-feat">
           <div class="dot" style="background:var(--water)"></div>
-          <div><h4>RainBird Integration</h4><p>State-of-the-art irrigation tied into our platform. Smart zones that respond to actual soil moisture and weather forecasts. Water only when needed — the swale tells you.</p></div>
+          <div><h4>RainBird Integration</h4><p>State-of-the-art irrigation tied into our platform. Smart zones that respond to actual soil moisture and weather forecasts. Water only when needed  -  the swale tells you.</p></div>
         </div>
         <div class="eco-feat">
           <div class="dot" style="background:var(--terracotta)"></div>
@@ -1093,7 +1093,7 @@ footer .flinks a:hover{color:var(--white)}
         <div class="phone-screen">
           <div class="phone-header">
             <h5>Swale</h5>
-            <p>Walsh Residence — Cedar Creek</p>
+            <p>Walsh Residence  -  Cedar Creek</p>
           </div>
           <div class="phone-card">
             <h6>Today's Flow</h6>
@@ -1112,7 +1112,7 @@ footer .flinks a:hover{color:var(--white)}
           </div>
           <div class="phone-card">
             <h6>Next Service</h6>
-            <div class="val" style="color:var(--gold);font-size:.9rem">Mar 15 — Spring Drift Check</div>
+            <div class="val" style="color:var(--gold);font-size:.9rem">Mar 15  -  Spring Drift Check</div>
           </div>
         </div>
       </div>
@@ -1123,7 +1123,7 @@ footer .flinks a:hover{color:var(--white)}
 <!-- RESIDENTIAL WAITLIST -->
 <section class="waitlist-sec" id="waitlist">
   <h2 class="rv">The Residential <em>Waitlist.</em></h2>
-  <p class="rv">Launching August 2026. Limited to 50 homes in Year One. Every residential install ends with a branding ceremony — a heated iron seared into your western red cedar check dam. Plus:</p>
+  <p class="rv">Launching August 2026. Limited to 50 homes in Year One. Every residential install ends with a branding ceremony  -  a heated iron seared into your western red cedar check dam. Plus:</p>
   <div class="waitlist-perks">
     <div class="wl-perk rv">
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1151,7 +1151,7 @@ footer .flinks a:hover{color:var(--white)}
         <path d="M30 43Q29 40 30 38" fill="none" stroke="#d4a853" stroke-width=".8" opacity=".2"/>
       </svg>
       <h4>Branding Ceremony</h4>
-      <p>A heated iron brand seared into your western red cedar check dam. Smoke, char, permanence. We don't just install — we brand it yours.</p>
+      <p>A heated iron brand seared into your western red cedar check dam. Smoke, char, permanence. We don't just install  -  we brand it yours.</p>
     </div>
     <div class="wl-perk rv">
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1228,7 +1228,7 @@ footer .flinks a:hover{color:var(--white)}
       <h3>Home Series</h3>
       <div class="zone">LR1 / LR2 / LR3 / SF</div>
       <p>Designed for single-family and low-rise multifamily. Turns a permit requirement into a selling feature. Includes engraved stone, iron branding ceremony, and custom hori hori.</p>
-      <div class="waitlist-badge"><a href="#waitlist" style="color:inherit;text-decoration:none">Waitlist Open — August 2026</a></div>
+      <div class="waitlist-badge"><a href="#waitlist" style="color:inherit;text-decoration:none">Waitlist Open  -  August 2026</a></div>
     </div>
     <div class="prcard rv">
       <div class="lab">Governmental</div>
@@ -1269,11 +1269,11 @@ footer .flinks a:hover{color:var(--white)}
 </div>
 
 <script>
-// ═══════════════════════════════════════════════════════
-// PHOTOREALISTIC CANVAS GRASS — foreground layer
+// =======================================================
+// PHOTOREALISTIC CANVAS GRASS  -  foreground layer
 // Hundreds of blades with tapered geometry, color
 // gradients, depth layers, wind animation
-// ═══════════════════════════════════════════════════════
+// =======================================================
 (function() {
   const container = document.getElementById('heroGrass');
   const canvas = document.createElement('canvas');
@@ -1427,10 +1427,10 @@ footer .flinks a:hover{color:var(--white)}
 })();
 
 
-// ═══════════════════════════════════════════════════════
-// VIDEO FRAME PLAYER — preloads frames, draws on demand
+// =======================================================
+// VIDEO FRAME PLAYER  -  preloads frames, draws on demand
 // Sits behind grass, revealed when grass parts
-// ═══════════════════════════════════════════════════════
+// =======================================================
 (function() {
   const TOTAL_FRAMES = 121;
   const FRAME_PATH = 'frames/frame_';
@@ -1480,18 +1480,18 @@ footer .flinks a:hover{color:var(--white)}
 })();
 
 
-// ═══════════════════════════════════════════════════════
-// SCROLL CONTROLLER — Mountains + Grass + Video + Logo
+// =======================================================
+// SCROLL CONTROLLER  -  Mountains + Grass + Video + Logo
 //
 // Phases (p = 0 to 1 over 500vh):
-//   0.00–0.08  Hero text fades out
-//   0.00–0.15  Mountains visible, grass sways peacefully
-//   0.10–0.30  Grass parts, video fades in behind
-//   0.25–0.60  Video scrubs through frames
-//   0.55–0.65  Video + grass fade out, logo fades in
-//   0.65–0.85  Logo hold
-//   0.85–0.95  Logo fades, dark overlay for content
-// ═══════════════════════════════════════════════════════
+//   0.00-0.08  Hero text fades out
+//   0.00-0.15  Mountains visible, grass sways peacefully
+//   0.10-0.30  Grass parts, video fades in behind
+//   0.25-0.60  Video scrubs through frames
+//   0.55-0.65  Video + grass fade out, logo fades in
+//   0.65-0.85  Logo hold
+//   0.85-0.95  Logo fades, dark overlay for content
+// =======================================================
 (function() {
   const wrap = document.getElementById('heroWrap');
   const heroEl = document.getElementById('hero');
@@ -1513,15 +1513,15 @@ footer .flinks a:hover{color:var(--white)}
     heroEl.style.opacity = textFade;
     heroEl.style.transform = 'translateY(' + (p * -80) + 'px)';
 
-    // Grass zoom (0–0.25)
+    // Grass zoom (0-0.25)
     const zoom = 1 + Math.min(p, 0.25) * 0.7;
     grass.style.transform = 'scale(' + zoom + ')';
 
-    // Grass parts (0.08–0.25)
+    // Grass parts (0.08-0.25)
     const partProgress = Math.max(0, Math.min(1, (p - 0.08) / 0.17));
     window._setGrassPart(partProgress);
 
-    // Video layer opacity — single variable, no conflicts
+    // Video layer opacity  -  single variable, no conflicts
     let videoOpacity = 0;
     if (p >= 0.10 && p < 0.22) {
       videoOpacity = (p - 0.10) / 0.12;           // fade in
@@ -1532,17 +1532,17 @@ footer .flinks a:hover{color:var(--white)}
     }
     videoLayer.style.opacity = videoOpacity;
 
-    // Video scrubs (0.15–0.55) — all frames play while video is visible
+    // Video scrubs (0.15-0.55)  -  all frames play while video is visible
     if (window._videoReady && window._videoReady()) {
       const frameP = Math.max(0, Math.min(1, (p - 0.15) / 0.40));
       window._drawVideoFrame(Math.round(frameP * (TOTAL_FRAMES - 1)));
     }
 
-    // Grass fades out (0.20–0.32)
+    // Grass fades out (0.20-0.32)
     const grassFade = 1 - Math.max(0, Math.min(1, (p - 0.20) / 0.12));
     grass.style.opacity = grassFade;
 
-    // Logo: simple opacity fade — cross-fades in over video, holds, fades out into black
+    // Logo: simple opacity fade  -  cross-fades in over video, holds, fades out into black
     let revealOpacity = 0;
     if (p >= 0.50 && p < 0.60) {
       revealOpacity = (p - 0.50) / 0.10;           // fade in
@@ -1554,7 +1554,7 @@ footer .flinks a:hover{color:var(--white)}
     reveal.style.opacity = revealOpacity;
     reveal.style.transform = 'none';
 
-    // Fade to black — starts as logo fades, fully black by end so pillars is seamless
+    // Fade to black  -  starts as logo fades, fully black by end so pillars is seamless
     if (p >= 0.82) {
       dark.style.opacity = Math.min(1, (p - 0.82) / 0.14);
     } else {
@@ -1569,9 +1569,9 @@ footer .flinks a:hover{color:var(--white)}
   onScroll();
 })();
 
-// ═══════════════════════════════════════════════════════
-// PILLARS FADE-IN — triggered when section enters viewport
-// ═══════════════════════════════════════════════════════
+// =======================================================
+// PILLARS FADE-IN  -  triggered when section enters viewport
+// =======================================================
 (function() {
   var pillars = document.getElementById('pillars');
   if (!pillars) return;
@@ -1584,11 +1584,11 @@ footer .flinks a:hover{color:var(--white)}
   obs.observe(pillars);
 })();
 
-// ═══════════════════════════════════════════════════════
-// MISSISSIPPI MEANDER MAP — scrolling background
+// =======================================================
+// MISSISSIPPI MEANDER MAP  -  scrolling background
 // The map image pans vertically as you scroll through
 // content sections, traveling along the river.
-// ═══════════════════════════════════════════════════════
+// =======================================================
 (function() {
   const bg = document.getElementById('meanderBg');
   const img = document.getElementById('meanderImg');
@@ -1605,7 +1605,7 @@ footer .flinks a:hover{color:var(--white)}
     const inContent = belowRect.top < window.innerHeight * 0.3 && belowRect.bottom > 0;
     bg.classList.toggle('vis', inContent);
 
-    // Pan the image: top of map at start → bottom of map at end of page
+    // Pan the image: top of map at start -> bottom of map at end of page
     // Image is taller than viewport, so we shift it upward as we scroll
     const imgH = img.naturalHeight || 1764;
     const viewH = window.innerHeight;
@@ -1624,9 +1624,9 @@ footer .flinks a:hover{color:var(--white)}
   onScroll();
 })();
 
-// ═══════════════════════════════════════════════════════
+// =======================================================
 // MOBILE NAV
-// ═══════════════════════════════════════════════════════
+// =======================================================
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobileNav');
 hamburger.addEventListener('click', () => {
@@ -1640,9 +1640,9 @@ function closeMobile() {
   document.body.style.overflow = '';
 }
 
-// ═══════════════════════════════════════════════════════
+// =======================================================
 // NAVIGATION + INTERSECTION OBSERVER
-// ═══════════════════════════════════════════════════════
+// =======================================================
 const navEl = document.getElementById('nav');
 window.addEventListener('scroll', () => navEl.classList.toggle('scrolled', scrollY > 50), { passive: true });
 
@@ -1658,9 +1658,9 @@ window.addEventListener('scroll', () => {
   if (hint) hint.classList.toggle('hid', scrollY > 60);
 }, { passive: true });
 
-// ═══════════════════════════════════════════════════════
+// =======================================================
 // SWM FEE SAVINGS CALCULATOR
-// ═══════════════════════════════════════════════════════
+// =======================================================
 const SWM_RATES = { 2: 361, 3: 1004, 4: 1879, 5: 3206, 6: 4466, 7: 5495 };
 function calcSavings() {
   const acres = parseFloat(document.getElementById('calcAcres').value) || 0.25;
@@ -1676,9 +1676,9 @@ document.getElementById('calcCurrent').addEventListener('change', calcSavings);
 document.getElementById('calcAfter').addEventListener('change', calcSavings);
 calcSavings();
 
-// ═══════════════════════════════════════════════════════
-// FORMS — Formspree + localStorage backup
-// ═══════════════════════════════════════════════════════
+// =======================================================
+// FORMS  -  Formspree + localStorage backup
+// =======================================================
 const FORMSPREE_LEAD = 'https://formspree.io/f/xovdgbzk'; // Replace with your Formspree form ID
 const FORMSPREE_WAITLIST = 'https://formspree.io/f/mvgogyyq'; // Replace with your Formspree form ID
 
