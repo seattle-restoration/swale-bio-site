@@ -1118,7 +1118,7 @@ footer .flinks a:hover{color:var(--white)}
   container.appendChild(canvas);
   const ctx = canvas.getContext('2d');
 
-  const dpr = Math.min(window.devicePixelRatio, 2);
+  const dpr = Math.min(window.devicePixelRatio, window.innerWidth < 768 ? 1.5 : 2);
   let W, H;
 
   function resize() {
@@ -1133,7 +1133,8 @@ footer .flinks a:hover{color:var(--white)}
   }
 
   const LAYERS = 5;
-  const BLADES_PER_LAYER = [400, 450, 500, 550, 600];
+  const isMobile = window.innerWidth < 768;
+  const BLADES_PER_LAYER = isMobile ? [150, 180, 200, 220, 250] : [400, 450, 500, 550, 600];
   let blades = [];
 
   function hsl(h, s, l) { return 'hsl(' + h + ',' + s + '%,' + l + '%)'; }
@@ -1174,7 +1175,7 @@ footer .flinks a:hover{color:var(--white)}
     const wind = Math.sin(time * b.swaySpeed + b.phase) * b.swayAmp +
                  Math.sin(time * b.swaySpeed * 0.6 + b.phase * 1.7) * b.swayAmp * 0.3;
     const totalLean = b.lean + wind;
-    const segments = 8;
+    const segments = isMobile ? 4 : 8;
     const baseX = b.x;
     const baseY = H;
     const pts = [];
@@ -1295,7 +1296,7 @@ footer .flinks a:hover{color:var(--white)}
   let W, H;
   function resize() {
     W = window.innerWidth; H = window.innerHeight;
-    const dpr = Math.min(window.devicePixelRatio, 2);
+    const dpr = Math.min(window.devicePixelRatio, window.innerWidth < 768 ? 1.5 : 2);
     canvas.width = W * dpr; canvas.height = H * dpr;
     canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
