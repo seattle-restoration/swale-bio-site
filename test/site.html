@@ -21,13 +21,13 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--black:#0a0a0a;--white:#fafafa;--green:#0f7a36;--green-light:#1a9e48;--green-dark:#0a5c28;--green-glow:rgba(15,122,54,0.15);--gray-400:#a8a29e;--gray-600:#57534e;--gray-800:#292524;--gray-900:#1c1917;--water:#3b82f6;--gold:#d4a853;--terracotta:#c4785a;--font-heading:'Outfit',system-ui,sans-serif;--font-body:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif}
-html{-webkit-font-smoothing:antialiased;-webkit-overflow-scrolling:touch}
-body{font-family:var(--font-body);background:var(--black);color:var(--white);overflow-x:hidden;line-height:1.6;-webkit-overflow-scrolling:touch}
+html{-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-body);background:var(--black);color:var(--white);overflow-x:hidden;line-height:1.6}
 h1,h2,h3,h4{font-family:var(--font-heading)}
 
 /* ═══ HERO SCENE ═══ */
 .hero-wrap{position:relative;height:200vh}
-.hero-scene{position:sticky;top:0;width:100%;height:100vh;overflow:hidden;will-change:transform;-webkit-transform:translateZ(0);transform:translateZ(0)}
+.hero-scene{position:sticky;top:0;width:100%;height:100vh;overflow:hidden}
 
 /* Layer 0: Mountain illustration background */
 .hero-mountains{position:absolute;inset:0;z-index:0;background:url('../hero-mountains.png') center 55%/cover no-repeat;filter:brightness(0.3)}
@@ -1118,7 +1118,7 @@ footer .flinks a:hover{color:var(--white)}
   container.appendChild(canvas);
   const ctx = canvas.getContext('2d');
 
-  const dpr = Math.min(window.devicePixelRatio, window.innerWidth < 768 ? 1.5 : 2);
+  const dpr = Math.min(window.devicePixelRatio, 2);
   let W, H;
 
   function resize() {
@@ -1133,8 +1133,7 @@ footer .flinks a:hover{color:var(--white)}
   }
 
   const LAYERS = 5;
-  const isMobile = window.innerWidth < 768;
-  const BLADES_PER_LAYER = isMobile ? [150, 180, 200, 220, 250] : [400, 450, 500, 550, 600];
+  const BLADES_PER_LAYER = [400, 450, 500, 550, 600];
   let blades = [];
 
   function hsl(h, s, l) { return 'hsl(' + h + ',' + s + '%,' + l + '%)'; }
@@ -1175,7 +1174,7 @@ footer .flinks a:hover{color:var(--white)}
     const wind = Math.sin(time * b.swaySpeed + b.phase) * b.swayAmp +
                  Math.sin(time * b.swaySpeed * 0.6 + b.phase * 1.7) * b.swayAmp * 0.3;
     const totalLean = b.lean + wind;
-    const segments = isMobile ? 4 : 8;
+    const segments = 8;
     const baseX = b.x;
     const baseY = H;
     const pts = [];
@@ -1284,30 +1283,19 @@ footer .flinks a:hover{color:var(--white)}
 
   function pad(n) { return String(n).padStart(4, '0'); }
 
-  // Lazy progressive loading — defer frame downloads until page is interactive
+  // Progressive loading — start showing as soon as first frames arrive
   let minReady = 10;
-  function loadFrames() {
-    let i = 0;
-    function loadNext() {
-      if (i >= TOTAL_FRAMES) return;
-      i++;
-      const img = new Image();
-      img.src = FRAME_PATH + pad(i) + '.jpg';
-      img.onload = () => { loaded++; if (loaded >= minReady && !ready) { ready = true; resize(); drawFrame(0); } loadNext(); };
-      img.onerror = () => { loadNext(); };
-      frames[i - 1] = img;
-    }
-    // Load 3 at a time for speed without saturating mobile connection
-    for (let c = 0; c < 3; c++) loadNext();
+  for (let i = 1; i <= TOTAL_FRAMES; i++) {
+    const img = new Image();
+    img.src = FRAME_PATH + pad(i) + '.jpg';
+    img.onload = () => { loaded++; if (loaded >= minReady && !ready) { ready = true; resize(); drawFrame(0); } };
+    frames.push(img);
   }
-  // Wait for page to be interactive before loading frames
-  if (document.readyState === 'complete') { setTimeout(loadFrames, 100); }
-  else { window.addEventListener('load', () => setTimeout(loadFrames, 100)); }
 
   let W, H;
   function resize() {
     W = window.innerWidth; H = window.innerHeight;
-    const dpr = Math.min(window.devicePixelRatio, window.innerWidth < 768 ? 1.5 : 2);
+    const dpr = Math.min(window.devicePixelRatio, 2);
     canvas.width = W * dpr; canvas.height = H * dpr;
     canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -1443,10 +1431,7 @@ footer .flinks a:hover{color:var(--white)}
     }
   }
 
-  let ticking = false;
-  window.addEventListener('scroll', function() {
-    if (!ticking) { ticking = true; requestAnimationFrame(function() { onScroll(); ticking = false; }); }
-  }, { passive: true });
+  window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 })();
 
