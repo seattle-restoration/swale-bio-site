@@ -174,22 +174,22 @@ nav.scrolled{background:rgba(10,10,10,.85);backdrop-filter:blur(20px);-webkit-ba
 .tool-desc{color:var(--gray-400);font-size:.82rem;line-height:1.55;max-width:260px}
 
 /* Waitlist CTA */
-.waitlist-sec{position:relative;padding:56px 40px;text-align:center;background:linear-gradient(180deg,var(--black) 0%,#0a150a 50%,var(--black) 100%)}
-.waitlist-sec h2{font-size:clamp(2.5rem,5vw,4rem);font-weight:900;margin-bottom:16px}
+.waitlist-sec{position:relative;padding:100px 40px 80px;text-align:center;background:linear-gradient(180deg,var(--black) 0%,#0a150a 50%,var(--black) 100%)}
+.waitlist-sec h2{font-size:clamp(2.5rem,5vw,4rem);font-weight:900;margin-bottom:20px}
 .waitlist-sec h2 em{font-style:normal;color:var(--green)}
-.waitlist-sec>p{color:var(--gray-400);font-weight:300;font-size:1.1rem;max-width:600px;margin:0 auto 40px}
+.waitlist-sec>p{color:var(--gray-400);font-weight:300;font-size:1.1rem;max-width:600px;margin:0 auto 56px;line-height:1.7}
 .waitlist-perks{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:900px;margin:0 auto 48px}
-.wl-perk{padding:32px 24px;border-radius:16px;border:1px solid rgba(212,168,83,.1);background:rgba(212,168,83,.03);text-align:center}
-.wl-perk svg{margin-bottom:16px}
-.wl-perk h4{font-size:1rem;font-weight:700;margin-bottom:6px;color:var(--gold)}
-.wl-perk p{font-size:.85rem;color:var(--gray-400);font-weight:300;line-height:1.5}
-.wl-form{display:flex;gap:12px;max-width:500px;margin:0 auto}
+.wl-perk{padding:40px 28px 36px;border-radius:16px;border:1px solid rgba(212,168,83,.1);background:rgba(212,168,83,.03);text-align:center}
+.wl-perk svg{margin-bottom:20px}
+.wl-perk h4{font-size:1.05rem;font-weight:700;margin-bottom:8px;color:var(--gold)}
+.wl-perk p{font-size:.85rem;color:var(--gray-400);font-weight:300;line-height:1.6}
+.wl-form{display:flex;gap:12px;max-width:500px;margin:32px auto 0}
 .wl-form input{flex:1;padding:14px 20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:100px;color:var(--white);font-family:inherit;font-size:.95rem;outline:none;transition:border-color .3s}
 .wl-form input::placeholder{color:var(--gray-600)}
 .wl-form input:focus{border-color:var(--green)}
 .wl-form button{padding:14px 28px;border-radius:100px;background:var(--green);color:var(--white);font-weight:600;border:none;cursor:pointer;font-family:inherit;font-size:.95rem;transition:background .3s;white-space:nowrap}
 .wl-form button:hover{background:var(--green-dark)}
-.wl-count{font-size:.8rem;color:var(--gray-600);margin-top:16px}
+.wl-count{font-size:.8rem;color:var(--gray-600);margin-top:16px;margin-bottom:20px}
 #wlsuccess{display:none;padding:20px;text-align:center}
 #wlsuccess h3{color:var(--green);font-size:1.2rem;margin-bottom:4px}
 #wlsuccess p{color:var(--gray-400);font-size:.9rem;font-weight:300}
@@ -1003,39 +1003,62 @@ footer .flinks a:hover{color:var(--white)}
   <p class="rv">Launching August 2026. Limited to 50 homes in Year One. Every residential install ends with a branding ceremony. A heated iron seared into your western red cedar check dam. Plus:</p>
   <div class="waitlist-perks">
     <div class="wl-perk rv">
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="8" y="14" width="32" height="24" rx="3" stroke="#d4a853" stroke-width="1.5"/>
-        <rect x="12" y="18" width="24" height="16" rx="2" fill="rgba(212,168,83,.08)"/>
-        <text x="24" y="30" fill="#d4a853" font-size="7" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">SWALE</text>
-        <line x1="14" y1="36" x2="34" y2="36" stroke="#d4a853" stroke-width=".5" opacity=".5"/>
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Engraved basalt stone -->
+        <path d="M8 32Q6 26 10 20Q16 14 28 12Q40 14 46 20Q50 26 48 32Q46 38 38 42Q28 44 18 42Q10 38 8 32Z" fill="rgba(212,168,83,.06)" stroke="#d4a853" stroke-width="1.2"/>
+        <path d="M14 24Q18 20 28 18Q38 20 42 24" fill="none" stroke="#d4a853" stroke-width=".6" opacity=".3"/>
+        <text x="28" y="30" fill="#d4a853" font-size="5.5" font-family="Inter,sans-serif" font-weight="800" text-anchor="middle" letter-spacing=".8">SWALE</text>
+        <text x="28" y="36" fill="#d4a853" font-size="3" font-family="Inter,sans-serif" font-weight="400" text-anchor="middle" opacity=".5">47.6°N 122.3°W</text>
+        <line x1="18" y1="38" x2="38" y2="38" stroke="#d4a853" stroke-width=".4" opacity=".3"/>
       </svg>
       <h4>Engraved Stone</h4>
       <p>A custom basalt marker engraved with your swale's name, GPS coordinates, and installation date. Permanent. Beautiful.</p>
     </div>
     <div class="wl-perk rv">
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <!-- Iron brand icon -->
-        <rect x="20" y="4" width="8" height="20" rx="1" fill="rgba(212,168,83,.15)" stroke="#d4a853" stroke-width="1.2"/>
-        <line x1="24" y1="4" x2="24" y2="24" stroke="#d4a853" stroke-width=".5" opacity=".3"/>
-        <!-- Brand head -->
-        <rect x="14" y="24" width="20" height="14" rx="3" stroke="#d4a853" stroke-width="1.5"/>
-        <text x="24" y="34" fill="#d4a853" font-size="7" font-family="Inter,sans-serif" font-weight="900" text-anchor="middle">S</text>
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Iron branding iron -->
+        <!-- Handle -->
+        <rect x="25" y="2" width="6" height="22" rx="3" fill="rgba(212,168,83,.1)" stroke="#d4a853" stroke-width="1.2"/>
+        <line x1="28" y1="4" x2="28" y2="22" stroke="#d4a853" stroke-width=".4" opacity=".25"/>
+        <!-- Collar -->
+        <rect x="24" y="22" width="8" height="3" rx="1" fill="rgba(212,168,83,.15)" stroke="#d4a853" stroke-width=".8"/>
+        <!-- Brand face — thick SWALE stamp -->
+        <rect x="12" y="25" width="32" height="16" rx="2" stroke="#d4a853" stroke-width="1.5"/>
+        <rect x="14" y="27" width="28" height="12" rx="1" fill="rgba(212,168,83,.08)"/>
+        <text x="28" y="36.5" fill="#d4a853" font-size="8" font-family="Inter,sans-serif" font-weight="900" text-anchor="middle" letter-spacing="1.5">SWALE</text>
         <!-- Heat glow -->
-        <circle cx="24" cy="31" r="8" fill="rgba(212,168,83,.06)"/>
+        <ellipse cx="28" cy="41" rx="14" ry="4" fill="rgba(212,168,83,.06)"/>
         <!-- Smoke wisps -->
-        <path d="M18 42Q17 40 18 38" fill="none" stroke="#d4a853" stroke-width=".8" opacity=".3"/>
-        <path d="M24 44Q23 41 24 39" fill="none" stroke="#d4a853" stroke-width=".8" opacity=".25"/>
-        <path d="M30 43Q29 40 30 38" fill="none" stroke="#d4a853" stroke-width=".8" opacity=".2"/>
+        <path d="M20 48Q19 46 20 43" fill="none" stroke="#d4a853" stroke-width=".7" opacity=".2" stroke-linecap="round"/>
+        <path d="M28 50Q27 47 28 44" fill="none" stroke="#d4a853" stroke-width=".7" opacity=".15" stroke-linecap="round"/>
+        <path d="M36 49Q35 46 36 43" fill="none" stroke="#d4a853" stroke-width=".7" opacity=".2" stroke-linecap="round"/>
       </svg>
       <h4>Branding Ceremony</h4>
       <p>A heated iron brand seared into your western red cedar check dam. Smoke, char, permanence. We don't just install. We brand it yours.</p>
     </div>
     <div class="wl-perk rv">
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M24 6 L28 6 Q30 16 29 26 Q28 34 26 40 L22 40 Q20 34 19 26 Q18 16 20 6 Z" fill="rgba(212,168,83,.1)" stroke="#d4a853" stroke-width="1.2"/>
-        <line x1="24" y1="8" x2="24" y2="38" stroke="#d4a853" stroke-width=".5" opacity=".3"/>
-        <rect x="19" y="38" width="10" height="6" rx="2" fill="rgba(139,105,20,.3)" stroke="#d4a853" stroke-width="1"/>
-        <text x="24" y="22" fill="#d4a853" font-size="4" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle" opacity=".5">SWALE</text>
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Hori Hori knife — traced from reference image -->
+        <!-- Blade — tapered with serrated edge -->
+        <path d="M30 4L34 4Q35 8 35.5 14Q36 22 35.5 28L34 34L30 34Q29 28 28.5 22Q28 14 28.5 8Z" fill="rgba(212,168,83,.08)" stroke="#d4a853" stroke-width="1.2" stroke-linejoin="round"/>
+        <!-- Serrated edge -->
+        <path d="M28.5 10L27.5 12L28.2 14L27.2 16L28 18L27 20L27.8 22L27 24L27.8 26L27 28L28 30L28.5 32" fill="none" stroke="#d4a853" stroke-width=".7" opacity=".5"/>
+        <!-- Center line -->
+        <line x1="31.5" y1="6" x2="32" y2="32" stroke="#d4a853" stroke-width=".4" opacity=".3"/>
+        <!-- Blade tip -->
+        <path d="M28.5 4L30 1L34 4" fill="none" stroke="#d4a853" stroke-width="1" stroke-linejoin="round"/>
+        <!-- Guard -->
+        <rect x="27" y="34" width="10" height="2.5" rx="1" fill="rgba(212,168,83,.12)" stroke="#d4a853" stroke-width=".8"/>
+        <!-- Handle — walnut wood -->
+        <path d="M28 36.5L27.5 50Q27.5 53 30 54L34 54Q36.5 53 36.5 50L36 36.5Z" fill="rgba(139,105,20,.15)" stroke="#d4a853" stroke-width="1.2" stroke-linejoin="round"/>
+        <!-- Handle hole -->
+        <circle cx="32" cy="51" r="1.5" fill="none" stroke="#d4a853" stroke-width=".8" opacity=".5"/>
+        <!-- Handle rivets -->
+        <circle cx="32" cy="40" r=".8" fill="#d4a853" opacity=".4"/>
+        <circle cx="32" cy="44" r=".8" fill="#d4a853" opacity=".4"/>
+        <circle cx="32" cy="48" r=".8" fill="#d4a853" opacity=".4"/>
+        <!-- SWALE engraving on blade -->
+        <text x="32" y="20" fill="#d4a853" font-size="3" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle" opacity=".4" transform="rotate(2,32,20)">SWALE</text>
       </svg>
       <h4>Custom Hori Hori</h4>
       <p>A SWALE-engraved Japanese hori hori garden knife. Walnut handle, 7" stainless blade, serrated edge. Yours to keep.</p>
