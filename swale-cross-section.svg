@@ -1,0 +1,84 @@
+<svg viewBox="0 0 960 520" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <!-- Patterns for textures -->
+    <pattern id="soilPattern" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.7" fill="#5a4738" opacity="0.8"/>
+      <circle cx="6" cy="6" r="0.7" fill="#5a4738" opacity="0.8"/>
+      <circle cx="4" cy="0" r="0.7" fill="#5a4738" opacity="0.8"/>
+      <circle cx="0" cy="4" r="0.7" fill="#5a4738" opacity="0.8"/>
+    </pattern>
+    <pattern id="gravelPattern" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2" fill="#66625d" opacity="0.8"/>
+      <circle cx="9" cy="9" r="2" fill="#66625d" opacity="0.8"/>
+      <circle cx="6" cy="1" r="1.5" fill="#66625d" opacity="0.8"/>
+      <circle cx="1" cy="7" r="1.5" fill="#66625d" opacity="0.8"/>
+    </pattern>
+    <pattern id="mulchPattern" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+      <path d="M0 5 L5 0 L10 5 L5 10 Z" fill="#4d3b2a" opacity="0.6"/>
+      <path d="M2 7 L7 2 M3 9 L9 3" stroke="#4d3b2a" stroke-width="0.5" opacity="0.7"/>
+    </pattern>
+
+    <!-- Filter for plant glow -->
+    <filter id="plantGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+      <feFlood flood-color="#0f7a36" flood-opacity="0.4" result="tint" />
+      <feComposite in="tint" in2="blur" operator="arithmetic" k1="1" k2="0" k3="0" k4="0" result="glow" />
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Water droplet for animation -->
+    <circle id="waterDroplet" r="3" fill="#3b82f6" opacity="0.8"/>
+    <!-- Water arrow for percolation, pointing down -->
+    <path id="waterArrow" d="M0 0 L-3 6 L0 4 L3 6 Z" fill="#3b82f6" stroke="none"/>
+  </defs>
+
+  <!-- Layers (bottom to top) -->
+
+  <!-- 7. NATIVE SUBGRADE -->
+  <!-- Main shape of the ground and excavated area -->
+  <path d="M0 150 H357 L456 216 H504 L603 150 H960 V520 H0 Z" fill="#2a1f15"/>
+
+  <!-- 5. GRAVEL DRAINAGE BED (on top of subgrade, inside channel) -->
+  <rect x="456" y="192" width="48" height="24" fill="url(#gravelPattern)"/>
+
+  <!-- 6. PERFORATED DRAIN PIPE (centered in gravel) -->
+  <circle cx="480" cy="204" r="6" fill="#3b82f6"/>
+  <!-- Perforations -->
+  <g fill="#0c327a">
+    <circle cx="486" cy="204" r="0.8"/>
+    <circle cx="474" cy="204" r="0.8"/>
+    <circle cx="480" cy="198" r="0.8"/>
+    <circle cx="480" cy="210" r="0.8"/>
+    <circle cx="484.24" cy="208.24" r="0.8"/>
+    <circle cx="475.76" cy="199.76" r="0.8"/>
+    <circle cx="484.24" cy="199.76" r="0.8"/>
+    <circle cx="475.76" cy="208.24" r="0.8"/>
+  </g>
+
+  <!-- 4. GEOTEXTILE FABRIC (on top of gravel) -->
+  <line x1="456" y1="192" x2="504" y2="192" stroke="#a8a29e" stroke-width="1.5" stroke-dasharray="4 2"/>
+
+  <!-- 3. ENGINEERED BIORETENTION SOIL (on top of geotextile) -->
+  <rect x="456" y="156" width="48" height="36" fill="url(#soilPattern)"/>
+
+  <!-- 2. MULCH LAYER (on top of soil) -->
+  <rect x="456" y="150" width="48" height="6" fill="url(#mulchPattern)"/>
+
+  <!-- 1. NATIVE PLANTS -->
+  <g filter="url(#plantGlow)">
+    <!-- Sword Fern (simplified silhouettes) -->
+    <path fill="#0f7a36" d="M350 150 C345 125 355 110 360 120 C365 110 375 125 370 150 Z"/>
+    <path fill="#1a9e48" d="M355 150 C350 120 360 105 365 115 C370 105 380 120 375 150 Z" transform="translate(10, 0) scale(0.9)"/>
+    <path fill="#0a5c28" d="M360 150 C355 130 365 115 370 125 C375 115 385 130 380 150 Z" transform="translate(20, 0) scale(0.8)"/>
+
+    <!-- Slough Sedge (grass-like blades) -->
+    <path fill="#1a9e48" d="M460 150 L462 120 L464 150 Z M465 150 L467 115 L469 150 Z M470 150 L472 125 L474 150 Z"/>
+    <path fill="#0f7a36" d="M475 150 L477 118 L479 150 Z M480 150 L482 122 L484 150 Z M485 150 L487 116 L489 150 Z"/>
+    <path fill="#0a5c28" d="M490 150 L492 120 L494 150 Z M495 150 L497 115 L499 150 Z"/>
+    
+    <!-- Salal (rounded leaves, shrubby) -->
+    <path fill="#0f7a36" d="M590 150 C585 130 600 120 605 135 C610 120 625 130 620 150 Z"/>
+    <path fill="#1a9e48" d="M580 150 C575 125 590 115 595 130 C600
