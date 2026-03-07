@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SWALE  -  Bioswale Design, Construction & Maintenance | Seattle</title>
+<title>SWALE | Bioswale Design, Construction & Maintenance | Seattle</title>
 <meta name="description" content="Seattle's premier bioswale company. We design, build, and maintain living infrastructure that settles stormwater, tames torrents, and filters filth. Join our residential waitlist.">
 <meta name="keywords" content="bioswale, bioswale Seattle, bioswale installation, bioswale design, green infrastructure Seattle, stormwater management, rain garden, green factor, sustainable landscaping, bioswale waitlist, residential bioswale, commercial bioswale, hori hori, swale maintenance, beehive grate, Alderwood soil, check dam, bioretention, RainBird irrigation, smart irrigation Seattle, low maintenance landscaping, Piet Oudolf, naturalistic planting">
 <meta name="author" content="Swale LLC">
 <link rel="canonical" href="https://swale.bio">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><g fill='%2316a34a'><path d='M34 62Q33 58 32 52Q31 46 31 40Q30 34 30 28Q30 22 31 16Q31.5 12 32 8Q32.2 6 32.5 4L33 4Q33.5 6 33.8 8Q34 12 34.5 16Q35 22 35 28Q35 34 34.5 40Q34 46 33.5 52Q33 58 32.5 62Z' fill='%230d5e2e'/><path d='M31 10Q27 7 22 5Q26 5 28 7Q30 9 31 12Z'/><path d='M34 10Q38 7 43 5Q39 5 37 7Q35 9 34 12Z'/><path d='M30.5 14Q25 10 18 8Q22 9 25 11Q28 13 30 16Z'/><path d='M34.5 14Q40 10 47 8Q43 9 40 11Q37 13 35 16Z'/><path d='M30 18Q23 14 15 13Q19 14 23 16Q27 18 29 21Z'/><path d='M35 18Q42 14 50 13Q46 14 42 16Q38 18 36 21Z'/><path d='M30 22Q22 18 13 18Q17 19 21 21Q26 23 29 26Z'/><path d='M35 22Q43 18 52 18Q48 19 44 21Q39 23 36 26Z'/><path d='M30 27Q21 23 11 24Q16 24 20 26Q25 28 29 31Z'/><path d='M35 27Q44 23 54 24Q49 24 45 26Q40 28 36 31Z'/><path d='M30 32Q22 29 13 30Q17 30 21 32Q26 34 29 36Z'/><path d='M35 32Q43 29 52 30Q48 30 44 32Q39 34 36 36Z'/><path d='M30 37Q23 34 16 36Q20 35 24 37Q28 39 30 41Z'/><path d='M35 37Q42 34 49 36Q45 35 41 37Q37 39 35 41Z'/><path d='M31 42Q25 40 19 42Q23 41 26 42Q29 44 31 46Z'/><path d='M34 42Q40 40 46 42Q42 41 39 42Q36 44 34 46Z'/><path d='M31 48Q27 46 22 48Q25 47 28 48Q30 49 31 51Z'/><path d='M34 48Q38 46 43 48Q40 47 37 48Q35 49 34 51Z'/></g></svg>">
-<meta property="og:title" content="SWALE  -  Seattle's Premier Infrastructure Company | Residential Waitlist Open">
-<meta property="og:description" content="Bioswale design, construction & maintenance. Settle stormwater. Tame torrents. Filter filth. Join the residential waitlist  -  August 2026 launch.">
+<link rel="icon" href="favicon.png" type="image/png">
+<meta property="og:title" content="SWALE | Seattle's Premier Infrastructure Company | Residential Waitlist Open">
+<meta property="og:description" content="Bioswale design, construction & maintenance. Settle stormwater. Tame torrents. Filter filth. Join the residential waitlist. August 2026 launch.">
 <meta property="og:url" content="https://swale.bio">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -21,31 +21,31 @@
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{--black:#0a0a0a;--white:#fafafa;--green:#0f7a36;--green-light:#1a9e48;--green-dark:#0a5c28;--green-glow:rgba(15,122,54,0.15);--gray-400:#a8a29e;--gray-600:#57534e;--gray-800:#292524;--gray-900:#1c1917;--water:#3b82f6;--gold:#d4a853;--terracotta:#c4785a;--font-heading:'Outfit',system-ui,sans-serif;--font-body:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif}
-html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth;-webkit-overflow-scrolling:touch}
+html{-webkit-font-smoothing:antialiased;-webkit-overflow-scrolling:touch}
 body{font-family:var(--font-body);background:var(--black);color:var(--white);overflow-x:hidden;line-height:1.6;-webkit-overflow-scrolling:touch}
 h1,h2,h3,h4{font-family:var(--font-heading)}
 
-/* === HERO SCENE === */
+/* ═══ HERO SCENE ═══ */
 .hero-wrap{position:relative;height:200vh}
 .hero-scene{position:sticky;top:0;width:100%;height:100vh;overflow:hidden;will-change:transform;-webkit-transform:translateZ(0);transform:translateZ(0)}
 
 /* Layer 0: Mountain illustration background */
 .hero-mountains{position:absolute;inset:0;z-index:0;background:url('../hero-mountains.png') center 55%/cover no-repeat;filter:brightness(0.3)}
 
-/* Layer 1: Video frame canvas  -  revealed when grass parts */
+/* Layer 1: Video frame canvas — revealed when grass parts */
 .hero-video-canvas{position:absolute;inset:0;z-index:1;opacity:0}
 .hero-video-canvas canvas{width:100%;height:100%;display:block;object-fit:cover}
 
-/* Layer 2: Canvas grass  -  foreground, parts on scroll */
-.hero-grass{position:absolute;bottom:0;left:0;right:0;height:42vh;z-index:5;pointer-events:none;transition:none;transform-origin:center bottom;will-change:transform,opacity;-webkit-transform:translateZ(0);transform:translateZ(0)}
+/* Layer 2: Canvas grass — foreground, parts on scroll */
+.hero-grass{position:absolute;bottom:0;left:0;right:0;height:42vh;z-index:5;pointer-events:none;transition:none;transform-origin:center bottom}
 .hero-grass canvas{width:100%;height:100%;display:block}
 
-/* Reveal layer  -  logo rises from grass, no dark background */
+/* Reveal layer — logo rises from grass, no dark background */
 .hero-reveal{position:absolute;inset:0;z-index:15;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;opacity:0;pointer-events:none}
 .hero-reveal-logo{width:clamp(200px,35vw,400px);height:auto;margin-bottom:16px;filter:brightness(0) invert(1);transition:none}
 .hero-reveal-sub{font-size:clamp(1rem,2vw,1.4rem);font-weight:300;color:#e7e5e4;letter-spacing:.04em;max-width:500px;text-shadow:0 1px 10px rgba(0,0,0,.5)}
 
-/* Dark overlay  -  final transition to content */
+/* Dark overlay — final transition to content */
 .hero-dark-overlay{position:absolute;inset:0;background:var(--black);opacity:0;z-index:20;pointer-events:none}
 
 
@@ -75,21 +75,21 @@ nav.scrolled{background:rgba(10,10,10,.85);backdrop-filter:blur(20px);-webkit-ba
 @keyframes fl{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
 #below{position:relative;z-index:50}
 
-/* Mississippi meander map  -  scrolling background */
+/* Mississippi meander map — scrolling background */
 .meander-bg{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100vw;height:100vh;z-index:9999;pointer-events:none;opacity:0;transition:opacity .4s}
 .meander-bg.vis{opacity:1}
 .meander-bg img{position:absolute;left:50%;transform:translateX(-50%);width:120%;max-width:none;filter:sepia(.2) saturate(.3);opacity:.1}
 
 /* Section shared */
 .sec-line::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--green-dark),transparent)}
-.shdr{text-align:center;margin-bottom:80px}
+.shdr{text-align:center;margin-bottom:32px}
 .shdr h2{font-size:clamp(2rem,4vw,3.5rem);font-weight:800;margin-bottom:16px}
 .shdr p{color:var(--gray-400);font-weight:300;font-size:1.1rem}
 .rv{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
 .rv.vis{opacity:1;transform:translateY(0)}
 
 /* Pillars */
-.psec{position:relative;padding:120px 40px}
+.psec{position:relative;padding:56px 40px}
 #pillars{padding-top:60px;background:var(--black)}
 #pillars .shdr{opacity:0;transform:translateY(30px);transition:opacity .8s ease-out,transform .8s ease-out}
 #pillars.vis .shdr{opacity:1;transform:translateY(0)}
@@ -107,10 +107,10 @@ nav.scrolled{background:rgba(10,10,10,.85);backdrop-filter:blur(20px);-webkit-ba
 .pcard p{font-size:.95rem;color:var(--gray-400);line-height:1.7;font-weight:300}
 
 /* Anatomy */
-.asec{padding:120px 40px;background:var(--gray-900);position:relative}
+.asec{padding:56px 40px;background:var(--gray-900);position:relative}
 
 /* Oudolf / Chelsea section */
-.oudolf-sec{position:relative;padding:120px 40px;background:linear-gradient(180deg,var(--black) 0%,#0d120a 50%,var(--black) 100%);overflow:hidden}
+.oudolf-sec{position:relative;padding:72px 40px;background:linear-gradient(180deg,var(--black) 0%,#0d120a 50%,var(--black) 100%);overflow:hidden}
 .oudolf-sec .shdr p{max-width:600px;margin:0 auto}
 .oudolf-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:48px;max-width:1100px;margin:0 auto}
 .oudolf-card{border-radius:20px;overflow:hidden;border:1px solid rgba(15,122,54,.08);background:rgba(15,122,54,.02);transition:border-color .4s}
@@ -129,14 +129,14 @@ nav.scrolled{background:rgba(10,10,10,.85);backdrop-filter:blur(20px);-webkit-ba
 
 /* Swale Mix */
 .mix-section{position:relative;overflow:hidden}
-.mix-hero{position:relative;min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px 40px;background:transparent}
+.mix-hero{position:relative;min-height:auto;display:flex;align-items:center;justify-content:center;text-align:center;padding:56px 40px 32px;background:transparent}
 .mix-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 0%,rgba(10,10,10,.3) 100%)}
 .mix-content{position:relative;z-index:2;max-width:800px}
 .mix-label{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green-light);margin-bottom:16px}
 .mix-content h2{font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;line-height:1;letter-spacing:-.03em;margin-bottom:20px}
 .mix-content h2 em{font-style:normal;color:var(--green)}
 .mix-content>p{font-size:1.2rem;color:var(--gray-400);font-weight:300;max-width:600px;margin:0 auto 60px;line-height:1.6}
-.mix-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1100px;margin:0 auto;padding:0 40px 100px;position:relative;z-index:2}
+.mix-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1100px;margin:0 auto;padding:0 40px 60px;position:relative;z-index:2}
 .mix-card{border-radius:20px;overflow:hidden;border:1px solid rgba(15,122,54,.1);background:rgba(10,10,10,.8);backdrop-filter:blur(10px);transition:border-color .4s,transform .3s}
 .mix-card:hover{border-color:rgba(15,122,54,.4);transform:translateY(-4px)}
 .mix-img{height:240px;position:relative;overflow:hidden}
@@ -150,34 +150,31 @@ nav.scrolled{background:rgba(10,10,10,.85);backdrop-filter:blur(20px);-webkit-ba
 .mix-card-body p{font-size:.9rem;color:var(--gray-400);line-height:1.6;font-weight:300}
 
 /* Stats */
-.stats-bar{padding:80px 40px;background:var(--black);position:relative}
+.stats-bar{padding:40px 40px;background:var(--black);position:relative}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;max-width:1100px;margin:0 auto;text-align:center}
 .stat-item h4{font-size:clamp(2rem,4vw,3.5rem);font-weight:900;color:var(--green);letter-spacing:-.02em;line-height:1}
 .stat-item p{font-size:.85rem;color:var(--gray-400);font-weight:400;margin-top:8px}
 
 /* Hori Hori feature */
-.hori-sec{position:relative;padding:120px 40px;background:var(--gray-900);overflow:hidden}
-.hori-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;max-width:1100px;margin:0 auto;align-items:center}
-.hori-text h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:16px}
-.hori-text h2 em{font-style:normal;color:var(--gold)}
-.hori-text>p{color:var(--gray-400);font-weight:300;font-size:1.05rem;line-height:1.6;margin-bottom:32px}
-.hori-features{display:flex;flex-direction:column;gap:20px}
-.hori-feat{display:flex;gap:16px;align-items:flex-start}
-.hori-feat-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.hori-feat h4{font-size:.95rem;font-weight:600;margin-bottom:2px}
-.hori-feat p{font-size:.85rem;color:var(--gray-400);font-weight:300}
-.hori-graphic{position:relative;display:flex;align-items:center;justify-content:center;min-height:600px}
-.hori-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:300px;height:500px;background:radial-gradient(ellipse,rgba(212,168,83,.06) 0%,transparent 70%);filter:blur(40px);pointer-events:none}
-/* Scroll-triggered reveal */
-.hori-knife{opacity:0;transform:translateY(60px);transition:opacity 1.2s cubic-bezier(.16,1,.3,1),transform 1.2s cubic-bezier(.16,1,.3,1);filter:drop-shadow(0 0 60px rgba(212,168,83,.08))}
-.hori-knife.vis{opacity:1;transform:translateY(0)}
-.hori-knife svg{animation:knifeFloat 4s ease-in-out infinite}
-@keyframes knifeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.hori-annot{opacity:0;transform:translateX(20px);transition:opacity .8s ease,transform .8s ease}
-.hori-annot.vis{opacity:1;transform:translateX(0)}
+/* Artisan Tools Section */
+.tools-section{padding:56px 40px;max-width:1100px;margin:0 auto}
+.tools-section .section-label{color:var(--gold);font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px}
+.tools-section .section-title{font-size:clamp(2rem,3.5vw,2.8rem);font-weight:800;letter-spacing:.02em;line-height:1.15;margin-bottom:12px}
+.tools-section .section-sub{color:var(--gray-400);font-size:.95rem;max-width:480px;line-height:1.6;margin-bottom:72px}
+.tools-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.04);border-radius:16px;overflow:hidden}
+.tool{background:rgba(255,255,255,.015);padding:48px 32px 40px;display:flex;flex-direction:column;align-items:center;text-align:center;transition:background .4s ease;cursor:default;position:relative}
+.tool:hover{background:rgba(255,255,255,.035)}
+.tool::after{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,168,83,.25),transparent);opacity:0;transition:opacity .4s}
+.tool:hover::after{opacity:1}
+.tool-img{width:100%;height:220px;display:flex;align-items:center;justify-content:center;margin-bottom:28px;position:relative}
+.tool-img img{max-height:200px;max-width:90%;object-fit:contain;filter:brightness(1.1) contrast(1.05) drop-shadow(0 4px 24px rgba(0,0,0,.6));transition:transform .5s cubic-bezier(.16,1,.3,1),filter .5s}
+.tool:hover .tool-img img{transform:translateY(-8px) scale(1.03);filter:brightness(1.1) contrast(1.08) drop-shadow(0 12px 32px rgba(0,0,0,.6))}
+.tool-name{font-size:1.15rem;font-weight:700;letter-spacing:.03em;margin-bottom:6px}
+.tool-origin{color:var(--gold);font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;opacity:.8}
+.tool-desc{color:var(--gray-400);font-size:.82rem;line-height:1.55;max-width:260px}
 
 /* Waitlist CTA */
-.waitlist-sec{position:relative;padding:100px 40px;text-align:center;background:linear-gradient(180deg,var(--black) 0%,#0a150a 50%,var(--black) 100%)}
+.waitlist-sec{position:relative;padding:56px 40px;text-align:center;background:linear-gradient(180deg,var(--black) 0%,#0a150a 50%,var(--black) 100%)}
 .waitlist-sec h2{font-size:clamp(2.5rem,5vw,4rem);font-weight:900;margin-bottom:16px}
 .waitlist-sec h2 em{font-style:normal;color:var(--green)}
 .waitlist-sec>p{color:var(--gray-400);font-weight:300;font-size:1.1rem;max-width:600px;margin:0 auto 40px}
@@ -216,7 +213,7 @@ nav.scrolled{background:rgba(10,10,10,.85);backdrop-filter:blur(20px);-webkit-ba
 .artisan-text p{font-size:1.1rem;color:var(--gray-400);font-weight:300}
 
 /* Products */
-.prsec{padding:120px 40px;position:relative}
+.prsec{padding:56px 40px;position:relative}
 .prgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1100px;margin:0 auto}
 .prcard{padding:48px 36px;border-radius:20px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);transition:border-color .4s,transform .3s}
 .prcard:hover{border-color:rgba(15,122,54,.3);transform:translateY(-4px)}
@@ -227,7 +224,7 @@ nav.scrolled{background:rgba(10,10,10,.85);backdrop-filter:blur(20px);-webkit-ba
 .waitlist-badge{display:inline-block;padding:4px 14px;border-radius:100px;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:rgba(212,168,83,.1);color:var(--gold);border:1px solid rgba(212,168,83,.2);margin-top:16px}
 
 /* CTA */
-.ctasec{min-height:80vh;display:flex;align-items:center;justify-content:center;padding:120px 40px;background:var(--gray-900);text-align:center;position:relative}
+.ctasec{min-height:auto;display:flex;align-items:center;justify-content:center;padding:56px 40px;background:var(--gray-900);text-align:center;position:relative}
 .ctac{max-width:600px}
 .ctac h2{font-size:clamp(2.5rem,5vw,4rem);font-weight:900;margin-bottom:20px;line-height:1.05}
 .ctac>p{font-size:1.2rem;color:var(--gray-400);font-weight:300;margin-bottom:40px}
@@ -262,7 +259,7 @@ footer .flinks a:hover{color:var(--white)}
 .oudolf-divider{width:100%;max-width:600px;margin:0 auto;display:block;opacity:.12;padding:40px 0}
 
 /* Supply Chain / Materials */
-.supply-sec{position:relative;padding:120px 40px;background:var(--black)}
+.supply-sec{position:relative;padding:56px 40px;background:var(--black)}
 .supply-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;max-width:1100px;margin:0 auto}
 .supply-card{border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02);transition:border-color .4s}
 .supply-card:hover{border-color:rgba(15,122,54,.25)}
@@ -273,7 +270,7 @@ footer .flinks a:hover{color:var(--white)}
 .supply-card-body p{font-size:.9rem;color:var(--gray-400);line-height:1.6;font-weight:300}
 
 /* Ecosystem / App */
-.eco-sec{position:relative;padding:120px 40px;background:linear-gradient(180deg,var(--gray-900) 0%,var(--black) 100%)}
+.eco-sec{position:relative;padding:56px 40px;background:linear-gradient(180deg,var(--gray-900) 0%,var(--black) 100%)}
 .eco-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;max-width:1100px;margin:0 auto;align-items:center}
 .eco-text h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:16px}
 .eco-text h2 em{font-style:normal;color:var(--green)}
@@ -316,7 +313,7 @@ footer .flinks a:hover{color:var(--white)}
 .mobile-overlay .nav-cta{background:var(--green);padding:14px 32px;border-radius:100px;font-weight:600}
 
 /* SWM Savings section */
-.savings-sec{position:relative;padding:120px 40px;background:linear-gradient(180deg,var(--black) 0%,#0a1a0a 50%,var(--black) 100%)}
+.savings-sec{position:relative;padding:56px 40px;background:linear-gradient(180deg,var(--black) 0%,#0a1a0a 50%,var(--black) 100%)}
 .savings-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
 .savings-text h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:16px}
 .savings-text h2 em{font-style:normal;color:var(--green)}
@@ -336,10 +333,15 @@ footer .flinks a:hover{color:var(--white)}
 .calc-result .sub{font-size:.85rem;color:var(--gray-400);margin-top:8px;font-weight:300}
 
 /* Matrix planting section */
-.matrix-sec{position:relative;padding:120px 40px;background:var(--black);overflow:hidden}
+.matrix-sec{position:relative;padding:56px 40px;background:var(--black);overflow:hidden}
 .matrix-inner{max-width:1100px;margin:0 auto}
 .matrix-methods{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:60px}
-.matrix-method{padding:40px 28px;border-radius:20px;border:1px solid rgba(15,122,54,.08);background:rgba(15,122,54,.02);text-align:center;transition:border-color .4s}
+.matrix-method{padding:40px 28px;border-radius:20px;border:1px solid rgba(15,122,54,.08);background:rgba(15,122,54,.02);text-align:center;transition:border-color .4s;position:relative;overflow:hidden;z-index:1}
+.matrix-method::before{content:'';position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity .6s ease;z-index:-1}
+.matrix-method:nth-child(1)::before{background-image:url('oudolf-1.jpg')}
+.matrix-method:nth-child(2)::before{background-image:url('oudolf-2.jpg')}
+.matrix-method:nth-child(3)::before{background-image:url('oudolf-1.jpg');background-position:right center}
+.matrix-method:hover::before{opacity:.15}
 .matrix-method:hover{border-color:rgba(15,122,54,.25)}
 .matrix-method h4{font-size:1.2rem;font-weight:700;margin-bottom:8px}
 .matrix-method .tag{font-size:.75rem;color:var(--green);font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
@@ -352,10 +354,72 @@ footer .flinks a:hover{color:var(--white)}
 .plant-tag .latin{font-size:.7rem;color:var(--green);font-style:italic;font-weight:400}
 .plant-tag .role{font-size:.72rem;color:var(--gray-600);margin-top:4px;font-weight:300}
 
-@media(max-width:768px){.hamburger{display:block}nav{padding:16px 24px}.nav-links{display:none}.pgrid,.prgrid,.mix-grid,.stats-grid,.waitlist-perks{grid-template-columns:1fr;gap:24px}.psec,.asec,.prsec,.ctasec,.oudolf-sec,.hori-sec,.team-sec,.waitlist-sec{padding:80px 24px}.lform .fr{flex-direction:column}.mix-hero{padding:80px 24px}.mix-grid{padding:0 24px 80px}.stats-grid{grid-template-columns:repeat(2,1fr)}.hori-inner{grid-template-columns:1fr;gap:40px}.oudolf-grid{grid-template-columns:1fr}.team-grid{grid-template-columns:repeat(2,1fr)}.wl-form{flex-direction:column}.supply-grid{grid-template-columns:1fr}.eco-inner{grid-template-columns:1fr;gap:40px}.supply-sec,.eco-sec,.maint-sec,.savings-sec,.matrix-sec{padding:80px 24px}.savings-inner{grid-template-columns:1fr}.matrix-methods{grid-template-columns:1fr}.plant-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.hamburger{display:block}nav{padding:16px 24px}.nav-links{display:none}.pgrid,.prgrid,.mix-grid,.stats-grid,.waitlist-perks{grid-template-columns:1fr;gap:24px}.psec,.asec,.prsec,.ctasec,.oudolf-sec,.team-sec,.waitlist-sec{padding:80px 24px}.lform .fr{flex-direction:column}.mix-hero{padding:80px 24px}.mix-grid{padding:0 24px 80px}.stats-grid{grid-template-columns:repeat(2,1fr)}.oudolf-grid{grid-template-columns:1fr}.team-grid{grid-template-columns:repeat(2,1fr)}.wl-form{flex-direction:column}.supply-grid{grid-template-columns:1fr}.eco-inner{grid-template-columns:1fr;gap:40px}.supply-sec,.eco-sec,.maint-sec,.savings-sec,.matrix-sec{padding:80px 24px}.savings-inner{grid-template-columns:1fr}.matrix-methods{grid-template-columns:1fr}.tools-section{padding:64px 24px 56px}.tools-row{grid-template-columns:1fr}.tool{padding:36px 24px 32px}.tool-img{height:180px}}
+
+/* ═══ TOAST NOTIFICATION ═══ */
+.toast{position:fixed;bottom:32px;right:32px;z-index:10000;background:var(--green);color:#fff;padding:16px 24px;border-radius:14px;font-size:.95rem;font-weight:500;display:flex;align-items:center;gap:10px;box-shadow:0 8px 32px rgba(15,122,54,.3),0 2px 8px rgba(0,0,0,.2);transform:translateY(120px);opacity:0;transition:transform .5s cubic-bezier(.16,1,.3,1),opacity .5s cubic-bezier(.16,1,.3,1);pointer-events:none}
+.toast.show{transform:translateY(0);opacity:1;pointer-events:auto}
+.toast svg{flex-shrink:0}
+.toast-bar{position:absolute;bottom:0;left:0;height:3px;background:rgba(255,255,255,.4);border-radius:0 0 14px 14px;animation:toastBar 4s linear forwards}
+@keyframes toastBar{from{width:100%}to{width:0}}
+
+/* ═══ HERO STAGGERED ENTRANCE ═══ */
+.hero-badge,.hero-h1-wrap,#hero h1,.hero-sub,.cta-group{opacity:0;transform:translateY(30px);animation-fill-mode:forwards;animation-timing-function:cubic-bezier(.16,1,.3,1);animation-duration:.9s}
+.hero-badge{animation-name:heroIn;animation-delay:.3s}
+#hero h1{animation-name:heroIn;animation-delay:.5s}
+.hero-sub{animation-name:heroIn;animation-delay:.7s}
+.cta-group{animation-name:heroIn;animation-delay:.9s}
+@keyframes heroIn{to{opacity:1;transform:translateY(0)}}
+
+/* ═══ ACTIVE NAV INDICATOR ═══ */
+.nav-links{position:relative}
+.nav-links a{position:relative}
+.nav-links a:not(.nav-cta)::after{content:'';position:absolute;bottom:-6px;left:0;right:0;height:2px;background:var(--green);border-radius:1px;transform:scaleX(0);transition:transform .3s cubic-bezier(.16,1,.3,1);transform-origin:center}
+.nav-links a:not(.nav-cta).active::after{transform:scaleX(1)}
+
+/* ═══ CARD HOVER DEPTH ═══ */
+.pcard{transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1),border-color .4s,box-shadow .4s}
+.pcard:hover{border-color:rgba(15,122,54,.3);box-shadow:0 8px 30px rgba(15,122,54,.08),0 0 60px rgba(15,122,54,.04);transform:translateY(-6px)!important}
+.mix-card{transition:border-color .4s,transform .3s,box-shadow .4s}
+.mix-card:hover{border-color:rgba(15,122,54,.4);transform:translateY(-8px);box-shadow:0 12px 40px rgba(15,122,54,.1),0 0 80px rgba(15,122,54,.05)}
+.supply-card{transition:border-color .4s,transform .3s,box-shadow .4s}
+.supply-card:hover{border-color:rgba(15,122,54,.25);transform:translateY(-6px);box-shadow:0 8px 30px rgba(15,122,54,.08)}
+.team-card{transition:border-color .3s,transform .3s,box-shadow .3s}
+.team-card:hover{border-color:rgba(15,122,54,.2);transform:translateY(-4px);box-shadow:0 6px 24px rgba(15,122,54,.06)}
+.prcard{transition:border-color .4s,transform .3s,box-shadow .4s}
+.prcard:hover{border-color:rgba(15,122,54,.3);transform:translateY(-8px);box-shadow:0 12px 40px rgba(15,122,54,.1),0 0 60px rgba(15,122,54,.04)}
+.matrix-method{transition:border-color .4s,transform .3s,box-shadow .4s}
+.matrix-method:hover{border-color:rgba(15,122,54,.25);transform:translateY(-4px);box-shadow:0 6px 24px rgba(15,122,54,.06)}
+
+/* ═══ BUTTON FOCUS RINGS ═══ */
+.btn-p:focus-visible,.btn-g:focus-visible,.nav-cta:focus-visible,.fsbtn:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.btn-p,.btn-g,.fsbtn,.nav-cta{transition:background .3s,transform .15s,box-shadow .3s}
+.btn-p:active,.fsbtn:active{transform:scale(.97)}
+.btn-g:active{transform:scale(.97)}
+
+/* ═══ MOBILE NAV STAGGERED ═══ */
+.mobile-overlay a{opacity:0;transform:translateY(20px);transition:opacity .4s ease,transform .4s ease,color .3s}
+.mobile-overlay.open a{opacity:1;transform:translateY(0)}
+.mobile-overlay.open a:nth-child(1){transition-delay:.05s}
+.mobile-overlay.open a:nth-child(2){transition-delay:.1s}
+.mobile-overlay.open a:nth-child(3){transition-delay:.15s}
+.mobile-overlay.open a:nth-child(4){transition-delay:.2s}
+.mobile-overlay.open a:nth-child(5){transition-delay:.25s}
+.mobile-overlay.open a:nth-child(6){transition-delay:.3s}
+
+/* ═══ SCROLL HINT CHEVRON ═══ */
+#shint i{display:none}
+.scroll-chevron{width:20px;height:20px;border-right:2px solid var(--gray-600);border-bottom:2px solid var(--gray-600);transform:rotate(45deg);animation:chevronBounce 2s ease-in-out infinite}
+@keyframes chevronBounce{0%,100%{transform:rotate(45deg) translate(0,0);opacity:.6}50%{transform:rotate(45deg) translate(4px,4px);opacity:1}}
 </style>
+<!-- Lenis smooth scroll -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
 </head>
 <body>
+<div class="toast" id="toast"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span id="toastMsg"></span><div class="toast-bar"></div></div>
 
 <nav id="nav">
   <a href="#" class="nav-logo"><img src="../swale-logo.png" alt="SWALE" class="nav-logo-img"></a>
@@ -378,19 +442,19 @@ footer .flinks a:hover{color:var(--white)}
   <a href="#contact" class="nav-cta" onclick="closeMobile()">Get Started</a>
 </div>
 
-<!-- === HERO SCENE  -  Scroll-through grass field === -->
+<!-- ═══ HERO SCENE — Scroll-through grass field ═══ -->
 <div class="hero-wrap" id="heroWrap">
 <div class="hero-scene" id="heroScene">
   <!-- Layer 0: Mountain illustration -->
   <div class="hero-mountains"></div>
 
-  <!-- Layer 1: Video frames  -  revealed when grass parts (placeholder until real footage) -->
+  <!-- Layer 1: Video frames — revealed when grass parts (placeholder until real footage) -->
   <div class="hero-video-canvas" id="heroVideoCanvas"></div>
 
   <!-- Layer 2: Canvas grass foreground -->
   <div class="hero-grass" id="heroGrass"></div>
 
-  <!-- Reveal layer  -  logo after video -->
+  <!-- Reveal layer — logo after video -->
   <div class="hero-reveal" id="heroReveal">
     <img src="../swale-logo-white.png" alt="SWALE" class="hero-reveal-logo">
     <div class="hero-reveal-sub">Welcome to your new backyard.</div>
@@ -403,14 +467,14 @@ footer .flinks a:hover{color:var(--white)}
   <div id="hero">
     <div class="hero-badge">Seattle's Premier Infrastructure Company</div>
     <h1>Grass is <span class="accent">ugly.</span></h1>
-    <p class="hero-sub">We augment lawns with living infrastructure  -  the trim that settles stormwater, tames torrents, and filters filth.</p>
+    <p class="hero-sub">We augment lawns with living infrastructure. The trim that settles stormwater, tames torrents, and filters filth.</p>
     <div class="cta-group">
       <a href="#waitlist" class="btn-p">Join the Waitlist <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       <a href="#pillars" class="btn-g">See How It Works</a>
     </div>
   </div>
 
-  <div id="shint"><span>Scroll to enter</span><i></i></div>
+  <div id="shint"><span>Scroll to enter</span><div class="scroll-chevron"></div></div>
 </div>
 </div>
 
@@ -444,7 +508,7 @@ footer .flinks a:hover{color:var(--white)}
       <div class="pico" style="background:rgba(202,138,4,.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#ca8a04" stroke-width="1.5" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
       <div class="tag">Filter Filth</div>
       <h3>Strip It Clean</h3>
-      <p>Heavy metals, oils, petroleum compounds, sediment  -  gone. 99% pollutant removal before it reaches the creek.</p>
+      <p>Heavy metals, oils, petroleum compounds, sediment. Gone. 99% pollutant removal before it reaches the creek.</p>
     </div>
   </div>
 </section>
@@ -453,123 +517,192 @@ footer .flinks a:hover{color:var(--white)}
 <section class="asec rv sec-line" id="anatomy">
   <div style="max-width:1000px;margin:0 auto;text-align:center">
     <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:16px">Anatomy of a Swale</h2>
-    <p style="color:var(--gray-400);font-weight:300;font-size:1.1rem;margin-bottom:60px">Seven engineered layers working together beneath the beauty.</p>
-    <svg viewBox="0 0 900 440" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;display:block;margin:0 auto">
-      <path d="M50 200 L200 200 Q300 200 350 260 Q400 320 450 320 Q500 320 550 260 Q600 200 650 200 L850 200" fill="none" stroke="#57534e" stroke-width="2"/>
-      <path d="M200 200 Q300 200 350 260 Q400 320 450 320 Q500 320 550 260 Q600 200 650 200 L650 370 L200 370Z" fill="rgba(15,122,54,.06)"/>
-      <rect x="280" y="340" width="290" height="30" rx="4" fill="rgba(168,162,158,.12)" stroke="#57534e" stroke-width=".5" stroke-dasharray="4 2"/>
-      <ellipse cx="425" cy="365" rx="18" ry="10" fill="none" stroke="#a8a29e" stroke-width="1.5"/>
-      <path d="M310 285Q380 278 450 288Q520 298 540 280" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity=".5"><animate attributeName="d" dur="3s" repeatCount="indefinite" values="M310 285Q380 278 450 288Q520 298 540 280;M310 282Q380 290 450 282Q520 275 540 284;M310 285Q380 278 450 288Q520 298 540 280"/></path>
-      <rect x="400" y="290" width="8" height="30" rx="2" fill="#57534e" opacity=".6"/>
-      <rect x="460" y="280" width="8" height="30" rx="2" fill="#57534e" opacity=".4"/>
-      <g opacity=".8"><line x1="320" y1="245" x2="316" y2="210" stroke="#0f7a36" stroke-width="1.2"/><line x1="320" y1="245" x2="324" y2="208" stroke="#0f7a36" stroke-width="1.2"/><line x1="320" y1="245" x2="320" y2="205" stroke="#0f7a36" stroke-width="1.5"/></g>
-      <g opacity=".7" transform="translate(420,290)"><path d="M0 0Q-8-20-4-35" fill="none" stroke="#1a9e48" stroke-width="1.2"/><path d="M0 0Q8-20 4-35" fill="none" stroke="#1a9e48" stroke-width="1.2"/><path d="M0 0Q0-22 0-38" fill="none" stroke="#1a9e48" stroke-width="1.5"/></g>
-      <g opacity=".7" transform="translate(530,240)"><line x1="0" y1="0" x2="0" y2="-20" stroke="#0a5c28" stroke-width="1.5"/><ellipse cx="-8" cy="-22" rx="10" ry="7" fill="none" stroke="#0f7a36" stroke-width="1.2"/><ellipse cx="8" cy="-25" rx="9" ry="6" fill="none" stroke="#0f7a36" stroke-width="1.2"/></g>
-      <text x="80" y="168" fill="#a8a29e" font-size="11" font-family="Inter,sans-serif" font-weight="500">Stormwater inflow</text>
-      <text x="710" y="252" fill="#0f7a36" font-size="11" font-family="Inter,sans-serif" font-weight="600">Sedges &amp; Ferns</text>
-      <text x="710" y="292" fill="#3b82f6" font-size="11" font-family="Inter,sans-serif" font-weight="500" opacity=".6">Filtered water</text>
-      <text x="710" y="312" fill="#57534e" font-size="11" font-family="Inter,sans-serif" font-weight="500">Check dams</text>
-      <text x="710" y="348" fill="#a8a29e" font-size="11" font-family="Inter,sans-serif" font-weight="500">Gravel bed</text>
-      <text x="710" y="372" fill="#a8a29e" font-size="11" font-family="Inter,sans-serif" font-weight="500">Perforated drain</text>
-    </svg>
-  </div>
-</section>
+    <p style="color:var(--gray-400);font-weight:300;font-size:1.1rem;margin-bottom:32px">Seven engineered layers working together beneath the beauty.</p>
+    <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;display:block;margin:0 auto">
+      <defs>
+        <linearGradient id="waterGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#3b82f6" stop-opacity=".1"/><stop offset="50%" stop-color="#3b82f6" stop-opacity=".25"/><stop offset="100%" stop-color="#3b82f6" stop-opacity=".05"/></linearGradient>
+        <linearGradient id="soilGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0f7a36" stop-opacity=".08"/><stop offset="100%" stop-color="#0f7a36" stop-opacity=".02"/></linearGradient>
+        <!-- Layer texture patterns -->
+        <pattern id="xMulchPat" width="14" height="6" patternUnits="userSpaceOnUse"><path d="M1 3Q3 1 6 3Q9 5 12 3" fill="none" stroke="#5a3d1a" stroke-width=".6" opacity=".5"/></pattern>
+        <pattern id="xSoilPat" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r=".8" fill="#6b5240" opacity=".4"/><circle cx="8" cy="7" r=".6" fill="#6b5240" opacity=".3"/><circle cx="1" cy="8" r=".5" fill="#6b5240" opacity=".35"/></pattern>
+        <pattern id="xGravelPat" width="16" height="14" patternUnits="userSpaceOnUse"><ellipse cx="4" cy="4" rx="3" ry="2.5" fill="none" stroke="#78716c" stroke-width=".6" opacity=".4"/><ellipse cx="12" cy="10" rx="2.5" ry="2" fill="none" stroke="#78716c" stroke-width=".6" opacity=".35"/><ellipse cx="9" cy="3" rx="2" ry="1.5" fill="none" stroke="#78716c" stroke-width=".6" opacity=".3"/><ellipse cx="3" cy="11" rx="2.5" ry="2" fill="none" stroke="#78716c" stroke-width=".6" opacity=".35"/></pattern>
+        <pattern id="xSubPat" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="6" cy="6" r=".4" fill="#3d2e20" opacity=".5"/><circle cx="2" cy="10" r=".3" fill="#3d2e20" opacity=".4"/><circle cx="10" cy="2" r=".35" fill="#3d2e20" opacity=".45"/></pattern>
+        <linearGradient id="subGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2a1f15"/><stop offset="100%" stop-color="#1a120a"/></linearGradient>
+      </defs>
 
-<!-- OUDOLF / CHELSEA / HIGH LINE DESIGN PHILOSOPHY -->
-<section class="oudolf-sec" id="design">
-  <div class="oudolf-bg" style="top:0;left:0;width:100%;height:100%">
-    <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 300Q200 250 400 300Q600 350 800 280Q1000 210 1200 300" fill="none" stroke="#0f7a36" stroke-width="2"/>
-      <path d="M0 320Q200 270 400 320Q600 370 800 300Q1000 230 1200 320" fill="none" stroke="#0f7a36" stroke-width="1" stroke-dasharray="4 6"/>
-      <circle cx="200" cy="280" r="4" fill="#0f7a36"/><circle cx="220" cy="270" r="3" fill="#0f7a36"/><circle cx="210" cy="290" r="3" fill="#0f7a36"/>
-      <circle cx="600" cy="340" r="4" fill="#0f7a36"/><circle cx="620" cy="350" r="3" fill="#0f7a36"/><circle cx="580" cy="345" r="2.5" fill="#0f7a36"/>
-      <circle cx="900" cy="260" r="3.5" fill="#0f7a36"/><circle cx="920" cy="250" r="3" fill="#0f7a36"/>
+      <!-- ═══ 7. NATIVE SUBGRADE — undisturbed soil below everything ═══ -->
+      <path d="M30 190 L180 190 Q260 190 320 240 Q380 295 450 300 Q520 295 580 240 Q640 190 720 190 L870 190 L870 480 L30 480Z" fill="url(#subGrad)"/>
+      <path d="M30 190 L180 190 Q260 190 320 240 Q380 295 450 300 Q520 295 580 240 Q640 190 720 190 L870 190 L870 480 L30 480Z" fill="url(#xSubPat)"/>
+
+      <!-- ═══ 5. GRAVEL DRAINAGE BED — washed 3/4" drain rock, 12" deep ═══ -->
+      <path d="M260 360 Q300 355 350 370 Q400 385 450 388 Q500 385 550 370 Q600 355 640 360 L640 400 Q600 395 550 405 Q500 415 450 418 Q400 415 350 405 Q300 395 260 400Z" fill="#3d3530"/>
+      <path d="M260 360 Q300 355 350 370 Q400 385 450 388 Q500 385 550 370 Q600 355 640 360 L640 400 Q600 395 550 405 Q500 415 450 418 Q400 415 350 405 Q300 395 260 400Z" fill="url(#xGravelPat)"/>
+
+      <!-- ═══ 6. PERFORATED DRAIN PIPE — 6" HDPE centered in gravel ═══ -->
+      <ellipse cx="450" cy="405" rx="24" ry="12" fill="rgba(30,30,35,.6)" stroke="#3b82f6" stroke-width="1.8"/>
+      <ellipse cx="450" cy="405" rx="20" ry="10" fill="none" stroke="#3b82f6" stroke-width=".5" opacity=".4"/>
+      <g fill="#3b82f6" opacity=".5"><circle cx="432" cy="403" r="1.2"/><circle cx="438" cy="398" r="1.2"/><circle cx="445" cy="396" r="1.2"/><circle cx="455" cy="396" r="1.2"/><circle cx="462" cy="398" r="1.2"/><circle cx="468" cy="403" r="1.2"/><circle cx="465" cy="410" r="1.2"/><circle cx="435" cy="410" r="1.2"/></g>
+
+      <!-- ═══ 4. GEOTEXTILE FABRIC — separation membrane ═══ -->
+      <path d="M240 358 Q300 350 350 365 Q400 380 450 384 Q500 380 550 365 Q600 350 660 358" fill="none" stroke="#a8a29e" stroke-width="1.8" stroke-dasharray="6 3"/>
+
+      <!-- ═══ 3. ENGINEERED BIORETENTION SOIL — Alderwood series, 18" deep ═══ -->
+      <path d="M180 190 Q260 190 320 240 Q380 295 450 300 Q520 295 580 240 Q640 190 720 190 L660 358 Q600 350 550 365 Q500 380 450 384 Q400 380 350 365 Q300 350 240 358Z" fill="#3a2a1e"/>
+      <path d="M180 190 Q260 190 320 240 Q380 295 450 300 Q520 295 580 240 Q640 190 720 190 L660 358 Q600 350 550 365 Q500 380 450 384 Q400 380 350 365 Q300 350 240 358Z" fill="url(#xSoilPat)"/>
+
+      <!-- ═══ 2. MULCH LAYER — 3" organic mulch on surface ═══ -->
+      <path d="M180 190 Q260 190 320 240 Q380 295 450 300 Q520 295 580 240 Q640 190 720 190 L718 196 Q638 196 578 246 Q518 301 450 306 Q382 301 322 246 Q262 196 182 196Z" fill="#2e1e10"/>
+      <path d="M180 190 Q260 190 320 240 Q380 295 450 300 Q520 295 580 240 Q640 190 720 190 L718 196 Q638 196 578 246 Q518 301 450 306 Q382 301 322 246 Q262 196 182 196Z" fill="url(#xMulchPat)"/>
+
+      <!-- ═══ GROUND SURFACE PROFILE ═══ -->
+      <path d="M30 190 L180 190 Q260 190 320 240 Q380 295 450 300 Q520 295 580 240 Q640 190 720 190 L870 190" fill="none" stroke="#78716c" stroke-width="2.5"/>
+      <!-- Flat ground fill (left & right) -->
+      <path d="M30 190 L180 190 L180 196 L30 196Z" fill="#2e1e10"/><path d="M30 190 L180 190 L180 196 L30 196Z" fill="url(#xMulchPat)"/>
+      <path d="M720 190 L870 190 L870 196 L720 196Z" fill="#2e1e10"/><path d="M720 190 L870 190 L870 196 L720 196Z" fill="url(#xMulchPat)"/>
+
+      <!-- ═══ CHECK DAMS — timber logs spanning the channel ═══ -->
+      <rect x="330" y="248" width="50" height="10" rx="4" fill="#5a4020" stroke="#7a5a30" stroke-width=".8" transform="rotate(-8,355,253)"/>
+      <g><circle cx="340" cy="253" r="5" fill="none" stroke="#7a5a30" stroke-width=".5" opacity=".6"/><circle cx="340" cy="253" r="2.5" fill="#4a3018"/><circle cx="370" cy="251" r="5" fill="none" stroke="#7a5a30" stroke-width=".5" opacity=".6"/><circle cx="370" cy="251" r="2.5" fill="#4a3018"/></g>
+      <rect x="420" y="295" width="55" height="10" rx="4" fill="#5a4020" stroke="#7a5a30" stroke-width=".8"/>
+      <g><circle cx="432" cy="300" r="5" fill="none" stroke="#7a5a30" stroke-width=".5" opacity=".6"/><circle cx="432" cy="300" r="2.5" fill="#4a3018"/><circle cx="463" cy="300" r="5" fill="none" stroke="#7a5a30" stroke-width=".5" opacity=".6"/><circle cx="463" cy="300" r="2.5" fill="#4a3018"/></g>
+      <rect x="530" y="248" width="50" height="10" rx="4" fill="#5a4020" stroke="#7a5a30" stroke-width=".8" transform="rotate(8,555,253)"/>
+      <g><circle cx="540" cy="253" r="5" fill="none" stroke="#7a5a30" stroke-width=".5" opacity=".6"/><circle cx="540" cy="253" r="2.5" fill="#4a3018"/><circle cx="570" cy="251" r="5" fill="none" stroke="#7a5a30" stroke-width=".5" opacity=".6"/><circle cx="570" cy="251" r="2.5" fill="#4a3018"/></g>
+
+      <!-- ═══ WATER FLOW — animated blue flow + percolation arrows ═══ -->
+      <path d="M340 295 Q395 310 450 308 Q505 306 560 295" fill="url(#waterGrad)" opacity=".5"/>
+      <path d="M170 188 Q240 192 310 240 Q360 275 420 295 Q480 305 530 285 Q570 268 620 240 Q680 200 730 190" fill="none" stroke="#3b82f6" stroke-width="2" opacity=".4" stroke-dasharray="8 6"><animate attributeName="stroke-dashoffset" from="28" to="0" dur="2s" repeatCount="indefinite"/></path>
+      <g fill="#3b82f6" opacity=".35"><polygon points="250,218 258,215 254,222" transform="rotate(-25,254,218)"/><polygon points="450,305 458,302 454,309"/><polygon points="650,210 658,207 654,214" transform="rotate(25,654,210)"/></g>
+      <!-- Percolation arrows (water seeping down through layers) -->
+      <g stroke="#3b82f6" stroke-width="1" opacity=".2" stroke-dasharray="3 4"><line x1="390" y1="310" x2="385" y2="380"/><line x1="420" y1="312" x2="418" y2="382"/><line x1="450" y1="314" x2="450" y2="384"/><line x1="480" y1="312" x2="482" y2="382"/><line x1="510" y1="308" x2="515" y2="378"/></g>
+      <g fill="#3b82f6" opacity=".15"><polygon points="385,378 382,372 388,372"/><polygon points="418,380 415,374 421,374"/><polygon points="450,382 447,376 453,376"/><polygon points="482,380 479,374 485,374"/><polygon points="515,376 512,370 518,370"/></g>
+
+      <!-- ═══ PLANTS — Botanically accurate illustrations ═══ -->
+
+      <!-- SWORD FERN — left bank -->
+      <g transform="translate(250,210)" opacity=".9">
+        <path d="M0,0 Q-15,-30 -30,-65 Q-35,-80 -33,-92" stroke="#0a5c28" stroke-width="1.8" fill="none"/>
+        <path d="M-3,-8 C-8,-6 -16,-12 -18,-16 C-16,-14 -8,-10 -4,-10Z" fill="#0f7a36"/><path d="M-6,-18 C-12,-15 -22,-20 -24,-24 C-22,-22 -12,-18 -7,-19Z" fill="#1a9e48"/><path d="M-9,-28 C-16,-25 -26,-29 -28,-33 C-26,-31 -16,-27 -10,-29Z" fill="#0f7a36"/><path d="M-13,-38 C-19,-35 -28,-38 -30,-42 C-28,-40 -19,-37 -14,-39Z" fill="#1a9e48"/><path d="M-17,-48 C-22,-45 -30,-47 -32,-51 C-30,-49 -22,-47 -18,-49Z" fill="#0f7a36"/><path d="M-20,-56 C-24,-53 -31,-55 -33,-58 C-31,-57 -24,-55 -21,-57Z" fill="#1a9e48"/>
+        <path d="M-2,-12 C2,-9 10,-12 12,-16 C10,-14 2,-12 -1,-14Z" fill="#1a9e48"/><path d="M-5,-22 C-1,-18 7,-20 9,-24 C7,-22 -1,-20 -4,-23Z" fill="#0f7a36"/><path d="M-8,-32 C-4,-28 4,-30 6,-34 C4,-32 -4,-30 -7,-33Z" fill="#1a9e48"/><path d="M-12,-42 C-8,-38 0,-40 2,-44 C0,-42 -8,-40 -11,-43Z" fill="#0f7a36"/>
+        <path d="M0,0 Q15,-30 30,-65 Q35,-80 33,-92" stroke="#0a5c28" stroke-width="1.8" fill="none"/>
+        <path d="M3,-8 C8,-6 16,-12 18,-16 C16,-14 8,-10 4,-10Z" fill="#1a9e48"/><path d="M6,-18 C12,-15 22,-20 24,-24 C22,-22 12,-18 7,-19Z" fill="#0f7a36"/><path d="M9,-28 C16,-25 26,-29 28,-33 C26,-31 16,-27 10,-29Z" fill="#1a9e48"/><path d="M13,-38 C19,-35 28,-38 30,-42 C28,-40 19,-37 14,-39Z" fill="#0f7a36"/><path d="M17,-48 C22,-45 30,-47 32,-51 C30,-49 22,-47 18,-49Z" fill="#1a9e48"/>
+        <path d="M0,0 Q0,-30 1,-62 Q1,-78 1,-88" stroke="#0a5c28" stroke-width="1.5" fill="none" opacity=".8"/>
+        <path d="M0,-10 C-5,-7 -12,-10 -13,-14 C-12,-12 -5,-10 -1,-12Z" fill="#0f7a36" opacity=".8"/><path d="M0,-10 C5,-7 12,-10 13,-14 C12,-12 5,-10 1,-12Z" fill="#1a9e48" opacity=".8"/><path d="M0,-20 C-5,-17 -11,-19 -12,-22 C-11,-21 -5,-19 -1,-21Z" fill="#1a9e48" opacity=".8"/><path d="M0,-20 C5,-17 11,-19 12,-22 C11,-21 5,-19 1,-21Z" fill="#0f7a36" opacity=".8"/><path d="M0,-30 C-4,-27 -10,-29 -11,-32 C-10,-31 -4,-29 -1,-31Z" fill="#0f7a36" opacity=".8"/><path d="M1,-30 C5,-27 10,-29 11,-32 C10,-31 5,-29 2,-31Z" fill="#1a9e48" opacity=".8"/>
+      </g>
+
+      <!-- SALAL — left upper bank -->
+      <g transform="translate(195,192) scale(0.55)" opacity=".85">
+        <path d="M35 0 L32 -5 L38 -10 L35 -15 L41 -20 L38 -25 L44 -30" stroke="#0a5c28" stroke-width="2" fill="none"/>
+        <path d="M35 0 L38 -5 L32 -10 L35 -15 L29 -20 L32 -25 L26 -30" stroke="#0a5c28" stroke-width="2" fill="none"/>
+        <ellipse cx="35" cy="-5" rx="8" ry="6" fill="#0f7a36" opacity=".9"/><ellipse cx="28" cy="-10" rx="8" ry="6" fill="#1a9e48" opacity=".9"/><ellipse cx="42" cy="-10" rx="8" ry="6" fill="#0f7a36" opacity=".9"/><ellipse cx="20" cy="-15" rx="8" ry="6" fill="#1a9e48" opacity=".9"/><ellipse cx="35" cy="-15" rx="8" ry="6" fill="#0f7a36" opacity=".9"/><ellipse cx="50" cy="-15" rx="8" ry="6" fill="#1a9e48" opacity=".9"/><ellipse cx="30" cy="-25" rx="8" ry="6" fill="#1a9e48" opacity=".9"/><ellipse cx="40" cy="-25" rx="8" ry="6" fill="#0f7a36" opacity=".9"/>
+      </g>
+
+      <!-- SEDGE — left slope -->
+      <g transform="translate(310,258)" opacity=".85">
+        <path d="M0,0 C0,-12 -1,-30 -1,-48 C-1,-49 1,-49 1,-48 C1,-30 0,-12 0,0Z" fill="#0f7a36"/><path d="M2,0 C2,-10 3,-28 4,-44 C4,-45 2,-45 2,-44 C1,-28 2,-10 2,0Z" fill="#1a9e48"/><path d="M-2,0 C-2,-11 -3,-29 -4,-42 C-4,-43 -2,-43 -2,-42 C-1,-29 -2,-11 -2,0Z" fill="#0a5c28"/>
+        <path d="M1,0 C4,-10 12,-22 24,-30 C24,-29 12,-20 4,-8 C2,-4 1,0 1,0Z" fill="#2db65a"/><path d="M1,0 C5,-12 16,-26 32,-34 C32,-33 16,-24 5,-10 C3,-5 1,0 1,0Z" fill="#0f7a36"/><path d="M2,0 C7,-14 20,-30 38,-36 C38,-35 20,-28 7,-12 C4,-6 2,0 2,0Z" fill="#0a5c28"/>
+        <path d="M-1,0 C-4,-10 -12,-22 -24,-30 C-24,-29 -12,-20 -4,-8 C-2,-4 -1,0 -1,0Z" fill="#1a9e48"/><path d="M-1,0 C-5,-12 -16,-26 -32,-34 C-32,-33 -16,-24 -5,-10 C-3,-5 -1,0 -1,0Z" fill="#0f7a36"/><path d="M-2,0 C-7,-14 -20,-30 -38,-36 C-38,-35 -20,-28 -7,-12 C-4,-6 -2,0 -2,0Z" fill="#0a5c28"/>
+      </g>
+
+      <!-- SEDGE — channel bottom -->
+      <g transform="translate(400,295)" opacity=".75">
+        <path d="M0,0 C0,-10 -1,-24 -1,-38 C-1,-39 1,-39 1,-38 C1,-24 0,-10 0,0Z" fill="#0f7a36"/><path d="M1,0 C3,-8 10,-18 20,-24 C20,-23 10,-16 3,-6 C2,-3 1,0 1,0Z" fill="#1a9e48"/><path d="M1,0 C4,-10 14,-22 28,-28 C28,-27 14,-20 4,-8 C2,-4 1,0 1,0Z" fill="#0a5c28"/>
+        <path d="M-1,0 C-3,-8 -10,-18 -20,-24 C-20,-23 -10,-16 -3,-6 C-2,-3 -1,0 -1,0Z" fill="#2db65a"/><path d="M-1,0 C-4,-10 -14,-22 -28,-28 C-28,-27 -14,-20 -4,-8 C-2,-4 -1,0 -1,0Z" fill="#0f7a36"/>
+        <path d="M2,0 C2,-8 3,-20 4,-32 C4,-33 2,-33 2,-32 C1,-20 2,-8 2,0Z" fill="#1a9e48"/><path d="M-2,0 C-2,-8 -3,-20 -4,-32 C-4,-33 -2,-33 -2,-32 C-1,-20 -2,-8 -2,0Z" fill="#0a5c28"/>
+      </g>
+
+      <!-- FERN — channel center -->
+      <g transform="translate(495,285)" opacity=".7">
+        <path d="M0,0 Q-8,-18 -15,-40 Q-18,-50 -16,-58" stroke="#0a5c28" stroke-width="1.5" fill="none"/>
+        <path d="M-2,-8 C-5,-6 -10,-9 -11,-12 C-10,-11 -5,-9 -3,-10Z" fill="#0f7a36"/><path d="M-4,-16 C-7,-14 -12,-16 -13,-19 C-12,-18 -7,-16 -5,-17Z" fill="#1a9e48"/><path d="M-6,-24 C-9,-22 -13,-24 -14,-26 C-13,-25 -9,-24 -7,-25Z" fill="#0f7a36"/><path d="M-8,-32 C-10,-30 -14,-31 -15,-33 C-14,-33 -10,-32 -9,-33Z" fill="#1a9e48"/>
+        <path d="M0,0 Q8,-18 15,-40 Q18,-50 16,-58" stroke="#0a5c28" stroke-width="1.5" fill="none"/>
+        <path d="M2,-8 C5,-6 10,-9 11,-12 C10,-11 5,-9 3,-10Z" fill="#1a9e48"/><path d="M4,-16 C7,-14 12,-16 13,-19 C12,-18 7,-16 5,-17Z" fill="#0f7a36"/><path d="M6,-24 C9,-22 13,-24 14,-26 C13,-25 9,-24 7,-25Z" fill="#1a9e48"/>
+      </g>
+
+      <!-- SWORD FERN — right bank -->
+      <g transform="translate(650,215)" opacity=".85">
+        <path d="M0,0 Q-12,-28 -25,-60 Q-28,-72 -27,-82" stroke="#0a5c28" stroke-width="1.6" fill="none"/>
+        <path d="M-2,-10 C-6,-8 -12,-11 -13,-14 C-12,-13 -6,-11 -3,-12Z" fill="#0f7a36"/><path d="M-5,-20 C-9,-18 -15,-20 -16,-23 C-15,-22 -9,-20 -6,-21Z" fill="#1a9e48"/><path d="M-8,-30 C-12,-28 -17,-29 -18,-32 C-17,-31 -12,-30 -9,-31Z" fill="#0f7a36"/><path d="M-11,-40 C-14,-38 -19,-39 -20,-42 C-19,-41 -14,-40 -12,-41Z" fill="#1a9e48"/>
+        <path d="M0,0 Q12,-28 25,-60 Q28,-72 27,-82" stroke="#0a5c28" stroke-width="1.6" fill="none"/>
+        <path d="M2,-10 C6,-8 12,-11 13,-14 C12,-13 6,-11 3,-12Z" fill="#1a9e48"/><path d="M5,-20 C9,-18 15,-20 16,-23 C15,-22 9,-20 6,-21Z" fill="#0f7a36"/><path d="M8,-30 C12,-28 17,-29 18,-32 C17,-31 12,-30 9,-31Z" fill="#1a9e48"/><path d="M11,-40 C14,-38 19,-39 20,-42 C19,-41 14,-40 12,-41Z" fill="#0f7a36"/>
+        <path d="M0,0 Q0,-25 1,-55 Q1,-68 1,-78" stroke="#0a5c28" stroke-width="1.3" fill="none" opacity=".7"/>
+        <path d="M0,-10 C-4,-8 -9,-10 -10,-12 C-9,-12 -4,-10 -1,-11Z" fill="#0f7a36" opacity=".7"/><path d="M0,-10 C4,-8 9,-10 10,-12 C9,-12 4,-10 1,-11Z" fill="#1a9e48" opacity=".7"/><path d="M0,-20 C-4,-18 -8,-19 -9,-21 C-8,-21 -4,-20 -1,-21Z" fill="#1a9e48" opacity=".7"/><path d="M1,-20 C4,-18 8,-19 9,-21 C8,-21 4,-20 2,-21Z" fill="#0f7a36" opacity=".7"/>
+      </g>
+
+      <!-- SALAL — right upper bank -->
+      <g transform="translate(690,195) scale(0.5)" opacity=".8">
+        <path d="M35 0 L32 -5 L38 -10 L35 -15 L41 -20" stroke="#0a5c28" stroke-width="2" fill="none"/>
+        <path d="M35 0 L38 -5 L32 -10 L35 -15 L29 -20" stroke="#0a5c28" stroke-width="2" fill="none"/>
+        <ellipse cx="35" cy="-5" rx="8" ry="6" fill="#0f7a36" opacity=".9"/><ellipse cx="28" cy="-10" rx="8" ry="6" fill="#1a9e48" opacity=".9"/><ellipse cx="42" cy="-10" rx="8" ry="6" fill="#0f7a36" opacity=".9"/><ellipse cx="35" cy="-15" rx="8" ry="6" fill="#1a9e48" opacity=".9"/><ellipse cx="28" cy="-20" rx="8" ry="6" fill="#0f7a36" opacity=".9"/><ellipse cx="42" cy="-20" rx="8" ry="6" fill="#1a9e48" opacity=".9"/>
+      </g>
+
+      <!-- SEDGE — right slope -->
+      <g transform="translate(595,248)" opacity=".8">
+        <path d="M0,0 C0,-10 -1,-26 -1,-42 C-1,-43 1,-43 1,-42 C1,-26 0,-10 0,0Z" fill="#0f7a36"/><path d="M2,0 C2,-8 3,-22 4,-36 C4,-37 2,-37 2,-36 C1,-22 2,-8 2,0Z" fill="#1a9e48"/><path d="M-2,0 C-2,-9 -3,-24 -4,-36 C-4,-37 -2,-37 -2,-36 C-1,-24 -2,-9 -2,0Z" fill="#0a5c28"/>
+        <path d="M1,0 C4,-8 12,-18 24,-24 C24,-23 12,-16 4,-6 C2,-3 1,0 1,0Z" fill="#2db65a"/><path d="M1,0 C5,-10 16,-22 32,-28 C32,-27 16,-20 5,-8 C3,-4 1,0 1,0Z" fill="#0f7a36"/>
+        <path d="M-1,0 C-4,-8 -12,-18 -24,-24 C-24,-23 -12,-16 -4,-6 C-2,-3 -1,0 -1,0Z" fill="#1a9e48"/><path d="M-1,0 C-5,-10 -16,-22 -32,-28 C-32,-27 -16,-20 -5,-8 C-3,-4 -1,0 -1,0Z" fill="#0a5c28"/>
+      </g>
+
+      <!-- ═══ DIMENSION LINES ═══ -->
+      <g stroke="#57534e" stroke-width=".6" opacity=".5" font-family="Inter,sans-serif" font-size="9" fill="#78716c">
+        <!-- Bioretention soil depth -->
+        <line x1="145" y1="196" x2="145" y2="358"/><line x1="140" y1="196" x2="150" y2="196"/><line x1="140" y1="358" x2="150" y2="358"/>
+        <text x="120" y="282" fill="#78716c" font-size="9" text-anchor="middle" transform="rotate(-90,120,282)">18" Bioretention Soil</text>
+        <!-- Gravel bed depth -->
+        <line x1="145" y1="362" x2="145" y2="400"/><line x1="140" y1="362" x2="150" y2="362"/><line x1="140" y1="400" x2="150" y2="400"/>
+        <text x="120" y="381" fill="#78716c" font-size="8" text-anchor="middle" transform="rotate(-90,120,381)">12" Drain Rock</text>
+      </g>
+
+      <!-- ═══ LABELS ═══ -->
+      <text x="45" y="178" fill="#a8a29e" font-size="11.5" font-family="Inter,sans-serif" font-weight="500">Stormwater inflow</text>
+      <polygon points="165,186 175,183 175,189" fill="#a8a29e" opacity=".6"/>
+
+      <g font-family="Inter,sans-serif" font-size="11" font-weight="500">
+        <!-- Plant labels -->
+        <line x1="710" y1="178" x2="738" y2="178" stroke="#0f7a36" stroke-width=".5" opacity=".5"/>
+        <text x="742" y="175" fill="#0f7a36" font-weight="600">Salal</text>
+        <text x="742" y="189" fill="#78716c" font-size="9" font-weight="400">Evergreen groundcover</text>
+
+        <line x1="685" y1="210" x2="738" y2="210" stroke="#0f7a36" stroke-width=".5" opacity=".5"/>
+        <text x="742" y="207" fill="#0f7a36" font-weight="600">Sword Fern</text>
+        <text x="742" y="221" fill="#78716c" font-size="9" font-weight="400">Rainfall interception</text>
+
+        <line x1="610" y1="248" x2="738" y2="248" stroke="#3a8a2a" stroke-width=".5" opacity=".5"/>
+        <text x="742" y="245" fill="#3a8a2a" font-weight="600">Slough Sedge</text>
+        <text x="742" y="259" fill="#78716c" font-size="9" font-weight="400">Wetland filtration</text>
+
+        <!-- Layer labels -->
+        <line x1="580" y1="253" x2="738" y2="290" stroke="#7a5a30" stroke-width=".5" opacity=".4"/>
+        <text x="742" y="288" fill="#7a5a30" font-weight="500">Check Dams</text>
+        <text x="742" y="302" fill="#78716c" font-size="9" font-weight="400">Timber velocity control</text>
+
+        <line x1="660" y1="195" x2="738" y2="318" stroke="#5a3d1a" stroke-width=".5" opacity=".3"/>
+        <text x="742" y="316" fill="#a8937a" font-weight="500">Mulch Layer</text>
+        <text x="742" y="330" fill="#78716c" font-size="9" font-weight="400">3" organic topdressing</text>
+
+        <line x1="660" y1="280" x2="738" y2="346" stroke="#6b5240" stroke-width=".5" opacity=".3"/>
+        <text x="742" y="344" fill="#a8937a" font-weight="500">Bioretention Soil</text>
+        <text x="742" y="358" fill="#78716c" font-size="9" font-weight="400">Alderwood sandy loam</text>
+
+        <line x1="660" y1="358" x2="738" y2="374" stroke="#a8a29e" stroke-width=".5" opacity=".3"/>
+        <text x="742" y="372" fill="#a8a29e" font-weight="500">Geotextile Fabric</text>
+        <text x="742" y="386" fill="#78716c" font-size="9" font-weight="400">Separation membrane</text>
+
+        <line x1="640" y1="380" x2="738" y2="400" stroke="#78716c" stroke-width=".5" opacity=".4"/>
+        <text x="742" y="398" fill="#a8a29e">Gravel Bed</text>
+        <text x="742" y="412" fill="#78716c" font-size="9" font-weight="400">3/4" washed drain rock</text>
+
+        <line x1="472" y1="405" x2="738" y2="428" stroke="#3b82f6" stroke-width=".5" opacity=".3"/>
+        <text x="742" y="426" fill="#3b82f6" opacity=".7">Perforated Drain</text>
+        <text x="742" y="440" fill="#78716c" font-size="9" font-weight="400">6" HDPE collection pipe</text>
+
+        <line x1="600" y1="440" x2="738" y2="456" stroke="#57534e" stroke-width=".5" opacity=".3"/>
+        <text x="742" y="454" fill="#78716c">Native Subgrade</text>
+        <text x="742" y="468" fill="#57534e" font-size="9" font-weight="400">Undisturbed soil</text>
+      </g>
+
+      <polygon points="740,190 730,187 730,193" fill="#a8a29e" opacity=".6"/>
+      <text x="748" y="194" fill="#a8a29e" font-size="10" font-family="Inter,sans-serif" font-weight="400" opacity=".7">Clean outflow</text>
     </svg>
-  </div>
-  <div class="shdr rv"><h2>Designed like the High Line.</h2><p>Our planting philosophy draws from the world's greatest public landscapes.</p></div>
-  <div class="oudolf-grid">
-    <div class="oudolf-card rv">
-      <div class="oudolf-card-img" style="background:linear-gradient(135deg,#0a1a0a,#1a3a1a 40%,#0d280d)">
-        <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg">
-          <!-- Naturalistic drift planting plan view -->
-          <g opacity=".4">
-            <!-- Drift 1  -  grasses -->
-            <path d="M80 180Q120 140 180 160Q220 175 200 200Q170 220 120 210Q80 200 80 180Z" fill="none" stroke="#1a9e48" stroke-width="1.5"/>
-            <circle cx="120" cy="175" r="2.5" fill="#1a9e48"/><circle cx="140" cy="170" r="2" fill="#1a9e48"/><circle cx="155" cy="180" r="2.5" fill="#1a9e48"/><circle cx="130" cy="190" r="2" fill="#1a9e48"/><circle cx="160" cy="195" r="2" fill="#1a9e48"/><circle cx="110" cy="185" r="1.5" fill="#1a9e48"/>
-            <!-- Drift 2  -  salal mass -->
-            <path d="M280 120Q330 100 380 115Q410 130 395 160Q370 180 320 175Q280 165 275 140Z" fill="none" stroke="#0f7a36" stroke-width="1.5"/>
-            <line x1="300" y1="135" x2="305" y2="128" stroke="#0f7a36" stroke-width="1.2"/><line x1="320" y1="140" x2="325" y2="133" stroke="#0f7a36" stroke-width="1.2"/><line x1="340" y1="135" x2="345" y2="128" stroke="#0f7a36" stroke-width="1.2"/><line x1="360" y1="140" x2="365" y2="133" stroke="#0f7a36" stroke-width="1.2"/><line x1="310" y1="155" x2="315" y2="148" stroke="#0f7a36" stroke-width="1.2"/><line x1="350" y1="155" x2="355" y2="148" stroke="#0f7a36" stroke-width="1.2"/>
-            <!-- Drift 3  -  ferns -->
-            <path d="M440 170Q490 150 530 170Q550 195 520 215Q480 225 450 210Q430 195 440 170Z" fill="none" stroke="#0a5c28" stroke-width="1.5"/>
-            <circle cx="470" cy="185" r="8" fill="none" stroke="#0a5c28" stroke-width="1"/><line x1="470" y1="177" x2="470" y2="193" stroke="#0a5c28" stroke-width=".8"/><line x1="462" y1="185" x2="478" y2="185" stroke="#0a5c28" stroke-width=".8"/>
-            <circle cx="505" cy="190" r="7" fill="none" stroke="#0a5c28" stroke-width="1"/><line x1="505" y1="183" x2="505" y2="197" stroke="#0a5c28" stroke-width=".8"/><line x1="498" y1="190" x2="512" y2="190" stroke="#0a5c28" stroke-width=".8"/>
-            <!-- Path -->
-            <path d="M50 240Q150 220 250 230Q350 240 450 225Q550 210 600 220" fill="none" stroke="#57534e" stroke-width="2" stroke-dasharray="8 4"/>
-            <!-- Water channel -->
-            <path d="M0 100Q100 90 200 95Q300 100 400 90Q500 80 600 85" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity=".4"/>
-          </g>
-        </svg>
-      </div>
-      <div class="oudolf-card-body">
-        <div class="loc">Design Principle</div>
-        <h3>Naturalistic Drifts</h3>
-        <p>Piet Oudolf's signature approach  -  large sweeps of single species that create movement and seasonal rhythm. Every Swale installation uses drift planting, never rows. Your property becomes a living painting that changes with the seasons.</p>
-      </div>
-    </div>
-    <div class="oudolf-card rv">
-      <div class="oudolf-card-img" style="background:linear-gradient(135deg,#0d1a0d,#1a2a1a 40%,#0a200a)">
-        <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg">
-          <!-- Chelsea High Line inspired cross-section -->
-          <g opacity=".4">
-            <!-- Elevated walkway / boardwalk -->
-            <rect x="50" y="160" width="500" height="8" rx="2" fill="none" stroke="#57534e" stroke-width="1.5"/>
-            <line x1="100" y1="168" x2="100" y2="240" stroke="#57534e" stroke-width="1" stroke-dasharray="4 3"/>
-            <line x1="250" y1="168" x2="250" y2="240" stroke="#57534e" stroke-width="1" stroke-dasharray="4 3"/>
-            <line x1="400" y1="168" x2="400" y2="240" stroke="#57534e" stroke-width="1" stroke-dasharray="4 3"/>
-            <!-- Plants erupting through -->
-            <g transform="translate(140,155)">
-              <line x1="0" y1="0" x2="-8" y2="-60" stroke="#1a9e48" stroke-width="1.5"/>
-              <line x1="0" y1="0" x2="6" y2="-55" stroke="#1a9e48" stroke-width="1.5"/>
-              <line x1="0" y1="0" x2="0" y2="-65" stroke="#1a9e48" stroke-width="2"/>
-              <line x1="0" y1="0" x2="-14" y2="-45" stroke="#0f7a36" stroke-width="1.2"/>
-              <line x1="0" y1="0" x2="12" y2="-48" stroke="#0f7a36" stroke-width="1.2"/>
-            </g>
-            <g transform="translate(200,155)">
-              <line x1="0" y1="0" x2="0" y2="-40" stroke="#0a5c28" stroke-width="1.5"/>
-              <ellipse cx="-8" cy="-42" rx="10" ry="7" fill="none" stroke="#0f7a36" stroke-width="1"/>
-              <ellipse cx="8" cy="-46" rx="9" ry="6" fill="none" stroke="#0f7a36" stroke-width="1"/>
-            </g>
-            <g transform="translate(320,155)">
-              <line x1="0" y1="0" x2="-10" y2="-70" stroke="#1a9e48" stroke-width="1.5"/>
-              <line x1="0" y1="0" x2="8" y2="-65" stroke="#1a9e48" stroke-width="1.5"/>
-              <line x1="0" y1="0" x2="0" y2="-75" stroke="#1a9e48" stroke-width="2"/>
-              <line x1="0" y1="0" x2="-18" y2="-50" stroke="#0f7a36" stroke-width="1.2"/>
-              <line x1="0" y1="0" x2="15" y2="-55" stroke="#0f7a36" stroke-width="1.2"/>
-            </g>
-            <g transform="translate(460,155)">
-              <path d="M0 0Q-10-30-8-60" fill="none" stroke="#0a5c28" stroke-width="1.5"/>
-              <path d="M0 0Q10-30 8-60" fill="none" stroke="#0a5c28" stroke-width="1.5"/>
-              <path d="M0 0Q0-35 0-70" fill="none" stroke="#1a9e48" stroke-width="2"/>
-              <path d="M-5-25Q-18-30-22-22" fill="none" stroke="#0f7a36" stroke-width=".8"/>
-              <path d="M5-25Q18-30 22-22" fill="none" stroke="#0f7a36" stroke-width=".8"/>
-              <path d="M-4-40Q-15-45-18-38" fill="none" stroke="#0f7a36" stroke-width=".8"/>
-              <path d="M4-40Q15-45 18-38" fill="none" stroke="#0f7a36" stroke-width=".8"/>
-            </g>
-            <!-- Water below -->
-            <path d="M50 230Q150 225 250 232Q350 238 450 228Q550 220 600 228" fill="none" stroke="#3b82f6" stroke-width="1" opacity=".3"/>
-          </g>
-        </svg>
-      </div>
-      <div class="oudolf-card-body">
-        <div class="loc">Inspiration</div>
-        <h3>Chelsea & the High Line</h3>
-        <p>The High Line proved that infrastructure can become a garden. Chelsea Flower Show proved that gardens can be art. We bring both to your front yard  -  elevated plantings, boardwalk elements, and the wild elegance that made these places famous.</p>
-      </div>
-    </div>
-  </div>
-  <div class="oudolf-quote rv">
-    <blockquote>"A garden is not nature. It is an interpretation of nature."</blockquote>
-    <cite> -  Piet Oudolf, designer of the High Line</cite>
   </div>
 </section>
 
@@ -579,7 +712,7 @@ footer .flinks a:hover{color:var(--white)}
     <div class="mix-content rv">
       <div class="mix-label">Proprietary Formulation</div>
       <h2>The <em>Swale Mix.</em></h2>
-      <p>Three Pacific Northwest natives, engineered to work together. Planted in naturalistic drifts  -  seasonal structure that performs year-round.</p>
+      <p>Three Pacific Northwest natives, engineered to work together. Planted in naturalistic drifts. Seasonal structure that performs year-round.</p>
     </div>
   </div>
   <div class="mix-grid">
@@ -620,7 +753,7 @@ footer .flinks a:hover{color:var(--white)}
         </svg>
         <div class="tag">Primary Method</div>
         <h4>Matrix Planting</h4>
-        <p>Interwoven species at ground level  -  a living tapestry where each plant supports its neighbors. No gaps, no mulch, no maintenance. The bioswale fills itself in.</p>
+        <p>Interwoven species at ground level. A living tapestry where each plant supports its neighbors. No gaps, no mulch, no maintenance. The bioswale fills itself in.</p>
       </div>
       <div class="matrix-method rv">
         <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -632,7 +765,7 @@ footer .flinks a:hover{color:var(--white)}
         </svg>
         <div class="tag">Accent Method</div>
         <h4>Naturalistic Drifts</h4>
-        <p>Large sweeps of single species  -  Piet Oudolf's signature. Creates movement and seasonal rhythm across the swale's contours.</p>
+        <p>Large sweeps of single species Piet Oudolf's signature. Creates movement and seasonal rhythm across the swale's contours.</p>
       </div>
       <div class="matrix-method rv">
         <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -649,25 +782,7 @@ footer .flinks a:hover{color:var(--white)}
         <p>Bold masses of a single species for maximum visual impact. Defines zones, creates edges, and anchors the composition at key transitions.</p>
       </div>
     </div>
-    <div class="shdr rv" style="margin-bottom:40px"><h2 style="font-size:clamp(1.5rem,3vw,2.2rem)">The full palette.</h2><p>16 Pacific Northwest natives engineered for Seattle bioswales.</p></div>
-    <div class="plant-grid">
-      <div class="plant-tag rv"><h5>Salal</h5><div class="latin">Gaultheria shallon</div><div class="role">Evergreen groundcover, erosion control</div></div>
-      <div class="plant-tag rv"><h5>Western Sword Fern</h5><div class="latin">Polystichum munitum</div><div class="role">Rainfall interception, biofilter</div></div>
-      <div class="plant-tag rv"><h5>Slough Sedge</h5><div class="latin">Carex obnupta</div><div class="role">Wetland filtration workhorse</div></div>
-      <div class="plant-tag rv"><h5>Douglas Aster</h5><div class="latin">Symphyotrichum subspicatum</div><div class="role">Pollinator magnet, late bloom</div></div>
-      <div class="plant-tag rv"><h5>Pacific Silverweed</h5><div class="latin">Potentilla anserina</div><div class="role">Wet soil stabilizer, spreading</div></div>
-      <div class="plant-tag rv"><h5>Maidenhair Fern</h5><div class="latin">Adiantum aleuticum</div><div class="role">Shade layer, delicate texture</div></div>
-      <div class="plant-tag rv"><h5>Arctic Iris</h5><div class="latin">Iris setosa</div><div class="role">Wetland edge, striking bloom</div></div>
-      <div class="plant-tag rv"><h5>Oregon Grape</h5><div class="latin">Mahonia aquifolium</div><div class="role">Structural evergreen, berries</div></div>
-      <div class="plant-tag rv"><h5>Kinnikinnick</h5><div class="latin">Arctostaphylos uva-ursi</div><div class="role">Mat groundcover, xerophytic</div></div>
-      <div class="plant-tag rv"><h5>Coastal Strawberry</h5><div class="latin">Fragaria chiloensis</div><div class="role">Fast spreading, edge softener</div></div>
-      <div class="plant-tag rv"><h5>Goatsbeard</h5><div class="latin">Aruncus dioicus</div><div class="role">Tall accent, cream plumes</div></div>
-      <div class="plant-tag rv"><h5>Nodding Onion</h5><div class="latin">Allium cernuum</div><div class="role">Matrix filler, drought tolerant</div></div>
-      <div class="plant-tag rv"><h5>Pacific Waterleaf</h5><div class="latin">Hydrophyllum tenuipes</div><div class="role">Shade-moist, spring ephemeral</div></div>
-      <div class="plant-tag rv"><h5>Woodland Sorrel</h5><div class="latin">Oxalis oregana</div><div class="role">Dense shade carpet, acidic soil</div></div>
-      <div class="plant-tag rv"><h5>Red Huckleberry</h5><div class="latin">Vaccinium parvifolium</div><div class="role">Vertical structure, wildlife food</div></div>
-      <div class="plant-tag rv"><h5>Deer Fern</h5><div class="latin">Blechnum spicant</div><div class="role">Evergreen fern, bank stabilizer</div></div>
-    </div>
+    <!-- Plant palette grid removed — saved for Swale app -->
   </div>
 </section>
 
@@ -677,16 +792,16 @@ footer .flinks a:hover{color:var(--white)}
     <div class="stat-item rv"><h4>99%</h4><p>Pollutant removal rate</p></div>
     <div class="stat-item rv"><h4>90%</h4><p>Velocity reduction</p></div>
     <div class="stat-item rv"><h4>742M</h4><p>Gallons managed annually (Seattle GSI)</p></div>
-    <div class="stat-item rv"><h4>$1,300+</h4><p>Annual SWM fee savings per acre</p></div>
+    <div class="stat-item rv"><h4>$1,300+</h4><p>Annual stormwater fee savings per acre</p></div>
   </div>
 </section>
 
-<!-- SWM FEE SAVINGS  -  PROPERTY TAX VALUE PITCH -->
+<!-- SWM FEE SAVINGS — PROPERTY TAX VALUE PITCH -->
 <section class="savings-sec sec-line" id="savings">
   <div class="savings-inner">
     <div class="savings-text rv">
-      <h2>Your bioswale <em>pays for itself.</em></h2>
-      <p>King County charges a Surface Water Management fee based on your property's impervious surface percentage. More pavement and roof = higher fee. A bioswale converts impervious area into permeable, living infrastructure  -  dropping you into a lower rate class and saving real money every year.</p>
+      <h2>Your bioswale <em>could pay for itself.</em></h2>
+      <p>King County charges a Surface Water Management fee based on your property's impervious surface percentage. More pavement and roof = higher fee. A bioswale converts impervious area into permeable, living infrastructure, dropping you into a lower rate class and saving real money every year. Qualifying installations may also be eligible for <a href="https://kingcounty.gov/en/dept/dnrp/waste-services/wastewater-treatment/programs/rainwise" target="_blank" rel="noopener" style="color:var(--green-light);text-decoration:underline;text-underline-offset:3px">RainWise rebates of up to $4,000</a>.</p>
       <div style="display:flex;flex-direction:column;gap:12px;margin-top:24px">
         <div style="display:flex;justify-content:space-between;padding:12px 16px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05)">
           <span style="color:var(--gray-400);font-size:.85rem">Very Heavy (85-100%)</span>
@@ -705,7 +820,7 @@ footer .flinks a:hover{color:var(--white)}
           <span style="font-weight:700;color:var(--green)">$1,879<span style="font-size:.75rem;color:var(--green);opacity:.6">/acre/yr</span></span>
         </div>
       </div>
-      <p class="savings-source">Source: <a href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/environment-ecology-conservation/stormwater-surface-water-management/surface-water-management-fee/rates" target="_blank" rel="noopener">King County DNRP  -  2025 SWM Fee Rates</a></p>
+      <p class="savings-source">Source: <a href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/environment-ecology-conservation/stormwater-surface-water-management/surface-water-management-fee/rates" target="_blank" rel="noopener">King County DNRP, 2025 SWM Fee Rates</a></p>
     </div>
     <div class="savings-calc rv">
       <h3>Estimate Your Annual Savings</h3>
@@ -716,20 +831,20 @@ footer .flinks a:hover{color:var(--white)}
       <div class="calc-field">
         <label>Current Impervious Surface</label>
         <select id="calcCurrent">
-          <option value="7">Very Heavy (85-100%)  -  $5,495/acre</option>
-          <option value="6" selected>Heavy (65-85%)  -  $4,466/acre</option>
-          <option value="5">Mod. Heavy (45-65%)  -  $3,206/acre</option>
-          <option value="4">Moderate (20-45%)  -  $1,879/acre</option>
-          <option value="3">Light (10-20%)  -  $1,004/acre</option>
+          <option value="7">Very Heavy (85-100%): $5,495/acre</option>
+          <option value="6" selected>Heavy (65-85%): $4,466/acre</option>
+          <option value="5">Mod. Heavy (45-65%): $3,206/acre</option>
+          <option value="4">Moderate (20-45%): $1,879/acre</option>
+          <option value="3">Light (10-20%): $1,004/acre</option>
         </select>
       </div>
       <div class="calc-field">
         <label>After Bioswale Installation</label>
         <select id="calcAfter">
-          <option value="5">Mod. Heavy (45-65%)  -  $3,206/acre</option>
-          <option value="4" selected>Moderate (20-45%)  -  $1,879/acre</option>
-          <option value="3">Light (10-20%)  -  $1,004/acre</option>
-          <option value="2">Very Light (<=10%)  -  $361/parcel</option>
+          <option value="5">Mod. Heavy (45-65%): $3,206/acre</option>
+          <option value="4" selected>Moderate (20-45%): $1,879/acre</option>
+          <option value="3">Light (10-20%): $1,004/acre</option>
+          <option value="2">Very Light (≤10%): $361/parcel</option>
         </select>
       </div>
       <div class="calc-result" id="calcResult">
@@ -740,309 +855,71 @@ footer .flinks a:hover{color:var(--white)}
   </div>
 </section>
 
-<!-- HORI HORI FEATURE -->
-<section class="hori-sec" id="tools">
-  <div class="hori-inner">
-    <div class="hori-text rv">
-      <h2>Your lawn is <em>artwork.</em></h2>
-      <p>Every Swale installation is hand-finished with Japanese garden tools. Our crews use hori horis, hand rakes, and traditional techniques to sculpt drainage patterns that are as beautiful as they are functional.</p>
-      <div class="hori-features">
-        <div class="hori-feat">
-          <div class="hori-feat-icon" style="background:rgba(212,168,83,.1)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d4a853" stroke-width="1.5" stroke-linecap="round"><path d="M12 2v20M8 6l4-4 4 4M8 10l4-2 4 2"/></svg></div>
-          <div><h4>Hand-Raked Drainage Art</h4><p>Zen garden meets civil engineering. Artistic rake patterns direct water flow.</p></div>
-        </div>
-        <div class="hori-feat">
-          <div class="hori-feat-icon" style="background:rgba(15,122,54,.1)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f7a36" stroke-width="1.5" stroke-linecap="round"><path d="M3 21h18M9 8h6M12 3v18"/><circle cx="12" cy="8" r="3"/></svg></div>
-          <div><h4>Curated Subdrainage</h4><p>Engineered subsurface channels with optional submetering  -  track every gallon.</p></div>
-        </div>
-        <div class="hori-feat">
-          <div class="hori-feat-icon" style="background:rgba(59,130,246,.1)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/><path d="M12 9v4M10 11h4"/></svg></div>
-          <div><h4>Flow Submetering</h4><p>IoT water sensors measure actual throughput. Real data for real performance.</p></div>
-        </div>
+<!-- ARTISAN TOOLS -->
+<section class="tools-section sec-line" id="tools">
+  <div class="section-label rv">Artisan Toolkit</div>
+  <h2 class="section-title rv">From Plan to Earth</h2>
+  <p class="section-sub rv">Every installation is finished by hand with traditional Japanese garden tools and forged ironwork.</p>
+
+  <div class="tools-row">
+    <div class="tool rv d1">
+      <div class="tool-img">
+        <img src="../hori-hori-final.png" alt="Hori Hori knife">
       </div>
+      <div class="tool-name">Hori Hori</div>
+      <div class="tool-origin">Nisaku, Made in Japan</div>
+      <div class="tool-desc">7-inch stainless steel blade with serrated edge. The essential soil knife for precision planting and root work.</div>
     </div>
-    <div class="hori-graphic">
-      <div class="hori-glow"></div>
-      <div class="hori-knife rv">
-      <!-- HORI HORI  -  premium illustration, real 57/43 blade-to-handle ratio -->
-      <svg viewBox="0 0 340 680" width="300" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <!-- 7-stop steel gradient  -  realistic metallic sheen -->
-          <linearGradient id="steelGrad" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="#606060"/>
-            <stop offset="15%" stop-color="#909090"/>
-            <stop offset="30%" stop-color="#c0c0c0"/>
-            <stop offset="48%" stop-color="#e8e8e8"/>
-            <stop offset="62%" stop-color="#c0c0c0"/>
-            <stop offset="80%" stop-color="#909090"/>
-            <stop offset="100%" stop-color="#707070"/>
-          </linearGradient>
-          <!-- Concave blade highlight  -  simulates the U-trough -->
-          <linearGradient id="concaveHighlight" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="rgba(255,255,255,0)"/>
-            <stop offset="35%" stop-color="rgba(255,255,255,0.12)"/>
-            <stop offset="50%" stop-color="rgba(255,255,255,0.04)"/>
-            <stop offset="65%" stop-color="rgba(255,255,255,0.12)"/>
-            <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
-          </linearGradient>
-          <!-- Walnut handle gradient -->
-          <linearGradient id="walnut" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="#4a2a08"/>
-            <stop offset="20%" stop-color="#6a4a12"/>
-            <stop offset="40%" stop-color="#8B6914"/>
-            <stop offset="55%" stop-color="#a07a20"/>
-            <stop offset="70%" stop-color="#8B6914"/>
-            <stop offset="85%" stop-color="#6a4a12"/>
-            <stop offset="100%" stop-color="#503010"/>
-          </linearGradient>
-          <!-- Brass radial gradient for rivets -->
-          <radialGradient id="rivet">
-            <stop offset="0%" stop-color="#d4b870"/>
-            <stop offset="40%" stop-color="#b8a050"/>
-            <stop offset="100%" stop-color="#8a7030"/>
-          </radialGradient>
-          <!-- Wood grain noise -->
-          <filter id="woodNoise">
-            <feTurbulence type="fractalNoise" baseFrequency="0.02 0.4" numOctaves="4" seed="3" result="noise"/>
-            <feColorMatrix type="saturate" values="0" in="noise" result="gray"/>
-            <feBlend in="SourceGraphic" in2="gray" mode="soft-light"/>
-          </filter>
-        </defs>
 
-        <!-- === BLADE (57% = ~388px of 680) === -->
-        <!-- Main blade shape  -  asymmetric taper, offset tip toward serrated side -->
-        <path d="M155 380 L175 380 Q182 310 179 240 Q176 170 173 110 Q170 60 166 30 Q162 10 158 2 Q154 0 150 4 Q146 12 142 35 Q138 65 135 115 Q132 175 130 245 Q127 315 135 380 Z" fill="url(#steelGrad)" stroke="#777" stroke-width=".6"/>
-
-        <!-- Concave cross-section highlight (the U-trough shine) -->
-        <path d="M155 380 L175 380 Q182 310 179 240 Q176 170 173 110 Q170 60 166 30 Q162 10 158 2 Q154 0 150 4 Q146 12 142 35 Q138 65 135 115 Q132 175 130 245 Q127 315 135 380 Z" fill="url(#concaveHighlight)"/>
-
-        <!-- Specular highlight strip  -  runs along the spine -->
-        <path d="M162 15 Q164 80 166 160 Q167 240 165 320 Q164 360 163 378" fill="none" stroke="rgba(255,255,255,.25)" stroke-width="2"/>
-        <path d="M162 15 Q164 80 166 160 Q167 240 165 320 Q164 360 163 378" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="6"/>
-
-        <!-- Cutting edge highlight  -  right side, the sharp bevel -->
-        <path d="M175 375 Q178 300 179 240 Q176 170 173 110 Q170 60 166 30" fill="none" stroke="rgba(255,255,255,.18)" stroke-width=".6"/>
-
-        <!-- Serrated edge  -  left side, scalloped semicircles -->
-        <g stroke="#6a6a6a" stroke-width="1" fill="none">
-          <path d="M134 360 Q130 356 134 352"/>
-          <path d="M133 352 Q129 348 133 344"/>
-          <path d="M132 344 Q128 340 132 336"/>
-          <path d="M132 336 Q128 332 132 328"/>
-          <path d="M131 328 Q127 324 131 320"/>
-          <path d="M131 320 Q127 316 131 312"/>
-          <path d="M130 312 Q126 308 131 304"/>
-          <path d="M130 304 Q126 300 131 296"/>
-          <path d="M130 296 Q126 292 131 288"/>
-          <path d="M130 288 Q126 284 131 280"/>
-          <path d="M130 280 Q127 276 131 272"/>
-          <path d="M131 272 Q127 268 132 264"/>
-          <path d="M132 264 Q128 260 133 256"/>
-          <path d="M133 256 Q129 252 134 248"/>
-        </g>
-
-        <!-- Depth measurement marks  -  etched at 1" intervals -->
-        <g stroke="rgba(255,255,255,.12)" stroke-width=".4">
-          <line x1="168" y1="340" x2="178" y2="340"/>
-          <line x1="168" y1="300" x2="178" y2="300"/>
-          <line x1="168" y1="260" x2="178" y2="260"/>
-          <line x1="168" y1="220" x2="178" y2="220"/>
-          <line x1="168" y1="180" x2="178" y2="180"/>
-          <line x1="168" y1="140" x2="178" y2="140"/>
-          <line x1="168" y1="100" x2="178" y2="100"/>
-        </g>
-        <g fill="rgba(255,255,255,.08)" font-size="6" font-family="Inter,sans-serif" font-weight="400">
-          <text x="180" y="342">1</text><text x="180" y="302">2</text><text x="180" y="262">3</text>
-          <text x="180" y="222">4</text><text x="180" y="182">5</text><text x="180" y="142">6</text>
-          <text x="180" y="102">7</text>
-        </g>
-
-        <!-- Tip highlight  -  catches light -->
-        <path d="M158 2 Q155 15 152 32 L164 32 Q161 15 158 2Z" fill="rgba(255,255,255,.12)"/>
-
-        <!-- SWALE engraving on ricasso (near bolster, display side) -->
-        <text x="155" y="130" fill="rgba(255,255,255,.09)" font-size="14" font-family="Inter,sans-serif" font-weight="900" text-anchor="middle" letter-spacing=".2em">SWALE</text>
-
-        <!-- === BOLSTER / GUARD  -  brass === -->
-        <rect x="122" y="380" width="66" height="18" rx="5" fill="#b0a068"/>
-        <rect x="124" y="382" width="62" height="14" rx="4" fill="#c4b478"/>
-        <line x1="128" y1="389" x2="182" y2="389" stroke="#9a8a58" stroke-width=".5"/>
-        <!-- Bolster edge highlights -->
-        <line x1="124" y1="383" x2="186" y2="383" stroke="rgba(255,255,255,.15)" stroke-width=".5"/>
-
-        <!-- === HANDLE (43% = ~292px)  -  full-tang walnut === -->
-        <rect x="130" y="398" width="50" height="210" rx="8" fill="url(#walnut)" filter="url(#woodNoise)"/>
-
-        <!-- Visible tang edges (full-tang construction) -->
-        <line x1="132" y1="400" x2="132" y2="600" stroke="rgba(100,80,40,.3)" stroke-width=".5"/>
-        <line x1="178" y1="400" x2="178" y2="600" stroke="rgba(100,80,40,.3)" stroke-width=".5"/>
-
-        <!-- Wood grain lines -->
-        <g stroke="#5a3a0a" opacity=".2">
-          <line x1="138" y1="400" x2="138" y2="605" stroke-width=".6"/>
-          <line x1="145" y1="398" x2="145" y2="607" stroke-width=".4"/>
-          <line x1="155" y1="400" x2="155" y2="605" stroke-width=".5"/>
-          <line x1="162" y1="399" x2="162" y2="606" stroke-width=".4"/>
-          <line x1="170" y1="400" x2="170" y2="605" stroke-width=".6"/>
-          <line x1="150" y1="400" x2="150" y2="605" stroke-width=".3"/>
-        </g>
-
-        <!-- Brass rivets  -  3 pins through tang -->
-        <circle cx="155" cy="425" r="4" fill="url(#rivet)" stroke="#7a6020" stroke-width=".5"/>
-        <circle cx="155" cy="480" r="4" fill="url(#rivet)" stroke="#7a6020" stroke-width=".5"/>
-        <circle cx="155" cy="535" r="4" fill="url(#rivet)" stroke="#7a6020" stroke-width=".5"/>
-        <!-- Rivet center highlights -->
-        <circle cx="154" cy="424" r="1.2" fill="rgba(255,255,255,.2)"/>
-        <circle cx="154" cy="479" r="1.2" fill="rgba(255,255,255,.2)"/>
-        <circle cx="154" cy="534" r="1.2" fill="rgba(255,255,255,.2)"/>
-
-        <!-- Handle comfort contour  -  subtle shadow -->
-        <path d="M130 440 Q128 500 130 560" fill="none" stroke="rgba(0,0,0,.15)" stroke-width="2"/>
-        <path d="M180 440 Q182 500 180 560" fill="none" stroke="rgba(0,0,0,.15)" stroke-width="2"/>
-
-        <!-- === POMMEL === -->
-        <rect x="126" y="605" width="58" height="16" rx="6" fill="#5a3a10"/>
-        <rect x="128" y="607" width="54" height="12" rx="5" fill="#6a4a18"/>
-        <!-- Lanyard hole -->
-        <circle cx="155" cy="636" r="10" fill="#5a3a10" stroke="#4a2a08" stroke-width="1.5"/>
-        <circle cx="155" cy="636" r="5" fill="#1a0e05"/>
-        <circle cx="155" cy="636" r="4" fill="none" stroke="#7a5a20" stroke-width=".5"/>
-        <!-- Lanyard loop hint -->
-        <path d="M155 646 Q145 660 148 670 Q152 678 155 670 Q158 678 162 670 Q165 660 155 646" fill="none" stroke="#6a4a20" stroke-width="1.5" opacity=".4"/>
-
-        <!-- === ANNOTATIONS  -  fly in from right === -->
-        <g class="hori-annot" data-d="200">
-          <line x1="185" y1="180" x2="220" y2="180" stroke="#57534e" stroke-width=".5" stroke-dasharray="3 3"/>
-          <text x="225" y="177" fill="#a8a29e" font-size="9" font-family="Inter,sans-serif" font-weight="500">7" stainless blade</text>
-          <text x="225" y="190" fill="#78716c" font-size="7" font-family="Inter,sans-serif" font-weight="300">Concave cross-section</text>
-        </g>
-        <g class="hori-annot" data-d="400">
-          <line x1="185" y1="300" x2="220" y2="300" stroke="#57534e" stroke-width=".5" stroke-dasharray="3 3"/>
-          <text x="225" y="297" fill="#d4a853" font-size="9" font-family="Inter,sans-serif" font-weight="500">Serrated edge</text>
-          <text x="225" y="310" fill="#78716c" font-size="7" font-family="Inter,sans-serif" font-weight="300">14 scalloped teeth</text>
-        </g>
-        <g class="hori-annot" data-d="600">
-          <line x1="188" y1="389" x2="220" y2="389" stroke="#57534e" stroke-width=".5" stroke-dasharray="3 3"/>
-          <text x="225" y="386" fill="#c4b478" font-size="9" font-family="Inter,sans-serif" font-weight="500">Brass bolster</text>
-          <text x="225" y="399" fill="#78716c" font-size="7" font-family="Inter,sans-serif" font-weight="300">Full-tang construction</text>
-        </g>
-        <g class="hori-annot" data-d="800">
-          <line x1="185" y1="480" x2="220" y2="480" stroke="#57534e" stroke-width=".5" stroke-dasharray="3 3"/>
-          <text x="225" y="477" fill="#8B6914" font-size="9" font-family="Inter,sans-serif" font-weight="500">Walnut handle</text>
-          <text x="225" y="490" fill="#78716c" font-size="7" font-family="Inter,sans-serif" font-weight="300">Oiled finish, 3 brass rivets</text>
-        </g>
-        <g class="hori-annot" data-d="1000">
-          <line x1="167" y1="636" x2="220" y2="636" stroke="#57534e" stroke-width=".5" stroke-dasharray="3 3"/>
-          <text x="225" y="633" fill="#a8a29e" font-size="9" font-family="Inter,sans-serif" font-weight="500">Leather lanyard</text>
-          <text x="225" y="646" fill="#78716c" font-size="7" font-family="Inter,sans-serif" font-weight="300">Brass grommet ring</text>
-        </g>
-      </svg>
+    <div class="tool rv d2">
+      <div class="tool-img">
+        <img src="../hand-rake-final.png" alt="Kumade hand rake">
       </div>
+      <div class="tool-name">Kumade</div>
+      <div class="tool-origin">Hand-Forged Steel</div>
+      <div class="tool-desc">Curved steel tines on weathered wood. Used for final grading and surface preparation around plantings.</div>
+    </div>
+
+    <div class="tool rv d3">
+      <div class="tool-img">
+        <img src="../iron-brand.png" alt="SWALE iron brand">
+      </div>
+      <div class="tool-name">Iron Brand</div>
+      <div class="tool-origin">Estate Iron Work</div>
+      <div class="tool-desc">Hand-forged branding iron seared into western red cedar check dams. Every installation carries the mark.</div>
     </div>
   </div>
-</section>
 
-<!-- SUPPLY CHAIN  -  materials that matter -->
-<section class="supply-sec sec-line" id="materials">
-  <div class="shdr rv"><h2>Materials we control.</h2><p>We don't outsource the critical stuff. Our supply chain is purpose-built for Seattle bioswales.</p></div>
-  <div class="supply-grid">
-    <div class="supply-card rv">
-      <div class="supply-card-vis" style="background:linear-gradient(135deg,#1a1a1a,#252520)">
-        <!-- Beehive grate SVG -->
-        <svg viewBox="0 0 200 180" width="180" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="100" cy="100" rx="70" ry="35" fill="none" stroke="#57534e" stroke-width="2"/>
-          <!-- Dome -->
-          <path d="M30 100 Q30 50 100 40 Q170 50 170 100" fill="none" stroke="#a8a29e" stroke-width="1.5"/>
-          <!-- Ribs -->
-          <path d="M50 100 Q55 60 100 50 Q145 60 150 100" fill="none" stroke="#57534e" stroke-width="1"/>
-          <path d="M65 100 Q70 70 100 62 Q130 70 135 100" fill="none" stroke="#57534e" stroke-width="1"/>
-          <path d="M80 100 Q85 78 100 72 Q115 78 120 100" fill="none" stroke="#57534e" stroke-width="1"/>
-          <!-- Vertical ribs -->
-          <line x1="100" y1="40" x2="100" y2="100" stroke="#57534e" stroke-width="1"/>
-          <line x1="65" y1="55" x2="50" y2="100" stroke="#57534e" stroke-width=".8"/>
-          <line x1="135" y1="55" x2="150" y2="100" stroke="#57534e" stroke-width=".8"/>
-          <!-- Water drops through -->
-          <line x1="85" y1="108" x2="85" y2="118" stroke="#3b82f6" stroke-width="1" opacity=".4"/>
-          <line x1="100" y1="110" x2="100" y2="122" stroke="#3b82f6" stroke-width="1" opacity=".3"/>
-          <line x1="115" y1="108" x2="115" y2="116" stroke="#3b82f6" stroke-width="1" opacity=".35"/>
-          <!-- Frame ring -->
-          <ellipse cx="100" cy="100" rx="75" ry="38" fill="none" stroke="#a8a29e" stroke-width="2.5"/>
-          <text x="100" y="160" fill="#57534e" font-size="8" font-family="Inter,sans-serif" font-weight="600" text-anchor="middle" letter-spacing=".15em">J.R. HOE MCB-350BH</text>
-        </svg>
+  <div class="section-label rv" style="margin-top:48px">Materials We Control</div>
+  <h2 class="section-title rv">Supply Chain</h2>
+  <p class="section-sub rv">We don't outsource the critical stuff. Purpose-built for Seattle bioswales.</p>
+
+  <div class="tools-row">
+    <div class="tool rv d1">
+      <div class="tool-img">
+        <img src="../beehive-grate-final.png" alt="Beehive grate">
       </div>
-      <div class="supply-card-body">
-        <h3>Beehive Grates</h3>
-        <div class="spec">Cast Iron  -  Municipal Grade</div>
-        <p>J.R. Hoe MCB-350BH round manhole beehive grates. The most beautiful drain cover ever cast. Connects your swale to the municipal system with style. We source direct.</p>
-      </div>
+      <div class="tool-name">Beehive Grate</div>
+      <div class="tool-origin">J.R. Hoe — Cast Iron</div>
+      <div class="tool-desc">MCB-350BH round manhole beehive grate. The most beautiful drain cover ever cast. Connects your swale to the municipal system with style.</div>
     </div>
-    <div class="supply-card rv">
-      <div class="supply-card-vis" style="background:linear-gradient(135deg,#1a1510,#201a12)">
-        <!-- Alderwood soil cross-section -->
-        <svg viewBox="0 0 200 180" width="180" xmlns="http://www.w3.org/2000/svg">
-          <!-- Soil layers -->
-          <rect x="20" y="20" width="160" height="35" rx="2" fill="#3a3020" stroke="#57534e" stroke-width=".5"/>
-          <text x="30" y="42" fill="#a8a29e" font-size="7" font-family="Inter,sans-serif" font-weight="500">A  -  Topsoil</text>
-          <rect x="20" y="57" width="160" height="30" rx="2" fill="#4a3a25" stroke="#57534e" stroke-width=".5"/>
-          <text x="30" y="76" fill="#a8a29e" font-size="7" font-family="Inter,sans-serif" font-weight="500">Bw  -  Subsoil</text>
-          <rect x="20" y="89" width="160" height="25" rx="2" fill="#3a3520" stroke="#57534e" stroke-width=".5"/>
-          <text x="30" y="106" fill="#a8a29e" font-size="7" font-family="Inter,sans-serif" font-weight="500">2Bg  -  Glacial transition</text>
-          <rect x="20" y="116" width="160" height="30" rx="2" fill="#2a2518" stroke="#57534e" stroke-width=".5"/>
-          <text x="30" y="135" fill="#a8a29e" font-size="7" font-family="Inter,sans-serif" font-weight="500">2Cd  -  Dense glacial till</text>
-          <!-- Roots -->
-          <path d="M80 20 Q78 40 75 55" fill="none" stroke="#0f7a36" stroke-width="1" opacity=".4"/>
-          <path d="M120 20 Q122 35 125 50" fill="none" stroke="#0f7a36" stroke-width="1" opacity=".3"/>
-          <path d="M100 20 Q98 45 95 57" fill="none" stroke="#0f7a36" stroke-width=".8" opacity=".35"/>
-          <!-- Water arrow at dense layer -->
-          <path d="M140 116 L155 116" fill="none" stroke="#3b82f6" stroke-width="1" opacity=".4"/>
-          <text x="100" y="165" fill="#57534e" font-size="7" font-family="Inter,sans-serif" font-weight="600" text-anchor="middle" letter-spacing=".1em">USDA ALDERWOOD SERIES</text>
-        </svg>
+
+    <div class="tool rv d2">
+      <div class="tool-img">
+        <img src="../alderwood-soil-final.png" alt="Alderwood soil profile">
       </div>
-      <div class="supply-card-body">
-        <h3>Alderwood Soil</h3>
-        <div class="spec">Seattle's Native Glacial Till</div>
-        <p>Every Puget Sound bioswale sits on Alderwood series soil  -  glacial till with a dense layer at 20-40". We engineer our bioretention mix to work with it, not against it. The same soil that grows western red cedar and sword fern.</p>
-      </div>
+      <div class="tool-name">Alderwood Soil</div>
+      <div class="tool-origin">Seattle's Native Glacial Till</div>
+      <div class="tool-desc">Glacial till with a dense layer at 20-40". We engineer our bioretention mix to work with it, not against it.</div>
     </div>
-    <div class="supply-card rv">
-      <div class="supply-card-vis" style="background:linear-gradient(135deg,#1a1508,#201a10)">
-        <!-- Check dam wood options -->
-        <svg viewBox="0 0 200 180" width="180" xmlns="http://www.w3.org/2000/svg">
-          <!-- Three wood cross-sections -->
-          <g transform="translate(40,50)">
-            <ellipse cx="0" cy="0" rx="22" ry="22" fill="#4a3020" stroke="#6a5030" stroke-width="1"/>
-            <circle cx="0" cy="0" r="15" fill="none" stroke="#5a4025" stroke-width=".5"/>
-            <circle cx="0" cy="0" r="9" fill="none" stroke="#5a4025" stroke-width=".5"/>
-            <circle cx="0" cy="0" r="4" fill="#3a2518"/>
-            <text x="0" y="38" fill="#a8a29e" font-size="7" font-family="Inter,sans-serif" font-weight="500" text-anchor="middle">W. Red Cedar</text>
-          </g>
-          <g transform="translate(100,50)">
-            <ellipse cx="0" cy="0" rx="22" ry="22" fill="#5a4530" stroke="#7a6040" stroke-width="1"/>
-            <circle cx="0" cy="0" r="16" fill="none" stroke="#6a5035" stroke-width=".5"/>
-            <circle cx="0" cy="0" r="10" fill="none" stroke="#6a5035" stroke-width=".5"/>
-            <circle cx="0" cy="0" r="5" fill="#4a3525"/>
-            <text x="0" y="38" fill="#a8a29e" font-size="7" font-family="Inter,sans-serif" font-weight="500" text-anchor="middle">White Oak</text>
-          </g>
-          <g transform="translate(160,50)">
-            <ellipse cx="0" cy="0" rx="22" ry="22" fill="#5a4028" stroke="#7a5838" stroke-width="1"/>
-            <circle cx="0" cy="0" r="14" fill="none" stroke="#6a4830" stroke-width=".5"/>
-            <circle cx="0" cy="0" r="8" fill="none" stroke="#6a4830" stroke-width=".5"/>
-            <circle cx="0" cy="0" r="3" fill="#4a3020"/>
-            <text x="0" y="38" fill="#a8a29e" font-size="7" font-family="Inter,sans-serif" font-weight="500" text-anchor="middle">Juniper</text>
-          </g>
-          <!-- Brand mark on cedar -->
-          <text x="40" y="55" fill="rgba(212,168,83,.3)" font-size="8" font-family="Inter,sans-serif" font-weight="900" text-anchor="middle">S</text>
-          <!-- Iron brand icon -->
-          <path d="M85 120 L115 120 L112 135 L88 135Z" fill="none" stroke="#d4a853" stroke-width="1" opacity=".4"/>
-          <text x="100" y="155" fill="#57534e" font-size="7" font-family="Inter,sans-serif" font-weight="600" text-anchor="middle" letter-spacing=".1em">ESTATE IRON WORK</text>
-          <text x="100" y="170" fill="#d4a853" font-size="6" font-family="Inter,sans-serif" font-weight="500" text-anchor="middle">Custom iron brands</text>
-        </svg>
+
+    <div class="tool rv d3">
+      <div class="tool-img">
+        <img src="../check-dam-final.png" alt="Check dam timber">
       </div>
-      <div class="supply-card-body">
-        <h3>Check Dam Timber</h3>
-        <div class="spec">Your Choice  -  Three Species</div>
-        <p>Western red cedar (PNW native, rot-resistant, brands beautifully), white oak (hardest, longest-lasting), or juniper (dense, aromatic, weathers to silver). Branded by Estate Iron Work with your swale's mark.</p>
-      </div>
+      <div class="tool-name">Check Dam Timber</div>
+      <div class="tool-origin">Three Species — Your Choice</div>
+      <div class="tool-desc">Western red cedar, white oak, or juniper. Hand-selected and milled for your swale. Each species weathers differently. Your choice.</div>
     </div>
   </div>
 </section>
@@ -1050,7 +927,7 @@ footer .flinks a:hover{color:var(--white)}
 <!-- LOW MAINTENANCE PITCH -->
 <section class="maint-sec">
   <h3 class="rv">Designed for <em>almost zero</em> maintenance.</h3>
-  <p class="rv">Native plants. Engineered drainage. No mowing, no fertilizing, no irrigation battles. Your swale gets healthier on its own. We check in quarterly  -  that's it.</p>
+  <p class="rv">Native plants. Engineered drainage. No mowing, no fertilizing, no irrigation battles. Your swale gets healthier on its own. We check in quarterly. That's it.</p>
   <div class="maint-pills rv">
     <span class="maint-pill">No mowing</span>
     <span class="maint-pill">No fertilizer</span>
@@ -1061,12 +938,12 @@ footer .flinks a:hover{color:var(--white)}
   </div>
 </section>
 
-<!-- ECOSYSTEM  -  App + Knowledge Library + RainBird -->
+<!-- ECOSYSTEM — App + Knowledge Library + RainBird -->
 <section class="eco-sec" id="ecosystem">
   <div class="eco-inner">
     <div class="eco-text rv">
       <h2>The Swale <em>ecosystem.</em></h2>
-      <p>A dedicated app, a knowledge library for subscribers, and smart irrigation integration. Your swale doesn't just sit there  -  it reports back.</p>
+      <p>A dedicated app, a knowledge library for subscribers, and smart irrigation integration. Your swale doesn't just sit there. It reports back.</p>
       <div class="eco-features">
         <div class="eco-feat">
           <div class="dot" style="background:var(--green)"></div>
@@ -1078,7 +955,7 @@ footer .flinks a:hover{color:var(--white)}
         </div>
         <div class="eco-feat">
           <div class="dot" style="background:var(--water)"></div>
-          <div><h4>RainBird Integration</h4><p>State-of-the-art irrigation tied into our platform. Smart zones that respond to actual soil moisture and weather forecasts. Water only when needed  -  the swale tells you.</p></div>
+          <div><h4>RainBird Integration</h4><p>State-of-the-art irrigation tied into our platform. Smart zones that respond to actual soil moisture and weather forecasts. Water only when needed. The swale tells you.</p></div>
         </div>
         <div class="eco-feat">
           <div class="dot" style="background:var(--terracotta)"></div>
@@ -1093,7 +970,7 @@ footer .flinks a:hover{color:var(--white)}
         <div class="phone-screen">
           <div class="phone-header">
             <h5>Swale</h5>
-            <p>Walsh Residence  -  Cedar Creek</p>
+            <p>Walsh Residence, Cedar Creek</p>
           </div>
           <div class="phone-card">
             <h6>Today's Flow</h6>
@@ -1112,7 +989,7 @@ footer .flinks a:hover{color:var(--white)}
           </div>
           <div class="phone-card">
             <h6>Next Service</h6>
-            <div class="val" style="color:var(--gold);font-size:.9rem">Mar 15  -  Spring Drift Check</div>
+            <div class="val" style="color:var(--gold);font-size:.9rem">Mar 15, Spring Drift Check</div>
           </div>
         </div>
       </div>
@@ -1123,7 +1000,7 @@ footer .flinks a:hover{color:var(--white)}
 <!-- RESIDENTIAL WAITLIST -->
 <section class="waitlist-sec" id="waitlist">
   <h2 class="rv">The Residential <em>Waitlist.</em></h2>
-  <p class="rv">Launching August 2026. Limited to 50 homes in Year One. Every residential install ends with a branding ceremony  -  a heated iron seared into your western red cedar check dam. Plus:</p>
+  <p class="rv">Launching August 2026. Limited to 50 homes in Year One. Every residential install ends with a branding ceremony. A heated iron seared into your western red cedar check dam. Plus:</p>
   <div class="waitlist-perks">
     <div class="wl-perk rv">
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1151,7 +1028,7 @@ footer .flinks a:hover{color:var(--white)}
         <path d="M30 43Q29 40 30 38" fill="none" stroke="#d4a853" stroke-width=".8" opacity=".2"/>
       </svg>
       <h4>Branding Ceremony</h4>
-      <p>A heated iron brand seared into your western red cedar check dam. Smoke, char, permanence. We don't just install  -  we brand it yours.</p>
+      <p>A heated iron brand seared into your western red cedar check dam. Smoke, char, permanence. We don't just install. We brand it yours.</p>
     </div>
     <div class="wl-perk rv">
       <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1172,46 +1049,7 @@ footer .flinks a:hover{color:var(--white)}
   <p class="wl-count" id="wlcount"></p>
 </section>
 
-<!-- TEAM -->
-<section class="team-sec" id="team">
-  <div class="shdr rv"><h2>The crew.</h2><p>Every project is led by people who treat your property like a gallery.</p></div>
-  <div class="team-grid">
-    <div class="team-card rv">
-      <div class="team-avatar" style="background:rgba(15,122,54,.1);color:var(--green)">JW</div>
-      <h4>Jack Walsh</h4>
-      <div class="role">Founder & Lead Designer</div>
-      <p>Infrastructure strategist. Designs every swale system from watershed analysis to final planting plan. Obsessed with Oudolf.</p>
-    </div>
-    <div class="team-card rv">
-      <div class="team-avatar" style="background:rgba(59,130,246,.1);color:var(--water)">HC</div>
-      <h4>Head of Construction</h4>
-      <div class="role">Build Lead</div>
-      <p>Grading, drainage engineering, and heavy install. Ensures every swale performs to spec before a single plant goes in.</p>
-    </div>
-    <div class="team-card rv">
-      <div class="team-avatar" style="background:rgba(212,168,83,.1);color:var(--gold)">MA</div>
-      <h4>Master Artisan</h4>
-      <div class="role">Finish & Detail</div>
-      <p>Hand-raking, stone placement, hori hori edging. The person who turns engineered drainage into living artwork.</p>
-    </div>
-    <div class="team-card rv">
-      <div class="team-avatar" style="background:rgba(196,120,90,.1);color:var(--terracotta)">FC</div>
-      <h4>Field Curator</h4>
-      <div class="role">Maintenance & Monitoring</div>
-      <p>Ongoing seasonal care, submeter readings, drift management. Your swale gets healthier every year.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ARTISAN BANNER -->
-<div class="artisan-sec">
-  <div class="artisan-bg"></div>
-  <div class="artisan-overlay"></div>
-  <div class="artisan-text rv">
-    <h2>Every swale is a signature piece.</h2>
-    <p>We don't install landscapes. We compose them. Hand rakes, hori horis, and a crew that treats drainage like a canvas.</p>
-  </div>
-</div>
+<!-- Team + artisan banner removed -->
 
 <!-- PRODUCTS -->
 <section class="prsec sec-line" id="products">
@@ -1228,7 +1066,7 @@ footer .flinks a:hover{color:var(--white)}
       <h3>Home Series</h3>
       <div class="zone">LR1 / LR2 / LR3 / SF</div>
       <p>Designed for single-family and low-rise multifamily. Turns a permit requirement into a selling feature. Includes engraved stone, iron branding ceremony, and custom hori hori.</p>
-      <div class="waitlist-badge"><a href="#waitlist" style="color:inherit;text-decoration:none">Waitlist Open  -  August 2026</a></div>
+      <div class="waitlist-badge"><a href="#waitlist" style="color:inherit;text-decoration:none">Waitlist Open, August 2026</a></div>
     </div>
     <div class="prcard rv">
       <div class="lab">Governmental</div>
@@ -1254,7 +1092,7 @@ footer .flinks a:hover{color:var(--white)}
       <button type="submit" class="fsbtn">Book Free Assessment</button>
       <p class="fnote">We respond within 24 hours. No spam, ever.</p>
     </form>
-    <div id="fsuccess"><h3>We're on it.</h3><p>Jack will be in touch within 24 hours.</p></div>
+    <div id="fsuccess"><h3>We're on it.</h3><p>We'll be in touch within 24 hours.</p></div>
     <div class="cdiv"><span>or email directly</span></div>
     <a href="mailto:jack@swale.bio" class="ceml">jack@swale.bio</a>
   </div>
@@ -1269,11 +1107,11 @@ footer .flinks a:hover{color:var(--white)}
 </div>
 
 <script>
-// =======================================================
-// PHOTOREALISTIC CANVAS GRASS  -  foreground layer
+// ═══════════════════════════════════════════════════════
+// PHOTOREALISTIC CANVAS GRASS — foreground layer
 // Hundreds of blades with tapered geometry, color
 // gradients, depth layers, wind animation
-// =======================================================
+// ═══════════════════════════════════════════════════════
 (function() {
   const container = document.getElementById('heroGrass');
   const canvas = document.createElement('canvas');
@@ -1427,13 +1265,13 @@ footer .flinks a:hover{color:var(--white)}
 })();
 
 
-// =======================================================
-// VIDEO FRAME PLAYER  -  preloads frames, draws on demand
+// ═══════════════════════════════════════════════════════
+// VIDEO FRAME PLAYER — preloads frames, draws on demand
 // Sits behind grass, revealed when grass parts
-// =======================================================
+// ═══════════════════════════════════════════════════════
 (function() {
-  const TOTAL_FRAMES = 121;
-  const FRAME_PATH = 'frames/frame_';
+  const TOTAL_FRAMES = 105;
+  const FRAME_PATH = '../frames/frame_';
   const container = document.getElementById('heroVideoCanvas');
   const canvas = document.createElement('canvas');
   container.appendChild(canvas);
@@ -1445,10 +1283,12 @@ footer .flinks a:hover{color:var(--white)}
 
   function pad(n) { return String(n).padStart(4, '0'); }
 
+  // Progressive loading — start showing as soon as first frames arrive
+  let minReady = 10;
   for (let i = 1; i <= TOTAL_FRAMES; i++) {
     const img = new Image();
     img.src = FRAME_PATH + pad(i) + '.jpg';
-    img.onload = () => { loaded++; if (loaded === TOTAL_FRAMES) { ready = true; resize(); drawFrame(0); } };
+    img.onload = () => { loaded++; if (loaded >= minReady && !ready) { ready = true; resize(); drawFrame(0); } };
     frames.push(img);
   }
 
@@ -1480,18 +1320,18 @@ footer .flinks a:hover{color:var(--white)}
 })();
 
 
-// =======================================================
-// SCROLL CONTROLLER  -  Mountains + Grass + Video + Logo
+// ═══════════════════════════════════════════════════════
+// SCROLL CONTROLLER — Mountains + Grass + Video + Logo
 //
 // Phases (p = 0 to 1 over 500vh):
-//   0.00-0.08  Hero text fades out
-//   0.00-0.15  Mountains visible, grass sways peacefully
-//   0.10-0.30  Grass parts, video fades in behind
-//   0.25-0.60  Video scrubs through frames
-//   0.55-0.65  Video + grass fade out, logo fades in
-//   0.65-0.85  Logo hold
-//   0.85-0.95  Logo fades, dark overlay for content
-// =======================================================
+//   0.00–0.08  Hero text fades out
+//   0.00–0.15  Mountains visible, grass sways peacefully
+//   0.10–0.30  Grass parts, video fades in behind
+//   0.25–0.60  Video scrubs through frames
+//   0.55–0.65  Video + grass fade out, logo fades in
+//   0.65–0.85  Logo hold
+//   0.85–0.95  Logo fades, dark overlay for content
+// ═══════════════════════════════════════════════════════
 (function() {
   const wrap = document.getElementById('heroWrap');
   const heroEl = document.getElementById('hero');
@@ -1500,69 +1340,95 @@ footer .flinks a:hover{color:var(--white)}
   const reveal = document.getElementById('heroReveal');
   const dark = document.getElementById('heroDark');
   const hint = document.getElementById('shint');
-  const TOTAL_FRAMES = 121;
+  const TOTAL_FRAMES = 105;
 
-  function onScroll() {
-    const rect = wrap.getBoundingClientRect();
-    const scrollable = wrap.offsetHeight - window.innerHeight;
-    if (scrollable <= 0) return;
-    const p = Math.max(0, Math.min(1, -rect.top / scrollable));
+  // Smooth interpolation — prevents jarring jumps on fast scroll/fling
+  let targetP = 0;
+  let currentP = 0;
+  const LERP_SPEED = 0.08; // Lower = smoother/slower catch-up. 0.08 feels Apple-smooth.
+  let ticking = false;
 
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function applyFrame(p) {
     // Hero text fades out
     const textFade = 1 - Math.min(1, p / 0.08);
     heroEl.style.opacity = textFade;
     heroEl.style.transform = 'translateY(' + (p * -80) + 'px)';
 
-    // Grass zoom (0-0.25)
-    const zoom = 1 + Math.min(p, 0.25) * 0.7;
+    // Grass zoom (0–0.30) — slow zoom into the grass
+    const zoom = 1 + Math.min(p, 0.30) * 0.6;
     grass.style.transform = 'scale(' + zoom + ')';
 
-    // Grass parts (0.08-0.25)
-    const partProgress = Math.max(0, Math.min(1, (p - 0.08) / 0.17));
+    // Grass parts (0.06–0.22) — blades push aside to reveal video
+    const partProgress = Math.max(0, Math.min(1, (p - 0.06) / 0.16));
     window._setGrassPart(partProgress);
 
-    // Video layer opacity  -  single variable, no conflicts
+    // Video layer opacity — fades in as grass parts, holds during scrub, cross-fades to logo
     let videoOpacity = 0;
-    if (p >= 0.10 && p < 0.22) {
-      videoOpacity = (p - 0.10) / 0.12;           // fade in
-    } else if (p >= 0.22 && p < 0.50) {
-      videoOpacity = 1;                             // fully visible while scrubbing
-    } else if (p >= 0.50 && p < 0.58) {
-      videoOpacity = 1 - (p - 0.50) / 0.08;       // fade out (cross-fades with logo)
+    if (p >= 0.10 && p < 0.20) {
+      videoOpacity = (p - 0.10) / 0.10;
+    } else if (p >= 0.20 && p < 0.52) {
+      videoOpacity = 1;
+    } else if (p >= 0.52 && p < 0.60) {
+      videoOpacity = 1 - (p - 0.52) / 0.08;
     }
     videoLayer.style.opacity = videoOpacity;
 
-    // Video scrubs (0.15-0.55)  -  all frames play while video is visible
+    // Video scrubs (0.12–0.55) — 105 frames across 43% of scroll
     if (window._videoReady && window._videoReady()) {
-      const frameP = Math.max(0, Math.min(1, (p - 0.15) / 0.40));
+      const frameP = Math.max(0, Math.min(1, (p - 0.12) / 0.43));
       window._drawVideoFrame(Math.round(frameP * (TOTAL_FRAMES - 1)));
     }
 
-    // Grass fades out (0.20-0.32)
-    const grassFade = 1 - Math.max(0, Math.min(1, (p - 0.20) / 0.12));
+    // Grass fades out (0.22–0.32) — starts AFTER parting completes
+    const grassFade = 1 - Math.max(0, Math.min(1, (p - 0.22) / 0.10));
     grass.style.opacity = grassFade;
 
-    // Logo: simple opacity fade  -  cross-fades in over video, holds, fades out into black
+    // Logo: cross-fades in over video, holds, fades out into black
     let revealOpacity = 0;
-    if (p >= 0.50 && p < 0.60) {
-      revealOpacity = (p - 0.50) / 0.10;           // fade in
-    } else if (p >= 0.60 && p < 0.82) {
-      revealOpacity = 1;                             // hold
+    if (p >= 0.52 && p < 0.62) {
+      revealOpacity = (p - 0.52) / 0.10;
+    } else if (p >= 0.62 && p < 0.82) {
+      revealOpacity = 1;
     } else if (p >= 0.82 && p < 0.94) {
-      revealOpacity = 1 - (p - 0.82) / 0.12;       // fade out
+      revealOpacity = 1 - (p - 0.82) / 0.12;
     }
     reveal.style.opacity = revealOpacity;
     reveal.style.transform = 'none';
 
-    // Fade to black  -  starts as logo fades, fully black by end so pillars is seamless
-    if (p >= 0.82) {
-      dark.style.opacity = Math.min(1, (p - 0.82) / 0.14);
-    } else {
-      dark.style.opacity = 0;
-    }
+    // Fade to black
+    dark.style.opacity = p >= 0.82 ? Math.min(1, (p - 0.82) / 0.14) : 0;
 
     // Hint
     if (hint) hint.style.opacity = p > 0.02 ? 0 : 1;
+  }
+
+  // rAF loop — lerps currentP toward targetP every frame
+  function tick() {
+    const diff = Math.abs(targetP - currentP);
+    if (diff < 0.0005) {
+      // Close enough — snap and stop loop
+      currentP = targetP;
+      applyFrame(currentP);
+      ticking = false;
+      return;
+    }
+    currentP = lerp(currentP, targetP, LERP_SPEED);
+    applyFrame(currentP);
+    requestAnimationFrame(tick);
+  }
+
+  function onScroll() {
+    const rect = wrap.getBoundingClientRect();
+    const scrollable = wrap.offsetHeight - window.innerHeight;
+    if (scrollable <= 0) return;
+    targetP = Math.max(0, Math.min(1, -rect.top / scrollable));
+
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(tick);
+    }
   }
 
   let ticking = false;
@@ -1572,9 +1438,9 @@ footer .flinks a:hover{color:var(--white)}
   onScroll();
 })();
 
-// =======================================================
-// PILLARS FADE-IN  -  triggered when section enters viewport
-// =======================================================
+// ═══════════════════════════════════════════════════════
+// PILLARS FADE-IN — triggered when section enters viewport
+// ═══════════════════════════════════════════════════════
 (function() {
   var pillars = document.getElementById('pillars');
   if (!pillars) return;
@@ -1587,11 +1453,11 @@ footer .flinks a:hover{color:var(--white)}
   obs.observe(pillars);
 })();
 
-// =======================================================
-// MISSISSIPPI MEANDER MAP  -  scrolling background
+// ═══════════════════════════════════════════════════════
+// MISSISSIPPI MEANDER MAP — scrolling background
 // The map image pans vertically as you scroll through
 // content sections, traveling along the river.
-// =======================================================
+// ═══════════════════════════════════════════════════════
 (function() {
   const bg = document.getElementById('meanderBg');
   const img = document.getElementById('meanderImg');
@@ -1608,7 +1474,7 @@ footer .flinks a:hover{color:var(--white)}
     const inContent = belowRect.top < window.innerHeight * 0.3 && belowRect.bottom > 0;
     bg.classList.toggle('vis', inContent);
 
-    // Pan the image: top of map at start -> bottom of map at end of page
+    // Pan the image: top of map at start → bottom of map at end of page
     // Image is taller than viewport, so we shift it upward as we scroll
     const imgH = img.naturalHeight || 1764;
     const viewH = window.innerHeight;
@@ -1627,9 +1493,9 @@ footer .flinks a:hover{color:var(--white)}
   onScroll();
 })();
 
-// =======================================================
+// ═══════════════════════════════════════════════════════
 // MOBILE NAV
-// =======================================================
+// ═══════════════════════════════════════════════════════
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobileNav');
 hamburger.addEventListener('click', () => {
@@ -1643,9 +1509,9 @@ function closeMobile() {
   document.body.style.overflow = '';
 }
 
-// =======================================================
+// ═══════════════════════════════════════════════════════
 // NAVIGATION + INTERSECTION OBSERVER
-// =======================================================
+// ═══════════════════════════════════════════════════════
 const navEl = document.getElementById('nav');
 window.addEventListener('scroll', () => navEl.classList.toggle('scrolled', scrollY > 50), { passive: true });
 
@@ -1653,7 +1519,7 @@ window.addEventListener('scroll', () => navEl.classList.toggle('scrolled', scrol
 const obs = new IntersectionObserver(ee => ee.forEach(e => {
   if (e.isIntersecting) setTimeout(() => e.target.classList.add('vis'), parseInt(e.target.dataset.d || 0));
 }), { threshold: 0.15 });
-document.querySelectorAll('.rv,.pcard,.hori-knife,.hori-annot,.matrix-method,.plant-tag').forEach(el => obs.observe(el));
+document.querySelectorAll('.rv,.pcard,.matrix-method,.tool').forEach(el => obs.observe(el));
 
 // Scroll hint hide on scroll
 window.addEventListener('scroll', () => {
@@ -1661,9 +1527,9 @@ window.addEventListener('scroll', () => {
   if (hint) hint.classList.toggle('hid', scrollY > 60);
 }, { passive: true });
 
-// =======================================================
+// ═══════════════════════════════════════════════════════
 // SWM FEE SAVINGS CALCULATOR
-// =======================================================
+// ═══════════════════════════════════════════════════════
 const SWM_RATES = { 2: 361, 3: 1004, 4: 1879, 5: 3206, 6: 4466, 7: 5495 };
 function calcSavings() {
   const acres = parseFloat(document.getElementById('calcAcres').value) || 0.25;
@@ -1679,9 +1545,9 @@ document.getElementById('calcCurrent').addEventListener('change', calcSavings);
 document.getElementById('calcAfter').addEventListener('change', calcSavings);
 calcSavings();
 
-// =======================================================
-// FORMS  -  Formspree + localStorage backup
-// =======================================================
+// ═══════════════════════════════════════════════════════
+// FORMS — Formspree + localStorage backup
+// ═══════════════════════════════════════════════════════
 const FORMSPREE_LEAD = 'https://formspree.io/f/xovdgbzk'; // Replace with your Formspree form ID
 const FORMSPREE_WAITLIST = 'https://formspree.io/f/mvgogyyq'; // Replace with your Formspree form ID
 
@@ -1698,6 +1564,7 @@ document.getElementById('lf').addEventListener('submit', async e => {
   try { await fetch(FORMSPREE_LEAD, { method:'POST', body: fd, headers:{'Accept':'application/json'} }); } catch(err) {}
   e.target.style.display = 'none';
   document.getElementById('fsuccess').style.display = 'block';
+  showToast('Site assessment booked. We will be in touch within 24 hours.');
 });
 
 // Waitlist form
@@ -1716,6 +1583,7 @@ document.getElementById('wlf').addEventListener('submit', async e => {
   } catch(err) {}
   e.target.style.display = 'none';
   document.getElementById('wlsuccess').style.display = 'block';
+  showToast("You're on the waitlist! We'll reach out before August 2026.");
   updateWlCount();
 });
 
@@ -1726,6 +1594,136 @@ function updateWlCount() {
   el.textContent = (wl.length + base) + ' homeowners on the waitlist';
 }
 updateWlCount();
+
+// ═══════════════════════════════════════════════════════
+// LENIS SMOOTH SCROLL
+// ═══════════════════════════════════════════════════════
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  touchMultiplier: 2,
+});
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+// Sync GSAP ScrollTrigger with Lenis
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add((time) => lenis.raf(time * 1000));
+gsap.ticker.lagSmoothing(0);
+
+// ═══════════════════════════════════════════════════════
+// GSAP SCROLL TRIGGER — reveal animations
+// ═══════════════════════════════════════════════════════
+gsap.registerPlugin(ScrollTrigger);
+
+// Stagger pillar cards
+gsap.utils.toArray('.pcard').forEach((card, i) => {
+  gsap.from(card, {
+    scrollTrigger: { trigger: card, start: 'top 85%', toggleActions: 'play none none none' },
+    y: 50, opacity: 0, duration: 0.8, delay: i * 0.15,
+    ease: 'power3.out',
+    onComplete: () => card.classList.add('vis')
+  });
+});
+
+// Stats counter animation
+gsap.utils.toArray('.stat-item').forEach((item) => {
+  const h4 = item.querySelector('h4');
+  const text = h4.textContent;
+  const num = parseFloat(text.replace(/[^0-9.]/g, ''));
+  const prefix = text.match(/^\$/)?.[0] || '';
+  const suffix = text.replace(/^[\$]?[\d,.]+/, '');
+  const isDecimal = text.includes('.');
+
+  ScrollTrigger.create({
+    trigger: item,
+    start: 'top 85%',
+    once: true,
+    onEnter: () => {
+      const obj = { val: 0 };
+      gsap.to(obj, {
+        val: num, duration: 2.5, ease: 'circ.out',
+        onUpdate: () => {
+          const v = isDecimal ? obj.val.toFixed(1) : Math.round(obj.val);
+          const formatted = Number(v).toLocaleString();
+          h4.textContent = prefix + formatted + suffix;
+        },
+        snap: { val: isDecimal ? 0.1 : 1 }
+      });
+    }
+  });
+});
+
+// General reveal animations via GSAP (for elements not handled by the original observer)
+gsap.utils.toArray('.shdr.rv, .oudolf-quote.rv, .oudolf-card.rv, .artisan-text.rv, .eco-text.rv, .eco-mockup.rv').forEach(el => {
+  gsap.from(el, {
+    scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' },
+    y: 40, opacity: 0, duration: 0.8, ease: 'power3.out',
+    onComplete: () => el.classList.add('vis')
+  });
+});
+
+// ═══════════════════════════════════════════════════════
+// MAGNETIC BUTTONS
+// ═══════════════════════════════════════════════════════
+(function() {
+  if (!matchMedia('(hover:hover)').matches) return;
+  const magnets = document.querySelectorAll('.btn-p, .btn-g, .nav-cta, .fsbtn');
+  magnets.forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const rect = btn.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const px = (e.clientX - cx) / rect.width;
+      const py = (e.clientY - cy) / rect.height;
+      btn.style.transform = 'translate(' + (px * 8) + 'px, ' + (py * 4) + 'px)';
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+  });
+})();
+
+// ═══════════════════════════════════════════════════════
+// ACTIVE NAV SECTION INDICATOR
+// ═══════════════════════════════════════════════════════
+(function() {
+  const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+  const sectionIds = [];
+  navLinks.forEach(a => {
+    const href = a.getAttribute('href');
+    if (href && href.startsWith('#')) sectionIds.push({ el: document.getElementById(href.slice(1)), link: a });
+  });
+
+  function updateActive() {
+    let current = null;
+    sectionIds.forEach(({ el }) => {
+      if (el && el.getBoundingClientRect().top <= window.innerHeight * 0.4) current = el;
+    });
+    sectionIds.forEach(({ el, link }) => {
+      link.classList.toggle('active', el === current);
+    });
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+})();
+
+// ═══════════════════════════════════════════════════════
+// TOAST NOTIFICATIONS
+// ═══════════════════════════════════════════════════════
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  document.getElementById('toastMsg').textContent = msg;
+  // Reset bar animation
+  const bar = toast.querySelector('.toast-bar');
+  bar.style.animation = 'none';
+  bar.offsetHeight; // reflow
+  bar.style.animation = '';
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 4500);
+}
 
 // ===== ARROW KEY NAVIGATION =====
 (function() {
