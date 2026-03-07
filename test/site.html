@@ -1107,6 +1107,7 @@ footer .flinks a:hover{color:var(--white)}
 </div>
 
 <script>
+var _isMobile = window.innerWidth < 768;
 // ═══════════════════════════════════════════════════════
 // PHOTOREALISTIC CANVAS GRASS — foreground layer
 // Hundreds of blades with tapered geometry, color
@@ -1118,7 +1119,7 @@ footer .flinks a:hover{color:var(--white)}
   container.appendChild(canvas);
   const ctx = canvas.getContext('2d');
 
-  const dpr = Math.min(window.devicePixelRatio, 2);
+  const dpr = Math.min(window.devicePixelRatio, _isMobile ? 1.5 : 2);
   let W, H;
 
   function resize() {
@@ -1133,7 +1134,7 @@ footer .flinks a:hover{color:var(--white)}
   }
 
   const LAYERS = 5;
-  const BLADES_PER_LAYER = [400, 450, 500, 550, 600];
+  const BLADES_PER_LAYER = _isMobile ? [100, 120, 140, 160, 180] : [400, 450, 500, 550, 600];
   let blades = [];
 
   function hsl(h, s, l) { return 'hsl(' + h + ',' + s + '%,' + l + '%)'; }
@@ -1284,12 +1285,15 @@ footer .flinks a:hover{color:var(--white)}
   function pad(n) { return String(n).padStart(4, '0'); }
 
   // Progressive loading — start showing as soon as first frames arrive
+  // Skip on mobile to avoid crashing the browser
   let minReady = 10;
-  for (let i = 1; i <= TOTAL_FRAMES; i++) {
-    const img = new Image();
-    img.src = FRAME_PATH + pad(i) + '.jpg';
-    img.onload = () => { loaded++; if (loaded >= minReady && !ready) { ready = true; resize(); drawFrame(0); } };
-    frames.push(img);
+  if (!_isMobile) {
+    for (let i = 1; i <= TOTAL_FRAMES; i++) {
+      const img = new Image();
+      img.src = FRAME_PATH + pad(i) + '.jpg';
+      img.onload = () => { loaded++; if (loaded >= minReady && !ready) { ready = true; resize(); drawFrame(0); } };
+      frames.push(img);
+    }
   }
 
   let W, H;
@@ -1595,19 +1599,21 @@ updateWlCount();
 // ═══════════════════════════════════════════════════════
 // LENIS SMOOTH SCROLL
 // ═══════════════════════════════════════════════════════
-const lenis = new Lenis({
-  duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  touchMultiplier: 2,
-});
-function raf(time) {
-  lenis.raf(time);
+// Lenis smooth scroll — desktop only (crashes mobile Safari)
+if (!_isMobile) {
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    touchMultiplier: 2,
+  });
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
   requestAnimationFrame(raf);
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((time) => lenis.raf(time * 1000));
 }
-requestAnimationFrame(raf);
-// Sync GSAP ScrollTrigger with Lenis
-lenis.on('scroll', ScrollTrigger.update);
-gsap.ticker.add((time) => lenis.raf(time * 1000));
 gsap.ticker.lagSmoothing(0);
 
 // ═══════════════════════════════════════════════════════
