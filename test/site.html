@@ -141,7 +141,7 @@ nav.scrolled{background:rgba(10,10,10,.85);backdrop-filter:blur(20px);-webkit-ba
 .mix-card:hover{border-color:rgba(15,122,54,.4);transform:translateY(-4px)}
 .mix-img{height:240px;position:relative;overflow:hidden}
 .mix-img-salal{background:linear-gradient(160deg,#0d2b0d,#1a4a1a 40%,#2d5a2d 70%,#1a3a1a)}
-.mix-img-fern{background:linear-gradient(160deg,#0a2a0a,#164a16 40%,#1a5a1a 70%,#0d2d0d)}
+.mix-img-fern{background:linear-gradient(160deg,#0a1a0a,#0f2a10 40%,#122e14 70%,#0a1a0a)}
 .mix-img-sedge{background:linear-gradient(160deg,#1a2a0a,#2a4a1a 40%,#3a5a2a 70%,#1a3a0a)}
 .mix-img svg{position:absolute;bottom:0;left:0;width:100%;height:100%;opacity:.6}
 .mix-card-body{padding:28px 28px 32px}
@@ -518,17 +518,8 @@ footer .flinks a:hover{color:var(--white)}
   <div style="max-width:1000px;margin:0 auto;text-align:center">
     <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:16px">Anatomy of a Swale</h2>
     <p style="color:var(--gray-400);font-weight:300;font-size:1.1rem;margin-bottom:32px">Seven engineered layers working together beneath the beauty.</p>
-    <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;display:block;margin:0 auto">
-      <defs>
-        <linearGradient id="waterGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#3b82f6" stop-opacity=".1"/><stop offset="50%" stop-color="#3b82f6" stop-opacity=".25"/><stop offset="100%" stop-color="#3b82f6" stop-opacity=".05"/></linearGradient>
-        <linearGradient id="soilGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#0f7a36" stop-opacity=".08"/><stop offset="100%" stop-color="#0f7a36" stop-opacity=".02"/></linearGradient>
-        <!-- Layer texture patterns -->
-        <pattern id="xMulchPat" width="14" height="6" patternUnits="userSpaceOnUse"><path d="M1 3Q3 1 6 3Q9 5 12 3" fill="none" stroke="#5a3d1a" stroke-width=".6" opacity=".5"/></pattern>
-        <pattern id="xSoilPat" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r=".8" fill="#6b5240" opacity=".4"/><circle cx="8" cy="7" r=".6" fill="#6b5240" opacity=".3"/><circle cx="1" cy="8" r=".5" fill="#6b5240" opacity=".35"/></pattern>
-        <pattern id="xGravelPat" width="16" height="14" patternUnits="userSpaceOnUse"><ellipse cx="4" cy="4" rx="3" ry="2.5" fill="none" stroke="#78716c" stroke-width=".6" opacity=".4"/><ellipse cx="12" cy="10" rx="2.5" ry="2" fill="none" stroke="#78716c" stroke-width=".6" opacity=".35"/><ellipse cx="9" cy="3" rx="2" ry="1.5" fill="none" stroke="#78716c" stroke-width=".6" opacity=".3"/><ellipse cx="3" cy="11" rx="2.5" ry="2" fill="none" stroke="#78716c" stroke-width=".6" opacity=".35"/></pattern>
-        <pattern id="xSubPat" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="6" cy="6" r=".4" fill="#3d2e20" opacity=".5"/><circle cx="2" cy="10" r=".3" fill="#3d2e20" opacity=".4"/><circle cx="10" cy="2" r=".35" fill="#3d2e20" opacity=".45"/></pattern>
-        <linearGradient id="subGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2a1f15"/><stop offset="100%" stop-color="#1a120a"/></linearGradient>
-      </defs>
+    <img src="../swale-cross-section.png" alt="Bioswale cross-section showing seven engineered layers" style="width:100%;max-width:900px;display:block;margin:0 auto;border-radius:12px">
+    <svg viewBox="0 0 0 0" xmlns="http://www.w3.org/2000/svg" style="display:none">
 
       <!-- ═══ 7. NATIVE SUBGRADE — undisturbed soil below everything ═══ -->
       <path d="M30 190 L180 190 Q260 190 320 240 Q380 295 450 300 Q520 295 580 240 Q640 190 720 190 L870 190 L870 480 L30 480Z" fill="url(#subGrad)"/>
@@ -717,20 +708,20 @@ footer .flinks a:hover{color:var(--white)}
   </div>
   <div class="mix-grid">
     <div class="mix-card rv">
-      <div class="mix-img mix-img-salal">
-        <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg"><g transform="translate(200,220)" opacity=".7"><line x1="0" y1="0" x2="0" y2="-100" stroke="#2d6b2d" stroke-width="3"/><line x1="0" y1="-40" x2="-35" y2="-70" stroke="#2d6b2d" stroke-width="2"/><line x1="0" y1="-60" x2="30" y2="-90" stroke="#2d6b2d" stroke-width="2"/><ellipse cx="-40" cy="-75" rx="22" ry="14" fill="#1a5a1a" opacity=".8"/><ellipse cx="35" cy="-95" rx="20" ry="13" fill="#1a6a1a" opacity=".7"/><ellipse cx="-10" cy="-105" rx="24" ry="15" fill="#1a5a1a" opacity=".8"/><ellipse cx="15" cy="-115" rx="18" ry="12" fill="#2a6a2a" opacity=".7"/><ellipse cx="-25" cy="-95" rx="20" ry="14" fill="#1a6a2a" opacity=".75"/></g></svg>
+      <div class="mix-img mix-img-salal" style="display:flex;align-items:center;justify-content:center">
+        <img src="../mix-salal.png" alt="Salal plant" style="width:80%;height:80%;object-fit:contain">
       </div>
       <div class="mix-card-body"><h3>Salal</h3><div class="latin">Gaultheria shallon</div><p>Evergreen groundcover native to the PNW. Dense root system stabilizes soil and prevents erosion. Leathery leaves shed water into the swale channel.</p></div>
     </div>
     <div class="mix-card rv">
-      <div class="mix-img mix-img-fern">
-        <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg"><g transform="translate(200,230)" opacity=".7"><path d="M0 0 Q-15-60-10-120" fill="none" stroke="#1a6a1a" stroke-width="2.5"/><path d="M0 0 Q15-60 10-120" fill="none" stroke="#1a6a1a" stroke-width="2.5"/><path d="M0 0 Q0-65 0-130" fill="none" stroke="#1a7a1a" stroke-width="3"/><path d="M0 0 Q-30-45-25-100" fill="none" stroke="#1a5a1a" stroke-width="2"/><path d="M0 0 Q30-45 25-100" fill="none" stroke="#1a5a1a" stroke-width="2"/><path d="M-8-40 Q-25-45-30-35" fill="none" stroke="#2a7a2a" stroke-width="1"/><path d="M8-40 Q25-45 30-35" fill="none" stroke="#2a7a2a" stroke-width="1"/><path d="M-6-60 Q-22-65-26-55" fill="none" stroke="#2a7a2a" stroke-width="1"/><path d="M6-60 Q22-65 26-55" fill="none" stroke="#2a7a2a" stroke-width="1"/></g></svg>
+      <div class="mix-img mix-img-fern" style="display:flex;align-items:center;justify-content:center">
+        <img src="../mix-fern.png" alt="Western Sword Fern" style="width:80%;height:80%;object-fit:contain">
       </div>
       <div class="mix-card-body"><h3>Western Sword Fern</h3><div class="latin">Polystichum munitum</div><p>Massive fronds intercept rainfall, slowing velocity before it reaches the swale floor. Root networks create natural biofilter channels in the soil media.</p></div>
     </div>
     <div class="mix-card rv">
-      <div class="mix-img mix-img-sedge">
-        <svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg"><g transform="translate(200,235)" opacity=".7"><line x1="0" y1="0" x2="-15" y2="-130" stroke="#3a7a2a" stroke-width="2"/><line x1="0" y1="0" x2="12" y2="-125" stroke="#3a7a2a" stroke-width="2"/><line x1="0" y1="0" x2="0" y2="-140" stroke="#4a8a3a" stroke-width="2.5"/><line x1="0" y1="0" x2="-25" y2="-110" stroke="#2a6a1a" stroke-width="1.5"/><line x1="0" y1="0" x2="22" y2="-115" stroke="#2a6a1a" stroke-width="1.5"/><line x1="0" y1="0" x2="-8" y2="-135" stroke="#3a8a2a" stroke-width="1.5"/><line x1="0" y1="0" x2="18" y2="-128" stroke="#3a7a2a" stroke-width="1.5"/></g></svg>
+      <div class="mix-img mix-img-sedge" style="display:flex;align-items:center;justify-content:center">
+        <img src="../mix-sedge.png" alt="Slough Sedge" style="width:80%;height:80%;object-fit:contain">
       </div>
       <div class="mix-card-body"><h3>Slough Sedge</h3><div class="latin">Carex obnupta</div><p>The workhorse of wetland filtration. Dense clumping growth traps sediment. Root zone hosts microbial communities that break down petroleum compounds and heavy metals.</p></div>
     </div>
