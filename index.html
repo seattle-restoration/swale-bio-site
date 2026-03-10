@@ -3,86 +3,1853 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SWALE - Bioswale Design, Construction & Maintenance | Seattle</title>
-<meta name="description" content="Seattle's premier bioswale company. We design, build, and maintain living infrastructure that settles stormwater, tames torrents, and filters filth. Coming soon.">
-<link rel="canonical" href="https://www.swale.bio">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><g fill='%2316a34a'><path d='M34 62Q33 58 32 52Q31 46 31 40Q30 34 30 28Q30 22 31 16Q31.5 12 32 8Q32.2 6 32.5 4L33 4Q33.5 6 33.8 8Q34 12 34.5 16Q35 22 35 28Q35 34 34.5 40Q34 46 33.5 52Q33 58 32.5 62Z' fill='%230d5e2e'/><path d='M31 10Q27 7 22 5Q26 5 28 7Q30 9 31 12Z'/><path d='M34 10Q38 7 43 5Q39 5 37 7Q35 9 34 12Z'/><path d='M30.5 14Q25 10 18 8Q22 9 25 11Q28 13 30 16Z'/><path d='M34.5 14Q40 10 47 8Q43 9 40 11Q37 13 35 16Z'/><path d='M30 18Q23 14 15 13Q19 14 23 16Q27 18 29 21Z'/><path d='M35 18Q42 14 50 13Q46 14 42 16Q38 18 36 21Z'/><path d='M30 22Q22 18 13 18Q17 19 21 21Q26 23 29 26Z'/><path d='M35 22Q43 18 52 18Q48 19 44 21Q39 23 36 26Z'/><path d='M30 27Q21 23 11 24Q16 24 20 26Q25 28 29 31Z'/><path d='M35 27Q44 23 54 24Q49 24 45 26Q40 28 36 31Z'/><path d='M30 32Q22 29 13 30Q17 30 21 32Q26 34 29 36Z'/><path d='M35 32Q43 29 52 30Q48 30 44 32Q39 34 36 36Z'/><path d='M30 37Q23 34 16 36Q20 35 24 37Q28 39 30 41Z'/><path d='M35 37Q42 34 49 36Q45 35 41 37Q37 39 35 41Z'/><path d='M31 42Q25 40 19 42Q23 41 26 42Q29 44 31 46Z'/><path d='M34 42Q40 40 46 42Q42 41 39 42Q36 44 34 46Z'/><path d='M31 48Q27 46 22 48Q25 47 28 48Q30 49 31 51Z'/><path d='M34 48Q38 46 43 48Q40 47 37 48Q35 49 34 51Z'/></g></svg>">
+<title>SWALE | Bioswale Design, Construction & Maintenance | Seattle</title>
+<meta name="description" content="Seattle's premier bioswale company. We design, build, and maintain living infrastructure that settles stormwater, tames torrents, and filters filth. Join our residential waitlist.">
+<meta name="keywords" content="bioswale, bioswale Seattle, bioswale installation, bioswale design, green infrastructure Seattle, stormwater management, rain garden, green factor, sustainable landscaping, bioswale waitlist, residential bioswale, commercial bioswale, hori hori, swale maintenance, beehive grate, Alderwood soil, check dam, bioretention, RainBird irrigation, smart irrigation Seattle, low maintenance landscaping, Piet Oudolf, naturalistic planting">
+<meta name="author" content="Swale LLC">
+<link rel="canonical" href="https://swale.bio">
+<link rel="icon" href="favicon.png" type="image/png">
+<meta property="og:title" content="SWALE | Seattle's Premier Infrastructure Company | Residential Waitlist Open">
+<meta property="og:description" content="Bioswale design, construction & maintenance. Settle stormwater. Tame torrents. Filter filth. Join the residential waitlist. August 2026 launch.">
+<meta property="og:url" content="https://swale.bio">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Swale LLC","url":"https://swale.bio","email":"jack@swale.bio","description":"Seattle's premier bioswale design, construction, and maintenance company. Residential waitlist now open for August 2026 launch.","address":{"@type":"PostalAddress","addressLocality":"Seattle","addressRegion":"WA","addressCountry":"US"},"serviceType":["Bioswale Design","Bioswale Construction","Green Infrastructure","Stormwater Management","Municipal Stormwater Engineering"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Services","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Commercial Bioswale Systems"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Residential Bioswale (Waitlist)"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Municipal Infrastructure"}}]}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@700;800;900&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-:root {
-  --bg: #0a0a0a; --surface: #141414; --border: #1f1f1f;
-  --text: #e7e5e4; --text-dim: #78716c; --text-faint: #57534e;
-  --green: #16a34a; --green-glow: rgba(22, 163, 74, 0.12);
-}
-html { -webkit-font-smoothing: antialiased; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; min-height: 100dvh; overflow: hidden; }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--black:#0a0a0a;--white:#fafafa;--green:#0f7a36;--green-light:#1a9e48;--green-dark:#0a5c28;--green-glow:rgba(15,122,54,0.15);--gray-400:#a8a29e;--gray-600:#57534e;--gray-800:#292524;--gray-900:#1c1917;--water:#3b82f6;--gold:#d4a853;--terracotta:#c4785a;--font-heading:'Outfit',system-ui,sans-serif;--font-body:'Inter',-apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+html{-webkit-font-smoothing:antialiased}
+body{font-family:var(--font-body);background:var(--black);color:var(--white);overflow-x:hidden;line-height:1.6}
+h1,h2,h3,h4{font-family:var(--font-heading)}
 
-.scene { position: relative; width: 100%; height: 100vh; height: 100dvh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; }
+/* ═══ HERO SCENE ═══ */
+.hero-wrap{position:relative;height:200vh}
+.hero-scene{position:sticky;top:0;width:100%;height:100vh;overflow:hidden}
 
-/* Animated background grid */
-.grid-bg { position: absolute; inset: 0; overflow: hidden; opacity: 0.04; }
-.grid-bg::before {
-  content: '';
-  position: absolute; inset: -50%;
-  background-image:
-    linear-gradient(var(--green) 1px, transparent 1px),
-    linear-gradient(90deg, var(--green) 1px, transparent 1px);
-  background-size: 60px 60px;
-  animation: drift 30s linear infinite;
-}
-@keyframes drift { to { transform: translate(60px, 60px); } }
+/* Layer 0: Mountain illustration background */
+.hero-mountains{position:absolute;inset:0;z-index:0;background:url('hero-mountains.png') center 55%/cover no-repeat;filter:brightness(0.3)}
 
-/* Radial glow behind logo */
-.glow { position: absolute; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, var(--green-glow), transparent 70%); filter: blur(60px); animation: pulse 4s ease-in-out infinite; }
-@keyframes pulse { 0%, 100% { opacity: 0.5; transform: scale(1); } 50% { opacity: 0.8; transform: scale(1.1); } }
+/* Layer 1: Video frame canvas — revealed when grass parts */
+.hero-video-canvas{position:absolute;inset:0;z-index:1;opacity:0}
+.hero-video-canvas canvas{width:100%;height:100%;display:block;object-fit:cover}
 
-.content { position: relative; z-index: 1; text-align: center; max-width: 560px; }
+/* Layer 2: Canvas grass — foreground, parts on scroll */
+.hero-grass{position:absolute;bottom:0;left:0;right:0;height:42vh;z-index:5;pointer-events:none;transition:none;transform-origin:center bottom}
+.hero-grass canvas{width:100%;height:100%;display:block}
 
-.logo { margin: 0 auto 40px; opacity: 0; animation: fadeUp 1s 0.2s ease-out forwards; }
-.logo img { width: clamp(180px, 40vw, 320px); height: auto; }
+/* Reveal layer — logo rises from grass, no dark background */
+.hero-reveal{position:absolute;inset:0;z-index:15;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;opacity:0;pointer-events:none}
+.hero-reveal-logo{width:clamp(200px,35vw,400px);height:auto;margin-bottom:16px;filter:brightness(0) invert(1);transition:none}
+.hero-reveal-sub{font-size:clamp(1rem,2vw,1.4rem);font-weight:300;color:#e7e5e4;letter-spacing:.04em;max-width:500px;text-shadow:0 1px 10px rgba(0,0,0,.5)}
 
-h1 { font-size: clamp(2.4rem, 6vw, 3.6rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 20px; opacity: 0; animation: fadeUp 1s 0.4s ease-out forwards; }
-h1 span { color: var(--green); }
+/* Dark overlay — final transition to content */
+.hero-dark-overlay{position:absolute;inset:0;background:var(--black);opacity:0;z-index:20;pointer-events:none}
 
-.tagline { font-size: clamp(1rem, 2.5vw, 1.15rem); color: var(--text-dim); line-height: 1.7; margin-bottom: 40px; opacity: 0; animation: fadeUp 1s 0.6s ease-out forwards; }
 
-.actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; opacity: 0; animation: fadeUp 1s 0.8s ease-out forwards; }
-.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: 100px; font-size: 0.95rem; font-weight: 600; text-decoration: none; transition: all 0.25s; }
-.btn-primary { background: var(--green); color: #fff; border: none; }
-.btn-primary:hover { background: #15803d; transform: translateY(-1px); }
-.btn-ghost { background: transparent; color: var(--text-dim); border: 1px solid var(--border); }
-.btn-ghost:hover { border-color: var(--text-dim); color: var(--text); }
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;transition:background .4s}
+nav.scrolled{background:rgba(10,10,10,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.nav-logo{text-decoration:none;display:flex;align-items:center}
+.nav-logo-img{height:32px;width:auto;image-rendering:auto}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{color:var(--gray-400);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.05em;transition:color .3s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--green)!important;color:var(--white)!important;padding:10px 24px;border-radius:100px;font-weight:600!important}
+#hero{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;z-index:10;padding:0 40px;pointer-events:none;transition:opacity .4s}
+#hero>*{pointer-events:auto}
+.hero-badge{display:inline-block;padding:6px 20px;border:1px solid rgba(15,122,54,.4);border-radius:100px;font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--green-light);margin-bottom:32px;background:rgba(10,10,10,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+#hero h1{font-family:'Barlow Condensed',var(--font-heading),sans-serif;font-size:clamp(2.8rem,6.5vw,5.5rem);font-weight:700;line-height:1;letter-spacing:.04em;margin-bottom:24px;text-transform:uppercase;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.5),0 1px 4px rgba(0,0,0,.4)}
+#hero h1 .accent{color:var(--green-light)}
+.hero-sub{font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:400;color:#e7e5e4;max-width:600px;margin:0 auto 48px;line-height:1.5;text-shadow:0 1px 12px rgba(0,0,0,.5),0 1px 3px rgba(0,0,0,.3)}
+.cta-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-p{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:var(--white);padding:16px 36px;border-radius:100px;font-size:1rem;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:background .3s}
+.btn-p:hover{background:var(--green-dark)}
+.btn-g{display:inline-flex;align-items:center;gap:8px;background:0 0;color:var(--white);padding:16px 36px;border-radius:100px;font-size:1rem;font-weight:500;text-decoration:none;border:1px solid var(--gray-600);cursor:pointer;transition:border-color .3s}
+.btn-g:hover{border-color:var(--white)}
+#shint{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:20;display:flex;flex-direction:column;align-items:center;gap:8px;animation:fl 2s ease-in-out infinite;transition:opacity .4s}
+#shint.hid{opacity:0}
+#shint span{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gray-600)}
+#shint i{display:block;width:1px;height:40px;background:linear-gradient(to bottom,var(--gray-600),transparent)}
+@keyframes fl{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+#below{position:relative;z-index:50}
 
-.footer { position: absolute; bottom: 32px; left: 0; right: 0; text-align: center; opacity: 0; animation: fadeUp 1s 1s ease-out forwards; }
-.footer span { font-size: 0.8rem; color: var(--text-faint); letter-spacing: 0.08em; }
-.bar { display: inline-block; width: 40px; height: 2px; background: var(--green); border-radius: 2px; margin-bottom: 8px; opacity: 0.4; }
+/* Mississippi meander map — scrolling background */
+.meander-bg{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100vw;height:100vh;z-index:9999;pointer-events:none;opacity:0;transition:opacity .4s}
+.meander-bg.vis{opacity:1}
+.meander-bg img{position:absolute;left:50%;transform:translateX(-50%);width:120%;max-width:none;filter:sepia(.2) saturate(.3);opacity:.1}
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+/* Section shared */
+.sec-line::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(to right,transparent,var(--green-dark),transparent)}
+.shdr{text-align:center;margin-bottom:32px}
+.shdr h2{font-size:clamp(2rem,4vw,3.5rem);font-weight:800;margin-bottom:16px}
+.shdr p{color:var(--gray-400);font-weight:300;font-size:1.1rem}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.rv.vis{opacity:1;transform:translateY(0)}
 
-@media (max-width: 480px) {
-  .glow { width: 280px; height: 280px; }
-}
+/* Pillars */
+.psec{position:relative;padding:56px 40px}
+#pillars{padding-top:60px;background:var(--black)}
+#pillars .shdr{opacity:0;transform:translateY(30px);transition:opacity .8s ease-out,transform .8s ease-out}
+#pillars.vis .shdr{opacity:1;transform:translateY(0)}
+#pillars .pgrid{opacity:0;transform:translateY(20px);transition:opacity .8s .2s ease-out,transform .8s .2s ease-out}
+#pillars.vis .pgrid{opacity:1;transform:translateY(0)}
+#below section:not(#pillars){background:var(--black)}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;max-width:1100px;margin:0 auto}
+.pcard{text-align:center;padding:60px 32px;border-radius:24px;background:rgba(15,122,54,.03);border:1px solid rgba(15,122,54,.08);opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1),border-color .4s}
+.pcard.vis{opacity:1;transform:translateY(0)}
+.pcard:hover{border-color:rgba(15,122,54,.3)}
+.pico{width:80px;height:80px;margin:0 auto 28px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.pico svg{width:40px;height:40px}
+.pcard h3{font-size:1.6rem;font-weight:800;margin-bottom:8px}
+.pcard .tag{font-size:1rem;color:var(--green);font-weight:600;margin-bottom:16px}
+.pcard p{font-size:.95rem;color:var(--gray-400);line-height:1.7;font-weight:300}
+
+/* Anatomy */
+.asec{padding:56px 40px;background:var(--gray-900);position:relative}
+
+/* Oudolf / Chelsea section */
+.oudolf-sec{position:relative;padding:72px 40px;background:linear-gradient(180deg,var(--black) 0%,#0d120a 50%,var(--black) 100%);overflow:hidden}
+.oudolf-sec .shdr p{max-width:600px;margin:0 auto}
+.oudolf-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:48px;max-width:1100px;margin:0 auto}
+.oudolf-card{border-radius:20px;overflow:hidden;border:1px solid rgba(15,122,54,.08);background:rgba(15,122,54,.02);transition:border-color .4s}
+.oudolf-card:hover{border-color:rgba(15,122,54,.25)}
+.oudolf-card-img{height:280px;position:relative;overflow:hidden}
+.oudolf-card-img svg{width:100%;height:100%}
+.oudolf-card-body{padding:32px}
+.oudolf-card-body h3{font-size:1.4rem;font-weight:700;margin-bottom:8px}
+.oudolf-card-body .loc{font-size:.75rem;color:var(--green);font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.oudolf-card-body p{font-size:.9rem;color:var(--gray-400);line-height:1.6;font-weight:300}
+.oudolf-quote{text-align:center;max-width:700px;margin:60px auto 0;padding:40px}
+.oudolf-quote blockquote{font-size:clamp(1.2rem,2.5vw,1.7rem);font-weight:300;color:rgba(255,255,255,.7);line-height:1.5;font-style:italic;margin-bottom:12px}
+.oudolf-quote cite{font-size:.8rem;color:var(--gray-600);font-style:normal;font-weight:500}
+.oudolf-bg{position:absolute;pointer-events:none;opacity:.04}
+.oudolf-bg svg{width:100%;height:100%}
+
+/* Swale Mix */
+.mix-section{position:relative;overflow:hidden}
+.mix-hero{position:relative;min-height:auto;display:flex;align-items:center;justify-content:center;text-align:center;padding:56px 40px 32px;background:transparent}
+.mix-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 0%,rgba(10,10,10,.3) 100%)}
+.mix-content{position:relative;z-index:2;max-width:800px}
+.mix-label{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green-light);margin-bottom:16px}
+.mix-content h2{font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;line-height:1;letter-spacing:-.03em;margin-bottom:20px}
+.mix-content h2 em{font-style:normal;color:var(--green)}
+.mix-content>p{font-size:1.2rem;color:var(--gray-400);font-weight:300;max-width:600px;margin:0 auto 60px;line-height:1.6}
+.mix-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1100px;margin:0 auto;padding:0 40px 60px;position:relative;z-index:2}
+.mix-card{border-radius:20px;overflow:hidden;border:1px solid rgba(15,122,54,.1);background:rgba(10,10,10,.8);backdrop-filter:blur(10px);transition:border-color .4s,transform .3s}
+.mix-card:hover{border-color:rgba(15,122,54,.4);transform:translateY(-4px)}
+.mix-img{height:240px;position:relative;overflow:hidden}
+.mix-img-salal{background:linear-gradient(160deg,#0a1a0a,#0f2a10 40%,#122e14 70%,#0a1a0a)}
+.mix-img-fern{background:linear-gradient(160deg,#0a1a0a,#0f2a10 40%,#122e14 70%,#0a1a0a)}
+.mix-img-sedge{background:linear-gradient(160deg,#0a1a0a,#0f2a10 40%,#122e14 70%,#0a1a0a)}
+.mix-img svg{position:absolute;bottom:0;left:0;width:100%;height:100%;opacity:.6}
+.mix-card-body{padding:28px 28px 32px}
+.mix-card-body h3{font-size:1.4rem;font-weight:800;margin-bottom:4px}
+.mix-card-body .latin{font-size:.8rem;color:var(--green);font-style:italic;margin-bottom:12px;font-weight:400}
+.mix-card-body p{font-size:.9rem;color:var(--gray-400);line-height:1.6;font-weight:300}
+
+/* Stats */
+.stats-bar{padding:40px 40px;background:var(--black);position:relative}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;max-width:1100px;margin:0 auto;text-align:center}
+.stat-item h4{font-size:clamp(2rem,4vw,3.5rem);font-weight:900;color:var(--green);letter-spacing:-.02em;line-height:1}
+.stat-item p{font-size:.85rem;color:var(--gray-400);font-weight:400;margin-top:8px}
+
+/* Hori Hori feature */
+/* Artisan Tools Section */
+.tools-section{padding:56px 40px;max-width:1100px;margin:0 auto}
+.tools-section .section-label{color:var(--gold);font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;margin-bottom:16px}
+.tools-section .section-title{font-size:clamp(2rem,3.5vw,2.8rem);font-weight:800;letter-spacing:.02em;line-height:1.15;margin-bottom:12px}
+.tools-section .section-sub{color:var(--gray-400);font-size:.95rem;max-width:480px;line-height:1.6;margin-bottom:72px}
+.tools-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.04);border-radius:16px;overflow:hidden}
+.tool{background:rgba(255,255,255,.015);padding:48px 32px 40px;display:flex;flex-direction:column;align-items:center;text-align:center;transition:background .4s ease;cursor:default;position:relative}
+.tool:hover{background:rgba(255,255,255,.035)}
+.tool::after{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(212,168,83,.25),transparent);opacity:0;transition:opacity .4s}
+.tool:hover::after{opacity:1}
+.tool-img{width:100%;height:220px;display:flex;align-items:center;justify-content:center;margin-bottom:28px;position:relative}
+.tool-img img{max-height:200px;max-width:90%;object-fit:contain;filter:brightness(1.1) contrast(1.05) drop-shadow(0 4px 24px rgba(0,0,0,.6));transition:transform .5s cubic-bezier(.16,1,.3,1),filter .5s}
+.tool:hover .tool-img img{transform:translateY(-8px) scale(1.03);filter:brightness(1.1) contrast(1.08) drop-shadow(0 12px 32px rgba(0,0,0,.6))}
+.tool-name{font-size:1.15rem;font-weight:700;letter-spacing:.03em;margin-bottom:6px}
+.tool-origin{color:var(--gold);font-size:.6rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;opacity:.8}
+.tool-desc{color:var(--gray-400);font-size:.82rem;line-height:1.55;max-width:260px}
+
+/* Waitlist CTA */
+.waitlist-sec{position:relative;padding:56px 40px;text-align:center;background:linear-gradient(180deg,var(--black) 0%,#0a150a 50%,var(--black) 100%)}
+.waitlist-sec h2{font-size:clamp(2.5rem,5vw,4rem);font-weight:900;margin-bottom:16px}
+.waitlist-sec h2 em{font-style:normal;color:var(--green)}
+.waitlist-sec>p{color:var(--gray-400);font-weight:300;font-size:1.1rem;max-width:600px;margin:0 auto 40px}
+.waitlist-perks{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:900px;margin:0 auto 48px}
+.wl-perk{padding:32px 24px;border-radius:16px;border:1px solid rgba(212,168,83,.1);background:rgba(212,168,83,.03);text-align:center}
+.wl-perk svg,.wl-perk img{margin-bottom:16px}
+.wl-perk h4{font-size:1rem;font-weight:700;margin-bottom:6px;color:var(--gold)}
+.wl-perk p{font-size:.85rem;color:var(--gray-400);font-weight:300;line-height:1.5}
+.wl-form{display:flex;gap:12px;max-width:500px;margin:40px auto 0}
+.wl-form input{flex:1;padding:14px 20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:100px;color:var(--white);font-family:inherit;font-size:.95rem;outline:none;transition:border-color .3s}
+.wl-form input::placeholder{color:var(--gray-600)}
+.wl-form input:focus{border-color:var(--green)}
+.wl-form button{padding:14px 28px;border-radius:100px;background:var(--green);color:var(--white);font-weight:600;border:none;cursor:pointer;font-family:inherit;font-size:.95rem;transition:background .3s;white-space:nowrap}
+.wl-form button:hover{background:var(--green-dark)}
+.wl-count{font-size:.8rem;color:var(--gray-600);margin-top:60px}
+#wlsuccess{display:none;padding:20px;text-align:center}
+#wlsuccess h3{color:var(--green);font-size:1.2rem;margin-bottom:4px}
+#wlsuccess p{color:var(--gray-400);font-size:.9rem;font-weight:300}
+
+/* Team */
+.team-sec{position:relative;padding:120px 40px;background:var(--black)}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;max-width:1100px;margin:0 auto}
+.team-card{text-align:center;padding:40px 24px;border-radius:20px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.05);transition:border-color .3s}
+.team-card:hover{border-color:rgba(15,122,54,.2)}
+.team-avatar{width:80px;height:80px;border-radius:50%;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-weight:800}
+.team-card h4{font-size:1.05rem;font-weight:700;margin-bottom:4px}
+.team-card .role{font-size:.75rem;color:var(--green);font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.team-card p{font-size:.85rem;color:var(--gray-400);font-weight:300;line-height:1.5}
+
+/* Artisan banner */
+.artisan-sec{position:relative;height:50vh;min-height:350px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.artisan-bg{position:absolute;inset:0;background:linear-gradient(160deg,#1a2a15,#2a4a25 40%,#1a3a1a 70%,#0d1f0d)}
+.artisan-overlay{position:absolute;inset:0;background:rgba(0,0,0,.3)}
+.artisan-text{position:relative;z-index:2;text-align:center;max-width:700px;padding:0 40px}
+.artisan-text h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:12px}
+.artisan-text p{font-size:1.1rem;color:var(--gray-400);font-weight:300}
+
+/* Products */
+.prsec{padding:56px 40px;position:relative}
+.prgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:1100px;margin:0 auto}
+.prcard{padding:48px 36px;border-radius:20px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);transition:border-color .4s,transform .3s}
+.prcard:hover{border-color:rgba(15,122,54,.3);transform:translateY(-4px)}
+.prcard .lab{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+.prcard h3{font-size:1.8rem;font-weight:800;margin-bottom:12px}
+.prcard .zone{font-size:.8rem;color:var(--gray-600);font-weight:500;margin-bottom:16px}
+.prcard p{font-size:.95rem;color:var(--gray-400);line-height:1.6;font-weight:300}
+.waitlist-badge{display:inline-block;padding:4px 14px;border-radius:100px;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;background:rgba(212,168,83,.1);color:var(--gold);border:1px solid rgba(212,168,83,.2);margin-top:16px}
+
+/* CTA */
+.ctasec{min-height:auto;display:flex;align-items:center;justify-content:center;padding:56px 40px;background:var(--gray-900);text-align:center;position:relative}
+.ctac{max-width:600px}
+.ctac h2{font-size:clamp(2.5rem,5vw,4rem);font-weight:900;margin-bottom:20px;line-height:1.05}
+.ctac>p{font-size:1.2rem;color:var(--gray-400);font-weight:300;margin-bottom:40px}
+.lform{display:flex;flex-direction:column;gap:16px;text-align:left;margin-bottom:32px}
+.lform .fr{display:flex;gap:12px}
+.lform .fr input{flex:1}
+.lform input,.lform select,.lform textarea{width:100%;padding:14px 18px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;color:var(--white);font-family:inherit;font-size:.95rem;outline:none;transition:border-color .3s}
+.lform input::placeholder,.lform textarea::placeholder{color:var(--gray-600)}
+.lform input:focus,.lform select:focus,.lform textarea:focus{border-color:var(--green)}
+.lform select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2357534e' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+.lform select option{background:var(--gray-900);color:var(--white)}
+.lform textarea{resize:vertical;min-height:80px}
+.fsbtn{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--green);color:var(--white);padding:16px 36px;border-radius:100px;font-size:1rem;font-weight:600;border:none;cursor:pointer;width:100%;transition:background .3s}
+.fsbtn:hover{background:var(--green-dark)}
+.fnote{font-size:.75rem;color:var(--gray-600);text-align:center;margin-top:8px}
+.assess-toggle{margin:4px 0}
+.assess-label{font-size:.8rem;font-weight:600;color:var(--gray-400);letter-spacing:.05em;text-transform:uppercase;margin-bottom:10px;display:block}
+.assess-options{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.assess-opt{cursor:pointer;display:block}
+.assess-opt input{display:none}
+.assess-card{padding:20px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);text-align:center;transition:border-color .3s,background .3s,box-shadow .3s}
+.assess-opt input:checked~.assess-card{border-color:var(--green);background:rgba(22,163,74,.08);box-shadow:0 0 24px rgba(22,163,74,.12)}
+.assess-icon{font-size:1.6rem;margin-bottom:8px;filter:grayscale(.8);transition:filter .3s}
+.assess-opt input:checked~.assess-card .assess-icon{filter:grayscale(0)}
+.assess-title{font-size:.95rem;font-weight:700;color:var(--white);margin-bottom:4px}
+.assess-sub{font-size:.75rem;color:var(--gray-500);font-weight:400}
+.assess-disclosure{margin-top:14px;padding:18px 20px;border-radius:12px;border-left:3px solid var(--green);background:rgba(22,163,74,.06);display:none;animation:discSlide .4s cubic-bezier(.16,1,.3,1)}
+@keyframes discSlide{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.disc-badge{display:inline-block;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:100px;background:rgba(22,163,74,.15);color:var(--green-light);margin-bottom:10px}
+.dry-badge{background:rgba(202,138,4,.12);color:#facc15}
+.assess-disclosure p{font-size:.85rem;color:var(--gray-400);line-height:1.6;margin:0 0 8px}
+.disc-note{font-size:.78rem!important;color:var(--gray-500)!important;font-style:italic}
+.disc-cert{display:flex;align-items:flex-start;gap:10px;margin-top:12px;cursor:pointer;font-size:.82rem;color:var(--gray-300);line-height:1.5}
+.disc-cert input[type="checkbox"]{margin-top:3px;accent-color:var(--green);width:16px;height:16px;flex-shrink:0}
+#fsuccess{display:none;text-align:center;padding:32px}
+#fsuccess h3{font-size:1.5rem;font-weight:700;color:var(--green);margin-bottom:8px}
+#fsuccess p{color:var(--gray-400);font-weight:300}
+.cdiv{display:flex;align-items:center;gap:16px;margin:24px 0;color:var(--gray-600);font-size:.8rem}
+.cdiv::before,.cdiv::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.08)}
+.ceml{font-size:1.1rem;color:var(--green);text-decoration:none;font-weight:500}
+
+footer{padding:60px 40px 40px;text-align:center;border-top:1px solid rgba(255,255,255,.05)}
+footer p{font-size:.8rem;color:var(--gray-600)}
+footer .fl{font-size:.75rem;color:var(--gray-600);margin-top:8px;letter-spacing:.1em;text-transform:uppercase}
+footer .flinks{margin-top:16px;display:flex;gap:24px;justify-content:center}
+footer .flinks a{color:var(--gray-600);text-decoration:none;font-size:.8rem;transition:color .3s}
+footer .flinks a:hover{color:var(--white)}
+
+.oudolf-plan{position:absolute;pointer-events:none;opacity:.06;z-index:0}
+.oudolf-plan svg{width:100%;height:100%}
+.oudolf-divider{width:100%;max-width:600px;margin:0 auto;display:block;opacity:.12;padding:40px 0}
+
+/* Supply Chain / Materials */
+.supply-sec{position:relative;padding:56px 40px;background:var(--black)}
+.supply-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;max-width:1100px;margin:0 auto}
+.supply-card{border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02);transition:border-color .4s}
+.supply-card:hover{border-color:rgba(15,122,54,.25)}
+.supply-card-vis{height:200px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.supply-card-body{padding:28px 28px 32px}
+.supply-card-body h3{font-size:1.3rem;font-weight:800;margin-bottom:4px}
+.supply-card-body .spec{font-size:.75rem;color:var(--green);font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+.supply-card-body p{font-size:.9rem;color:var(--gray-400);line-height:1.6;font-weight:300}
+
+/* Ecosystem / App */
+.eco-sec{position:relative;padding:56px 40px;background:linear-gradient(180deg,var(--gray-900) 0%,var(--black) 100%)}
+.eco-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;max-width:1100px;margin:0 auto;align-items:center}
+.eco-text h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:16px}
+.eco-text h2 em{font-style:normal;color:var(--green)}
+.eco-text>p{color:var(--gray-400);font-weight:300;font-size:1.05rem;line-height:1.6;margin-bottom:32px}
+.eco-features{display:flex;flex-direction:column;gap:16px}
+.eco-feat{display:flex;gap:14px;align-items:flex-start}
+.eco-feat .dot{width:8px;height:8px;border-radius:50%;margin-top:6px;flex-shrink:0}
+.eco-feat h4{font-size:.9rem;font-weight:600;margin-bottom:2px}
+.eco-feat p{font-size:.82rem;color:var(--gray-400);font-weight:300}
+.eco-mockup{position:relative;display:flex;align-items:center;justify-content:center}
+.phone-frame{width:260px;height:480px;border-radius:36px;border:2px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);padding:16px;overflow:hidden;position:relative}
+.phone-notch{width:100px;height:24px;background:var(--black);border-radius:0 0 16px 16px;position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:2}
+.phone-screen{width:100%;height:100%;border-radius:24px;overflow:hidden;background:linear-gradient(180deg,#0a1a0a,#0d200d);padding:20px 16px;display:flex;flex-direction:column;gap:12px}
+.phone-header{text-align:center;padding:20px 0 8px}
+.phone-header h5{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green)}
+.phone-header p{font-size:.6rem;color:var(--gray-600);margin-top:2px}
+.phone-card{background:rgba(15,122,54,.05);border:1px solid rgba(15,122,54,.1);border-radius:12px;padding:12px}
+.phone-card h6{font-size:.65rem;font-weight:600;color:var(--gray-400);margin-bottom:4px}
+.phone-card .val{font-size:1.1rem;font-weight:800;color:var(--green)}
+.phone-card .sub{font-size:.55rem;color:var(--gray-600);margin-top:2px}
+
+/* Low maintenance banner */
+.maint-sec{position:relative;padding:80px 40px;text-align:center;background:var(--black)}
+.maint-sec h3{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:12px}
+.maint-sec h3 em{font-style:normal;color:var(--green)}
+.maint-sec p{color:var(--gray-400);font-weight:300;font-size:1rem;max-width:600px;margin:0 auto}
+.maint-pills{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.maint-pill{padding:8px 20px;border-radius:100px;border:1px solid rgba(15,122,54,.15);background:rgba(15,122,54,.04);font-size:.8rem;font-weight:500;color:var(--gray-400)}
+
+/* Mobile hamburger */
+.hamburger{display:none;background:0 0;border:0;cursor:pointer;padding:8px;z-index:1001}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);margin:5px 0;transition:transform .3s,opacity .3s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-overlay{display:none;position:fixed;inset:0;background:rgba(10,10,10,.97);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:32px}
+.mobile-overlay.open{display:flex}
+.mobile-overlay a{color:var(--white);text-decoration:none;font-size:1.3rem;font-weight:500;letter-spacing:.05em;transition:color .3s}
+.mobile-overlay a:hover{color:var(--green)}
+.mobile-overlay .nav-cta{background:var(--green);padding:14px 32px;border-radius:100px;font-weight:600}
+
+/* SWM Savings section */
+.savings-sec{position:relative;padding:56px 40px;background:linear-gradient(180deg,var(--black) 0%,#0a1a0a 50%,var(--black) 100%)}
+.savings-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.savings-text h2{font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:16px}
+.savings-text h2 em{font-style:normal;color:var(--green)}
+.savings-text>p{color:var(--gray-400);font-weight:300;font-size:1.05rem;line-height:1.6;margin-bottom:24px}
+.savings-source{font-size:.75rem;color:var(--gray-600);margin-top:16px}
+.savings-source a{color:var(--green);text-decoration:none}
+.savings-calc{background:rgba(15,122,54,.03);border:1px solid rgba(15,122,54,.1);border-radius:20px;padding:40px}
+.savings-calc h3{font-size:1.2rem;font-weight:700;margin-bottom:24px;text-align:center}
+.calc-field{margin-bottom:20px}
+.calc-field label{display:block;font-size:.8rem;font-weight:600;color:var(--gray-400);margin-bottom:6px;letter-spacing:.05em;text-transform:uppercase}
+.calc-field input,.calc-field select{width:100%;padding:12px 16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:var(--white);font-family:inherit;font-size:.95rem;outline:none;transition:border-color .3s}
+.calc-field input:focus,.calc-field select:focus{border-color:var(--green)}
+.calc-field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2357534e' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.calc-field select option{background:var(--gray-900);color:var(--white)}
+.calc-result{text-align:center;padding:24px;border-radius:12px;background:rgba(15,122,54,.06);border:1px solid rgba(15,122,54,.15)}
+.calc-result .big{font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--green);line-height:1}
+.calc-result .sub{font-size:.85rem;color:var(--gray-400);margin-top:8px;font-weight:300}
+
+/* Matrix planting section */
+.matrix-sec{position:relative;padding:56px 40px;background:var(--black);overflow:hidden}
+.matrix-inner{max-width:1100px;margin:0 auto}
+.matrix-methods{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:60px}
+.matrix-method{padding:40px 28px;border-radius:20px;border:1px solid rgba(15,122,54,.08);background:rgba(15,122,54,.02);text-align:center;transition:border-color .4s;position:relative;overflow:hidden;z-index:1}
+.matrix-method::before{content:'';position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity .6s ease;z-index:-1}
+.matrix-method:nth-child(1)::before{background-image:url('oudolf-1.jpg')}
+.matrix-method:nth-child(2)::before{background-image:url('oudolf-2.jpg')}
+.matrix-method:nth-child(3)::before{background-image:url('oudolf-1.jpg');background-position:right center}
+.matrix-method:hover::before{opacity:.15}
+.matrix-method:hover{border-color:rgba(15,122,54,.25)}
+.matrix-method h4{font-size:1.2rem;font-weight:700;margin-bottom:8px}
+.matrix-method .tag{font-size:.75rem;color:var(--green);font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.matrix-method p{font-size:.9rem;color:var(--gray-400);line-height:1.6;font-weight:300}
+.matrix-method svg{margin-bottom:20px}
+.plant-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.plant-tag{padding:16px 20px;border-radius:12px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02);transition:border-color .3s}
+.plant-tag:hover{border-color:rgba(15,122,54,.2)}
+.plant-tag h5{font-size:.9rem;font-weight:600;margin-bottom:2px}
+.plant-tag .latin{font-size:.7rem;color:var(--green);font-style:italic;font-weight:400}
+.plant-tag .role{font-size:.72rem;color:var(--gray-600);margin-top:4px;font-weight:300}
+
+@media(max-width:768px){.hamburger{display:block}nav{padding:16px 24px}.nav-links{display:none}.pgrid,.prgrid,.mix-grid,.stats-grid,.waitlist-perks{grid-template-columns:1fr!important;gap:24px}.psec,.asec,.prsec,.ctasec,.oudolf-sec,.team-sec,.waitlist-sec{padding:80px 24px}.lform .fr{flex-direction:column}.mix-hero{padding:80px 24px}.mix-grid{padding:0 24px 80px}.stats-grid{grid-template-columns:repeat(2,1fr)}.oudolf-grid{grid-template-columns:1fr}.team-grid{grid-template-columns:repeat(2,1fr)}.wl-form{flex-direction:column}.supply-grid{grid-template-columns:1fr}.eco-inner{grid-template-columns:1fr;gap:40px}.supply-sec,.eco-sec,.maint-sec,.savings-sec,.matrix-sec{padding:80px 24px}.savings-inner{grid-template-columns:1fr}.matrix-methods{grid-template-columns:1fr}.tools-section{padding:64px 24px 56px}.tools-row{grid-template-columns:1fr}.tool{padding:36px 24px 32px}.tool-img{height:180px}}
+
+/* ═══ TOAST NOTIFICATION ═══ */
+.toast{position:fixed;bottom:32px;right:32px;z-index:10000;background:var(--green);color:#fff;padding:16px 24px;border-radius:14px;font-size:.95rem;font-weight:500;display:flex;align-items:center;gap:10px;box-shadow:0 8px 32px rgba(15,122,54,.3),0 2px 8px rgba(0,0,0,.2);transform:translateY(120px);opacity:0;transition:transform .5s cubic-bezier(.16,1,.3,1),opacity .5s cubic-bezier(.16,1,.3,1);pointer-events:none}
+.toast.show{transform:translateY(0);opacity:1;pointer-events:auto}
+.toast svg{flex-shrink:0}
+.toast-bar{position:absolute;bottom:0;left:0;height:3px;background:rgba(255,255,255,.4);border-radius:0 0 14px 14px;animation:toastBar 4s linear forwards}
+@keyframes toastBar{from{width:100%}to{width:0}}
+
+/* ═══ HERO STAGGERED ENTRANCE ═══ */
+.hero-badge,.hero-h1-wrap,#hero h1,.hero-sub,.cta-group{opacity:0;transform:translateY(30px);animation-fill-mode:forwards;animation-timing-function:cubic-bezier(.16,1,.3,1);animation-duration:.9s}
+.hero-badge{animation-name:heroIn;animation-delay:.3s}
+#hero h1{animation-name:heroIn;animation-delay:.5s}
+.hero-sub{animation-name:heroIn;animation-delay:.7s}
+.cta-group{animation-name:heroIn;animation-delay:.9s}
+@keyframes heroIn{to{opacity:1;transform:translateY(0)}}
+
+/* ═══ ACTIVE NAV INDICATOR ═══ */
+.nav-links{position:relative}
+.nav-links a{position:relative}
+.nav-links a:not(.nav-cta)::after{content:'';position:absolute;bottom:-6px;left:0;right:0;height:2px;background:var(--green);border-radius:1px;transform:scaleX(0);transition:transform .3s cubic-bezier(.16,1,.3,1);transform-origin:center}
+.nav-links a:not(.nav-cta).active::after{transform:scaleX(1)}
+
+/* ═══ CARD HOVER DEPTH ═══ */
+.pcard{transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1),border-color .4s,box-shadow .4s}
+.pcard:hover{border-color:rgba(15,122,54,.3);box-shadow:0 8px 30px rgba(15,122,54,.08),0 0 60px rgba(15,122,54,.04);transform:translateY(-6px)!important}
+.mix-card{transition:border-color .4s,transform .3s,box-shadow .4s}
+.mix-card:hover{border-color:rgba(15,122,54,.4);transform:translateY(-8px);box-shadow:0 12px 40px rgba(15,122,54,.1),0 0 80px rgba(15,122,54,.05)}
+.supply-card{transition:border-color .4s,transform .3s,box-shadow .4s}
+.supply-card:hover{border-color:rgba(15,122,54,.25);transform:translateY(-6px);box-shadow:0 8px 30px rgba(15,122,54,.08)}
+.team-card{transition:border-color .3s,transform .3s,box-shadow .3s}
+.team-card:hover{border-color:rgba(15,122,54,.2);transform:translateY(-4px);box-shadow:0 6px 24px rgba(15,122,54,.06)}
+.prcard{transition:border-color .4s,transform .3s,box-shadow .4s}
+.prcard:hover{border-color:rgba(15,122,54,.3);transform:translateY(-8px);box-shadow:0 12px 40px rgba(15,122,54,.1),0 0 60px rgba(15,122,54,.04)}
+.matrix-method{transition:border-color .4s,transform .3s,box-shadow .4s}
+.matrix-method:hover{border-color:rgba(15,122,54,.25);transform:translateY(-4px);box-shadow:0 6px 24px rgba(15,122,54,.06)}
+
+/* ═══ BUTTON FOCUS RINGS ═══ */
+.btn-p:focus-visible,.btn-g:focus-visible,.nav-cta:focus-visible,.fsbtn:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.btn-p,.btn-g,.fsbtn,.nav-cta{transition:background .3s,transform .15s,box-shadow .3s}
+.btn-p:active,.fsbtn:active{transform:scale(.97)}
+.btn-g:active{transform:scale(.97)}
+
+/* ═══ MOBILE NAV STAGGERED ═══ */
+.mobile-overlay a{opacity:0;transform:translateY(20px);transition:opacity .4s ease,transform .4s ease,color .3s}
+.mobile-overlay.open a{opacity:1;transform:translateY(0)}
+.mobile-overlay.open a:nth-child(1){transition-delay:.05s}
+.mobile-overlay.open a:nth-child(2){transition-delay:.1s}
+.mobile-overlay.open a:nth-child(3){transition-delay:.15s}
+.mobile-overlay.open a:nth-child(4){transition-delay:.2s}
+.mobile-overlay.open a:nth-child(5){transition-delay:.25s}
+.mobile-overlay.open a:nth-child(6){transition-delay:.3s}
+
+/* ═══ SCROLL HINT CHEVRON ═══ */
+#shint i{display:none}
+.scroll-chevron{width:20px;height:20px;border-right:2px solid var(--gray-600);border-bottom:2px solid var(--gray-600);transform:rotate(45deg);animation:chevronBounce 2s ease-in-out infinite}
+@keyframes chevronBounce{0%,100%{transform:rotate(45deg) translate(0,0);opacity:.6}50%{transform:rotate(45deg) translate(4px,4px);opacity:1}}
 </style>
+<!-- Lenis smooth scroll -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
 </head>
 <body>
-<div class="scene">
-  <div class="grid-bg"></div>
-  <div class="glow"></div>
-  <div class="content">
-    <div class="logo"><img src="swale-logo.png" alt="Swale"></div>
-    <h1>Coming <span>Soon</span></h1>
-    <p class="tagline">Get in touch with us if you want to settle your stormwater.</p>
-    <div class="actions">
-      <a href="mailto:jack@swale.bio" class="btn btn-primary">Get in Touch</a>
+<div class="toast" id="toast"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><span id="toastMsg"></span><div class="toast-bar"></div></div>
+
+<nav id="nav">
+  <a href="#" class="nav-logo"><img src="swale-logo.png" alt="SWALE" class="nav-logo-img"></a>
+  <div class="nav-links">
+    <a href="#pillars">What We Do</a>
+    <a href="#anatomy">How It Works</a>
+    <a href="#savings">Savings</a>
+    <a href="#waitlist">Waitlist</a>
+    <a href="#products">Products</a>
+    <a href="#contact" class="nav-cta">Get Started</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-overlay" id="mobileNav">
+  <a href="#pillars" onclick="closeMobile()">What We Do</a>
+  <a href="#anatomy" onclick="closeMobile()">How It Works</a>
+  <a href="#savings" onclick="closeMobile()">Savings</a>
+  <a href="#waitlist" onclick="closeMobile()">Waitlist</a>
+  <a href="#products" onclick="closeMobile()">Products</a>
+  <a href="#contact" class="nav-cta" onclick="closeMobile()">Get Started</a>
+</div>
+
+<!-- ═══ HERO SCENE — Scroll-through grass field ═══ -->
+<div class="hero-wrap" id="heroWrap">
+<div class="hero-scene" id="heroScene">
+  <!-- Layer 0: Mountain illustration -->
+  <div class="hero-mountains"></div>
+
+  <!-- Layer 1: Video frames — revealed when grass parts (placeholder until real footage) -->
+  <div class="hero-video-canvas" id="heroVideoCanvas"></div>
+
+  <!-- Layer 2: Canvas grass foreground -->
+  <div class="hero-grass" id="heroGrass"></div>
+
+  <!-- Reveal layer — logo after video -->
+  <div class="hero-reveal" id="heroReveal">
+    <img src="swale-logo-white.png" alt="SWALE" class="hero-reveal-logo">
+    <div class="hero-reveal-sub">Welcome to your new backyard.</div>
+  </div>
+
+  <!-- Dark overlay for transition -->
+  <div class="hero-dark-overlay" id="heroDark"></div>
+
+  <!-- Hero text overlay -->
+  <div id="hero">
+    <div class="hero-badge">Seattle's Premier Infrastructure Company</div>
+    <h1>Grass is <span class="accent">ugly.</span></h1>
+    <p class="hero-sub">We augment lawns with living infrastructure. The trim that settles stormwater, tames torrents, and filters filth.</p>
+    <div class="cta-group">
+      <a href="#waitlist" class="btn-p">Join the Waitlist <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="#pillars" class="btn-g">See How It Works</a>
     </div>
   </div>
-  <div class="footer">
-    <div class="bar"></div><br>
-    <span>SEATTLE, WA</span>
-  </div>
+
+  <div id="shint"><span>Scroll to enter</span><div class="scroll-chevron"></div></div>
 </div>
+</div>
+
+<div class="meander-bg" id="meanderBg"><img src="mississippi-meander.jpg" alt="" id="meanderImg"></div>
+<div id="below">
+
+<!-- PILLARS -->
+<section class="psec sec-line" id="pillars">
+  <div class="shdr rv"><h2>Settle damaging stormwaters.</h2><p>Three ways we protect your property, your watershed, and your bottom line.</p></div>
+  <div class="oudolf-plan" style="top:10%;right:5%;width:300px;height:300px">
+    <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="80" cy="60" r="3" fill="#0f7a36"/><circle cx="95" cy="55" r="2.5" fill="#0f7a36"/><circle cx="88" cy="72" r="2" fill="#0f7a36"/><circle cx="72" cy="50" r="2.5" fill="#0f7a36"/><circle cx="100" cy="68" r="3" fill="#0f7a36"/>
+      <path d="M160 120 Q180 100 210 110 Q240 120 235 150 Q230 180 200 185 Q170 190 155 165 Q140 140 160 120Z" fill="none" stroke="#0f7a36" stroke-width="1.5"/>
+      <circle cx="180" cy="140" r="2" fill="#0f7a36"/><circle cx="195" cy="135" r="1.5" fill="#0f7a36"/><circle cx="200" cy="155" r="2" fill="#0f7a36"/>
+    </svg>
+  </div>
+  <div class="pgrid">
+    <div class="pcard" data-d="0">
+      <div class="pico" style="background:rgba(59,130,246,.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/><path d="M8 14l2.5-3L13 13l3-4"/></svg></div>
+      <div class="tag">Reduce Runoff</div>
+      <h3>Divert Sheet Flow</h3>
+      <p>Route stormwater from impervious surfaces into established conveyances. Less runoff, lower King County SWM fees.</p>
+    </div>
+    <div class="pcard" data-d="150">
+      <div class="pico" style="background:var(--green-glow)"><svg viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linecap="round"><path d="M3 17h4l3-6 4 10 3-8h4"/></svg></div>
+      <div class="tag">Tame Torrents</div>
+      <h3>Slow the Violence</h3>
+      <p>90% velocity reduction through check dams and meanders. Controlled cascades, not chaos.</p>
+    </div>
+    <div class="pcard" data-d="300">
+      <div class="pico" style="background:rgba(202,138,4,.12)"><svg viewBox="0 0 24 24" fill="none" stroke="#ca8a04" stroke-width="1.5" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+      <div class="tag">Filter Filth</div>
+      <h3>Strip It Clean</h3>
+      <p>Heavy metals, oils, petroleum compounds, sediment. Gone. 99% pollutant removal before it reaches the creek.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ANATOMY -->
+<section class="asec rv sec-line" id="anatomy">
+  <div style="max-width:1000px;margin:0 auto;text-align:center">
+    <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;margin-bottom:16px">Anatomy of a Swale</h2>
+    <p style="color:var(--gray-400);font-weight:300;font-size:1.1rem;margin-bottom:32px">Seven engineered layers working together beneath the beauty.</p>
+    <img src="swale-cross-section.png" alt="Bioswale cross-section showing seven engineered layers" style="width:100%;max-width:900px;display:block;margin:0 auto 48px;border-radius:12px">
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;max-width:1000px;margin:0 auto;padding:0 20px">
+      <div style="background:rgba(15,122,54,.08);border:1px solid rgba(15,122,54,.15);border-radius:16px;padding:24px 16px;text-align:center">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" style="margin-bottom:12px"><path d="M18 4C10 4 4 10 4 18s6 14 14 14 14-6 14-14S26 4 18 4z" stroke="#0f7a36" stroke-width="1.5" opacity=".3"/><path d="M18 8v10l7 4" stroke="#0f7a36" stroke-width="2" stroke-linecap="round"/></svg>
+        <div style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:6px">Settles</div>
+        <h4 style="font-size:1rem;font-weight:800;margin-bottom:6px">Settles Stormwater</h4>
+        <p style="font-size:.8rem;color:var(--gray-400);font-weight:300;line-height:1.5">Engineered contours slow the rush. Water pools, pauses, and percolates on your terms.</p>
+      </div>
+      <div style="background:rgba(15,122,54,.08);border:1px solid rgba(15,122,54,.15);border-radius:16px;padding:24px 16px;text-align:center">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" style="margin-bottom:12px"><path d="M6 30L18 6l12 24" stroke="#0f7a36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="6" y1="30" x2="30" y2="30" stroke="#0f7a36" stroke-width="2"/></svg>
+        <div style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:6px">Grades</div>
+        <h4 style="font-size:1rem;font-weight:800;margin-bottom:6px">Gently Grades</h4>
+        <p style="font-size:.8rem;color:var(--gray-400);font-weight:300;line-height:1.5">Precise slopes guide every drop. No ponding, no erosion — just controlled flow.</p>
+      </div>
+      <div style="background:rgba(15,122,54,.08);border:1px solid rgba(15,122,54,.15);border-radius:16px;padding:24px 16px;text-align:center">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" style="margin-bottom:12px"><circle cx="18" cy="18" r="12" stroke="#0f7a36" stroke-width="1.5" opacity=".3"/><path d="M12 18h12M18 12v12" stroke="#0f7a36" stroke-width="2" stroke-linecap="round"/></svg>
+        <div style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:6px">Filters</div>
+        <h4 style="font-size:1rem;font-weight:800;margin-bottom:6px">Filters Filth</h4>
+        <p style="font-size:.8rem;color:var(--gray-400);font-weight:300;line-height:1.5">Seven layers strip heavy metals, petroleum, and sediment. What leaves is clean.</p>
+      </div>
+      <div style="background:rgba(15,122,54,.08);border:1px solid rgba(15,122,54,.15);border-radius:16px;padding:24px 16px;text-align:center">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" style="margin-bottom:12px"><path d="M18 4c-4 8-10 12-10 18a10 10 0 0020 0c0-6-6-10-10-18z" stroke="#0f7a36" stroke-width="2"/></svg>
+        <div style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:6px">Reduces</div>
+        <h4 style="font-size:1rem;font-weight:800;margin-bottom:6px">Reduces Runoff</h4>
+        <p style="font-size:.8rem;color:var(--gray-400);font-weight:300;line-height:1.5">Up to 90% of stormwater absorbed on-site. Less burden on aging municipal systems.</p>
+      </div>
+      <div style="background:rgba(15,122,54,.08);border:1px solid rgba(15,122,54,.15);border-radius:16px;padding:24px 16px;text-align:center">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" style="margin-bottom:12px"><path d="M8 28Q14 16 18 12Q22 16 28 28" stroke="#0f7a36" stroke-width="2" fill="none"/><line x1="18" y1="12" x2="18" y2="6" stroke="#0f7a36" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="8" r="2" fill="#0f7a36" opacity=".4"/><circle cx="22" cy="8" r="2" fill="#0f7a36" opacity=".4"/></svg>
+        <div style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:6px">Curb Appeal</div>
+        <h4 style="font-size:1rem;font-weight:800;margin-bottom:6px">Cavernous Curb Appeal</h4>
+        <p style="font-size:.8rem;color:var(--gray-400);font-weight:300;line-height:1.5">Infrastructure that looks like landscape. Your neighbors will want one too.</p>
+      </div>
+    </div>
+    <svg viewBox="0 0 0 0" xmlns="http://www.w3.org/2000/svg" style="display:none">
+
+      <!-- ═══ 7. NATIVE SUBGRADE — undisturbed soil below everything ═══ -->
+      <path d="M30 190 L180 190 Q260 190 320 240 Q380 295 450 300 Q520 295 580 240 Q640 190 720 190 L870 190 L870 480 L30 480Z" fill="url(#subGrad)"/>
+      <path d="M30 190 L180 190 Q260 190 320 240 Q380 295 450 300 Q520 295 580 240 Q640 190 720 190 L870 190 L870 480 L30 480Z" fill="url(#xSubPat)"/>
+
+      <!-- ═══ 5. GRAVEL DRAINAGE BED — washed 3/4" drain rock, 12" deep ═══ -->
+      <path d="M260 360 Q300 355 350 370 Q400 385 450 388 Q500 385 550 370 Q600 355 640 360 L640 400 Q600 395 550 405 Q500 415 450 418 Q400 415 350 405 Q300 395 260 400Z" fill="#3d3530"/>
+      <path d="M260 360 Q300 355 350 370 Q400 385 450 388 Q500 385 550 370 Q600 355 640 360 L640 400 Q600 395 550 405 Q500 415 450 418 Q400 415 350 405 Q300 395 260 400Z" fill="url(#xGravelPat)"/>
+
+      <!-- ═══ 6. PERFORATED DRAIN PIPE — 6" HDPE centered in gravel ═══ -->
+      <ellipse cx="450" cy="405" rx="24" ry="12" fill="rgba(30,30,35,.6)" stroke="#3b82f6" stroke-width="1.8"/>
+      <ellipse cx="450" cy="405" rx="20" ry="10" fill="none" stroke="#3b82f6" stroke-width=".5" opacity=".4"/>
+      <g fill="#3b82f6" opacity=".5"><circle cx="432" cy="403" r="1.2"/><circle cx="438" cy="398" r="1.2"/><circle cx="445" cy="396" r="1.2"/><circle cx="455" cy="396" r="1.2"/><circle cx="462" cy="398" r="1.2"/><circle cx="468" cy="403" r="1.2"/><circle cx="465" cy="410" r="1.2"/><circle cx="435" cy="410" r="1.2"/></g>
+
+      <!-- ═══ 4. GEOTEXTILE FABRIC — separation membrane ═══ -->
+      <path d="M240 358 Q300 350 350 365 Q400 380 450 384 Q500 380 550 365 Q600 350 660 358" fill="none" stroke="#a8a29e" stroke-width="1.8" stroke-dasharray="6 3"/>
+
+      <!-- ═══ 3. ENGINEERED BIORETENTION SOIL — Alderwood series, 18" deep ═══ -->
+      <path d="M180 190 Q260 190 320 240 Q380 295 450 300 Q520 295 580 240 Q640 190 720 190 L660 358 Q600 350 550 365 Q500 380 450 384 Q400 380 350 365 Q300 350 240 358Z" fill="#3a2a1e"/>
+      <path d="M180 190 Q260 190 320 240 Q380 295 450 300 Q520 295 580 240 Q640 190 720 190 L660 358 Q600 350 550 365 Q500 380 450 384 Q400 380 350 365 Q300 350 240 358Z" fill="url(#xSoilPat)"/>
+
+      <!-- ═══ 2. MULCH LAYER — 3" organic mulch on surface ═══ -->
+      <path d="M180 190 Q260 190 320 240 Q380 295 450 300 Q520 295 580 240 Q640 190 720 190 L718 196 Q638 196 578 246 Q518 301 450 306 Q382 301 322 246 Q262 196 182 196Z" fill="#2e1e10"/>
+      <path d="M180 190 Q260 190 320 240 Q380 295 450 300 Q520 295 580 240 Q640 190 720 190 L718 196 Q638 196 578 246 Q518 301 450 306 Q382 301 322 246 Q262 196 182 196Z" fill="url(#xMulchPat)"/>
+
+      <!-- ═══ GROUND SURFACE PROFILE ═══ -->
+      <path d="M30 190 L180 190 Q260 190 320 240 Q380 295 450 300 Q520 295 580 240 Q640 190 720 190 L870 190" fill="none" stroke="#78716c" stroke-width="2.5"/>
+      <!-- Flat ground fill (left & right) -->
+      <path d="M30 190 L180 190 L180 196 L30 196Z" fill="#2e1e10"/><path d="M30 190 L180 190 L180 196 L30 196Z" fill="url(#xMulchPat)"/>
+      <path d="M720 190 L870 190 L870 196 L720 196Z" fill="#2e1e10"/><path d="M720 190 L870 190 L870 196 L720 196Z" fill="url(#xMulchPat)"/>
+
+      <!-- ═══ CHECK DAMS — timber logs spanning the channel ═══ -->
+      <rect x="330" y="248" width="50" height="10" rx="4" fill="#5a4020" stroke="#7a5a30" stroke-width=".8" transform="rotate(-8,355,253)"/>
+      <g><circle cx="340" cy="253" r="5" fill="none" stroke="#7a5a30" stroke-width=".5" opacity=".6"/><circle cx="340" cy="253" r="2.5" fill="#4a3018"/><circle cx="370" cy="251" r="5" fill="none" stroke="#7a5a30" stroke-width=".5" opacity=".6"/><circle cx="370" cy="251" r="2.5" fill="#4a3018"/></g>
+      <rect x="420" y="295" width="55" height="10" rx="4" fill="#5a4020" stroke="#7a5a30" stroke-width=".8"/>
+      <g><circle cx="432" cy="300" r="5" fill="none" stroke="#7a5a30" stroke-width=".5" opacity=".6"/><circle cx="432" cy="300" r="2.5" fill="#4a3018"/><circle cx="463" cy="300" r="5" fill="none" stroke="#7a5a30" stroke-width=".5" opacity=".6"/><circle cx="463" cy="300" r="2.5" fill="#4a3018"/></g>
+      <rect x="530" y="248" width="50" height="10" rx="4" fill="#5a4020" stroke="#7a5a30" stroke-width=".8" transform="rotate(8,555,253)"/>
+      <g><circle cx="540" cy="253" r="5" fill="none" stroke="#7a5a30" stroke-width=".5" opacity=".6"/><circle cx="540" cy="253" r="2.5" fill="#4a3018"/><circle cx="570" cy="251" r="5" fill="none" stroke="#7a5a30" stroke-width=".5" opacity=".6"/><circle cx="570" cy="251" r="2.5" fill="#4a3018"/></g>
+
+      <!-- ═══ WATER FLOW — animated blue flow + percolation arrows ═══ -->
+      <path d="M340 295 Q395 310 450 308 Q505 306 560 295" fill="url(#waterGrad)" opacity=".5"/>
+      <path d="M170 188 Q240 192 310 240 Q360 275 420 295 Q480 305 530 285 Q570 268 620 240 Q680 200 730 190" fill="none" stroke="#3b82f6" stroke-width="2" opacity=".4" stroke-dasharray="8 6"><animate attributeName="stroke-dashoffset" from="28" to="0" dur="2s" repeatCount="indefinite"/></path>
+      <g fill="#3b82f6" opacity=".35"><polygon points="250,218 258,215 254,222" transform="rotate(-25,254,218)"/><polygon points="450,305 458,302 454,309"/><polygon points="650,210 658,207 654,214" transform="rotate(25,654,210)"/></g>
+      <!-- Percolation arrows (water seeping down through layers) -->
+      <g stroke="#3b82f6" stroke-width="1" opacity=".2" stroke-dasharray="3 4"><line x1="390" y1="310" x2="385" y2="380"/><line x1="420" y1="312" x2="418" y2="382"/><line x1="450" y1="314" x2="450" y2="384"/><line x1="480" y1="312" x2="482" y2="382"/><line x1="510" y1="308" x2="515" y2="378"/></g>
+      <g fill="#3b82f6" opacity=".15"><polygon points="385,378 382,372 388,372"/><polygon points="418,380 415,374 421,374"/><polygon points="450,382 447,376 453,376"/><polygon points="482,380 479,374 485,374"/><polygon points="515,376 512,370 518,370"/></g>
+
+      <!-- ═══ PLANTS — Botanically accurate illustrations ═══ -->
+
+      <!-- SWORD FERN — left bank -->
+      <g transform="translate(250,210)" opacity=".9">
+        <path d="M0,0 Q-15,-30 -30,-65 Q-35,-80 -33,-92" stroke="#0a5c28" stroke-width="1.8" fill="none"/>
+        <path d="M-3,-8 C-8,-6 -16,-12 -18,-16 C-16,-14 -8,-10 -4,-10Z" fill="#0f7a36"/><path d="M-6,-18 C-12,-15 -22,-20 -24,-24 C-22,-22 -12,-18 -7,-19Z" fill="#1a9e48"/><path d="M-9,-28 C-16,-25 -26,-29 -28,-33 C-26,-31 -16,-27 -10,-29Z" fill="#0f7a36"/><path d="M-13,-38 C-19,-35 -28,-38 -30,-42 C-28,-40 -19,-37 -14,-39Z" fill="#1a9e48"/><path d="M-17,-48 C-22,-45 -30,-47 -32,-51 C-30,-49 -22,-47 -18,-49Z" fill="#0f7a36"/><path d="M-20,-56 C-24,-53 -31,-55 -33,-58 C-31,-57 -24,-55 -21,-57Z" fill="#1a9e48"/>
+        <path d="M-2,-12 C2,-9 10,-12 12,-16 C10,-14 2,-12 -1,-14Z" fill="#1a9e48"/><path d="M-5,-22 C-1,-18 7,-20 9,-24 C7,-22 -1,-20 -4,-23Z" fill="#0f7a36"/><path d="M-8,-32 C-4,-28 4,-30 6,-34 C4,-32 -4,-30 -7,-33Z" fill="#1a9e48"/><path d="M-12,-42 C-8,-38 0,-40 2,-44 C0,-42 -8,-40 -11,-43Z" fill="#0f7a36"/>
+        <path d="M0,0 Q15,-30 30,-65 Q35,-80 33,-92" stroke="#0a5c28" stroke-width="1.8" fill="none"/>
+        <path d="M3,-8 C8,-6 16,-12 18,-16 C16,-14 8,-10 4,-10Z" fill="#1a9e48"/><path d="M6,-18 C12,-15 22,-20 24,-24 C22,-22 12,-18 7,-19Z" fill="#0f7a36"/><path d="M9,-28 C16,-25 26,-29 28,-33 C26,-31 16,-27 10,-29Z" fill="#1a9e48"/><path d="M13,-38 C19,-35 28,-38 30,-42 C28,-40 19,-37 14,-39Z" fill="#0f7a36"/><path d="M17,-48 C22,-45 30,-47 32,-51 C30,-49 22,-47 18,-49Z" fill="#1a9e48"/>
+        <path d="M0,0 Q0,-30 1,-62 Q1,-78 1,-88" stroke="#0a5c28" stroke-width="1.5" fill="none" opacity=".8"/>
+        <path d="M0,-10 C-5,-7 -12,-10 -13,-14 C-12,-12 -5,-10 -1,-12Z" fill="#0f7a36" opacity=".8"/><path d="M0,-10 C5,-7 12,-10 13,-14 C12,-12 5,-10 1,-12Z" fill="#1a9e48" opacity=".8"/><path d="M0,-20 C-5,-17 -11,-19 -12,-22 C-11,-21 -5,-19 -1,-21Z" fill="#1a9e48" opacity=".8"/><path d="M0,-20 C5,-17 11,-19 12,-22 C11,-21 5,-19 1,-21Z" fill="#0f7a36" opacity=".8"/><path d="M0,-30 C-4,-27 -10,-29 -11,-32 C-10,-31 -4,-29 -1,-31Z" fill="#0f7a36" opacity=".8"/><path d="M1,-30 C5,-27 10,-29 11,-32 C10,-31 5,-29 2,-31Z" fill="#1a9e48" opacity=".8"/>
+      </g>
+
+      <!-- SALAL — left upper bank -->
+      <g transform="translate(195,192) scale(0.55)" opacity=".85">
+        <path d="M35 0 L32 -5 L38 -10 L35 -15 L41 -20 L38 -25 L44 -30" stroke="#0a5c28" stroke-width="2" fill="none"/>
+        <path d="M35 0 L38 -5 L32 -10 L35 -15 L29 -20 L32 -25 L26 -30" stroke="#0a5c28" stroke-width="2" fill="none"/>
+        <ellipse cx="35" cy="-5" rx="8" ry="6" fill="#0f7a36" opacity=".9"/><ellipse cx="28" cy="-10" rx="8" ry="6" fill="#1a9e48" opacity=".9"/><ellipse cx="42" cy="-10" rx="8" ry="6" fill="#0f7a36" opacity=".9"/><ellipse cx="20" cy="-15" rx="8" ry="6" fill="#1a9e48" opacity=".9"/><ellipse cx="35" cy="-15" rx="8" ry="6" fill="#0f7a36" opacity=".9"/><ellipse cx="50" cy="-15" rx="8" ry="6" fill="#1a9e48" opacity=".9"/><ellipse cx="30" cy="-25" rx="8" ry="6" fill="#1a9e48" opacity=".9"/><ellipse cx="40" cy="-25" rx="8" ry="6" fill="#0f7a36" opacity=".9"/>
+      </g>
+
+      <!-- SEDGE — left slope -->
+      <g transform="translate(310,258)" opacity=".85">
+        <path d="M0,0 C0,-12 -1,-30 -1,-48 C-1,-49 1,-49 1,-48 C1,-30 0,-12 0,0Z" fill="#0f7a36"/><path d="M2,0 C2,-10 3,-28 4,-44 C4,-45 2,-45 2,-44 C1,-28 2,-10 2,0Z" fill="#1a9e48"/><path d="M-2,0 C-2,-11 -3,-29 -4,-42 C-4,-43 -2,-43 -2,-42 C-1,-29 -2,-11 -2,0Z" fill="#0a5c28"/>
+        <path d="M1,0 C4,-10 12,-22 24,-30 C24,-29 12,-20 4,-8 C2,-4 1,0 1,0Z" fill="#2db65a"/><path d="M1,0 C5,-12 16,-26 32,-34 C32,-33 16,-24 5,-10 C3,-5 1,0 1,0Z" fill="#0f7a36"/><path d="M2,0 C7,-14 20,-30 38,-36 C38,-35 20,-28 7,-12 C4,-6 2,0 2,0Z" fill="#0a5c28"/>
+        <path d="M-1,0 C-4,-10 -12,-22 -24,-30 C-24,-29 -12,-20 -4,-8 C-2,-4 -1,0 -1,0Z" fill="#1a9e48"/><path d="M-1,0 C-5,-12 -16,-26 -32,-34 C-32,-33 -16,-24 -5,-10 C-3,-5 -1,0 -1,0Z" fill="#0f7a36"/><path d="M-2,0 C-7,-14 -20,-30 -38,-36 C-38,-35 -20,-28 -7,-12 C-4,-6 -2,0 -2,0Z" fill="#0a5c28"/>
+      </g>
+
+      <!-- SEDGE — channel bottom -->
+      <g transform="translate(400,295)" opacity=".75">
+        <path d="M0,0 C0,-10 -1,-24 -1,-38 C-1,-39 1,-39 1,-38 C1,-24 0,-10 0,0Z" fill="#0f7a36"/><path d="M1,0 C3,-8 10,-18 20,-24 C20,-23 10,-16 3,-6 C2,-3 1,0 1,0Z" fill="#1a9e48"/><path d="M1,0 C4,-10 14,-22 28,-28 C28,-27 14,-20 4,-8 C2,-4 1,0 1,0Z" fill="#0a5c28"/>
+        <path d="M-1,0 C-3,-8 -10,-18 -20,-24 C-20,-23 -10,-16 -3,-6 C-2,-3 -1,0 -1,0Z" fill="#2db65a"/><path d="M-1,0 C-4,-10 -14,-22 -28,-28 C-28,-27 -14,-20 -4,-8 C-2,-4 -1,0 -1,0Z" fill="#0f7a36"/>
+        <path d="M2,0 C2,-8 3,-20 4,-32 C4,-33 2,-33 2,-32 C1,-20 2,-8 2,0Z" fill="#1a9e48"/><path d="M-2,0 C-2,-8 -3,-20 -4,-32 C-4,-33 -2,-33 -2,-32 C-1,-20 -2,-8 -2,0Z" fill="#0a5c28"/>
+      </g>
+
+      <!-- FERN — channel center -->
+      <g transform="translate(495,285)" opacity=".7">
+        <path d="M0,0 Q-8,-18 -15,-40 Q-18,-50 -16,-58" stroke="#0a5c28" stroke-width="1.5" fill="none"/>
+        <path d="M-2,-8 C-5,-6 -10,-9 -11,-12 C-10,-11 -5,-9 -3,-10Z" fill="#0f7a36"/><path d="M-4,-16 C-7,-14 -12,-16 -13,-19 C-12,-18 -7,-16 -5,-17Z" fill="#1a9e48"/><path d="M-6,-24 C-9,-22 -13,-24 -14,-26 C-13,-25 -9,-24 -7,-25Z" fill="#0f7a36"/><path d="M-8,-32 C-10,-30 -14,-31 -15,-33 C-14,-33 -10,-32 -9,-33Z" fill="#1a9e48"/>
+        <path d="M0,0 Q8,-18 15,-40 Q18,-50 16,-58" stroke="#0a5c28" stroke-width="1.5" fill="none"/>
+        <path d="M2,-8 C5,-6 10,-9 11,-12 C10,-11 5,-9 3,-10Z" fill="#1a9e48"/><path d="M4,-16 C7,-14 12,-16 13,-19 C12,-18 7,-16 5,-17Z" fill="#0f7a36"/><path d="M6,-24 C9,-22 13,-24 14,-26 C13,-25 9,-24 7,-25Z" fill="#1a9e48"/>
+      </g>
+
+      <!-- SWORD FERN — right bank -->
+      <g transform="translate(650,215)" opacity=".85">
+        <path d="M0,0 Q-12,-28 -25,-60 Q-28,-72 -27,-82" stroke="#0a5c28" stroke-width="1.6" fill="none"/>
+        <path d="M-2,-10 C-6,-8 -12,-11 -13,-14 C-12,-13 -6,-11 -3,-12Z" fill="#0f7a36"/><path d="M-5,-20 C-9,-18 -15,-20 -16,-23 C-15,-22 -9,-20 -6,-21Z" fill="#1a9e48"/><path d="M-8,-30 C-12,-28 -17,-29 -18,-32 C-17,-31 -12,-30 -9,-31Z" fill="#0f7a36"/><path d="M-11,-40 C-14,-38 -19,-39 -20,-42 C-19,-41 -14,-40 -12,-41Z" fill="#1a9e48"/>
+        <path d="M0,0 Q12,-28 25,-60 Q28,-72 27,-82" stroke="#0a5c28" stroke-width="1.6" fill="none"/>
+        <path d="M2,-10 C6,-8 12,-11 13,-14 C12,-13 6,-11 3,-12Z" fill="#1a9e48"/><path d="M5,-20 C9,-18 15,-20 16,-23 C15,-22 9,-20 6,-21Z" fill="#0f7a36"/><path d="M8,-30 C12,-28 17,-29 18,-32 C17,-31 12,-30 9,-31Z" fill="#1a9e48"/><path d="M11,-40 C14,-38 19,-39 20,-42 C19,-41 14,-40 12,-41Z" fill="#0f7a36"/>
+        <path d="M0,0 Q0,-25 1,-55 Q1,-68 1,-78" stroke="#0a5c28" stroke-width="1.3" fill="none" opacity=".7"/>
+        <path d="M0,-10 C-4,-8 -9,-10 -10,-12 C-9,-12 -4,-10 -1,-11Z" fill="#0f7a36" opacity=".7"/><path d="M0,-10 C4,-8 9,-10 10,-12 C9,-12 4,-10 1,-11Z" fill="#1a9e48" opacity=".7"/><path d="M0,-20 C-4,-18 -8,-19 -9,-21 C-8,-21 -4,-20 -1,-21Z" fill="#1a9e48" opacity=".7"/><path d="M1,-20 C4,-18 8,-19 9,-21 C8,-21 4,-20 2,-21Z" fill="#0f7a36" opacity=".7"/>
+      </g>
+
+      <!-- SALAL — right upper bank -->
+      <g transform="translate(690,195) scale(0.5)" opacity=".8">
+        <path d="M35 0 L32 -5 L38 -10 L35 -15 L41 -20" stroke="#0a5c28" stroke-width="2" fill="none"/>
+        <path d="M35 0 L38 -5 L32 -10 L35 -15 L29 -20" stroke="#0a5c28" stroke-width="2" fill="none"/>
+        <ellipse cx="35" cy="-5" rx="8" ry="6" fill="#0f7a36" opacity=".9"/><ellipse cx="28" cy="-10" rx="8" ry="6" fill="#1a9e48" opacity=".9"/><ellipse cx="42" cy="-10" rx="8" ry="6" fill="#0f7a36" opacity=".9"/><ellipse cx="35" cy="-15" rx="8" ry="6" fill="#1a9e48" opacity=".9"/><ellipse cx="28" cy="-20" rx="8" ry="6" fill="#0f7a36" opacity=".9"/><ellipse cx="42" cy="-20" rx="8" ry="6" fill="#1a9e48" opacity=".9"/>
+      </g>
+
+      <!-- SEDGE — right slope -->
+      <g transform="translate(595,248)" opacity=".8">
+        <path d="M0,0 C0,-10 -1,-26 -1,-42 C-1,-43 1,-43 1,-42 C1,-26 0,-10 0,0Z" fill="#0f7a36"/><path d="M2,0 C2,-8 3,-22 4,-36 C4,-37 2,-37 2,-36 C1,-22 2,-8 2,0Z" fill="#1a9e48"/><path d="M-2,0 C-2,-9 -3,-24 -4,-36 C-4,-37 -2,-37 -2,-36 C-1,-24 -2,-9 -2,0Z" fill="#0a5c28"/>
+        <path d="M1,0 C4,-8 12,-18 24,-24 C24,-23 12,-16 4,-6 C2,-3 1,0 1,0Z" fill="#2db65a"/><path d="M1,0 C5,-10 16,-22 32,-28 C32,-27 16,-20 5,-8 C3,-4 1,0 1,0Z" fill="#0f7a36"/>
+        <path d="M-1,0 C-4,-8 -12,-18 -24,-24 C-24,-23 -12,-16 -4,-6 C-2,-3 -1,0 -1,0Z" fill="#1a9e48"/><path d="M-1,0 C-5,-10 -16,-22 -32,-28 C-32,-27 -16,-20 -5,-8 C-3,-4 -1,0 -1,0Z" fill="#0a5c28"/>
+      </g>
+
+      <!-- ═══ DIMENSION LINES ═══ -->
+      <g stroke="#57534e" stroke-width=".6" opacity=".5" font-family="Inter,sans-serif" font-size="9" fill="#78716c">
+        <!-- Bioretention soil depth -->
+        <line x1="145" y1="196" x2="145" y2="358"/><line x1="140" y1="196" x2="150" y2="196"/><line x1="140" y1="358" x2="150" y2="358"/>
+        <text x="120" y="282" fill="#78716c" font-size="9" text-anchor="middle" transform="rotate(-90,120,282)">18" Bioretention Soil</text>
+        <!-- Gravel bed depth -->
+        <line x1="145" y1="362" x2="145" y2="400"/><line x1="140" y1="362" x2="150" y2="362"/><line x1="140" y1="400" x2="150" y2="400"/>
+        <text x="120" y="381" fill="#78716c" font-size="8" text-anchor="middle" transform="rotate(-90,120,381)">12" Drain Rock</text>
+      </g>
+
+      <!-- ═══ LABELS ═══ -->
+      <text x="45" y="178" fill="#a8a29e" font-size="11.5" font-family="Inter,sans-serif" font-weight="500">Stormwater inflow</text>
+      <polygon points="165,186 175,183 175,189" fill="#a8a29e" opacity=".6"/>
+
+      <g font-family="Inter,sans-serif" font-size="11" font-weight="500">
+        <!-- Plant labels -->
+        <line x1="710" y1="178" x2="738" y2="178" stroke="#0f7a36" stroke-width=".5" opacity=".5"/>
+        <text x="742" y="175" fill="#0f7a36" font-weight="600">Salal</text>
+        <text x="742" y="189" fill="#78716c" font-size="9" font-weight="400">Evergreen groundcover</text>
+
+        <line x1="685" y1="210" x2="738" y2="210" stroke="#0f7a36" stroke-width=".5" opacity=".5"/>
+        <text x="742" y="207" fill="#0f7a36" font-weight="600">Sword Fern</text>
+        <text x="742" y="221" fill="#78716c" font-size="9" font-weight="400">Rainfall interception</text>
+
+        <line x1="610" y1="248" x2="738" y2="248" stroke="#3a8a2a" stroke-width=".5" opacity=".5"/>
+        <text x="742" y="245" fill="#3a8a2a" font-weight="600">Slough Sedge</text>
+        <text x="742" y="259" fill="#78716c" font-size="9" font-weight="400">Wetland filtration</text>
+
+        <!-- Layer labels -->
+        <line x1="580" y1="253" x2="738" y2="290" stroke="#7a5a30" stroke-width=".5" opacity=".4"/>
+        <text x="742" y="288" fill="#7a5a30" font-weight="500">Check Dams</text>
+        <text x="742" y="302" fill="#78716c" font-size="9" font-weight="400">Timber velocity control</text>
+
+        <line x1="660" y1="195" x2="738" y2="318" stroke="#5a3d1a" stroke-width=".5" opacity=".3"/>
+        <text x="742" y="316" fill="#a8937a" font-weight="500">Mulch Layer</text>
+        <text x="742" y="330" fill="#78716c" font-size="9" font-weight="400">3" organic topdressing</text>
+
+        <line x1="660" y1="280" x2="738" y2="346" stroke="#6b5240" stroke-width=".5" opacity=".3"/>
+        <text x="742" y="344" fill="#a8937a" font-weight="500">Bioretention Soil</text>
+        <text x="742" y="358" fill="#78716c" font-size="9" font-weight="400">Alderwood sandy loam</text>
+
+        <line x1="660" y1="358" x2="738" y2="374" stroke="#a8a29e" stroke-width=".5" opacity=".3"/>
+        <text x="742" y="372" fill="#a8a29e" font-weight="500">Geotextile Fabric</text>
+        <text x="742" y="386" fill="#78716c" font-size="9" font-weight="400">Separation membrane</text>
+
+        <line x1="640" y1="380" x2="738" y2="400" stroke="#78716c" stroke-width=".5" opacity=".4"/>
+        <text x="742" y="398" fill="#a8a29e">Gravel Bed</text>
+        <text x="742" y="412" fill="#78716c" font-size="9" font-weight="400">3/4" washed drain rock</text>
+
+        <line x1="472" y1="405" x2="738" y2="428" stroke="#3b82f6" stroke-width=".5" opacity=".3"/>
+        <text x="742" y="426" fill="#3b82f6" opacity=".7">Perforated Drain</text>
+        <text x="742" y="440" fill="#78716c" font-size="9" font-weight="400">6" HDPE collection pipe</text>
+
+        <line x1="600" y1="440" x2="738" y2="456" stroke="#57534e" stroke-width=".5" opacity=".3"/>
+        <text x="742" y="454" fill="#78716c">Native Subgrade</text>
+        <text x="742" y="468" fill="#57534e" font-size="9" font-weight="400">Undisturbed soil</text>
+      </g>
+
+      <polygon points="740,190 730,187 730,193" fill="#a8a29e" opacity=".6"/>
+      <text x="748" y="194" fill="#a8a29e" font-size="10" font-family="Inter,sans-serif" font-weight="400" opacity=".7">Clean outflow</text>
+    </svg>
+  </div>
+</section>
+
+<!-- SWALE MIX -->
+<section class="mix-section" id="mix">
+  <div class="mix-hero">
+    <div class="mix-content rv">
+      <div class="mix-label">Proprietary Formulation</div>
+      <h2>The <em>Swale Mix.</em></h2>
+      <p>Three Pacific Northwest natives, engineered to work together. Planted in naturalistic drifts. Seasonal structure that performs year-round.</p>
+    </div>
+  </div>
+  <div class="mix-grid">
+    <div class="mix-card rv">
+      <div class="mix-img mix-img-salal" style="display:flex;align-items:center;justify-content:center">
+        <img src="mix-salal.png" alt="Salal plant" style="width:80%;height:80%;object-fit:contain">
+      </div>
+      <div class="mix-card-body"><h3>Salal</h3><div class="latin">Gaultheria shallon</div><p>Evergreen groundcover native to the PNW. Dense root system stabilizes soil and prevents erosion. Leathery leaves shed water into the swale channel.</p></div>
+    </div>
+    <div class="mix-card rv">
+      <div class="mix-img mix-img-fern" style="display:flex;align-items:center;justify-content:center">
+        <img src="mix-fern.png" alt="Western Sword Fern" style="width:80%;height:80%;object-fit:contain">
+      </div>
+      <div class="mix-card-body"><h3>Western Sword Fern</h3><div class="latin">Polystichum munitum</div><p>Massive fronds intercept rainfall, slowing velocity before it reaches the swale floor. Root networks create natural biofilter channels in the soil media.</p></div>
+    </div>
+    <div class="mix-card rv">
+      <div class="mix-img mix-img-sedge" style="display:flex;align-items:center;justify-content:center">
+        <img src="mix-sedge.png" alt="Slough Sedge" style="width:80%;height:80%;object-fit:contain">
+      </div>
+      <div class="mix-card-body"><h3>Slough Sedge</h3><div class="latin">Carex obnupta</div><p>The workhorse of wetland filtration. Dense clumping growth traps sediment. Root zone hosts microbial communities that break down petroleum compounds and heavy metals.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- POLLINATOR ADD-ONS -->
+<section id="planting" style="position:relative;overflow:hidden;padding:0">
+  <div style="position:relative;min-height:680px">
+    <!-- Oudolf landscape — full bleed -->
+    <img src="oudolf-bg.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1">
+    <div style="position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(10,10,10,.65) 0%,rgba(10,10,10,.2) 30%,rgba(10,10,10,.15) 60%,rgba(10,10,10,.55) 100%)"></div>
+
+    <!-- Header text -->
+    <div style="position:relative;z-index:5;text-align:center;padding:80px 40px 24px">
+      <div style="font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green-light);margin-bottom:16px">Stops Traffic Cold</div>
+      <h2 style="font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;line-height:1;letter-spacing:-.03em;margin-bottom:20px">The <em style="font-style:normal;color:var(--green)">Pollinator Upgrade.</em></h2>
+      <p style="font-size:1.1rem;color:rgba(255,255,255,.6);font-weight:300;max-width:550px;margin:0 auto;line-height:1.6">Choose your colors. We plant the natives that make them happen.</p>
+    </div>
+
+    <!-- Dots embedded in the landscape -->
+    <div style="position:relative;z-index:5;display:flex;gap:48px;justify-content:center;padding:40px 40px 0;flex-wrap:wrap">
+      <div class="pol-swatch" data-color="yellow" style="--swatch:#e8c840">
+        <div class="pol-dot"></div>
+        <span class="pol-name">Oregon Grape</span>
+      </div>
+      <div class="pol-swatch" data-color="blue" style="--swatch:#4a6ad8">
+        <div class="pol-dot"></div>
+        <span class="pol-name">Tall Larkspur</span>
+      </div>
+      <div class="pol-swatch" data-color="red" style="--swatch:#e05050">
+        <div class="pol-dot"></div>
+        <span class="pol-name">Kinnikinnick</span>
+      </div>
+      <div class="pol-swatch" data-color="purple" style="--swatch:#9c60c0">
+        <div class="pol-dot"></div>
+        <span class="pol-name">Wild Geranium</span>
+      </div>
+      <div class="pol-swatch" data-color="white" style="--swatch:#f0ede4">
+        <div class="pol-dot"></div>
+        <span class="pol-name">Goatsbeard</span>
+      </div>
+    </div>
+
+    <!-- Pollinator vectors — rise from landscape on hover -->
+    <div style="position:relative;height:260px;margin-top:-20px">
+      <img class="pol-float" data-color="yellow" src="pol-yellow.png" alt="Oregon Grape" style="position:absolute;left:10%;bottom:0;height:260px;z-index:4">
+      <img class="pol-float" data-color="blue" src="pol-blue.png" alt="Tall Larkspur" style="position:absolute;left:26%;bottom:0;height:300px;z-index:4">
+      <img class="pol-float" data-color="red" src="pol-red.png" alt="Kinnikinnick" style="position:absolute;left:42%;bottom:0;height:240px;z-index:4">
+      <img class="pol-float" data-color="purple" src="pol-purple.png" alt="Wild Geranium" style="position:absolute;left:58%;bottom:0;height:260px;z-index:4">
+      <img class="pol-float" data-color="white" src="pol-white.png" alt="Goatsbeard" style="position:absolute;left:74%;bottom:0;height:280px;z-index:4">
+      <!-- Soft ground fade — plants emerge from this -->
+      <div style="position:absolute;bottom:0;left:0;right:0;height:100px;z-index:5;background:linear-gradient(0deg,rgba(10,10,10,.85) 0%,rgba(10,10,10,.3) 60%,transparent 100%)"></div>
+    </div>
+  </div>
+</section>
+<style>
+.pol-swatch{position:relative;cursor:pointer;text-align:center;transition:transform .3s}
+.pol-swatch:hover{transform:translateY(-3px)}
+.pol-dot{width:48px;height:48px;border-radius:50%;background:var(--swatch);margin:0 auto 8px;box-shadow:0 4px 16px color-mix(in srgb,var(--swatch) 35%,transparent);transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s;border:2px solid rgba(255,255,255,.1)}
+.pol-swatch:hover .pol-dot{transform:scale(1.25);box-shadow:0 4px 24px color-mix(in srgb,var(--swatch) 50%,transparent),0 0 48px color-mix(in srgb,var(--swatch) 20%,transparent)}
+.pol-name{font-size:.7rem;font-weight:600;color:#fff;letter-spacing:.03em;opacity:0;transition:opacity .3s}
+.pol-swatch:hover .pol-name{opacity:.8}
+.pol-float{object-fit:contain;opacity:0;transform:translateY(80px) scale(.85);filter:brightness(.3) saturate(.5);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1),filter .8s cubic-bezier(.16,1,.3,1);transform-origin:bottom center}
+.pol-float.active{opacity:1;transform:translateY(-30px) scale(1);filter:brightness(1) saturate(1.1);drop-shadow(0 8px 24px rgba(0,0,0,.4))}
+</style>
+<script>
+(function(){
+  const swatches=document.querySelectorAll('.pol-swatch');
+  const floats=document.querySelectorAll('.pol-float');
+  swatches.forEach(s=>{
+    s.addEventListener('mouseenter',()=>{
+      const c=s.dataset.color;
+      floats.forEach(f=>{
+        if(f.dataset.color===c){f.classList.add('active')}
+        else{f.classList.remove('active')}
+      });
+    });
+    s.addEventListener('mouseleave',()=>{
+      floats.forEach(f=>f.classList.remove('active'));
+    });
+  });
+})();
+</script>
+
+<!-- STATS -->
+<section class="stats-bar sec-line">
+  <div class="stats-grid">
+    <div class="stat-item rv"><h4>99%</h4><p>Pollutant removal rate</p></div>
+    <div class="stat-item rv"><h4>90%</h4><p>Velocity reduction</p></div>
+    <div class="stat-item rv"><h4>742M</h4><p>Gallons managed annually (Seattle GSI)</p></div>
+    <div class="stat-item rv"><h4>$1,300+</h4><p>Annual stormwater fee savings per acre</p></div>
+  </div>
+</section>
+
+<!-- SWM FEE SAVINGS — PROPERTY TAX VALUE PITCH -->
+<section class="savings-sec sec-line" id="savings">
+  <div class="savings-inner">
+    <div class="savings-text rv">
+      <h2>Your bioswale <em>could pay for itself.</em></h2>
+      <p>King County charges a Surface Water Management fee based on your property's impervious surface percentage. More pavement and roof = higher fee. A bioswale converts impervious area into permeable, living infrastructure, dropping you into a lower rate class and saving real money every year. Qualifying installations may also be eligible for <a href="https://kingcounty.gov/en/dept/dnrp/waste-services/wastewater-treatment/programs/rainwise" target="_blank" rel="noopener" style="color:var(--green-light);text-decoration:underline;text-underline-offset:3px">RainWise rebates of up to $4,000</a>.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:24px">
+        <div style="display:flex;justify-content:space-between;padding:12px 16px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05)">
+          <span style="color:var(--gray-400);font-size:.85rem">Very Heavy (85-100%)</span>
+          <span style="font-weight:700;color:var(--white)">$5,495<span style="font-size:.75rem;color:var(--gray-600)">/acre/yr</span></span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:12px 16px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05)">
+          <span style="color:var(--gray-400);font-size:.85rem">Heavy (65-85%)</span>
+          <span style="font-weight:700;color:var(--white)">$4,466<span style="font-size:.75rem;color:var(--gray-600)">/acre/yr</span></span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:12px 16px;border-radius:10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05)">
+          <span style="color:var(--gray-400);font-size:.85rem">Mod. Heavy (45-65%)</span>
+          <span style="font-weight:700;color:var(--white)">$3,206<span style="font-size:.75rem;color:var(--gray-600)">/acre/yr</span></span>
+        </div>
+        <div style="display:flex;justify-content:space-between;padding:12px 16px;border-radius:10px;background:rgba(15,122,54,.06);border:1px solid rgba(15,122,54,.15)">
+          <span style="color:var(--green);font-size:.85rem;font-weight:600">Moderate (20-45%)</span>
+          <span style="font-weight:700;color:var(--green)">$1,879<span style="font-size:.75rem;color:var(--green);opacity:.6">/acre/yr</span></span>
+        </div>
+      </div>
+      <p class="savings-source">Source: <a href="https://kingcounty.gov/en/dept/dnrp/nature-recreation/environment-ecology-conservation/stormwater-surface-water-management/surface-water-management-fee/rates" target="_blank" rel="noopener">King County DNRP, 2025 SWM Fee Rates</a></p>
+    </div>
+    <div class="savings-calc rv">
+      <h3>Estimate Your Annual Savings</h3>
+      <div class="calc-field">
+        <label>Property Size (acres)</label>
+        <input type="number" id="calcAcres" value="0.25" step="0.01" min="0.01">
+      </div>
+      <div class="calc-field">
+        <label>Current Impervious Surface</label>
+        <select id="calcCurrent">
+          <option value="7">Very Heavy (85-100%): $5,495/acre</option>
+          <option value="6" selected>Heavy (65-85%): $4,466/acre</option>
+          <option value="5">Mod. Heavy (45-65%): $3,206/acre</option>
+          <option value="4">Moderate (20-45%): $1,879/acre</option>
+          <option value="3">Light (10-20%): $1,004/acre</option>
+        </select>
+      </div>
+      <div class="calc-field">
+        <label>After Bioswale Installation</label>
+        <select id="calcAfter">
+          <option value="5">Mod. Heavy (45-65%): $3,206/acre</option>
+          <option value="4" selected>Moderate (20-45%): $1,879/acre</option>
+          <option value="3">Light (10-20%): $1,004/acre</option>
+          <option value="2">Very Light (≤10%): $361/parcel</option>
+        </select>
+      </div>
+      <div class="calc-result" id="calcResult">
+        <div class="big" id="calcSavings">$647</div>
+        <div class="sub">estimated annual savings</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTISAN TOOLS -->
+<section class="tools-section sec-line" id="tools">
+  <div class="section-label rv">Artisan Toolkit</div>
+  <h2 class="section-title rv">From Plan to Earth</h2>
+  <p class="section-sub rv">Every installation is finished by hand with traditional Japanese garden tools and forged ironwork.</p>
+
+  <div class="tools-row">
+    <div class="tool rv d1">
+      <div class="tool-img">
+        <img src="hori-hori-final.png" alt="Hori Hori knife">
+      </div>
+      <div class="tool-name">Hori Hori</div>
+      <div class="tool-origin">Nisaku, Made in Japan</div>
+      <div class="tool-desc">7-inch stainless steel blade with serrated edge. The essential soil knife for precision planting and root work.</div>
+    </div>
+
+    <div class="tool rv d2">
+      <div class="tool-img">
+        <img src="hand-rake-final.png" alt="Kumade hand rake">
+      </div>
+      <div class="tool-name">Kumade</div>
+      <div class="tool-origin">Hand-Forged Steel</div>
+      <div class="tool-desc">Curved steel tines on weathered wood. Used for final grading and surface preparation around plantings.</div>
+    </div>
+
+    <div class="tool rv d3">
+      <div class="tool-img">
+        <img src="iron-brand.png" alt="SWALE iron brand">
+      </div>
+      <div class="tool-name">Iron Brand</div>
+      <div class="tool-origin">Estate Iron Work</div>
+      <div class="tool-desc">Hand-forged branding iron seared into western red cedar check dams. Every installation carries the mark.</div>
+    </div>
+  </div>
+
+  <div class="section-label rv" style="margin-top:48px">Materials We Control</div>
+  <h2 class="section-title rv">Supply Chain</h2>
+  <p class="section-sub rv">We don't outsource the critical stuff. Purpose-built for Seattle bioswales.</p>
+
+  <div class="tools-row">
+    <div class="tool rv d1">
+      <div class="tool-img">
+        <img src="beehive-grate-final.png" alt="Beehive grate">
+      </div>
+      <div class="tool-name">Beehive Grate</div>
+      <div class="tool-origin">J.R. Hoe — Cast Iron</div>
+      <div class="tool-desc">MCB-350BH round manhole beehive grate. The most beautiful drain cover ever cast. Connects your swale to the municipal system with style.</div>
+    </div>
+
+    <div class="tool rv d2">
+      <div class="tool-img">
+        <img src="alderwood-soil-final.png" alt="Alderwood soil profile">
+      </div>
+      <div class="tool-name">Alderwood Soil</div>
+      <div class="tool-origin">Seattle's Native Glacial Till</div>
+      <div class="tool-desc">Glacial till with a dense layer at 20-40". We engineer our bioretention mix to work with it, not against it.</div>
+    </div>
+
+    <div class="tool rv d3">
+      <div class="tool-img">
+        <img src="check-dam-final.png" alt="Check dam timber">
+      </div>
+      <div class="tool-name">Check Dam Timber</div>
+      <div class="tool-origin">Three Species — Your Choice</div>
+      <div class="tool-desc">Western red cedar, white oak, or juniper. Hand-selected and milled for your swale. Each species weathers differently. Your choice.</div>
+    </div>
+  </div>
+</section>
+
+<!-- LOW MAINTENANCE PITCH -->
+<section class="maint-sec">
+  <h3 class="rv">Designed for <em>almost zero</em> maintenance.</h3>
+  <p class="rv">Native plants. Engineered drainage. No mowing, no fertilizing, no irrigation battles. Your swale gets healthier on its own. We check in quarterly. That's it.</p>
+  <div class="maint-pills rv">
+    <span class="maint-pill">No mowing</span>
+    <span class="maint-pill">No fertilizer</span>
+    <span class="maint-pill">No irrigation required</span>
+    <span class="maint-pill">Self-filtering</span>
+    <span class="maint-pill">Quarterly check-ins</span>
+    <span class="maint-pill">Gets better with age</span>
+  </div>
+</section>
+
+<!-- ECOSYSTEM — App + Knowledge Library + RainBird -->
+<section class="eco-sec" id="ecosystem">
+  <div class="eco-inner">
+    <div class="eco-text rv">
+      <h2>The Swale <em>ecosystem.</em></h2>
+      <p>A dedicated app, a knowledge library for subscribers, and smart irrigation integration. Your swale doesn't just sit there. It reports back.</p>
+      <div class="eco-features">
+        <div class="eco-feat">
+          <div class="dot" style="background:var(--green)"></div>
+          <div><h4>Swale App</h4><p>Real-time flow data from your submeter. Seasonal health reports. Maintenance scheduling. Your swale in your pocket.</p></div>
+        </div>
+        <div class="eco-feat">
+          <div class="dot" style="background:var(--gold)"></div>
+          <div><h4>Knowledge Library</h4><p>Exclusive content unlocked for subscribers. Bioswale science, Oudolf planting guides, seasonal care playbooks, Seattle permit navigation. Stay in the ecosystem.</p></div>
+        </div>
+        <div class="eco-feat">
+          <div class="dot" style="background:var(--water)"></div>
+          <div><h4>RainBird Integration</h4><p>State-of-the-art irrigation tied into our platform. Smart zones that respond to actual soil moisture and weather forecasts. Water only when needed. The swale tells you.</p></div>
+        </div>
+        <div class="eco-feat">
+          <div class="dot" style="background:var(--terracotta)"></div>
+          <div><h4>Submeter Dashboard</h4><p>Track gallons filtered, velocity reduction, and estimated pollutant capture. Real data for real performance. Exportable for permit compliance.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="eco-mockup rv">
+      <!-- Phone mockup -->
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="phone-header">
+            <h5>Swale</h5>
+            <p>Walsh Residence, Cedar Creek</p>
+          </div>
+          <div class="phone-card">
+            <h6>Today's Flow</h6>
+            <div class="val">847 gal</div>
+            <div class="sub">+12% vs. 30-day avg</div>
+          </div>
+          <div class="phone-card">
+            <h6>Pollutants Filtered</h6>
+            <div class="val">99.2%</div>
+            <div class="sub">Heavy metals, oils, sediment</div>
+          </div>
+          <div class="phone-card">
+            <h6>Soil Moisture</h6>
+            <div class="val" style="color:var(--water)">68%</div>
+            <div class="sub">RainBird: irrigation OFF</div>
+          </div>
+          <div class="phone-card">
+            <h6>Next Service</h6>
+            <div class="val" style="color:var(--gold);font-size:.9rem">Mar 15, Spring Drift Check</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESIDENTIAL WAITLIST -->
+<section class="waitlist-sec" id="waitlist">
+  <h2 class="rv">The Residential <em>Waitlist.</em></h2>
+  <p class="rv">Launching August 2026. Limited to 50 homes in Year One. Every residential install ends with a branding ceremony. A heated iron seared into your western red cedar check dam. Plus:</p>
+  <div class="waitlist-perks">
+    <div class="wl-perk rv">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="8" y="14" width="32" height="24" rx="3" stroke="#d4a853" stroke-width="1.5"/>
+        <rect x="12" y="18" width="24" height="16" rx="2" fill="rgba(212,168,83,.08)"/>
+        <text x="24" y="30" fill="#d4a853" font-size="7" font-family="Inter,sans-serif" font-weight="700" text-anchor="middle">SWALE</text>
+        <line x1="14" y1="36" x2="34" y2="36" stroke="#d4a853" stroke-width=".5" opacity=".5"/>
+      </svg>
+      <h4>Engraved Stone</h4>
+      <p>A custom basalt marker engraved with your swale's name, GPS coordinates, and installation date.</p>
+    </div>
+    <div class="wl-perk rv">
+      <img src="brand-icon.png" width="48" height="48" alt="Branding iron" style="object-fit:contain;">
+      <h4>Branding Ceremony</h4>
+      <p>A heated iron brand seared into your western red cedar check dam. Smoke, char, permanence.</p>
+    </div>
+    <div class="wl-perk rv">
+      <img src="hori-icon.png" width="48" height="48" alt="Hori hori knife" style="object-fit:contain;">
+      <h4>Custom Hori Hori</h4>
+      <p>A SWALE-engraved Japanese hori hori garden knife. Walnut handle, 7" stainless blade, serrated edge. Yours to keep.</p>
+    </div>
+  </div>
+  <form class="wl-form" id="wlf">
+    <input type="email" name="email" placeholder="Enter your email for the waitlist" required>
+    <button type="submit">Join Waitlist</button>
+  </form>
+  <div id="wlsuccess"><h3>You're on the list.</h3><p>We'll reach out before August 2026 with your slot details.</p></div>
+  <p class="wl-count" id="wlcount" style="margin-top:40px"></p>
+</section>
+
+<!-- Team + artisan banner removed -->
+
+<!-- PRODUCTS -->
+<section class="prsec sec-line" id="products">
+  <div class="shdr rv"><h2>Three markets. One standard.</h2><p>Each engineered for its context. All maintained by Swale.</p></div>
+  <div class="prgrid">
+    <div class="prcard rv">
+      <div class="lab">Commercial</div>
+      <h3>Enterprise Systems</h3>
+      <div class="zone">NC3 / C1 / C2 / SM</div>
+      <p>High-density stormwater engineering for offices, retail, and mixed-use. City credit strategies for watershed-positive contributions. Built for ROI and Green Factor compliance.</p>
+    </div>
+    <div class="prcard rv">
+      <div class="lab">Residential</div>
+      <h3>Home Series</h3>
+      <div class="zone">LR1 / LR2 / LR3 / SF</div>
+      <p>Designed for single-family and low-rise multifamily. Turns a permit requirement into a selling feature. Includes engraved stone, iron branding ceremony, and custom hori hori.</p>
+      <div class="waitlist-badge"><a href="#waitlist" style="color:inherit;text-decoration:none">Waitlist Open, August 2026</a></div>
+    </div>
+    <div class="prcard rv">
+      <div class="lab">Governmental</div>
+      <h3>Municipal Infrastructure</h3>
+      <div class="zone">Public ROW / Parks / Schools</div>
+      <p>Watershed-scale stormwater redesign. We partner with cities to rethink how wastewater moves through the built environment. Complete process transformation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="ctasec sec-line" id="contact">
+  <div class="ctac">
+    <h2>Your lawn is costing you money.</h2>
+    <p>Free 30-minute site assessment. We'll show you what a swale can do for your property, your permit, and your bottom line.</p>
+    <form class="lform" id="lf">
+      <div class="fr"><input type="text" name="name" placeholder="Full name" required><input type="email" name="email" placeholder="Email" required></div>
+      <input type="tel" name="phone" placeholder="Phone (optional)">
+      <select name="project_type" required><option value="" disabled selected>What kind of project?</option><option>Commercial</option><option>Residential (Waitlist)</option><option>Municipal / Government</option><option>Multifamily</option><option>Other</option></select>
+      <input type="text" name="address" placeholder="Property address (optional)">
+
+      <!-- Assessment Type Toggle -->
+      <div class="assess-toggle">
+        <label class="assess-label">Assessment conditions</label>
+        <div class="assess-options">
+          <label class="assess-opt" data-type="rain">
+            <input type="radio" name="assess_type" value="rain">
+            <div class="assess-card">
+              <div class="assess-icon">&#x26C8;</div>
+              <div class="assess-title">In the Rain</div>
+              <div class="assess-sub">Live stormwater. Real results.</div>
+            </div>
+          </label>
+          <label class="assess-opt" data-type="dry">
+            <input type="radio" name="assess_type" value="dry" checked>
+            <div class="assess-card">
+              <div class="assess-icon">&#x2600;</div>
+              <div class="assess-title">Dry Conditions</div>
+              <div class="assess-sub">Simulated runoff test.</div>
+            </div>
+          </label>
+        </div>
+
+        <!-- Rain disclosure -->
+        <div class="assess-disclosure rain-disc" id="rainDisc">
+          <div class="disc-badge">Limited Availability</div>
+          <p>Rain assessments are scheduled around live storm events — we can only book a handful per season. You'll see exactly how water moves across your site under real conditions. No simulation compares.</p>
+          <p class="disc-note">Expect longer lead times. We'll contact you when the next qualifying storm is forecasted and confirm 48 hours in advance.</p>
+        </div>
+
+        <!-- Dry disclosure -->
+        <div class="assess-disclosure dry-disc" id="dryDisc" style="display:block">
+          <div class="disc-badge dry-badge">Requires Water Access</div>
+          <p>We simulate stormwater runoff using your on-site water source to test grading, flow paths, and infiltration rates.</p>
+          <label class="disc-cert">
+            <input type="checkbox" name="water_cert" id="waterCert">
+            <span>I confirm an accessible outdoor water source (hose bib or spigot) within 100 ft of the proposed swale area.</span>
+          </label>
+        </div>
+      </div>
+
+      <textarea name="message" placeholder="Tell us about your project..." rows="3"></textarea>
+      <input type="text" name="_hp" style="display:none" tabindex="-1">
+      <button type="submit" class="fsbtn">Book Free Assessment</button>
+      <p class="fnote">We respond within 24 hours. No spam, ever.</p>
+    </form>
+    <div id="fsuccess"><h3>We're on it.</h3><p>We'll be in touch within 24 hours.</p></div>
+    <div class="cdiv"><span>or email directly</span></div>
+    <a href="mailto:jack@swale.bio" class="ceml">jack@swale.bio</a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Swale LLC. All rights reserved.</p>
+  <p class="fl">Seattle, Washington</p>
+  <div class="flinks"><a href="mailto:jack@swale.bio">Contact</a><a href="#pillars">Services</a><a href="#products">Products</a><a href="#waitlist">Waitlist</a></div>
+</footer>
+
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════
+// PHOTOREALISTIC CANVAS GRASS — foreground layer
+// Hundreds of blades with tapered geometry, color
+// gradients, depth layers, wind animation
+// ═══════════════════════════════════════════════════════
+(function() {
+  const container = document.getElementById('heroGrass');
+  const canvas = document.createElement('canvas');
+  container.appendChild(canvas);
+  const ctx = canvas.getContext('2d');
+
+  const dpr = Math.min(window.devicePixelRatio, 2);
+  let W, H;
+
+  function resize() {
+    W = container.clientWidth;
+    H = container.clientHeight;
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    initBlades();
+  }
+
+  const LAYERS = 5;
+  const BLADES_PER_LAYER = [400, 450, 500, 550, 600];
+  let blades = [];
+
+  function hsl(h, s, l) { return 'hsl(' + h + ',' + s + '%,' + l + '%)'; }
+
+  function initBlades() {
+    blades = [];
+    for (let layer = 0; layer < LAYERS; layer++) {
+      const count = BLADES_PER_LAYER[layer];
+      const depth = layer / (LAYERS - 1);
+      for (let i = 0; i < count; i++) {
+        const x = Math.random() * W;
+        const baseH = H * (0.35 + depth * 0.55);
+        const h = baseH * (0.5 + Math.random() * 0.5);
+        const w = (3 + depth * 3 + Math.random() * 3);
+        const hue = 100 + Math.random() * 35;
+        const sat = 35 + Math.random() * 30;
+        const litBase = 4 + depth * 3 + Math.random() * 4;
+        const litTip = litBase + 4 + Math.random() * 7;
+        const isDried = Math.random() < 0.06;
+        const driedHue = 50 + Math.random() * 20;
+        const phase = Math.random() * Math.PI * 2;
+        const swayAmp = 0.015 + Math.random() * 0.03 + depth * 0.015;
+        const swaySpeed = 0.6 + Math.random() * 0.7;
+        const lean = (Math.random() - 0.5) * 0.12;
+        blades.push({
+          x, h, w, hue: isDried ? driedHue : hue,
+          sat: isDried ? 20 : sat,
+          litBase: isDried ? litBase + 4 : litBase,
+          litTip: isDried ? litTip + 6 : litTip,
+          phase, swayAmp, swaySpeed, lean, depth
+        });
+      }
+    }
+    blades.sort((a, b) => a.depth - b.depth);
+  }
+
+  function drawBlade(b, time) {
+    const wind = Math.sin(time * b.swaySpeed + b.phase) * b.swayAmp +
+                 Math.sin(time * b.swaySpeed * 0.6 + b.phase * 1.7) * b.swayAmp * 0.3;
+    const totalLean = b.lean + wind;
+    const segments = 8;
+    const baseX = b.x;
+    const baseY = H;
+    const pts = [];
+    for (let s = 0; s <= segments; s++) {
+      const t = s / segments;
+      const y = baseY - b.h * t;
+      const bendX = totalLean * b.h * t * t + Math.sin(t * Math.PI) * totalLean * b.h * 0.15;
+      const taper = 1 - Math.pow(t, 1.4) * 0.95;
+      const halfW = b.w * taper * 0.5;
+      pts.push({ x: baseX + bendX, y, halfW });
+    }
+    ctx.beginPath();
+    ctx.moveTo(pts[0].x - pts[0].halfW, pts[0].y);
+    for (let s = 1; s <= segments; s++) {
+      const p = pts[s], pp = pts[s - 1];
+      ctx.quadraticCurveTo(pp.x - pp.halfW, pp.y, (pp.x - pp.halfW + p.x - p.halfW) * 0.5, (pp.y + p.y) * 0.5);
+    }
+    ctx.lineTo(pts[segments].x, pts[segments].y);
+    for (let s = segments; s >= 1; s--) {
+      const p = pts[s], pp = pts[s - 1];
+      ctx.quadraticCurveTo(p.x + p.halfW, p.y, (p.x + p.halfW + pp.x + pp.halfW) * 0.5, (p.y + pp.y) * 0.5);
+    }
+    ctx.lineTo(pts[0].x + pts[0].halfW, pts[0].y);
+    ctx.closePath();
+    const grad = ctx.createLinearGradient(baseX, baseY, baseX + totalLean * b.h, baseY - b.h);
+    grad.addColorStop(0, hsl(b.hue, b.sat, b.litBase));
+    grad.addColorStop(0.5, hsl(b.hue, b.sat, b.litBase + (b.litTip - b.litBase) * 0.35));
+    grad.addColorStop(1, hsl(b.hue, b.sat - 5, b.litTip));
+    ctx.fillStyle = grad;
+    ctx.fill();
+    if (b.h > H * 0.3 && b.depth > 0.4) {
+      ctx.beginPath();
+      ctx.moveTo(pts[1].x, pts[1].y);
+      for (let s = 2; s <= segments - 1; s++) ctx.lineTo(pts[s].x, pts[s].y);
+      ctx.strokeStyle = 'rgba(160,200,120,' + (0.04 + b.depth * 0.05) + ')';
+      ctx.lineWidth = 0.6;
+      ctx.stroke();
+    }
+  }
+
+  let partAmount = 0;
+  window._setGrassPart = function(v) { partAmount = v; };
+
+  let animId;
+  function render(time) {
+    const t = time * 0.001;
+    ctx.clearRect(0, 0, W, H);
+    const groundGrad = ctx.createLinearGradient(0, H - 25, 0, H);
+    groundGrad.addColorStop(0, 'rgba(8,14,6,0)');
+    groundGrad.addColorStop(0.5, 'rgba(8,14,6,0.6)');
+    groundGrad.addColorStop(1, 'rgba(8,14,6,1)');
+    ctx.fillStyle = groundGrad;
+    ctx.fillRect(0, H - 25, W, 25);
+
+    const cx = W * 0.5;
+    for (let i = 0; i < blades.length; i++) {
+      const b = blades[i];
+      if (partAmount > 0.005) {
+        const dx = b.x - cx;
+        const dist = Math.abs(dx);
+        const radius = W * 0.5;
+        const proximity = Math.max(0, 1 - (dist / radius));
+        const ease = proximity * proximity * (3 - 2 * proximity);
+        const side = dx >= 0 ? 1 : -1;
+        const variation = 0.7 + Math.sin(b.phase * 3.7) * 0.3;
+        const leanPush = ease * 0.7 * partAmount * side * variation;
+        const origLean = b.lean;
+        b.lean = origLean + leanPush;
+        drawBlade(b, t);
+        b.lean = origLean;
+      } else {
+        drawBlade(b, t);
+      }
+    }
+
+    const fadeGrad = ctx.createLinearGradient(0, 0, 0, H * 0.25);
+    fadeGrad.addColorStop(0, 'rgba(10,10,10,0)');
+    fadeGrad.addColorStop(1, 'rgba(10,10,10,0)');
+    ctx.fillStyle = fadeGrad;
+    ctx.fillRect(0, 0, W, H * 0.25);
+
+    animId = requestAnimationFrame(render);
+  }
+
+  resize();
+  animId = requestAnimationFrame(render);
+  window.addEventListener('resize', () => { cancelAnimationFrame(animId); resize(); animId = requestAnimationFrame(render); });
+})();
+
+
+// ═══════════════════════════════════════════════════════
+// VIDEO FRAME PLAYER — preloads frames, draws on demand
+// Sits behind grass, revealed when grass parts
+// ═══════════════════════════════════════════════════════
+(function() {
+  const TOTAL_FRAMES = 105;
+  const FRAME_PATH = 'frames/frame_';
+  const container = document.getElementById('heroVideoCanvas');
+  const canvas = document.createElement('canvas');
+  container.appendChild(canvas);
+  const ctx = canvas.getContext('2d');
+
+  const frames = [];
+  let loaded = 0;
+  let ready = false;
+
+  function pad(n) { return String(n).padStart(4, '0'); }
+
+  // Progressive loading — start showing as soon as first frames arrive
+  let minReady = 10;
+  for (let i = 1; i <= TOTAL_FRAMES; i++) {
+    const img = new Image();
+    img.src = FRAME_PATH + pad(i) + '.jpg';
+    img.onload = () => { loaded++; if (loaded >= minReady && !ready) { ready = true; resize(); drawFrame(0); } };
+    frames.push(img);
+  }
+
+  let W, H;
+  function resize() {
+    W = window.innerWidth; H = window.innerHeight;
+    const dpr = Math.min(window.devicePixelRatio, 2);
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function drawFrame(index) {
+    if (!ready) return;
+    const img = frames[Math.min(index, TOTAL_FRAMES - 1)];
+    if (!img || !img.complete) return;
+    const imgR = img.naturalWidth / img.naturalHeight;
+    const viewR = W / H;
+    let sw, sh, sx, sy;
+    if (viewR > imgR) { sw = img.naturalWidth; sh = sw / viewR; sx = 0; sy = (img.naturalHeight - sh) * 0.4; }
+    else { sh = img.naturalHeight; sw = sh * viewR; sx = (img.naturalWidth - sw) * 0.5; sy = 0; }
+    ctx.drawImage(img, sx, sy, sw, sh, 0, 0, W, H);
+  }
+
+  window._drawVideoFrame = drawFrame;
+  window._videoReady = () => ready;
+  window.addEventListener('resize', resize);
+  resize();
+})();
+
+
+// ═══════════════════════════════════════════════════════
+// SCROLL CONTROLLER — Mountains + Grass + Video + Logo
+//
+// Phases (p = 0 to 1 over 500vh):
+//   0.00–0.08  Hero text fades out
+//   0.00–0.15  Mountains visible, grass sways peacefully
+//   0.10–0.30  Grass parts, video fades in behind
+//   0.25–0.60  Video scrubs through frames
+//   0.55–0.65  Video + grass fade out, logo fades in
+//   0.65–0.85  Logo hold
+//   0.85–0.95  Logo fades, dark overlay for content
+// ═══════════════════════════════════════════════════════
+(function() {
+  const wrap = document.getElementById('heroWrap');
+  const heroEl = document.getElementById('hero');
+  const grass = document.getElementById('heroGrass');
+  const videoLayer = document.getElementById('heroVideoCanvas');
+  const reveal = document.getElementById('heroReveal');
+  const dark = document.getElementById('heroDark');
+  const hint = document.getElementById('shint');
+  const TOTAL_FRAMES = 105;
+
+  // Smooth interpolation — prevents jarring jumps on fast scroll/fling
+  let targetP = 0;
+  let currentP = 0;
+  const LERP_SPEED = 0.08; // Lower = smoother/slower catch-up. 0.08 feels Apple-smooth.
+  let ticking = false;
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function applyFrame(p) {
+    // Hero text fades out
+    const textFade = 1 - Math.min(1, p / 0.08);
+    heroEl.style.opacity = textFade;
+    heroEl.style.transform = 'translateY(' + (p * -80) + 'px)';
+
+    // Grass zoom (0–0.30) — slow zoom into the grass
+    const zoom = 1 + Math.min(p, 0.30) * 0.6;
+    grass.style.transform = 'scale(' + zoom + ')';
+
+    // Grass parts (0.06–0.22) — blades push aside to reveal video
+    const partProgress = Math.max(0, Math.min(1, (p - 0.06) / 0.16));
+    window._setGrassPart(partProgress);
+
+    // Video layer opacity — fades in as grass parts, holds during scrub, cross-fades to logo
+    let videoOpacity = 0;
+    if (p >= 0.10 && p < 0.20) {
+      videoOpacity = (p - 0.10) / 0.10;
+    } else if (p >= 0.20 && p < 0.52) {
+      videoOpacity = 1;
+    } else if (p >= 0.52 && p < 0.60) {
+      videoOpacity = 1 - (p - 0.52) / 0.08;
+    }
+    videoLayer.style.opacity = videoOpacity;
+
+    // Video scrubs (0.12–0.55) — 105 frames across 43% of scroll
+    if (window._videoReady && window._videoReady()) {
+      const frameP = Math.max(0, Math.min(1, (p - 0.12) / 0.43));
+      window._drawVideoFrame(Math.round(frameP * (TOTAL_FRAMES - 1)));
+    }
+
+    // Grass fades out (0.22–0.32) — starts AFTER parting completes
+    const grassFade = 1 - Math.max(0, Math.min(1, (p - 0.22) / 0.10));
+    grass.style.opacity = grassFade;
+
+    // Logo: cross-fades in over video, holds, fades out into black
+    let revealOpacity = 0;
+    if (p >= 0.52 && p < 0.62) {
+      revealOpacity = (p - 0.52) / 0.10;
+    } else if (p >= 0.62 && p < 0.82) {
+      revealOpacity = 1;
+    } else if (p >= 0.82 && p < 0.94) {
+      revealOpacity = 1 - (p - 0.82) / 0.12;
+    }
+    reveal.style.opacity = revealOpacity;
+    reveal.style.transform = 'none';
+
+    // Fade to black
+    dark.style.opacity = p >= 0.82 ? Math.min(1, (p - 0.82) / 0.14) : 0;
+
+    // Hint
+    if (hint) hint.style.opacity = p > 0.02 ? 0 : 1;
+  }
+
+  // rAF loop — lerps currentP toward targetP every frame
+  function tick() {
+    const diff = Math.abs(targetP - currentP);
+    if (diff < 0.0005) {
+      // Close enough — snap and stop loop
+      currentP = targetP;
+      applyFrame(currentP);
+      ticking = false;
+      return;
+    }
+    currentP = lerp(currentP, targetP, LERP_SPEED);
+    applyFrame(currentP);
+    requestAnimationFrame(tick);
+  }
+
+  function onScroll() {
+    const rect = wrap.getBoundingClientRect();
+    const scrollable = wrap.offsetHeight - window.innerHeight;
+    if (scrollable <= 0) return;
+    targetP = Math.max(0, Math.min(1, -rect.top / scrollable));
+
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(tick);
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+
+// ═══════════════════════════════════════════════════════
+// PILLARS FADE-IN — triggered when section enters viewport
+// ═══════════════════════════════════════════════════════
+(function() {
+  var pillars = document.getElementById('pillars');
+  if (!pillars) return;
+  var obs = new IntersectionObserver(function(entries) {
+    if (entries[0].isIntersecting) {
+      pillars.classList.add('vis');
+      obs.disconnect();
+    }
+  }, { threshold: 0.05 });
+  obs.observe(pillars);
+})();
+
+// ═══════════════════════════════════════════════════════
+// MISSISSIPPI MEANDER MAP — scrolling background
+// The map image pans vertically as you scroll through
+// content sections, traveling along the river.
+// ═══════════════════════════════════════════════════════
+(function() {
+  const bg = document.getElementById('meanderBg');
+  const img = document.getElementById('meanderImg');
+  const below = document.getElementById('below');
+
+  function onScroll() {
+    const belowRect = below.getBoundingClientRect();
+    const belowTop = below.offsetTop;
+    const belowH = below.offsetHeight;
+    const scrolled = window.scrollY - belowTop;
+    const progress = Math.max(0, Math.min(1, scrolled / (belowH - window.innerHeight)));
+
+    // Show only when we're in the content sections
+    const inContent = belowRect.top < window.innerHeight * 0.3 && belowRect.bottom > 0;
+    bg.classList.toggle('vis', inContent);
+
+    // Pan the image: top of map at start → bottom of map at end of page
+    // Image is taller than viewport, so we shift it upward as we scroll
+    const imgH = img.naturalHeight || 1764;
+    const viewH = window.innerHeight;
+    const displayW = window.innerWidth * 1.2;
+    const displayH = displayW * (imgH / 1162); // maintain aspect ratio
+    const maxShift = displayH - viewH;
+    const shift = -progress * maxShift;
+    img.style.top = shift + 'px';
+    img.style.height = displayH + 'px';
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  // Wait for image to load before first calculation
+  img.addEventListener('load', onScroll);
+  onScroll();
+})();
+
+// ═══════════════════════════════════════════════════════
+// MOBILE NAV
+// ═══════════════════════════════════════════════════════
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileNav.classList.toggle('open');
+  document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+});
+function closeMobile() {
+  hamburger.classList.remove('open');
+  mobileNav.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ═══════════════════════════════════════════════════════
+// NAVIGATION + INTERSECTION OBSERVER
+// ═══════════════════════════════════════════════════════
+const navEl = document.getElementById('nav');
+window.addEventListener('scroll', () => navEl.classList.toggle('scrolled', scrollY > 50), { passive: true });
+
+// Scroll reveal observer
+const obs = new IntersectionObserver(ee => ee.forEach(e => {
+  if (e.isIntersecting) setTimeout(() => e.target.classList.add('vis'), parseInt(e.target.dataset.d || 0));
+}), { threshold: 0.15 });
+document.querySelectorAll('.rv,.pcard,.matrix-method,.tool').forEach(el => obs.observe(el));
+
+// Scroll hint hide on scroll
+window.addEventListener('scroll', () => {
+  const hint = document.getElementById('shint');
+  if (hint) hint.classList.toggle('hid', scrollY > 60);
+}, { passive: true });
+
+// ═══════════════════════════════════════════════════════
+// SWM FEE SAVINGS CALCULATOR
+// ═══════════════════════════════════════════════════════
+const SWM_RATES = { 2: 361, 3: 1004, 4: 1879, 5: 3206, 6: 4466, 7: 5495 };
+function calcSavings() {
+  const acres = parseFloat(document.getElementById('calcAcres').value) || 0.25;
+  const curr = parseInt(document.getElementById('calcCurrent').value);
+  const after = parseInt(document.getElementById('calcAfter').value);
+  const currentFee = (SWM_RATES[curr] || 0) * acres;
+  const afterFee = (SWM_RATES[after] || 0) * acres;
+  const savings = Math.max(0, currentFee - afterFee);
+  document.getElementById('calcSavings').textContent = '$' + Math.round(savings).toLocaleString();
+}
+document.getElementById('calcAcres').addEventListener('input', calcSavings);
+document.getElementById('calcCurrent').addEventListener('change', calcSavings);
+document.getElementById('calcAfter').addEventListener('change', calcSavings);
+calcSavings();
+
+// ═══════════════════════════════════════════════════════
+// FORMS — Formspree + localStorage backup
+// ═══════════════════════════════════════════════════════
+const FORMSPREE_LEAD = 'https://formspree.io/f/xovdgbzk'; // Replace with your Formspree form ID
+const FORMSPREE_WAITLIST = 'https://formspree.io/f/mvgogyyq'; // Replace with your Formspree form ID
+
+// Assessment type toggle
+document.querySelectorAll('input[name="assess_type"]').forEach(r => {
+  r.addEventListener('change', () => {
+    document.getElementById('rainDisc').style.display = r.value === 'rain' ? 'block' : 'none';
+    document.getElementById('dryDisc').style.display = r.value === 'dry' ? 'block' : 'none';
+  });
+});
+
+// Lead form
+document.getElementById('lf').addEventListener('submit', async e => {
+  e.preventDefault();
+  const fd = new FormData(e.target), obj = {};
+  fd.forEach((v,k) => { if(k!=='_hp') obj[k]=v; });
+  obj.timestamp = new Date().toISOString();
+  // localStorage backup
+  const leads = JSON.parse(localStorage.getItem('swale_leads')||'[]');
+  leads.push(obj); localStorage.setItem('swale_leads', JSON.stringify(leads));
+  // Formspree submit
+  try { await fetch(FORMSPREE_LEAD, { method:'POST', body: fd, headers:{'Accept':'application/json'} }); } catch(err) {}
+  e.target.style.display = 'none';
+  document.getElementById('fsuccess').style.display = 'block';
+  showToast('Site assessment booked. We will be in touch within 24 hours.');
+});
+
+// Waitlist form
+document.getElementById('wlf').addEventListener('submit', async e => {
+  e.preventDefault();
+  const email = e.target.querySelector('input[name="email"]').value;
+  const wl = JSON.parse(localStorage.getItem('swale_waitlist')||'[]');
+  wl.push({ email, timestamp: new Date().toISOString() });
+  localStorage.setItem('swale_waitlist', JSON.stringify(wl));
+  // Formspree submit
+  try {
+    const fd = new FormData();
+    fd.append('email', email);
+    fd.append('type', 'waitlist');
+    await fetch(FORMSPREE_WAITLIST, { method:'POST', body: fd, headers:{'Accept':'application/json'} });
+  } catch(err) {}
+  e.target.style.display = 'none';
+  document.getElementById('wlsuccess').style.display = 'block';
+  showToast("You're on the waitlist! We'll reach out before August 2026.");
+  updateWlCount();
+});
+
+function updateWlCount() {
+  const wl = JSON.parse(localStorage.getItem('swale_waitlist')||'[]');
+  const base = 12;
+  const el = document.getElementById('wlcount');
+  el.textContent = (wl.length + base) + ' homeowners on the waitlist';
+}
+updateWlCount();
+
+// ═══════════════════════════════════════════════════════
+// LENIS SMOOTH SCROLL
+// ═══════════════════════════════════════════════════════
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  touchMultiplier: 2,
+});
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+// Sync GSAP ScrollTrigger with Lenis
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add((time) => lenis.raf(time * 1000));
+gsap.ticker.lagSmoothing(0);
+
+// ═══════════════════════════════════════════════════════
+// GSAP SCROLL TRIGGER — reveal animations
+// ═══════════════════════════════════════════════════════
+gsap.registerPlugin(ScrollTrigger);
+
+// Stagger pillar cards
+gsap.utils.toArray('.pcard').forEach((card, i) => {
+  gsap.from(card, {
+    scrollTrigger: { trigger: card, start: 'top 85%', toggleActions: 'play none none none' },
+    y: 50, opacity: 0, duration: 0.8, delay: i * 0.15,
+    ease: 'power3.out',
+    onComplete: () => card.classList.add('vis')
+  });
+});
+
+// Stats counter animation
+gsap.utils.toArray('.stat-item').forEach((item) => {
+  const h4 = item.querySelector('h4');
+  const text = h4.textContent;
+  const num = parseFloat(text.replace(/[^0-9.]/g, ''));
+  const prefix = text.match(/^\$/)?.[0] || '';
+  const suffix = text.replace(/^[\$]?[\d,.]+/, '');
+  const isDecimal = text.includes('.');
+
+  ScrollTrigger.create({
+    trigger: item,
+    start: 'top 85%',
+    once: true,
+    onEnter: () => {
+      const obj = { val: 0 };
+      gsap.to(obj, {
+        val: num, duration: 2.5, ease: 'circ.out',
+        onUpdate: () => {
+          const v = isDecimal ? obj.val.toFixed(1) : Math.round(obj.val);
+          const formatted = Number(v).toLocaleString();
+          h4.textContent = prefix + formatted + suffix;
+        },
+        snap: { val: isDecimal ? 0.1 : 1 }
+      });
+    }
+  });
+});
+
+// General reveal animations via GSAP (for elements not handled by the original observer)
+gsap.utils.toArray('.shdr.rv, .oudolf-quote.rv, .oudolf-card.rv, .artisan-text.rv, .eco-text.rv, .eco-mockup.rv').forEach(el => {
+  gsap.from(el, {
+    scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' },
+    y: 40, opacity: 0, duration: 0.8, ease: 'power3.out',
+    onComplete: () => el.classList.add('vis')
+  });
+});
+
+// ═══════════════════════════════════════════════════════
+// MAGNETIC BUTTONS
+// ═══════════════════════════════════════════════════════
+(function() {
+  if (!matchMedia('(hover:hover)').matches) return;
+  const magnets = document.querySelectorAll('.btn-p, .btn-g, .nav-cta, .fsbtn');
+  magnets.forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const rect = btn.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const px = (e.clientX - cx) / rect.width;
+      const py = (e.clientY - cy) / rect.height;
+      btn.style.transform = 'translate(' + (px * 8) + 'px, ' + (py * 4) + 'px)';
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
+  });
+})();
+
+// ═══════════════════════════════════════════════════════
+// ACTIVE NAV SECTION INDICATOR
+// ═══════════════════════════════════════════════════════
+(function() {
+  const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+  const sectionIds = [];
+  navLinks.forEach(a => {
+    const href = a.getAttribute('href');
+    if (href && href.startsWith('#')) sectionIds.push({ el: document.getElementById(href.slice(1)), link: a });
+  });
+
+  function updateActive() {
+    let current = null;
+    sectionIds.forEach(({ el }) => {
+      if (el && el.getBoundingClientRect().top <= window.innerHeight * 0.4) current = el;
+    });
+    sectionIds.forEach(({ el, link }) => {
+      link.classList.toggle('active', el === current);
+    });
+  }
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+})();
+
+// ═══════════════════════════════════════════════════════
+// TOAST NOTIFICATIONS
+// ═══════════════════════════════════════════════════════
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  document.getElementById('toastMsg').textContent = msg;
+  // Reset bar animation
+  const bar = toast.querySelector('.toast-bar');
+  bar.style.animation = 'none';
+  bar.offsetHeight; // reflow
+  bar.style.animation = '';
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 4500);
+}
+
+// ===== ARROW KEY NAVIGATION =====
+(function() {
+  const sections = ['hero','pillars','anatomy','design','mix','planting','savings','tools','materials','ecosystem','waitlist','team','products','contact'];
+  let currentIdx = 0;
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      e.preventDefault();
+      currentIdx = e.key === 'ArrowRight'
+        ? Math.min(currentIdx + 1, sections.length - 1)
+        : Math.max(currentIdx - 1, 0);
+      document.getElementById(sections[currentIdx]).scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+  // Sync currentIdx on manual scroll
+  window.addEventListener('scroll', function() {
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const el = document.getElementById(sections[i]);
+      if (el && el.getBoundingClientRect().top <= window.innerHeight / 2) {
+        currentIdx = i;
+        break;
+      }
+    }
+  }, { passive: true });
+})();
+</script>
 </body>
 </html>
