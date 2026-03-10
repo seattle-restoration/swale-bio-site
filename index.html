@@ -351,22 +351,6 @@ footer .flinks a:hover{color:var(--white)}
 .calc-result .big{font-size:clamp(2rem,4vw,3rem);font-weight:900;color:var(--green);line-height:1}
 .calc-result .sub{font-size:.85rem;color:var(--gray-400);margin-top:8px;font-weight:300}
 
-/* Matrix planting section */
-.matrix-sec{position:relative;padding:56px 40px;background:var(--black);overflow:hidden}
-.matrix-inner{max-width:1100px;margin:0 auto}
-.matrix-methods{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-bottom:60px}
-.matrix-method{padding:40px 28px;border-radius:20px;border:1px solid rgba(15,122,54,.08);background:rgba(15,122,54,.02);text-align:center;transition:border-color .4s;position:relative;overflow:hidden;z-index:1}
-.matrix-method::before{content:'';position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity .6s ease;z-index:-1}
-.matrix-method:nth-child(1)::before{background-image:url('oudolf-1.jpg')}
-.matrix-method:nth-child(2)::before{background-image:url('oudolf-2.jpg')}
-.matrix-method:nth-child(3)::before{background-image:url('oudolf-1.jpg');background-position:right center}
-.matrix-method:hover::before{opacity:.15}
-.matrix-method:hover{border-color:rgba(15,122,54,.25)}
-.matrix-method h4{font-size:1.2rem;font-weight:700;margin-bottom:8px}
-.matrix-method .tag{font-size:.75rem;color:var(--green);font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
-.matrix-method p{font-size:.9rem;color:var(--gray-400);line-height:1.6;font-weight:300}
-.matrix-method svg{margin-bottom:20px}
-.plant-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .plant-tag{padding:16px 20px;border-radius:12px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02);transition:border-color .3s}
 .plant-tag:hover{border-color:rgba(15,122,54,.2)}
 .plant-tag h5{font-size:.9rem;font-weight:600;margin-bottom:2px}
@@ -549,7 +533,7 @@ footer .flinks a:hover{color:var(--white)}
         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" style="margin-bottom:12px"><path d="M6 30L18 6l12 24" stroke="#0f7a36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="6" y1="30" x2="30" y2="30" stroke="#0f7a36" stroke-width="2"/></svg>
         <div style="font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--green);margin-bottom:6px">Grades</div>
         <h4 style="font-size:1rem;font-weight:800;margin-bottom:6px">Gently Grades</h4>
-        <p style="font-size:.8rem;color:var(--gray-400);font-weight:300;line-height:1.5">Precise slopes guide every drop. No ponding, no erosion — just controlled flow.</p>
+        <p style="font-size:.8rem;color:var(--gray-400);font-weight:300;line-height:1.5">Precise slopes guide every drop. No ponding, no erosion. Just controlled flow.</p>
       </div>
       <div style="background:rgba(15,122,54,.08);border:1px solid rgba(15,122,54,.15);border-radius:16px;padding:24px 16px;text-align:center">
         <svg width="36" height="36" viewBox="0 0 36 36" fill="none" style="margin-bottom:12px"><circle cx="18" cy="18" r="12" stroke="#0f7a36" stroke-width="1.5" opacity=".3"/><path d="M12 18h12M18 12v12" stroke="#0f7a36" stroke-width="2" stroke-linecap="round"/></svg>
@@ -781,49 +765,28 @@ footer .flinks a:hover{color:var(--white)}
 
 <!-- POLLINATOR ADD-ONS -->
 <section id="planting" style="position:relative;overflow:hidden;padding:0">
-  <div style="position:relative;min-height:680px">
+  <div style="position:relative;min-height:580px">
     <!-- Oudolf landscape — full bleed -->
     <img src="oudolf-bg.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1">
     <div style="position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(10,10,10,.82) 0%,rgba(10,10,10,.55) 25%,rgba(10,10,10,.35) 55%,rgba(10,10,10,.6) 100%)"></div>
 
     <!-- Header text -->
-    <div style="position:relative;z-index:5;text-align:center;padding:80px 40px 24px">
+    <div style="position:relative;z-index:5;text-align:center;padding:60px 40px 16px">
       <div style="font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green-light);margin-bottom:16px">Stops Traffic Cold</div>
       <h2 style="font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;line-height:1;letter-spacing:-.03em;margin-bottom:20px;text-shadow:0 2px 20px rgba(0,0,0,.7)">The <em style="font-style:normal;color:var(--green)">Pollinator Upgrade.</em></h2>
       <p style="font-size:1.1rem;color:rgba(255,255,255,.6);font-weight:300;max-width:550px;margin:0 auto;line-height:1.6">Choose your colors. We plant the natives that make them happen.</p>
     </div>
 
-    <!-- Dots embedded in the landscape -->
-    <div style="position:relative;z-index:5;display:flex;gap:48px;justify-content:center;padding:40px 40px 0;flex-wrap:wrap">
-      <div class="pol-swatch" data-color="yellow" style="--swatch:#e8c840">
-        <div class="pol-dot"></div>
-        <span class="pol-name">Oregon Grape</span>
-      </div>
-      <div class="pol-swatch" data-color="blue" style="--swatch:#4a6ad8">
-        <div class="pol-dot"></div>
-        <span class="pol-name">Tall Larkspur</span>
-      </div>
-      <div class="pol-swatch" data-color="red" style="--swatch:#e05050">
-        <div class="pol-dot"></div>
-        <span class="pol-name">Kinnikinnick</span>
-      </div>
-      <div class="pol-swatch" data-color="purple" style="--swatch:#9c60c0">
-        <div class="pol-dot"></div>
-        <span class="pol-name">Wild Geranium</span>
-      </div>
-      <div class="pol-swatch" data-color="white" style="--swatch:#f0ede4">
-        <div class="pol-dot"></div>
-        <span class="pol-name">Goatsbeard</span>
-      </div>
+    <!-- Dots embedded in the landscape (populated by JS) -->
+    <div id="polDots" style="position:relative;z-index:5;display:flex;gap:48px;justify-content:center;align-items:center;padding:24px 40px 0;flex-wrap:wrap"></div>
+
+    <!-- Subtle shuffle button -->
+    <div style="position:relative;z-index:5;text-align:center;margin-top:12px">
+      <button id="polShuffle" title="New palette" style="background:none;border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:6px 16px;color:rgba(255,255,255,.35);font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all .3s;font-family:inherit">&#x21bb; New palette</button>
     </div>
 
-    <!-- Pollinator vectors — rise from landscape on hover -->
-    <div style="position:relative;height:260px;margin-top:-20px">
-      <img class="pol-float" data-color="yellow" src="pol-yellow.png" alt="Oregon Grape" style="position:absolute;left:10%;bottom:0;height:260px;z-index:4">
-      <img class="pol-float" data-color="blue" src="pol-blue.png" alt="Tall Larkspur" style="position:absolute;left:26%;bottom:0;height:300px;z-index:4">
-      <img class="pol-float" data-color="red" src="pol-red.png" alt="Kinnikinnick" style="position:absolute;left:42%;bottom:0;height:240px;z-index:4">
-      <img class="pol-float" data-color="purple" src="pol-purple.png" alt="Wild Geranium" style="position:absolute;left:58%;bottom:0;height:260px;z-index:4">
-      <img class="pol-float" data-color="white" src="pol-white.png" alt="Goatsbeard" style="position:absolute;left:74%;bottom:0;height:280px;z-index:4">
+    <!-- Pollinator vectors — rise from landscape on hover (populated by JS) -->
+    <div id="polFloats" style="position:relative;height:220px;margin-top:-10px">
       <!-- Soft ground fade — plants emerge from this -->
       <div style="position:absolute;bottom:0;left:0;right:0;height:100px;z-index:5;background:linear-gradient(0deg,rgba(10,10,10,.85) 0%,rgba(10,10,10,.3) 60%,transparent 100%)"></div>
     </div>
@@ -838,22 +801,99 @@ footer .flinks a:hover{color:var(--white)}
 .pol-swatch:hover .pol-name{opacity:.8}
 .pol-float{object-fit:contain;opacity:0;transform:translateY(80px) scale(.85);filter:brightness(.3) saturate(.5);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1),filter .8s cubic-bezier(.16,1,.3,1);transform-origin:bottom center}
 .pol-float.active{opacity:1;transform:translateY(-30px) scale(1);filter:brightness(1) saturate(1.1);drop-shadow(0 8px 24px rgba(0,0,0,.4))}
+#polShuffle:hover{color:rgba(255,255,255,.6);border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.05)}
 </style>
 <script>
 (function(){
-  const swatches=document.querySelectorAll('.pol-swatch');
-  const floats=document.querySelectorAll('.pol-float');
-  swatches.forEach(s=>{
-    s.addEventListener('mouseenter',()=>{
-      const c=s.dataset.color;
-      floats.forEach(f=>{
-        if(f.dataset.color===c){f.classList.add('active')}
-        else{f.classList.remove('active')}
+  var PALETTES=[
+    {name:'Woodland',plants:[
+      {id:'grape',label:'Oregon Grape',color:'#e8c840',h:260},
+      {id:'larkspur',label:'Tall Larkspur',color:'#4a6ad8',h:300},
+      {id:'kinnik',label:'Kinnikinnick',color:'#e05050',h:240},
+      {id:'geranium',label:'Wild Geranium',color:'#9c60c0',h:260},
+      {id:'goatsbeard',label:'Goatsbeard',color:'#f0ede4',h:280}
+    ]},
+    {name:'Streamside',plants:[
+      {id:'currant',label:'Flowering Currant',color:'#e8567f',h:270},
+      {id:'silverweed',label:'Pacific Silverweed',color:'#e8c840',h:240},
+      {id:'waterleaf',label:'Pacific Waterleaf',color:'#b8a0d0',h:260},
+      {id:'maidenhair',label:'Maidenhair Fern',color:'#4aad5a',h:280},
+      {id:'strawberry',label:'Coastal Strawberry',color:'#e05050',h:240}
+    ]},
+    {name:'Meadow',plants:[
+      {id:'iris',label:'Arctic Iris',color:'#6050b0',h:280},
+      {id:'columbine',label:'Red Columbine',color:'#d06030',h:270},
+      {id:'goatsbeard',label:'Goatsbeard',color:'#f0ede4',h:280},
+      {id:'rose',label:'Nootka Rose',color:'#d88098',h:260},
+      {id:'sorrel',label:'Woodland Sorrel',color:'#70c0a0',h:240}
+    ]},
+    {name:'Pollinator',plants:[
+      {id:'onion',label:'Nodding Onion',color:'#c87acc',h:260},
+      {id:'aster',label:'Douglas Aster',color:'#7c6fc4',h:280},
+      {id:'grape',label:'Oregon Grape',color:'#dab830',h:260},
+      {id:'currant',label:'Flowering Currant',color:'#e8567f',h:270},
+      {id:'maidenhair',label:'Maidenhair Fern',color:'#4aad5a',h:280}
+    ]},
+    {name:'Understory',plants:[
+      {id:'kinnik',label:'Kinnikinnick',color:'#c04040',h:240},
+      {id:'larkspur',label:'Tall Larkspur',color:'#4848a8',h:300},
+      {id:'silverweed',label:'Pacific Silverweed',color:'#dab830',h:240},
+      {id:'strawberry',label:'Coastal Strawberry',color:'#e87070',h:240},
+      {id:'sorrel',label:'Woodland Sorrel',color:'#70c0a0',h:250}
+    ]}
+  ];
+  var dotsEl=document.getElementById('polDots');
+  var floatsEl=document.getElementById('polFloats');
+  var fadeEl=floatsEl.lastElementChild;
+  var positions=[10,26,42,58,74];
+  var currentIdx=-1;
+
+  function render(palIdx){
+    currentIdx=palIdx;
+    var pal=PALETTES[palIdx];
+    // Clear old
+    dotsEl.innerHTML='';
+    var oldImgs=floatsEl.querySelectorAll('.pol-float');
+    oldImgs.forEach(function(el){el.remove()});
+    // Build new
+    pal.plants.forEach(function(p,i){
+      var sw=document.createElement('div');
+      sw.className='pol-swatch';
+      sw.dataset.idx=i;
+      sw.style.setProperty('--swatch',p.color);
+      sw.innerHTML='<div class="pol-dot"></div><span class="pol-name">'+p.label+'</span>';
+      dotsEl.appendChild(sw);
+      var img=document.createElement('img');
+      img.className='pol-float';
+      img.dataset.idx=i;
+      img.src='pol-'+p.id+'.png';
+      img.alt=p.label;
+      img.style.cssText='position:absolute;left:'+positions[i]+'%;bottom:0;height:'+p.h+'px;z-index:4';
+      floatsEl.insertBefore(img,fadeEl);
+    });
+    // Re-bind hover
+    var swatches=dotsEl.querySelectorAll('.pol-swatch');
+    var floats=floatsEl.querySelectorAll('.pol-float');
+    swatches.forEach(function(s){
+      s.addEventListener('mouseenter',function(){
+        var idx=s.dataset.idx;
+        floats.forEach(function(f){
+          if(f.dataset.idx===idx){f.classList.add('active')}
+          else{f.classList.remove('active')}
+        });
+      });
+      s.addEventListener('mouseleave',function(){
+        floats.forEach(function(f){f.classList.remove('active')});
       });
     });
-    s.addEventListener('mouseleave',()=>{
-      floats.forEach(f=>f.classList.remove('active'));
-    });
+  }
+
+  render(Math.floor(Math.random()*PALETTES.length));
+
+  document.getElementById('polShuffle').addEventListener('click',function(){
+    var next;
+    do{ next=Math.floor(Math.random()*PALETTES.length) }while(next===currentIdx&&PALETTES.length>1);
+    render(next);
   });
 })();
 </script>
@@ -972,7 +1012,7 @@ footer .flinks a:hover{color:var(--white)}
         <img src="beehive-grate-final.png" alt="Beehive grate">
       </div>
       <div class="tool-name">Beehive Grate</div>
-      <div class="tool-origin">J.R. Hoe — Cast Iron</div>
+      <div class="tool-origin">J.R. Hoe, Cast Iron</div>
       <div class="tool-desc">MCB-350BH round manhole beehive grate. The most beautiful drain cover ever cast. Connects your swale to the municipal system with style.</div>
     </div>
 
@@ -990,7 +1030,7 @@ footer .flinks a:hover{color:var(--white)}
         <img src="check-dam-final.png" alt="Check dam timber">
       </div>
       <div class="tool-name">Check Dam Timber</div>
-      <div class="tool-origin">Three Species — Your Choice</div>
+      <div class="tool-origin">Three Species, Your Choice</div>
       <div class="tool-desc">Western red cedar, white oak, or juniper. Hand-selected and milled for your swale. Each species weathers differently. Your choice.</div>
     </div>
   </div>
@@ -1167,7 +1207,7 @@ footer .flinks a:hover{color:var(--white)}
         <!-- Rain disclosure -->
         <div class="assess-disclosure rain-disc" id="rainDisc">
           <div class="disc-badge">Limited Availability</div>
-          <p>Rain assessments are scheduled around live storm events — we can only book a handful per season. You'll see exactly how water moves across your site under real conditions. No simulation compares.</p>
+          <p>Rain assessments are scheduled around live storm events. We can only book a handful per season. You'll see exactly how water moves across your site under real conditions. No simulation compares.</p>
           <p class="disc-note">Expect longer lead times. We'll contact you when the next qualifying storm is forecasted and confirm 48 hours in advance.</p>
         </div>
 
