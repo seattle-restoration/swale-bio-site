@@ -56,7 +56,19 @@ nav.scrolled{background:rgba(10,10,10,.85);backdrop-filter:blur(20px);-webkit-ba
 .nav-links{display:flex;gap:32px;align-items:center}
 .nav-links a{color:var(--gray-400);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.05em;transition:color .3s}
 .nav-links a:hover{color:var(--white)}
-.nav-cta{background:var(--green)!important;color:var(--white)!important;padding:10px 24px;border-radius:100px;font-weight:600!important}
+.nav-cta{background:var(--green)!important;color:var(--white)!important;padding:10px 24px;border-radius:100px;font-weight:600!important;position:relative;cursor:pointer}
+.nav-dropdown{position:relative}
+.nav-dropdown .nav-cta{display:inline-flex;align-items:center;gap:6px}
+.nav-dropdown .nav-cta svg{transition:transform .3s}
+.nav-dropdown:hover .nav-cta svg{transform:rotate(180deg)}
+.dropdown-menu{position:absolute;top:calc(100% + 12px);right:0;min-width:420px;background:rgba(20,20,20,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:24px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s,visibility .25s,transform .25s;z-index:2000;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.nav-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown-col h4{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-light);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid rgba(15,122,54,.2)}
+.dropdown-col a{display:block;color:var(--gray-400);font-size:.82rem;font-weight:400;padding:4px 0;transition:color .2s,padding-left .2s;text-decoration:none;letter-spacing:0}
+.dropdown-col a:hover{color:var(--white);padding-left:6px}
+.dropdown-pilot{grid-column:1/-1;text-align:center;padding-top:16px;border-top:1px solid rgba(255,255,255,.06)}
+.dropdown-pilot a{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:var(--white)!important;padding:10px 28px;border-radius:100px;font-size:.88rem;font-weight:600;transition:background .3s,transform .15s}
+.dropdown-pilot a:hover{background:var(--green-dark);transform:translateY(-2px);padding-left:28px}
 #hero{position:absolute;top:0;left:0;width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;z-index:10;padding:0 40px;pointer-events:none;transition:opacity .4s}
 #hero>*{pointer-events:auto}
 .hero-badge{display:inline-block;padding:6px 20px;border:1px solid rgba(15,122,54,.4);border-radius:100px;font-size:.75rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--green-light);margin-bottom:32px;background:rgba(10,10,10,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
@@ -432,9 +444,34 @@ footer .flinks a:hover{color:var(--white)}
     <a href="#savings">Savings</a>
     <a href="#waitlist">Waitlist</a>
     <a href="#products">Products</a>
-    <a href="/thornton-creek/">Thornton Creek</a>
-    <a href="/ravenna-creek/">Ravenna Creek</a>
-    <a href="#contact" class="nav-cta">Get Started</a>
+    <div class="nav-dropdown">
+      <span class="nav-cta">Get Started <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></span>
+      <div class="dropdown-menu">
+        <div class="dropdown-col">
+          <h4>Thornton Creek Watershed</h4>
+          <a href="/pilot/">Cedar Park</a>
+          <a href="/pilot/">Lake City</a>
+          <a href="/pilot/">Licton Springs</a>
+          <a href="/pilot/">Maple Leaf</a>
+          <a href="/pilot/">Matthews Beach</a>
+          <a href="/pilot/">Meadowbrook</a>
+          <a href="/pilot/">Northgate</a>
+          <a href="/pilot/">Pinehurst</a>
+          <a href="/pilot/">Victory Heights</a>
+          <a href="/pilot/">Wedgwood</a>
+        </div>
+        <div class="dropdown-col">
+          <h4>Ravenna Creek Watershed</h4>
+          <a href="/pilot/">Bryant</a>
+          <a href="/pilot/">Green Lake</a>
+          <a href="/pilot/">Ravenna</a>
+          <a href="/pilot/">University District</a>
+        </div>
+        <div class="dropdown-pilot">
+          <a href="/pilot/">Apply for Pilot Program <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+    </div>
   </div>
   <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
@@ -444,9 +481,17 @@ footer .flinks a:hover{color:var(--white)}
   <a href="#savings" onclick="closeMobile()">Savings</a>
   <a href="#waitlist" onclick="closeMobile()">Waitlist</a>
   <a href="#products" onclick="closeMobile()">Products</a>
-  <a href="/thornton-creek/" onclick="closeMobile()">Thornton Creek</a>
-  <a href="/ravenna-creek/" onclick="closeMobile()">Ravenna Creek</a>
-  <a href="#contact" class="nav-cta" onclick="closeMobile()">Get Started</a>
+  <div style="text-align:center;margin:8px 0"><span style="font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-light)">Thornton Creek</span></div>
+  <a href="/pilot/" onclick="closeMobile()" style="font-size:1rem">Cedar Park</a>
+  <a href="/pilot/" onclick="closeMobile()" style="font-size:1rem">Lake City</a>
+  <a href="/pilot/" onclick="closeMobile()" style="font-size:1rem">Maple Leaf</a>
+  <a href="/pilot/" onclick="closeMobile()" style="font-size:1rem">Wedgwood</a>
+  <div style="text-align:center;margin:8px 0"><span style="font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-light)">Ravenna Creek</span></div>
+  <a href="/pilot/" onclick="closeMobile()" style="font-size:1rem">Bryant</a>
+  <a href="/pilot/" onclick="closeMobile()" style="font-size:1rem">Green Lake</a>
+  <a href="/pilot/" onclick="closeMobile()" style="font-size:1rem">Ravenna</a>
+  <a href="/pilot/" onclick="closeMobile()" style="font-size:1rem">University District</a>
+  <a href="/pilot/" class="nav-cta" onclick="closeMobile()">Pilot Program</a>
 </div>
 
 <!-- ═══ HERO SCENE — Scroll-through grass field ═══ -->
