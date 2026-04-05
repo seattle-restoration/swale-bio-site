@@ -3,6 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18065104449"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18065104449');
+</script>
 <title>SWALE | Bioswale Design, Construction & Maintenance | Seattle</title>
 <meta name="description" content="Seattle's premier bioswale company. We design, build, and maintain living infrastructure that settles stormwater, tames torrents, and filters filth. Join our residential waitlist.">
 <meta name="keywords" content="bioswale, bioswale Seattle, bioswale installation, bioswale design, green infrastructure Seattle, stormwater management, rain garden, green factor, sustainable landscaping, bioswale waitlist, residential bioswale, commercial bioswale, hori hori, swale maintenance, beehive grate, Alderwood soil, check dam, bioretention, RainBird irrigation, smart irrigation Seattle, low maintenance landscaping, Piet Oudolf, naturalistic planting">
@@ -1713,10 +1721,10 @@ document.getElementById('lf').addEventListener('submit', async e => {
   const leads = JSON.parse(localStorage.getItem('swale_leads')||'[]');
   leads.push(obj); localStorage.setItem('swale_leads', JSON.stringify(leads));
   try {
-    await fetch('https://formspree.io/f/xovdgbzk', {
-      method: 'POST', headers: { 'Accept': 'application/json' }, body: fd
+    await fetch('https://formsubmit.co/ajax/jack@swale.bio', {
+      method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(obj)
     });
-  } catch(err) { console.error('Formspree error:', err); }
+  } catch(err) { console.error('Form error:', err); }
   e.target.style.display = 'none';
   document.getElementById('fsuccess').style.display = 'block';
   showToast('Application submitted!');
@@ -1733,10 +1741,10 @@ document.getElementById('wlf').addEventListener('submit', async e => {
     const fd = new FormData();
     fd.append('email', email);
     fd.append('_subject', 'Residential Waitlist Signup');
-    await fetch('https://formspree.io/f/mvgogyyq', {
-      method: 'POST', headers: { 'Accept': 'application/json' }, body: fd
+    await fetch('https://formsubmit.co/ajax/jack@swale.bio', {
+      method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ email, _subject: 'Residential Waitlist Signup' })
     });
-  } catch(err) { console.error('Formspree error:', err); }
+  } catch(err) { console.error('Form error:', err); }
   e.target.style.display = 'none';
   document.getElementById('wlsuccess').style.display = 'block';
   showToast("You're on the list!");
