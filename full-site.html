@@ -1704,7 +1704,7 @@ document.querySelectorAll('input[name="assess_type"]').forEach(r => {
   });
 });
 
-// Lead form — mailto to jack@swale.bio
+// Lead form — Formspree + localStorage backup
 document.getElementById('lf').addEventListener('submit', async e => {
   e.preventDefault();
   const fd = new FormData(e.target), obj = {};
@@ -1712,31 +1712,34 @@ document.getElementById('lf').addEventListener('submit', async e => {
   obj.timestamp = new Date().toISOString();
   const leads = JSON.parse(localStorage.getItem('swale_leads')||'[]');
   leads.push(obj); localStorage.setItem('swale_leads', JSON.stringify(leads));
-  var lines = [];
-  if(obj.name) lines.push('Name: '+obj.name);
-  if(obj.email) lines.push('Email: '+obj.email);
-  if(obj.phone) lines.push('Phone: '+obj.phone);
-  if(obj.project_type) lines.push('Project: '+obj.project_type);
-  if(obj.address) lines.push('Address: '+obj.address);
-  if(obj.assess_type) lines.push('Assessment: '+obj.assess_type);
-  if(obj.message) lines.push('\n'+obj.message);
-  window.location.href = 'mailto:jack@swale.bio?subject='+encodeURIComponent('Site Assessment Request')+'&body='+encodeURIComponent(lines.join('\n'));
+  try {
+    await fetch('https://formspree.io/f/xovdgbzk', {
+      method: 'POST', headers: { 'Accept': 'application/json' }, body: fd
+    });
+  } catch(err) { console.error('Formspree error:', err); }
   e.target.style.display = 'none';
   document.getElementById('fsuccess').style.display = 'block';
-  showToast('Opening your email client...');
+  showToast('Application submitted!');
 });
 
-// Waitlist form — mailto to jack@swale.bio
+// Waitlist form — Formspree + localStorage backup
 document.getElementById('wlf').addEventListener('submit', async e => {
   e.preventDefault();
   const email = e.target.querySelector('input[name="email"]').value;
   const wl = JSON.parse(localStorage.getItem('swale_waitlist')||'[]');
   wl.push({ email, timestamp: new Date().toISOString() });
   localStorage.setItem('swale_waitlist', JSON.stringify(wl));
-  window.location.href = 'mailto:jack@swale.bio?subject='+encodeURIComponent('Residential Waitlist Signup')+'&body='+encodeURIComponent('I\'d like to join the residential bioswale waitlist.\n\nEmail: '+email);
+  try {
+    const fd = new FormData();
+    fd.append('email', email);
+    fd.append('_subject', 'Residential Waitlist Signup');
+    await fetch('https://formspree.io/f/mvgogyyq', {
+      method: 'POST', headers: { 'Accept': 'application/json' }, body: fd
+    });
+  } catch(err) { console.error('Formspree error:', err); }
   e.target.style.display = 'none';
   document.getElementById('wlsuccess').style.display = 'block';
-  showToast("Opening your email client...");
+  showToast("You're on the list!");
   updateWlCount();
 });
 
