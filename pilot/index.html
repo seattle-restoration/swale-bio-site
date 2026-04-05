@@ -3,6 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18065104449"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18065104449');
+</script>
 <title>Thornton Creek Pilot Program | SWALE Seattle</title>
 <meta name="description" content="Apply for the Thornton Creek Watershed Pilot Program. We're selecting 5 homeowners for founding bioswale installations with complimentary site assessment, priority scheduling, and our signature iron-branded cedar check dam.">
 <meta name="keywords" content="bioswale pilot program Seattle, free bioswale assessment, Thornton Creek watershed, landscaping pilot program, bioswale installation Seattle, rain garden Seattle">
@@ -392,8 +400,10 @@ async function submitForm(e) {
   data.append('_subject', 'Pilot Program Application - ' + data.get('fname') + ' ' + data.get('lname') + ' - ' + data.get('neighborhood'));
 
   try {
-    await fetch('https://formspree.io/f/xovdgbzk', {
-      method: 'POST', headers: { 'Accept': 'application/json' }, body: data
+    const obj = {};
+    data.forEach((v,k) => obj[k] = v);
+    await fetch('https://formsubmit.co/ajax/jack@swale.bio', {
+      method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(obj)
     });
   } catch(err) { console.error('Formspree error:', err); }
 
