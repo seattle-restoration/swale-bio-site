@@ -384,27 +384,18 @@ function closeMobile(){hamburger.classList.remove('open');mobileNav.classList.re
 const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');observer.unobserve(e.target);}});},{threshold:0.1});
 document.querySelectorAll('.rv').forEach(el=>observer.observe(el));
 
-// Form submission
-function submitForm(e) {
+// Form submission — Formspree
+async function submitForm(e) {
   e.preventDefault();
   const form = document.getElementById('pilotForm');
   const data = new FormData(form);
+  data.append('_subject', 'Pilot Program Application - ' + data.get('fname') + ' ' + data.get('lname') + ' - ' + data.get('neighborhood'));
 
-  // Build mailto with form data
-  let body = 'PILOT PROGRAM APPLICATION\n\n';
-  body += 'Name: ' + data.get('fname') + ' ' + data.get('lname') + '\n';
-  body += 'Email: ' + data.get('email') + '\n';
-  body += 'Phone: ' + (data.get('phone') || 'Not provided') + '\n';
-  body += 'Address: ' + data.get('address') + '\n';
-  body += 'Neighborhood: ' + data.get('neighborhood') + '\n';
-  body += 'Lot Size: ' + data.get('lotsize') + '\n';
-  body += 'Drainage: ' + (data.get('drainage') || 'Not specified') + '\n';
-  body += 'Why interested: ' + (data.get('why') || 'Not provided') + '\n';
-  body += 'How heard: ' + (data.get('how') || 'Not specified') + '\n';
-
-  // Send via mailto
-  const subject = 'Pilot Program Application - ' + data.get('fname') + ' ' + data.get('lname') + ' - ' + data.get('neighborhood');
-  window.location.href = 'mailto:jack@swale.bio?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  try {
+    await fetch('https://formspree.io/f/xovdgbzk', {
+      method: 'POST', headers: { 'Accept': 'application/json' }, body: data
+    });
+  } catch(err) { console.error('Formspree error:', err); }
 
   // Show success state
   form.style.display = 'none';
