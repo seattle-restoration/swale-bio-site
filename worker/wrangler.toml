@@ -1,0 +1,16 @@
+name = "swale-api"
+main = "src/index.js"
+compatibility_date = "2026-05-01"
+
+# KV namespace for Rainbird state (Phase 2). Uncomment after creating with:
+#   npx wrangler kv namespace create SWALE_KV
+# then paste the returned id below.
+# [[kv_namespaces]]
+# binding = "SWALE_KV"
+# id = "PASTE_ID_HERE"
+
+# Secrets are set with `npx wrangler secret put <NAME>` (NOT here):
+#   ECOWITT_APP_KEY   (from api.ecowitt.net "Application Key")
+#   ECOWITT_API_KEY   (from api.ecowitt.net "API Key")
+#   ECOWITT_MAC       (the GW1200 MAC address, e.g. "AB:CD:EF:12:34:56")
+#   BRIDGE_TOKEN      (random string; only needed for Phase 2 Rainbird bridge)

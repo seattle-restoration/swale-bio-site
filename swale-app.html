@@ -1063,19 +1063,18 @@ body {
   </div>
   <div class="section-header"><span class="section-title">Sensors</span></div>
   <div class="setting-group">
-    <div class="setting-row"><span class="setting-label">ESP32 Controller</span><span class="setting-value" style="color:var(--green)">Connected</span></div>
-    <div class="setting-row"><span class="setting-label">Probe X (Front)</span><span class="setting-value" style="color:var(--green)">Online</span></div>
-    <div class="setting-row"><span class="setting-label">Probe Y (Middle)</span><span class="setting-value" style="color:var(--green)">Online</span></div>
-    <div class="setting-row"><span class="setting-label">Probe Z (Back)</span><span class="setting-value" style="color:var(--green)">Online</span></div>
-    <div class="setting-row"><span class="setting-label">Piezometer</span><span class="setting-value" style="color:var(--green)">Online</span></div>
-    <div class="setting-row"><span class="setting-label">Sump CT Clamp</span><span class="setting-value" style="color:var(--green)">Online</span></div>
+    <div class="setting-row"><span class="setting-label">Ecowitt API</span><span class="setting-value" id="settApiConn">Connecting…</span></div>
+    <div class="setting-row"><span class="setting-label">Probe X (Swale Front)</span><span class="setting-value" data-probe="swaleX">--</span></div>
+    <div class="setting-row"><span class="setting-label">Probe Y (Swale Middle)</span><span class="setting-value" data-probe="swaleY">--</span></div>
+    <div class="setting-row"><span class="setting-label">Probe Z (Swale Back)</span><span class="setting-value" data-probe="swaleZ">--</span></div>
+    <div class="setting-row"><span class="setting-label">Hanging Baskets</span><span class="setting-value" data-probe="baskets">--</span></div>
+    <div class="setting-row"><span class="setting-label">Sump</span><span class="setting-value" data-probe="sump">--</span></div>
     <div class="setting-row"><span class="setting-label">Last Reading</span><span class="setting-value" id="settLastReading">--</span></div>
   </div>
   <div class="section-header"><span class="section-title">Irrigation</span></div>
   <div class="setting-group">
-    <div class="setting-row"><span class="setting-label">RainBird ESP-TM2</span><span class="setting-value" style="color:var(--green)">Connected</span></div>
-    <div class="setting-row"><span class="setting-label">LNK2 WiFi Module</span><span class="setting-value" style="color:var(--green)">Online</span></div>
-    <div class="setting-row"><span class="setting-label">IP Address</span><span class="setting-value">192.168.1.42</span></div>
+    <div class="setting-row"><span class="setting-label">RainBird ESP-TM2</span><span class="setting-value" id="settRainbirdConn" style="color:var(--amber)">Schedule view (Phase 2)</span></div>
+    <div class="setting-row"><span class="setting-label">LNK Wi-Fi Module</span><span class="setting-value" style="color:var(--text-secondary)">LAN bridge pending</span></div>
   </div>
   <div class="section-header"><span class="section-title">Account</span></div>
   <div class="setting-group">
@@ -1160,14 +1159,55 @@ const ZONE_HISTORY = {
   baskets: genZoneHistory(18),
 };
 
-// Simulate ESP32 updates every 5 seconds
+// ========== LIVE DATA BRIDGE ==========
+// Set this to the deployed Cloudflare Worker URL after `npx wrangler deploy`.
+// Falls through to simulation if unreachable or unset.
+const API_BASE = 'https://swale-api.YOUR-CF-ACCOUNT.workers.dev';
+const LIVE_ZONES = new Set();    // zones with real Ecowitt data; simulator skips these
+let LAST_LIVE_FETCH = 0;
+let API_STATUS = 'connecting';   // 'live' | 'offline' | 'connecting'
+
+async function fetchLiveSensors() {
+  if (!API_BASE || API_BASE.includes('YOUR-CF-ACCOUNT')) {
+    API_STATUS = 'offline';
+    return;
+  }
+  try {
+    const r = await fetch(API_BASE + '/sensors', { cache: 'no-store' });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const data = await r.json();
+    if (!data.ok) throw new Error(data.error || 'api error');
+    for (const [zone, val] of Object.entries(data.moisture || {})) {
+      if (val !== null && Number.isFinite(val)) {
+        SIM[zone] = val;
+        LIVE_ZONES.add(zone);
+      }
+    }
+    if (data.environment && Number.isFinite(data.environment.soilTemp)) {
+      SIM.soilTemp = data.environment.soilTemp;
+      LIVE_ZONES.add('soilTemp');
+    }
+    LAST_LIVE_FETCH = Date.now();
+    API_STATUS = 'live';
+    updateDashboard();
+  } catch (e) {
+    console.warn('[swale-api] fetch failed:', e.message);
+    API_STATUS = 'offline';
+  }
+}
+
+// Hit the API now and every 60s thereafter
+fetchLiveSensors();
+setInterval(fetchLiveSensors, 60000);
+
+// Simulate the zones that aren't reporting live data yet (every 5 seconds)
 setInterval(() => {
-  SIM.swaleX = clamp(SIM.swaleX + (Math.random() - 0.48) * 2, 20, 60);
-  SIM.swaleY = clamp(SIM.swaleY + (Math.random() - 0.48) * 2, 20, 55);
-  SIM.swaleZ = clamp(SIM.swaleZ + (Math.random() - 0.45) * 2, 15, 50);
-  SIM.baskets = clamp(SIM.baskets + (Math.random() - 0.5) * 1.5, 5, 40);
+  if (!LIVE_ZONES.has('swaleX')) SIM.swaleX = clamp(SIM.swaleX + (Math.random() - 0.48) * 2, 20, 60);
+  if (!LIVE_ZONES.has('swaleY')) SIM.swaleY = clamp(SIM.swaleY + (Math.random() - 0.48) * 2, 20, 55);
+  if (!LIVE_ZONES.has('swaleZ')) SIM.swaleZ = clamp(SIM.swaleZ + (Math.random() - 0.45) * 2, 15, 50);
+  if (!LIVE_ZONES.has('baskets')) SIM.baskets = clamp(SIM.baskets + (Math.random() - 0.5) * 1.5, 5, 40);
   SIM.waterTable = clamp(SIM.waterTable + (Math.random() - 0.5) * 0.5, 24, 48);
-  SIM.soilTemp = clamp(SIM.soilTemp + (Math.random() - 0.5) * 0.3, 40, 65);
+  if (!LIVE_ZONES.has('soilTemp')) SIM.soilTemp = clamp(SIM.soilTemp + (Math.random() - 0.5) * 0.3, 40, 65);
   SIM.flowToday += Math.random() * 0.1;
   SIM.sumpLevel = clamp(SIM.sumpLevel + (Math.random() - 0.5) * 0.5, 2, 18);
   if (SIM.sumpLevel > 16 && Math.random() > 0.8) { SIM.sumpRuns++; SIM.sumpLevel = 4; }
@@ -1252,6 +1292,34 @@ function updateDashboard() {
   updateImpact();
   // Settings last reading
   document.getElementById('settLastReading').textContent = new Date().toLocaleTimeString();
+  // Connection + per-probe status on settings page
+  updateConnectionUI();
+}
+
+function updateConnectionUI() {
+  const apiEl = document.getElementById('settApiConn');
+  if (apiEl) {
+    if (API_STATUS === 'live') {
+      apiEl.textContent = 'Live';
+      apiEl.style.color = 'var(--green)';
+    } else if (API_STATUS === 'offline') {
+      apiEl.textContent = 'Offline — using simulator';
+      apiEl.style.color = 'var(--amber)';
+    } else {
+      apiEl.textContent = 'Connecting…';
+      apiEl.style.color = 'var(--text-secondary)';
+    }
+  }
+  document.querySelectorAll('[data-probe]').forEach(el => {
+    const z = el.dataset.probe;
+    if (LIVE_ZONES.has(z)) {
+      el.textContent = Math.round(SIM[z]) + '%';
+      el.style.color = 'var(--green)';
+    } else {
+      el.textContent = 'Not paired';
+      el.style.color = 'var(--text-secondary)';
+    }
+  });
 }
 
 const ZONES = [
