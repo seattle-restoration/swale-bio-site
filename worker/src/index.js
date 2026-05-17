@@ -4,17 +4,12 @@
 
 const CACHE_TTL_SECONDS = 30;
 
-// Map Ecowitt channel -> app zone key.
-// You have 2 WH51s now; remaining zones return null and the PWA shows them as "--".
+// Map Ecowitt channel -> app zone key. 2 WH51 probes.
+// To add more, drop in more soil_chN -> zoneKey pairs and add a matching
+// hotspot / zone entry in swale-app.html.
 const CHANNEL_MAP = {
   soil_ch1: 'swaleX',
   soil_ch2: 'swaleY',
-  soil_ch3: 'swaleZ',
-  soil_ch4: 'baskets',
-  soil_ch5: 'sump',
-  soil_ch6: 'extra1',
-  soil_ch7: 'extra2',
-  soil_ch8: 'extra3',
 };
 
 function corsHeaders() {

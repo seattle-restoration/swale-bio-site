@@ -924,11 +924,8 @@ body {
       <div class="hero-scene" id="heroScene">
         <img class="hero-image" id="heroImage" src="hero-isometric.png" alt="Property">
         <!-- Hotspots — positioned as % of image -->
-        <div class="hotspot" id="hs-swaleX" style="left:25%;top:55%" data-zone="swaleX"></div>
-        <div class="hotspot" id="hs-swaleY" style="left:50%;top:60%" data-zone="swaleY"></div>
-        <div class="hotspot" id="hs-swaleZ" style="left:72%;top:52%" data-zone="swaleZ"></div>
-        <div class="hotspot" id="hs-baskets" style="left:82%;top:30%" data-zone="baskets"></div>
-        <div class="hotspot" id="hs-sump" style="left:15%;top:70%" data-zone="sump"></div>
+        <div class="hotspot" id="hs-swaleX" style="left:30%;top:55%" data-zone="swaleX"></div>
+        <div class="hotspot" id="hs-swaleY" style="left:65%;top:55%" data-zone="swaleY"></div>
       </div>
     </div>
     <div class="hero-overlay"></div>
@@ -1064,11 +1061,8 @@ body {
   <div class="section-header"><span class="section-title">Sensors</span></div>
   <div class="setting-group">
     <div class="setting-row"><span class="setting-label">Ecowitt API</span><span class="setting-value" id="settApiConn">Connecting…</span></div>
-    <div class="setting-row"><span class="setting-label">Probe X (Swale Front)</span><span class="setting-value" data-probe="swaleX">--</span></div>
-    <div class="setting-row"><span class="setting-label">Probe Y (Swale Middle)</span><span class="setting-value" data-probe="swaleY">--</span></div>
-    <div class="setting-row"><span class="setting-label">Probe Z (Swale Back)</span><span class="setting-value" data-probe="swaleZ">--</span></div>
-    <div class="setting-row"><span class="setting-label">Hanging Baskets</span><span class="setting-value" data-probe="baskets">--</span></div>
-    <div class="setting-row"><span class="setting-label">Sump</span><span class="setting-value" data-probe="sump">--</span></div>
+    <div class="setting-row"><span class="setting-label">WH51 · Channel 1 (Swale X)</span><span class="setting-value" data-probe="swaleX">--</span></div>
+    <div class="setting-row"><span class="setting-label">WH51 · Channel 2 (Swale Y)</span><span class="setting-value" data-probe="swaleY">--</span></div>
     <div class="setting-row"><span class="setting-label">Last Reading</span><span class="setting-value" id="settLastReading">--</span></div>
   </div>
   <div class="section-header"><span class="section-title">Irrigation</span></div>
@@ -1101,7 +1095,7 @@ body {
 // Generates realistic data as if ESP32 + RainBird are feeding live
 
 const SIM = {
-  swaleX: 47, swaleY: 42, swaleZ: 28, baskets: 15,
+  swaleX: 47, swaleY: 42,
   waterTable: 38, soilTemp: 52,
   flowToday: 12.4, flowMonth: 847,
   sumpRuns: 0, sumpLevel: 8,
@@ -1155,8 +1149,6 @@ function genZoneHistory(base) {
 const ZONE_HISTORY = {
   swaleX: genZoneHistory(45),
   swaleY: genZoneHistory(40),
-  swaleZ: genZoneHistory(28),
-  baskets: genZoneHistory(18),
 };
 
 // ========== LIVE DATA BRIDGE ==========
@@ -1204,8 +1196,6 @@ setInterval(fetchLiveSensors, 60000);
 setInterval(() => {
   if (!LIVE_ZONES.has('swaleX')) SIM.swaleX = clamp(SIM.swaleX + (Math.random() - 0.48) * 2, 20, 60);
   if (!LIVE_ZONES.has('swaleY')) SIM.swaleY = clamp(SIM.swaleY + (Math.random() - 0.48) * 2, 20, 55);
-  if (!LIVE_ZONES.has('swaleZ')) SIM.swaleZ = clamp(SIM.swaleZ + (Math.random() - 0.45) * 2, 15, 50);
-  if (!LIVE_ZONES.has('baskets')) SIM.baskets = clamp(SIM.baskets + (Math.random() - 0.5) * 1.5, 5, 40);
   SIM.waterTable = clamp(SIM.waterTable + (Math.random() - 0.5) * 0.5, 24, 48);
   if (!LIVE_ZONES.has('soilTemp')) SIM.soilTemp = clamp(SIM.soilTemp + (Math.random() - 0.5) * 0.3, 40, 65);
   SIM.flowToday += Math.random() * 0.1;
@@ -1323,10 +1313,8 @@ function updateConnectionUI() {
 }
 
 const ZONES = [
-  { key: 'swaleX', name: 'Swale X', detail: 'Front · Capacitive Probe #1', active: true },
-  { key: 'swaleY', name: 'Swale Y', detail: 'Middle · Capacitive Probe #2', active: true },
-  { key: 'swaleZ', name: 'Swale Z', detail: 'Back · Capacitive Probe #3', active: true },
-  { key: 'baskets', name: 'Hanging Baskets', detail: 'Decorative · Zone 4', active: false },
+  { key: 'swaleX', name: 'Swale X', detail: 'WH51 · Channel 1', active: true },
+  { key: 'swaleY', name: 'Swale Y', detail: 'WH51 · Channel 2', active: true },
 ];
 
 function updateZoneCards() {
@@ -1891,11 +1879,8 @@ document.querySelectorAll('.hotspot').forEach(hs => {
     activeHotspot = zone;
 
     const info = {
-      swaleX: { title: 'SWALE X — FRONT', getValue: () => Math.round(SIM.swaleX) + '%', detail: 'Capacitive Probe #1' },
-      swaleY: { title: 'SWALE Y — MIDDLE', getValue: () => Math.round(SIM.swaleY) + '%', detail: 'Capacitive Probe #2' },
-      swaleZ: { title: 'SWALE Z — BACK', getValue: () => Math.round(SIM.swaleZ) + '%', detail: 'Capacitive Probe #3' },
-      baskets: { title: 'HANGING BASKETS', getValue: () => Math.round(SIM.baskets) + '%', detail: 'Zone 4 · Decorative' },
-      sump: { title: 'SUMP PUMP', getValue: () => SIM.sumpRuns + ' runs', detail: 'Level: ' + Math.round(SIM.sumpLevel) + ' in' },
+      swaleX: { title: 'SWALE X', getValue: () => Math.round(SIM.swaleX) + '%', detail: 'Ecowitt WH51 · Channel 1' },
+      swaleY: { title: 'SWALE Y', getValue: () => Math.round(SIM.swaleY) + '%', detail: 'Ecowitt WH51 · Channel 2' },
     }[zone];
 
     document.getElementById('popupTitle').textContent = info.title;
