@@ -394,6 +394,13 @@ const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isI
 document.querySelectorAll('.rv').forEach(el=>observer.observe(el));
 
 // Form submission — Formspree
+const WATERSHED_MAP = {
+  'Lake City':'Thornton Creek','Pinehurst':'Thornton Creek','Maple Leaf':'Thornton Creek',
+  'Victory Heights':'Thornton Creek','Cedar Park':'Thornton Creek','Matthews Beach':'Thornton Creek',
+  'Meadowbrook':'Thornton Creek','Northgate':'Thornton Creek','Licton Springs':'Thornton Creek',
+  'Wedgwood':'Thornton Creek','Ravenna':'Ravenna Creek','Bryant':'Ravenna Creek',
+  'Green Lake':'Ravenna Creek','University District':'Ravenna Creek'
+};
 async function submitForm(e) {
   e.preventDefault();
   const form = document.getElementById('pilotForm');
@@ -407,6 +414,13 @@ async function submitForm(e) {
       method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(obj)
     });
   } catch(err) { console.error('Formspree error:', err); }
+
+  const nbhd = data.get('neighborhood') || 'Unknown';
+  const watershed = WATERSHED_MAP[nbhd] || 'Other';
+  if (typeof gtag === 'function') {
+    gtag('event', 'pilot_application', { neighborhood: nbhd, watershed: watershed, lot_size: data.get('lotsize') || '' });
+    gtag('event', 'generate_lead', { form_id: 'pilot_application', neighborhood: nbhd, watershed: watershed, value: 200, currency: 'USD' });
+  }
 
   // Show success state
   form.style.display = 'none';
