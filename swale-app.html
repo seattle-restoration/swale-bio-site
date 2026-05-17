@@ -1,0 +1,2081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+<title>Swale Intelligence</title>
+<link rel="manifest" href="manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Swale">
+<meta name="theme-color" content="#0f1117">
+<link rel="apple-touch-icon" sizes="180x180" href="app-icon-512.png?v=4">
+<link rel="apple-touch-icon" sizes="152x152" href="app-icon-512.png?v=4">
+<link rel="apple-touch-icon" href="app-icon-512.png?v=4">
+<style>
+:root {
+  --bg: #0f1117;
+  --surface: #1a1d27;
+  --surface2: #232736;
+  --border: #2a2e3d;
+  --text: #e7e5e4;
+  --text-secondary: #8b8d97;
+  --green: #22c55e;
+  --green-dim: rgba(34,197,94,0.15);
+  --green-glow: rgba(34,197,94,0.4);
+  --blue: #3b82f6;
+  --blue-dim: rgba(59,130,246,0.15);
+  --amber: #f59e0b;
+  --amber-dim: rgba(245,158,11,0.15);
+  --cyan: #06b6d4;
+  --cyan-dim: rgba(6,182,212,0.15);
+  --red: #ef4444;
+  --red-dim: rgba(239,68,68,0.15);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+}
+
+/* Splash screen */
+.splash {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #0a321a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  transition: opacity 0.6s ease-out;
+}
+.splash.fade-out { opacity: 0; pointer-events: none; }
+.splash-logo {
+  width: 80px; height: 80px;
+  border-radius: 20px;
+  overflow: hidden;
+  animation: splash-breathe 2s ease-in-out infinite;
+}
+.splash-logo img { width: 100%; height: 100%; }
+.splash-text {
+  margin-top: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+}
+.splash-sub {
+  margin-top: 8px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+}
+.splash-dots {
+  margin-top: 24px;
+  display: flex;
+  gap: 6px;
+}
+.splash-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(34,197,94,0.6);
+  animation: splash-dot 1.2s ease-in-out infinite;
+}
+.splash-dot:nth-child(2) { animation-delay: 0.2s; }
+.splash-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes splash-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+@keyframes splash-dot {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  padding-top: calc(16px + env(safe-area-inset-top));
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15,17,23,0.85);
+}
+.header-left { display: flex; align-items: center; gap: 10px; }
+.header-logo {
+  width: 28px; height: 28px;
+  background: var(--green);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 14px; color: #000;
+}
+.header-title { font-size: 15px; font-weight: 600; letter-spacing: -0.3px; }
+.header-subtitle { font-size: 11px; color: var(--text-secondary); }
+.header-status {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 11px; color: var(--green);
+}
+.header-status::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--green);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--green-glow);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Pages */
+.page { display: none; padding: 0 16px 100px; max-width: 600px; margin: 0 auto; }
+.page.active { display: block; }
+#page-home.active { padding: 0; max-width: none; }
+
+/* Header hidden on home page hero, shown when scrolled to control center */
+.header.hero-mode { transform: translateY(-100%); opacity: 0; pointer-events: none; transition: transform 0.3s, opacity 0.3s; }
+.header { transition: transform 0.3s, opacity 0.3s; }
+/* Bottom nav hidden on hero, shown when scrolled */
+.bottom-nav.hero-mode { transform: translateY(100%); opacity: 0; pointer-events: none; transition: transform 0.3s, opacity 0.3s; }
+.bottom-nav { transition: transform 0.3s, opacity 0.3s; }
+
+/* Hero — fullscreen immersive */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a1a0f;
+  overflow: hidden;
+  touch-action: none;
+  flex-shrink: 0;
+}
+.hero-viewport {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-viewport:active { cursor: grabbing; }
+.hero-scene {
+  width: 100%;
+  max-width: 700px;
+  transform-origin: center center;
+  position: relative;
+  will-change: transform;
+}
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(1.03);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+.hero-image.loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+.hero-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(transparent, rgba(10,26,15,0.8));
+  pointer-events: none;
+  z-index: 3;
+}
+/* Status bar on hero */
+.hero-status {
+  position: absolute;
+  top: calc(12px + env(safe-area-inset-top));
+  left: 16px; right: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+  pointer-events: none;
+}
+.hero-status-left { display: flex; align-items: center; gap: 8px; }
+.hero-status-logo {
+  height: 18px;
+  width: auto;
+  opacity: 0.75;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.4));
+}
+.hero-status-live {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 10px; color: var(--green);
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+.hero-status-live::before {
+  content: ''; width: 5px; height: 5px;
+  background: var(--green); border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+/* Weather on hero */
+.hero-weather {
+  position: absolute;
+  top: calc(50px + env(safe-area-inset-top));
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 4;
+  pointer-events: none;
+}
+.hero-weather-temp { font-size: 48px; font-weight: 200; letter-spacing: -2px; text-shadow: 0 2px 12px rgba(0,0,0,0.5); }
+.hero-weather-desc { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 2px; text-shadow: 0 1px 4px rgba(0,0,0,0.5); }
+/* Property name */
+.hero-property-name {
+  position: absolute;
+  bottom: 56px; left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px; font-weight: 600;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  z-index: 4;
+  pointer-events: none;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+/* Swipe up handle */
+.hero-handle {
+  position: absolute;
+  bottom: calc(14px + env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  z-index: 5;
+  animation: handle-bob 2.5s ease-in-out infinite;
+}
+.hero-handle-pill {
+  width: 36px; height: 4px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.35);
+}
+.hero-handle-text {
+  font-size: 9px;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+@keyframes handle-bob {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-5px); }
+}
+/* Control center panel */
+.control-center {
+  padding: 0 16px 100px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.cc-handle-bar {
+  display: flex;
+  justify-content: center;
+  padding: 12px 0 8px;
+}
+.cc-handle-pill {
+  width: 36px; height: 4px;
+  border-radius: 2px;
+  background: var(--border);
+}
+.hero-zoom-hint { display: none; }
+
+/* Hotspots on hero image */
+.hotspot {
+  position: absolute;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: rgba(34,197,94,0.3);
+  border: 2px solid var(--green);
+  cursor: pointer;
+  z-index: 2;
+  animation: hotspot-pulse 3s ease-in-out infinite;
+  display: flex; align-items: center; justify-content: center;
+}
+.hotspot::after {
+  content: '';
+  width: 8px; height: 8px;
+  background: var(--green);
+  border-radius: 50%;
+}
+@keyframes hotspot-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(34,197,94,0); }
+}
+.hotspot-popup {
+  position: absolute;
+  background: var(--surface);
+  border: 1px solid var(--green);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  min-width: 140px;
+  z-index: 5;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+.hotspot-popup.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.hotspot-popup-title { font-size: 11px; font-weight: 600; color: var(--green); margin-bottom: 4px; }
+.hotspot-popup-value { font-size: 20px; font-weight: 700; }
+.hotspot-popup-detail { font-size: 10px; color: var(--text-secondary); margin-top: 2px; }
+
+/* Weather Effects */
+.weather-fx {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+.weather-fx.rain .drop {
+  position: absolute;
+  width: 1.5px; height: 18px;
+  background: linear-gradient(transparent, rgba(174,194,224,0.5));
+  border-radius: 0 0 2px 2px;
+  animation: rain-fall linear infinite;
+}
+@keyframes rain-fall {
+  0% { transform: translateY(-20px); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(500px) translateX(-30px); opacity: 0; }
+}
+.weather-fx.snow .flake {
+  position: absolute;
+  width: 4px; height: 4px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 50%;
+  animation: snow-fall linear infinite;
+  filter: blur(0.5px);
+}
+@keyframes snow-fall {
+  0% { transform: translateY(-10px) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(500px) translateX(40px) rotate(360deg); opacity: 0; }
+}
+.weather-fx.sun .ray {
+  position: absolute;
+  top: -40px; width: 2px; height: 200px;
+  background: linear-gradient(rgba(255,200,50,0.3), transparent);
+  transform-origin: top center;
+  animation: sun-shimmer 4s ease-in-out infinite;
+}
+@keyframes sun-shimmer { 0%, 100% { opacity: 0.15; } 50% { opacity: 0.4; } }
+.weather-fx.sun .glow {
+  position: absolute;
+  top: -60px; left: 50%;
+  transform: translateX(-50%);
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(255,200,50,0.25) 0%, transparent 70%);
+  animation: sun-pulse 6s ease-in-out infinite;
+}
+@keyframes sun-pulse {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.6; }
+  50% { transform: translateX(-50%) scale(1.15); opacity: 1; }
+}
+.weather-fx.fog .mist-band {
+  position: absolute;
+  width: 200%; height: 40px;
+  background: linear-gradient(90deg, transparent, rgba(200,210,220,0.08), rgba(200,210,220,0.12), rgba(200,210,220,0.08), transparent);
+  animation: fog-drift linear infinite;
+}
+@keyframes fog-drift { 0% { transform: translateX(-50%); } 100% { transform: translateX(0%); } }
+.weather-fx.overcast::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(20,25,35,0.3);
+}
+/* Partly cloudy — sun glow + drifting cloud wisps */
+.weather-fx.partly-cloudy .glow {
+  position: absolute;
+  top: -60px; right: 10%;
+  width: 160px; height: 160px;
+  background: radial-gradient(circle, rgba(255,200,50,0.2) 0%, transparent 70%);
+  animation: sun-pulse 6s ease-in-out infinite;
+}
+.weather-fx.partly-cloudy .cloud {
+  position: absolute;
+  width: 120px; height: 40px;
+  background: radial-gradient(ellipse at 50% 80%, rgba(200,210,225,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: cloud-drift linear infinite;
+  filter: blur(4px);
+}
+@keyframes cloud-drift { 0% { transform: translateX(-120px); } 100% { transform: translateX(calc(100vw + 120px)); } }
+/* Thunderstorm — rain + lightning flashes */
+.weather-fx.thunder .drop {
+  position: absolute;
+  width: 2px; height: 22px;
+  background: linear-gradient(transparent, rgba(174,194,224,0.6));
+  border-radius: 0 0 2px 2px;
+  animation: rain-fall linear infinite;
+}
+.weather-fx.thunder .lightning {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(200,210,255,0.15);
+  opacity: 0;
+  animation: lightning-flash 4s ease-out infinite;
+}
+@keyframes lightning-flash {
+  0%, 89% { opacity: 0; }
+  90% { opacity: 1; }
+  92% { opacity: 0; }
+  94% { opacity: 0.6; }
+  96% { opacity: 0; }
+  100% { opacity: 0; }
+}
+/* Drizzle — lighter, shorter drops */
+.weather-fx.drizzle .drop {
+  position: absolute;
+  width: 1px; height: 10px;
+  background: linear-gradient(transparent, rgba(174,194,224,0.35));
+  border-radius: 0 0 1px 1px;
+  animation: rain-fall linear infinite;
+}
+
+/* Section headers */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 28px 0 12px;
+}
+.section-title {
+  font-size: 13px; font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.section-badge {
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+.badge-live { background: var(--green-dim); color: var(--green); }
+.badge-idle { background: var(--border); color: var(--text-secondary); }
+
+/* Metric cards */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.metric-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s;
+  cursor: pointer;
+}
+.metric-card:active { border-color: var(--green); }
+.metric-card.wide { grid-column: span 2; }
+.metric-icon {
+  width: 32px; height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.metric-icon.green { background: var(--green-dim); }
+.metric-icon.blue { background: var(--blue-dim); }
+.metric-icon.amber { background: var(--amber-dim); }
+.metric-icon.cyan { background: var(--cyan-dim); }
+.metric-icon.red { background: var(--red-dim); }
+.metric-label { font-size: 11px; color: var(--text-secondary); font-weight: 500; margin-bottom: 4px; }
+.metric-value { font-size: 28px; font-weight: 600; letter-spacing: -1px; line-height: 1; }
+.metric-unit { font-size: 14px; font-weight: 400; color: var(--text-secondary); margin-left: 2px; }
+.metric-sublabel { font-size: 11px; color: var(--text-secondary); margin-top: 6px; }
+
+/* Zone cards */
+.zone-list { display: flex; flex-direction: column; gap: 8px; }
+.zone-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.zone-card:active { border-color: var(--green); }
+.zone-card-header {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.zone-left { display: flex; align-items: center; gap: 12px; }
+.zone-indicator { width: 8px; height: 8px; border-radius: 50%; }
+.zone-indicator.active {
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green-glow);
+  animation: pulse 2s infinite;
+}
+.zone-indicator.idle { background: var(--text-secondary); opacity: 0.4; }
+.zone-name { font-size: 14px; font-weight: 500; }
+.zone-detail { font-size: 11px; color: var(--text-secondary); margin-top: 1px; }
+.zone-right { text-align: right; }
+.zone-moisture { font-size: 16px; font-weight: 600; }
+.zone-moisture.good { color: var(--green); }
+.zone-moisture.medium { color: var(--amber); }
+.zone-moisture.low { color: var(--red); }
+.zone-status { font-size: 10px; color: var(--text-secondary); margin-top: 1px; }
+/* Zone expandable detail */
+.zone-expand {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.zone-card.expanded .zone-expand {
+  max-height: 300px;
+  padding-top: 12px;
+}
+.zone-sparkline { width: 100%; height: 60px; }
+.zone-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+.zone-stat { text-align: center; }
+.zone-stat-value { font-size: 14px; font-weight: 600; }
+.zone-stat-label { font-size: 9px; color: var(--text-secondary); margin-top: 1px; }
+
+/* Water table card */
+.water-table-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.wt-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+.wt-value { font-size: 36px; font-weight: 600; letter-spacing: -1.5px; color: var(--cyan); }
+.wt-unit { font-size: 14px; font-weight: 400; color: var(--text-secondary); }
+.wt-trend { font-size: 11px; color: var(--green); display: flex; align-items: center; gap: 4px; }
+.wt-visual {
+  width: 100%; height: 120px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(180deg, #2a1f0e 0%, #3d2d1a 25%, #2a2520 50%, #1a2a3a 75%, #0f2040 100%);
+  position: relative;
+  overflow: hidden;
+}
+.wt-level-line {
+  position: absolute;
+  left: 0; right: 0; height: 2px;
+  background: var(--cyan);
+  box-shadow: 0 0 10px var(--cyan), 0 0 20px rgba(6,182,212,0.3);
+  transition: top 1s ease;
+}
+.wt-level-label {
+  position: absolute;
+  right: 8px;
+  font-size: 10px; color: var(--cyan);
+  font-weight: 600;
+  transform: translateY(-50%);
+}
+.wt-layer-labels { display: flex; justify-content: space-between; margin-top: 8px; }
+.wt-layer-label { font-size: 9px; color: var(--text-secondary); }
+
+/* Chart card */
+.chart-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.chart-tabs {
+  display: flex; gap: 0;
+  margin-bottom: 16px;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  padding: 3px;
+}
+.chart-tab {
+  flex: 1; text-align: center;
+  padding: 6px 12px;
+  font-size: 11px; font-weight: 600;
+  color: var(--text-secondary);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none; background: none;
+  font-family: var(--font);
+}
+.chart-tab.active { background: var(--surface2); color: var(--text); }
+.chart-canvas { width: 100%; height: 140px; position: relative; }
+.chart-canvas canvas { width: 100%; height: 100%; }
+.chart-summary {
+  display: flex; justify-content: space-around;
+  margin-top: 12px; padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+.chart-stat { text-align: center; }
+.chart-stat-value { font-size: 16px; font-weight: 600; }
+.chart-stat-label { font-size: 10px; color: var(--text-secondary); margin-top: 2px; }
+
+/* Irrigation controls */
+.irrigation-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.irr-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 16px;
+}
+.irr-status { font-size: 12px; color: var(--green); font-weight: 500; }
+.irr-zones { display: flex; flex-direction: column; gap: 10px; }
+.irr-zone {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 12px;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+}
+.irr-zone-left { display: flex; align-items: center; gap: 10px; }
+.irr-zone-num {
+  width: 24px; height: 24px;
+  border-radius: 6px;
+  background: var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700;
+}
+.irr-zone-name { font-size: 13px; font-weight: 500; }
+.irr-zone-info { font-size: 10px; color: var(--text-secondary); }
+.toggle {
+  width: 44px; height: 24px;
+  background: var(--border);
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+  flex-shrink: 0;
+}
+.toggle.on { background: var(--green); }
+.toggle-knob {
+  width: 20px; height: 20px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px; left: 2px;
+  transition: transform 0.3s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+.toggle.on .toggle-knob { transform: translateX(20px); }
+.irr-schedule {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+}
+.irr-schedule-title { font-size: 11px; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px; }
+.irr-schedule-row {
+  display: flex; justify-content: space-between;
+  font-size: 12px; padding: 3px 0;
+}
+.irr-run-btn {
+  width: 100%; margin-top: 12px;
+  padding: 10px;
+  background: var(--green-dim);
+  border: 1px solid var(--green);
+  border-radius: var(--radius-sm);
+  color: var(--green);
+  font-size: 13px; font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font);
+  transition: background 0.2s;
+}
+.irr-run-btn:active { background: rgba(34,197,94,0.3); }
+.irr-running { color: var(--amber); animation: pulse 1s infinite; }
+
+/* Savings card */
+.savings-card {
+  background: linear-gradient(135deg, #0a2015, #0f1117);
+  border: 1px solid rgba(34,197,94,0.2);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+}
+.savings-value { font-size: 42px; font-weight: 700; color: var(--green); letter-spacing: -2px; }
+.savings-label { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
+.savings-breakdown {
+  display: flex; justify-content: center; gap: 24px;
+  margin-top: 16px; padding-top: 16px;
+  border-top: 1px solid rgba(34,197,94,0.15);
+}
+.savings-stat { text-align: center; }
+.savings-stat-value { font-size: 18px; font-weight: 600; }
+.savings-stat-label { font-size: 10px; color: var(--text-secondary); margin-top: 2px; }
+
+/* Rain Check banner */
+.raincheck-banner {
+  background: var(--surface);
+  border: 1px solid var(--amber);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  display: flex; align-items: center; gap: 14px;
+}
+.raincheck-icon { font-size: 28px; }
+.raincheck-text { flex: 1; }
+.raincheck-title { font-size: 14px; font-weight: 600; color: var(--amber); }
+.raincheck-desc { font-size: 11px; color: var(--text-secondary); margin-top: 2px; }
+
+/* Bottom nav */
+.bottom-nav {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(15,17,23,0.95);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-around;
+  padding: 6px 0 calc(6px + env(safe-area-inset-bottom));
+  z-index: 100;
+}
+.nav-item {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  font-size: 10px; color: var(--text-secondary);
+  cursor: pointer; padding: 4px 12px;
+  transition: color 0.2s;
+  border: none; background: none;
+  font-family: var(--font);
+  -webkit-tap-highlight-color: transparent;
+}
+.nav-item.active { color: var(--green); }
+.nav-icon { font-size: 20px; }
+
+/* Back button */
+.back-btn {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 13px; color: var(--green);
+  background: none; border: none;
+  cursor: pointer; padding: 8px 0;
+  font-family: var(--font);
+  margin-bottom: 8px;
+}
+
+/* Zone detail page */
+.zone-detail-hero {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.zone-detail-name { font-size: 18px; font-weight: 700; }
+.zone-detail-sub { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
+.zone-detail-big { font-size: 56px; font-weight: 700; margin: 16px 0 4px; }
+.zone-detail-status { font-size: 13px; font-weight: 500; }
+
+/* Lights page */
+.light-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 8px;
+}
+.light-left { display: flex; align-items: center; gap: 12px; }
+.light-icon {
+  width: 36px; height: 36px;
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+}
+.light-name { font-size: 14px; font-weight: 500; }
+.light-detail { font-size: 11px; color: var(--text-secondary); }
+.brightness-slider {
+  width: 100%;
+  margin-top: 12px;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  outline: none;
+}
+.brightness-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px; height: 18px;
+  background: var(--amber);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Settings page */
+.setting-group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.setting-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.setting-row:last-child { border-bottom: none; }
+.setting-label { font-size: 14px; }
+.setting-value { font-size: 13px; color: var(--text-secondary); }
+
+/* Toast notification */
+.toast {
+  position: fixed;
+  top: calc(80px + env(safe-area-inset-top));
+  left: 50%; transform: translateX(-50%) translateY(-20px);
+  background: var(--surface2);
+  border: 1px solid var(--green);
+  border-radius: var(--radius-sm);
+  padding: 10px 20px;
+  font-size: 13px; font-weight: 500;
+  z-index: 200;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+@media (min-width: 768px) {
+  .page { padding: 0 24px 100px; }
+  .metrics-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Splash Screen -->
+<div class="splash" id="splash">
+  <div class="splash-logo"><img src="app-icon-512.png" alt="Swale"></div>
+  <div class="splash-text">Swale</div>
+  <div class="splash-sub">Intelligence</div>
+  <div class="splash-dots">
+    <div class="splash-dot"></div>
+    <div class="splash-dot"></div>
+    <div class="splash-dot"></div>
+  </div>
+</div>
+
+<!-- Header -->
+<div class="header">
+  <div class="header-left">
+    <div class="header-logo">S</div>
+    <div>
+      <div class="header-title">Swale Intelligence</div>
+      <div class="header-subtitle" id="headerSub">Walsh Residence</div>
+    </div>
+  </div>
+  <div class="header-status" id="headerStatus">Live</div>
+</div>
+
+<!-- ===== HOME PAGE ===== -->
+<div class="page active" id="page-home">
+
+  <!-- Hero with pinch-zoom and hotspots -->
+  <div class="hero" id="heroContainer">
+    <!-- Status bar overlaid on hero -->
+    <div class="hero-status">
+      <div class="hero-status-left">
+        <img class="hero-status-logo" src="swale-logo-white.png" alt="Swale">
+      </div>
+      <div class="hero-status-live">Live</div>
+    </div>
+    <div class="hero-weather">
+      <div class="hero-weather-temp" id="weatherTemp">--°</div>
+      <div class="hero-weather-desc" id="weatherDesc">Loading...</div>
+    </div>
+    <div class="hero-viewport" id="heroViewport">
+      <div class="hero-scene" id="heroScene">
+        <img class="hero-image" id="heroImage" src="hero-isometric.png" alt="Property">
+        <!-- Hotspots — positioned as % of image -->
+        <div class="hotspot" id="hs-swaleX" style="left:30%;top:55%" data-zone="swaleX"></div>
+        <div class="hotspot" id="hs-swaleY" style="left:65%;top:55%" data-zone="swaleY"></div>
+      </div>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-property-name">Walsh Field Station</div>
+    <div class="hero-zoom-hint" id="zoomHint">Pinch to zoom · Tap sensors for data</div>
+    <!-- Swipe up handle -->
+    <div class="hero-handle" id="heroHandle">
+      <div class="hero-handle-pill"></div>
+      <div class="hero-handle-text">Swipe up</div>
+    </div>
+  </div>
+
+  <!-- Hotspot popup (floats above hero) -->
+  <div class="hotspot-popup" id="hotspotPopup">
+    <div class="hotspot-popup-title" id="popupTitle"></div>
+    <div class="hotspot-popup-value" id="popupValue"></div>
+    <div class="hotspot-popup-detail" id="popupDetail"></div>
+  </div>
+
+  <!-- Control Center (revealed by scrolling past hero) -->
+  <div class="control-center" id="controlCenter">
+    <div class="cc-handle-bar"><div class="cc-handle-pill"></div></div>
+    <!-- Soil Moisture -->
+    <div class="section-header">
+      <span class="section-title">Soil Moisture</span>
+      <span class="section-badge badge-live">● LIVE</span>
+    </div>
+    <div class="zone-list" id="zoneList"></div>
+
+    <!-- Key Metrics -->
+    <div class="section-header">
+      <span class="section-title">Key Metrics</span>
+      <span class="section-badge badge-live">● LIVE</span>
+    </div>
+    <div class="metrics-grid" id="metricsGrid"></div>
+
+    <!-- Water Table -->
+    <div class="section-header">
+      <span class="section-title">Water Table Depth</span>
+    </div>
+    <div class="water-table-card">
+      <div class="wt-header">
+        <div>
+          <div class="metric-label">Current Depth</div>
+          <div class="wt-value" id="wtValue">--<span class="wt-unit"> inches</span></div>
+        </div>
+        <div class="wt-trend" id="wtTrend">--</div>
+      </div>
+      <div class="wt-visual">
+        <div class="wt-level-line" id="wtLine" style="top:65%"></div>
+        <div class="wt-level-label" id="wtLabel" style="top:65%"></div>
+      </div>
+      <div class="wt-layer-labels">
+        <span class="wt-layer-label">Topsoil</span>
+        <span class="wt-layer-label">Subsoil</span>
+        <span class="wt-layer-label">Alderwood Hardpan</span>
+        <span class="wt-layer-label">Saturated</span>
+      </div>
+    </div>
+
+    <!-- 30-day Chart -->
+    <div class="section-header">
+      <span class="section-title">30-Day History</span>
+    </div>
+    <div class="chart-card">
+      <div class="chart-tabs" id="chartTabs">
+        <button class="chart-tab active" data-chart="moisture">Moisture</button>
+        <button class="chart-tab" data-chart="watertable">Water Table</button>
+        <button class="chart-tab" data-chart="flow">Flow</button>
+      </div>
+      <div class="chart-canvas"><canvas id="historyChart"></canvas></div>
+      <div class="chart-summary" id="chartSummary"></div>
+    </div>
+
+    <!-- Irrigation -->
+    <div class="section-header">
+      <span class="section-title">RainBird Control</span>
+      <span class="section-badge badge-idle">ESP-TM2</span>
+    </div>
+    <div class="irrigation-card" id="irrigationCard"></div>
+
+    <!-- Impact -->
+    <div class="section-header">
+      <span class="section-title">Impact</span>
+    </div>
+    <div class="savings-card">
+      <div class="savings-value" id="impactPct">96%</div>
+      <div class="savings-label">Less water used vs. traditional landscaping</div>
+      <div class="savings-breakdown" id="impactStats"></div>
+    </div>
+
+    <!-- Rain Check -->
+    <div class="section-header">
+      <span class="section-title">Rain Check Program</span>
+    </div>
+    <div class="raincheck-banner">
+      <div class="raincheck-icon">🌧️</div>
+      <div class="raincheck-text">
+        <div class="raincheck-title">Swale Award Member</div>
+        <div class="raincheck-desc" id="raincheckDesc">Health score: --/100</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ZONES PAGE ===== -->
+<div class="page" id="page-zones">
+  <div id="zonesContent"></div>
+</div>
+
+<!-- ===== LIGHTS PAGE ===== -->
+<div class="page" id="page-lights">
+  <div class="section-header">
+    <span class="section-title">Landscape Lighting</span>
+    <span class="section-badge badge-live">● CONNECTED</span>
+  </div>
+  <div id="lightsContent"></div>
+</div>
+
+<!-- ===== HISTORY PAGE ===== -->
+<div class="page" id="page-history">
+  <div id="historyContent"></div>
+</div>
+
+<!-- ===== SETTINGS PAGE ===== -->
+<div class="page" id="page-settings">
+  <div class="section-header"><span class="section-title">Property</span></div>
+  <div class="setting-group">
+    <div class="setting-row"><span class="setting-label">Name</span><span class="setting-value">Walsh Residence</span></div>
+    <div class="setting-row"><span class="setting-label">Location</span><span class="setting-value">Seattle, WA</span></div>
+    <div class="setting-row"><span class="setting-label">Install Date</span><span class="setting-value">Feb 15, 2026</span></div>
+  </div>
+  <div class="section-header"><span class="section-title">Sensors</span></div>
+  <div class="setting-group">
+    <div class="setting-row"><span class="setting-label">Ecowitt API</span><span class="setting-value" id="settApiConn">Connecting…</span></div>
+    <div class="setting-row"><span class="setting-label">WH51 · Channel 1 (Swale X)</span><span class="setting-value" data-probe="swaleX">--</span></div>
+    <div class="setting-row"><span class="setting-label">WH51 · Channel 2 (Swale Y)</span><span class="setting-value" data-probe="swaleY">--</span></div>
+    <div class="setting-row"><span class="setting-label">Last Reading</span><span class="setting-value" id="settLastReading">--</span></div>
+  </div>
+  <div class="section-header"><span class="section-title">Irrigation</span></div>
+  <div class="setting-group">
+    <div class="setting-row"><span class="setting-label">RainBird ESP-TM2</span><span class="setting-value" id="settRainbirdConn" style="color:var(--amber)">Schedule view (Phase 2)</span></div>
+    <div class="setting-row"><span class="setting-label">LNK Wi-Fi Module</span><span class="setting-value" style="color:var(--text-secondary)">LAN bridge pending</span></div>
+  </div>
+  <div class="section-header"><span class="section-title">Account</span></div>
+  <div class="setting-group">
+    <div class="setting-row"><span class="setting-label">Plan</span><span class="setting-value">Swale Pro — $15/mo</span></div>
+    <div class="setting-row"><span class="setting-label">Rain Check</span><span class="setting-value" style="color:var(--amber)">Active — $100 credit</span></div>
+    <div class="setting-row"><span class="setting-label">Support</span><span class="setting-value" style="color:var(--green)">jack@swale.bio</span></div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Bottom Navigation -->
+<div class="bottom-nav" id="bottomNav">
+  <button class="nav-item active" data-page="home"><span class="nav-icon">🏠</span>Home</button>
+  <button class="nav-item" data-page="zones"><span class="nav-icon">💧</span>Zones</button>
+  <button class="nav-item" data-page="lights"><span class="nav-icon">💡</span>Lights</button>
+  <button class="nav-item" data-page="history"><span class="nav-icon">📊</span>History</button>
+  <button class="nav-item" data-page="settings"><span class="nav-icon">⚙️</span>Settings</button>
+</div>
+
+<script>
+// ========== SIMULATED SENSOR ENGINE ==========
+// Generates realistic data as if ESP32 + RainBird are feeding live
+
+const SIM = {
+  swaleX: 47, swaleY: 42,
+  waterTable: 38, soilTemp: 52,
+  flowToday: 12.4, flowMonth: 847,
+  sumpRuns: 0, sumpLevel: 8,
+  underdrain: 2.4,
+  zone1Flow: 0.3, zone2Flow: 4.7,
+  zone1Month: 2.1, zone2Month: 47.2,
+  rainbird: {
+    zones: [
+      { name: 'Swale Establishment', on: false, lastRun: null, nextRun: null, duration: 15 },
+      { name: 'Front Lawn', on: false, lastRun: Date.now()-6*3600000, nextRun: Date.now()+18*3600000, duration: 20 },
+      { name: 'Hanging Baskets', on: true, lastRun: Date.now()-3600000, nextRun: Date.now()+5*3600000, duration: 10 },
+      { name: 'Drip — Garden Beds', on: false, lastRun: Date.now()-12*3600000, nextRun: Date.now()+12*3600000, duration: 30 },
+    ]
+  },
+  lights: [
+    { name: 'Swale Path Lights', icon: '🌿', on: true, brightness: 70, color: 'amber' },
+    { name: 'Front Porch', icon: '🏠', on: true, brightness: 100, color: 'amber' },
+    { name: 'Backyard Floods', icon: '🔦', on: false, brightness: 50, color: 'amber' },
+    { name: 'Garden Accent', icon: '🌸', on: true, brightness: 40, color: 'green' },
+    { name: 'Driveway', icon: '🚗', on: false, brightness: 80, color: 'amber' },
+  ],
+  healthScore: 92,
+  rainCheck: 100,
+};
+
+// 30-day history (simulated)
+function genHistory() {
+  const days = 30;
+  const h = { moisture: [], watertable: [], flow: [], dates: [] };
+  const now = Date.now();
+  for (let i = days - 1; i >= 0; i--) {
+    const d = new Date(now - i * 86400000);
+    h.dates.push(d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }));
+    h.moisture.push(Math.round(35 + Math.random() * 18 + Math.sin(i * 0.3) * 5));
+    h.watertable.push(Math.round(30 + Math.random() * 12 + Math.cos(i * 0.2) * 4));
+    h.flow.push(Math.round(Math.max(0, Math.random() * 25 - 5 + (Math.random() > 0.6 ? 15 : 0))));
+  }
+  return h;
+}
+const HISTORY = genHistory();
+
+// Per-zone 7-day hourly history
+function genZoneHistory(base) {
+  const pts = 168; // 7 days * 24 hours
+  const data = [];
+  for (let i = 0; i < pts; i++) {
+    data.push(Math.round(base + Math.sin(i * 0.1) * 8 + (Math.random() - 0.5) * 6));
+  }
+  return data;
+}
+const ZONE_HISTORY = {
+  swaleX: genZoneHistory(45),
+  swaleY: genZoneHistory(40),
+};
+
+// ========== LIVE DATA BRIDGE ==========
+// Set this to the deployed Cloudflare Worker URL after `npx wrangler deploy`.
+// Falls through to simulation if unreachable or unset.
+const API_BASE = 'https://swale-api.YOUR-CF-ACCOUNT.workers.dev';
+const LIVE_ZONES = new Set();    // zones with real Ecowitt data; simulator skips these
+let LAST_LIVE_FETCH = 0;
+let API_STATUS = 'connecting';   // 'live' | 'offline' | 'connecting'
+
+async function fetchLiveSensors() {
+  if (!API_BASE || API_BASE.includes('YOUR-CF-ACCOUNT')) {
+    API_STATUS = 'offline';
+    return;
+  }
+  try {
+    const r = await fetch(API_BASE + '/sensors', { cache: 'no-store' });
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const data = await r.json();
+    if (!data.ok) throw new Error(data.error || 'api error');
+    for (const [zone, val] of Object.entries(data.moisture || {})) {
+      if (val !== null && Number.isFinite(val)) {
+        SIM[zone] = val;
+        LIVE_ZONES.add(zone);
+      }
+    }
+    if (data.environment && Number.isFinite(data.environment.soilTemp)) {
+      SIM.soilTemp = data.environment.soilTemp;
+      LIVE_ZONES.add('soilTemp');
+    }
+    LAST_LIVE_FETCH = Date.now();
+    API_STATUS = 'live';
+    updateDashboard();
+  } catch (e) {
+    console.warn('[swale-api] fetch failed:', e.message);
+    API_STATUS = 'offline';
+  }
+}
+
+// Hit the API now and every 60s thereafter
+fetchLiveSensors();
+setInterval(fetchLiveSensors, 60000);
+
+// Simulate the zones that aren't reporting live data yet (every 5 seconds)
+setInterval(() => {
+  if (!LIVE_ZONES.has('swaleX')) SIM.swaleX = clamp(SIM.swaleX + (Math.random() - 0.48) * 2, 20, 60);
+  if (!LIVE_ZONES.has('swaleY')) SIM.swaleY = clamp(SIM.swaleY + (Math.random() - 0.48) * 2, 20, 55);
+  SIM.waterTable = clamp(SIM.waterTable + (Math.random() - 0.5) * 0.5, 24, 48);
+  if (!LIVE_ZONES.has('soilTemp')) SIM.soilTemp = clamp(SIM.soilTemp + (Math.random() - 0.5) * 0.3, 40, 65);
+  SIM.flowToday += Math.random() * 0.1;
+  SIM.sumpLevel = clamp(SIM.sumpLevel + (Math.random() - 0.5) * 0.5, 2, 18);
+  if (SIM.sumpLevel > 16 && Math.random() > 0.8) { SIM.sumpRuns++; SIM.sumpLevel = 4; }
+  updateDashboard();
+}, 5000);
+
+function clamp(v, mn, mx) { return Math.max(mn, Math.min(mx, v)); }
+
+// ========== NAVIGATION ==========
+let currentPage = 'home';
+
+document.getElementById('bottomNav').addEventListener('click', e => {
+  const btn = e.target.closest('.nav-item');
+  if (!btn) return;
+  navigateTo(btn.dataset.page);
+});
+
+function navigateTo(page) {
+  currentPage = page;
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.querySelector(`.nav-item[data-page="${page}"]`).classList.add('active');
+  window.scrollTo(0, 0);
+
+  // Hero mode: hide header/nav when on home page hero
+  const header = document.querySelector('.header');
+  const nav = document.getElementById('bottomNav');
+  if (page === 'home') {
+    header.classList.add('hero-mode');
+    nav.classList.add('hero-mode');
+  } else {
+    header.classList.remove('hero-mode');
+    nav.classList.remove('hero-mode');
+  }
+
+  if (page === 'zones') renderZonesPage();
+  if (page === 'lights') renderLightsPage();
+  if (page === 'history') renderHistoryPage();
+}
+
+// ========== HERO SCROLL DETECTION ==========
+// Show header + bottom nav when user scrolls past hero into control center
+(function() {
+  const header = document.querySelector('.header');
+  const nav = document.getElementById('bottomNav');
+  const handle = document.getElementById('heroHandle');
+  let lastScroll = 0;
+
+  // Start in hero mode on home page
+  header.classList.add('hero-mode');
+  nav.classList.add('hero-mode');
+
+  window.addEventListener('scroll', () => {
+    if (currentPage !== 'home') return;
+    const heroH = document.getElementById('heroContainer').offsetHeight;
+    const scrollY = window.scrollY;
+    const threshold = heroH * 0.3; // 30% scrolled past hero = show UI
+
+    if (scrollY > threshold) {
+      header.classList.remove('hero-mode');
+      nav.classList.remove('hero-mode');
+      if (handle) handle.style.opacity = '0';
+    } else {
+      header.classList.add('hero-mode');
+      nav.classList.add('hero-mode');
+      if (handle) handle.style.opacity = '';
+    }
+    lastScroll = scrollY;
+  }, { passive: true });
+})();
+
+// ========== HOME PAGE ==========
+function updateDashboard() {
+  // Zone cards
+  updateZoneCards();
+  // Key metrics
+  updateMetrics();
+  // Water table
+  updateWaterTable();
+  // Impact
+  updateImpact();
+  // Settings last reading
+  document.getElementById('settLastReading').textContent = new Date().toLocaleTimeString();
+  // Connection + per-probe status on settings page
+  updateConnectionUI();
+}
+
+function updateConnectionUI() {
+  const apiEl = document.getElementById('settApiConn');
+  if (apiEl) {
+    if (API_STATUS === 'live') {
+      apiEl.textContent = 'Live';
+      apiEl.style.color = 'var(--green)';
+    } else if (API_STATUS === 'offline') {
+      apiEl.textContent = 'Offline — using simulator';
+      apiEl.style.color = 'var(--amber)';
+    } else {
+      apiEl.textContent = 'Connecting…';
+      apiEl.style.color = 'var(--text-secondary)';
+    }
+  }
+  document.querySelectorAll('[data-probe]').forEach(el => {
+    const z = el.dataset.probe;
+    if (LIVE_ZONES.has(z)) {
+      el.textContent = Math.round(SIM[z]) + '%';
+      el.style.color = 'var(--green)';
+    } else {
+      el.textContent = 'Not paired';
+      el.style.color = 'var(--text-secondary)';
+    }
+  });
+}
+
+const ZONES = [
+  { key: 'swaleX', name: 'Swale X', detail: 'WH51 · Channel 1', active: true },
+  { key: 'swaleY', name: 'Swale Y', detail: 'WH51 · Channel 2', active: true },
+];
+
+function updateZoneCards() {
+  const el = document.getElementById('zoneList');
+  if (!el.children.length) {
+    el.innerHTML = ZONES.map(z => {
+      const v = Math.round(SIM[z.key]);
+      const cls = v > 35 ? 'good' : v > 20 ? 'medium' : 'low';
+      const status = v > 35 ? 'Optimal' : v > 20 ? 'Moderate' : 'Needs Water';
+      const hist = ZONE_HISTORY[z.key];
+      return `<div class="zone-card" data-zone="${z.key}" onclick="toggleZone(this)">
+        <div class="zone-card-header">
+          <div class="zone-left">
+            <div class="zone-indicator ${z.active ? 'active' : 'idle'}"></div>
+            <div><div class="zone-name">${z.name}</div><div class="zone-detail">${z.detail}</div></div>
+          </div>
+          <div class="zone-right">
+            <div class="zone-moisture ${cls}" data-zone-val="${z.key}">${v}%</div>
+            <div class="zone-status" data-zone-status="${z.key}">${status}</div>
+          </div>
+        </div>
+        <div class="zone-expand">
+          <canvas class="zone-sparkline" data-spark="${z.key}"></canvas>
+          <div class="zone-stats">
+            <div class="zone-stat"><div class="zone-stat-value">${Math.min(...hist)}%</div><div class="zone-stat-label">7d Low</div></div>
+            <div class="zone-stat"><div class="zone-stat-value">${Math.round(hist.reduce((a,b)=>a+b)/hist.length)}%</div><div class="zone-stat-label">7d Avg</div></div>
+            <div class="zone-stat"><div class="zone-stat-value">${Math.max(...hist)}%</div><div class="zone-stat-label">7d High</div></div>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+  } else {
+    ZONES.forEach(z => {
+      const v = Math.round(SIM[z.key]);
+      const cls = v > 35 ? 'good' : v > 20 ? 'medium' : 'low';
+      const status = v > 35 ? 'Optimal' : v > 20 ? 'Moderate' : 'Needs Water';
+      const valEl = document.querySelector(`[data-zone-val="${z.key}"]`);
+      const statusEl = document.querySelector(`[data-zone-status="${z.key}"]`);
+      if (valEl) { valEl.textContent = v + '%'; valEl.className = 'zone-moisture ' + cls; }
+      if (statusEl) statusEl.textContent = status;
+    });
+  }
+}
+
+function toggleZone(card) {
+  const wasExpanded = card.classList.contains('expanded');
+  document.querySelectorAll('.zone-card.expanded').forEach(c => c.classList.remove('expanded'));
+  if (!wasExpanded) {
+    card.classList.add('expanded');
+    const key = card.dataset.zone;
+    setTimeout(() => drawSparkline(card.querySelector(`[data-spark="${key}"]`), ZONE_HISTORY[key], '#22c55e'), 50);
+  }
+}
+
+function drawSparkline(canvas, data, color) {
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = 60 * dpr;
+  canvas.style.width = rect.width + 'px';
+  canvas.style.height = '60px';
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, rect.width, 60);
+  const w = rect.width, h = 60, pad = 8;
+  const mn = Math.min(...data), mx = Math.max(...data), rng = mx - mn || 1;
+  // Fill
+  ctx.beginPath();
+  data.forEach((v, i) => {
+    const x = (i / (data.length - 1)) * w;
+    const y = h - pad - ((v - mn) / rng) * (h - 2 * pad);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.lineTo(w, h); ctx.lineTo(0, h); ctx.closePath();
+  const grad = ctx.createLinearGradient(0, 0, 0, h);
+  grad.addColorStop(0, color + '30'); grad.addColorStop(1, color + '00');
+  ctx.fillStyle = grad; ctx.fill();
+  // Line
+  ctx.beginPath();
+  data.forEach((v, i) => {
+    const x = (i / (data.length - 1)) * w;
+    const y = h - pad - ((v - mn) / rng) * (h - 2 * pad);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.strokeStyle = color; ctx.lineWidth = 1.5; ctx.stroke();
+}
+
+function updateMetrics() {
+  const el = document.getElementById('metricsGrid');
+  el.innerHTML = `
+    <div class="metric-card" onclick="navigateTo('history')">
+      <div class="metric-icon cyan">💧</div>
+      <div class="metric-label">Water Table</div>
+      <div class="metric-value">${Math.round(SIM.waterTable)}<span class="metric-unit">in</span></div>
+      <div class="metric-sublabel">↑ 2in from last week</div>
+    </div>
+    <div class="metric-card" onclick="navigateTo('history')">
+      <div class="metric-icon blue">🌊</div>
+      <div class="metric-label">Flow Today</div>
+      <div class="metric-value">${SIM.flowToday.toFixed(1)}<span class="metric-unit">gal</span></div>
+      <div class="metric-sublabel">Stormwater captured</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon green">⚡</div>
+      <div class="metric-label">Sump Pump</div>
+      <div class="metric-value">${SIM.sumpRuns}<span class="metric-unit">runs</span></div>
+      <div class="metric-sublabel">${SIM.sumpRuns === 0 ? 'Idle — swale doing its job' : 'Activated today'}</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-icon amber">🌡</div>
+      <div class="metric-label">Soil Temp</div>
+      <div class="metric-value">${Math.round(SIM.soilTemp)}<span class="metric-unit">°F</span></div>
+      <div class="metric-sublabel">${SIM.soilTemp > 50 ? 'Growing season' : 'Dormant'}</div>
+    </div>
+    <div class="metric-card wide">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div>
+          <div class="metric-label">Total Water Usage</div>
+          <div class="metric-value" style="font-size:22px;">${(SIM.zone1Month + SIM.zone2Month).toFixed(1)}<span class="metric-unit">gal this month</span></div>
+        </div>
+        <div style="text-align:right;">
+          <div class="metric-label">vs. Traditional Lawn</div>
+          <div style="font-size:22px;font-weight:600;color:var(--green);">-312 gal</div>
+          <div class="metric-sublabel" style="color:var(--green);">↓ 86% reduction</div>
+        </div>
+      </div>
+      <div style="margin-top:12px;height:6px;background:var(--bg);border-radius:3px;overflow:hidden;">
+        <div style="width:14%;height:100%;background:linear-gradient(90deg,var(--green),var(--cyan));border-radius:3px;"></div>
+      </div>
+    </div>`;
+}
+
+function updateWaterTable() {
+  const wt = Math.round(SIM.waterTable);
+  const pct = Math.min(90, Math.max(20, (wt / 48) * 100));
+  document.getElementById('wtValue').innerHTML = wt + '<span class="wt-unit"> inches</span>';
+  document.getElementById('wtLine').style.top = pct + '%';
+  document.getElementById('wtLabel').style.top = pct + '%';
+  document.getElementById('wtLabel').textContent = '← ' + wt + '"';
+  document.getElementById('wtTrend').textContent = wt < 36 ? '↓ Falling' : '↑ Rising · Healthy';
+}
+
+function updateImpact() {
+  document.getElementById('impactStats').innerHTML = `
+    <div class="savings-stat"><div class="savings-stat-value">${Math.round(SIM.flowMonth)}</div><div class="savings-stat-label">Gallons Captured</div></div>
+    <div class="savings-stat"><div class="savings-stat-value">$${Math.round(SIM.flowMonth * 0.0089)}</div><div class="savings-stat-label">Water Savings</div></div>
+    <div class="savings-stat"><div class="savings-stat-value">${SIM.sumpRuns}</div><div class="savings-stat-label">Sump Pump Runs</div></div>`;
+  document.getElementById('raincheckDesc').textContent =
+    `Your swale health score is ${SIM.healthScore}/100. As a Swale Award Member, you've earned a $${SIM.rainCheck} Rain Check.`;
+}
+
+// ========== CHART ==========
+let currentChart = 'moisture';
+
+document.getElementById('chartTabs').addEventListener('click', e => {
+  const tab = e.target.closest('.chart-tab');
+  if (!tab) return;
+  document.querySelectorAll('#chartTabs .chart-tab').forEach(t => t.classList.remove('active'));
+  tab.classList.add('active');
+  currentChart = tab.dataset.chart;
+  drawMainChart(currentChart);
+});
+
+function drawMainChart(type) {
+  const canvas = document.getElementById('historyChart');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.parentElement.getBoundingClientRect();
+  canvas.width = rect.width * dpr;
+  canvas.height = 140 * dpr;
+  canvas.style.width = rect.width + 'px';
+  canvas.style.height = '140px';
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, rect.width, 140);
+
+  const colors = { moisture: '#22c55e', watertable: '#06b6d4', flow: '#3b82f6' };
+  const data = HISTORY[type];
+  const color = colors[type];
+  const w = rect.width, h = 140, pad = 20;
+  const mn = Math.min(...data), mx = Math.max(...data), rng = mx - mn || 1;
+
+  // Grid
+  ctx.strokeStyle = 'rgba(255,255,255,0.05)'; ctx.lineWidth = 1;
+  for (let i = 0; i < 4; i++) {
+    const y = pad + (h - 2 * pad) * i / 3;
+    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
+  }
+  // Fill
+  ctx.beginPath();
+  data.forEach((v, i) => {
+    const x = (i / (data.length - 1)) * w;
+    const y = h - pad - ((v - mn) / rng) * (h - 2 * pad);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.lineTo(w, h); ctx.lineTo(0, h); ctx.closePath();
+  const grad = ctx.createLinearGradient(0, 0, 0, h);
+  grad.addColorStop(0, color + '40'); grad.addColorStop(1, color + '00');
+  ctx.fillStyle = grad; ctx.fill();
+  // Line
+  ctx.beginPath();
+  data.forEach((v, i) => {
+    const x = (i / (data.length - 1)) * w;
+    const y = h - pad - ((v - mn) / rng) * (h - 2 * pad);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.stroke();
+  // Dot
+  const lastY = h - pad - ((data[data.length - 1] - mn) / rng) * (h - 2 * pad);
+  ctx.beginPath(); ctx.arc(w - 2, lastY, 4, 0, Math.PI * 2); ctx.fillStyle = color; ctx.fill();
+  ctx.beginPath(); ctx.arc(w - 2, lastY, 8, 0, Math.PI * 2); ctx.fillStyle = color + '30'; ctx.fill();
+
+  // Summary
+  const avg = Math.round(data.reduce((a, b) => a + b) / data.length);
+  const units = { moisture: '%', watertable: '"', flow: ' gal' };
+  document.getElementById('chartSummary').innerHTML = `
+    <div class="chart-stat"><div class="chart-stat-value" style="color:${color}">${Math.min(...data)}${units[type]}</div><div class="chart-stat-label">Low</div></div>
+    <div class="chart-stat"><div class="chart-stat-value" style="color:${color}">${avg}${units[type]}</div><div class="chart-stat-label">Average</div></div>
+    <div class="chart-stat"><div class="chart-stat-value" style="color:${color}">${Math.max(...data)}${units[type]}</div><div class="chart-stat-label">High</div></div>`;
+}
+
+// ========== IRRIGATION ==========
+function renderIrrigation() {
+  const el = document.getElementById('irrigationCard');
+  el.innerHTML = `
+    <div class="irr-header">
+      <div class="metric-label">Irrigation Zones</div>
+      <div class="irr-status">All Systems Normal</div>
+    </div>
+    <div class="irr-zones">
+      ${SIM.rainbird.zones.map((z, i) => `
+        <div class="irr-zone">
+          <div class="irr-zone-left">
+            <div class="irr-zone-num">${i + 1}</div>
+            <div>
+              <div class="irr-zone-name">${z.name}</div>
+              <div class="irr-zone-info">${z.on ? '<span class="irr-running">Running</span> · ' + z.duration + ' min' :
+                z.lastRun ? 'Last: ' + timeAgo(z.lastRun) + ' · Next: ' + timeUntil(z.nextRun) : 'Never run · Moisture sufficient'}</div>
+            </div>
+          </div>
+          <div class="toggle ${z.on ? 'on' : ''}" onclick="toggleIrrZone(${i})"><div class="toggle-knob"></div></div>
+        </div>`).join('')}
+    </div>
+    <button class="irr-run-btn" onclick="runAllZones()">Run All Zones Now</button>
+    <div class="irr-schedule">
+      <div class="irr-schedule-title">SCHEDULE</div>
+      ${SIM.rainbird.zones.filter(z => z.nextRun).map(z =>
+        `<div class="irr-schedule-row"><span>${z.name}</span><span style="color:var(--text-secondary)">${new Date(z.nextRun).toLocaleTimeString([], {hour:'numeric',minute:'2-digit'})}</span></div>`
+      ).join('')}
+    </div>`;
+}
+
+function toggleIrrZone(idx) {
+  const z = SIM.rainbird.zones[idx];
+  z.on = !z.on;
+  if (z.on) { z.lastRun = Date.now(); showToast(z.name + ' started'); }
+  else showToast(z.name + ' stopped');
+  renderIrrigation();
+}
+
+function runAllZones() {
+  SIM.rainbird.zones.forEach(z => { z.on = true; z.lastRun = Date.now(); });
+  showToast('All zones running');
+  renderIrrigation();
+}
+
+function timeAgo(ts) {
+  const m = Math.round((Date.now() - ts) / 60000);
+  if (m < 60) return m + 'm ago';
+  const h = Math.round(m / 60);
+  return h + 'h ago';
+}
+function timeUntil(ts) {
+  const m = Math.round((ts - Date.now()) / 60000);
+  if (m < 60) return 'in ' + m + 'm';
+  const h = Math.round(m / 60);
+  return 'in ' + h + 'h';
+}
+
+// ========== ZONES PAGE ==========
+function renderZonesPage() {
+  const el = document.getElementById('zonesContent');
+  el.innerHTML = `
+    <div class="section-header"><span class="section-title">All Sensor Zones</span></div>
+    ${ZONES.map(z => {
+      const v = Math.round(SIM[z.key]);
+      const cls = v > 35 ? 'good' : v > 20 ? 'medium' : 'low';
+      const status = v > 35 ? 'Optimal' : v > 20 ? 'Moderate' : 'Needs Water';
+      const hist = ZONE_HISTORY[z.key];
+      const avg = Math.round(hist.reduce((a,b)=>a+b)/hist.length);
+      return `
+      <div class="zone-detail-hero" style="margin-top:12px; cursor:pointer;" onclick="showZoneDetail('${z.key}')">
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <div style="text-align:left;">
+            <div class="zone-detail-name">${z.name}</div>
+            <div class="zone-detail-sub">${z.detail}</div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:36px; font-weight:700; color:var(--${cls === 'good' ? 'green' : cls === 'medium' ? 'amber' : 'red'});">${v}%</div>
+            <div style="font-size:12px; color:var(--text-secondary);">${status}</div>
+          </div>
+        </div>
+        <canvas class="zone-sparkline" id="zone-page-spark-${z.key}" style="margin-top:12px;"></canvas>
+        <div class="zone-stats">
+          <div class="zone-stat"><div class="zone-stat-value">${Math.min(...hist)}%</div><div class="zone-stat-label">7d Low</div></div>
+          <div class="zone-stat"><div class="zone-stat-value">${avg}%</div><div class="zone-stat-label">7d Avg</div></div>
+          <div class="zone-stat"><div class="zone-stat-value">${Math.max(...hist)}%</div><div class="zone-stat-label">7d High</div></div>
+        </div>
+      </div>`;
+    }).join('')}`;
+  // Draw sparklines after render
+  setTimeout(() => {
+    ZONES.forEach(z => {
+      const canvas = document.getElementById('zone-page-spark-' + z.key);
+      if (canvas) drawSparkline(canvas, ZONE_HISTORY[z.key], '#22c55e');
+    });
+  }, 50);
+}
+
+function showZoneDetail(key) {
+  showToast('Detailed view: ' + ZONES.find(z => z.key === key).name);
+}
+
+// ========== LIGHTS PAGE ==========
+function renderLightsPage() {
+  const el = document.getElementById('lightsContent');
+  el.innerHTML = SIM.lights.map((l, i) => `
+    <div class="light-card">
+      <div class="light-left">
+        <div class="light-icon" style="background:${l.on ? 'var(--amber-dim)' : 'var(--border)'};">${l.icon}</div>
+        <div>
+          <div class="light-name">${l.name}</div>
+          <div class="light-detail">${l.on ? 'On · ' + l.brightness + '%' : 'Off'}</div>
+        </div>
+      </div>
+      <div class="toggle ${l.on ? 'on' : ''}" onclick="toggleLight(${i})"><div class="toggle-knob"></div></div>
+    </div>
+    ${l.on ? `<div style="padding:0 16px 8px;">
+      <input type="range" class="brightness-slider" min="1" max="100" value="${l.brightness}" oninput="setLightBrightness(${i}, this.value)">
+    </div>` : ''}`).join('');
+}
+
+function toggleLight(idx) {
+  SIM.lights[idx].on = !SIM.lights[idx].on;
+  showToast(SIM.lights[idx].name + (SIM.lights[idx].on ? ' on' : ' off'));
+  renderLightsPage();
+}
+
+function setLightBrightness(idx, val) {
+  SIM.lights[idx].brightness = parseInt(val);
+  const detail = document.querySelectorAll('.light-card')[idx]?.querySelector('.light-detail');
+  if (detail) detail.textContent = 'On · ' + val + '%';
+}
+
+// ========== HISTORY PAGE ==========
+function renderHistoryPage() {
+  const el = document.getElementById('historyContent');
+  el.innerHTML = `
+    <div class="section-header"><span class="section-title">Moisture — 30 Days</span></div>
+    <div class="chart-card"><div class="chart-canvas"><canvas id="histChart1"></canvas></div>
+      <div class="chart-summary" id="histSum1"></div></div>
+    <div class="section-header"><span class="section-title">Water Table — 30 Days</span></div>
+    <div class="chart-card"><div class="chart-canvas"><canvas id="histChart2"></canvas></div>
+      <div class="chart-summary" id="histSum2"></div></div>
+    <div class="section-header"><span class="section-title">Flow (Gallons) — 30 Days</span></div>
+    <div class="chart-card"><div class="chart-canvas"><canvas id="histChart3"></canvas></div>
+      <div class="chart-summary" id="histSum3"></div></div>`;
+  setTimeout(() => {
+    drawFullChart('histChart1', 'histSum1', HISTORY.moisture, '#22c55e', '%');
+    drawFullChart('histChart2', 'histSum2', HISTORY.watertable, '#06b6d4', '"');
+    drawFullChart('histChart3', 'histSum3', HISTORY.flow, '#3b82f6', ' gal');
+  }, 50);
+}
+
+function drawFullChart(canvasId, sumId, data, color, unit) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.parentElement.getBoundingClientRect();
+  canvas.width = rect.width * dpr; canvas.height = 140 * dpr;
+  canvas.style.width = rect.width + 'px'; canvas.style.height = '140px';
+  ctx.scale(dpr, dpr); ctx.clearRect(0, 0, rect.width, 140);
+  const w = rect.width, h = 140, pad = 20;
+  const mn = Math.min(...data), mx = Math.max(...data), rng = mx - mn || 1;
+  ctx.strokeStyle = 'rgba(255,255,255,0.05)'; ctx.lineWidth = 1;
+  for (let i = 0; i < 4; i++) {
+    const y = pad + (h - 2 * pad) * i / 3;
+    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
+  }
+  ctx.beginPath();
+  data.forEach((v, i) => {
+    const x = (i / (data.length - 1)) * w;
+    const y = h - pad - ((v - mn) / rng) * (h - 2 * pad);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.lineTo(w, h); ctx.lineTo(0, h); ctx.closePath();
+  const grad = ctx.createLinearGradient(0, 0, 0, h);
+  grad.addColorStop(0, color + '40'); grad.addColorStop(1, color + '00');
+  ctx.fillStyle = grad; ctx.fill();
+  ctx.beginPath();
+  data.forEach((v, i) => {
+    const x = (i / (data.length - 1)) * w;
+    const y = h - pad - ((v - mn) / rng) * (h - 2 * pad);
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  });
+  ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.stroke();
+  const avg = Math.round(data.reduce((a, b) => a + b) / data.length);
+  document.getElementById(sumId).innerHTML = `
+    <div class="chart-stat"><div class="chart-stat-value" style="color:${color}">${mn}${unit}</div><div class="chart-stat-label">Low</div></div>
+    <div class="chart-stat"><div class="chart-stat-value" style="color:${color}">${avg}${unit}</div><div class="chart-stat-label">Average</div></div>
+    <div class="chart-stat"><div class="chart-stat-value" style="color:${color}">${mx}${unit}</div><div class="chart-stat-label">High</div></div>`;
+}
+
+// ========== HERO PINCH-TO-ZOOM ==========
+const heroScene = document.getElementById('heroScene');
+const heroViewport = document.getElementById('heroViewport');
+let scale = 1, panX = 0, panY = 0;
+let pinchStartDist = 0, pinchStartScale = 1;
+let pinchMidX = 0, pinchMidY = 0;
+let dragStartX = 0, dragStartY = 0, dragStartPanX = 0, dragStartPanY = 0;
+let isDragging = false, isPinching = false;
+let lastTapTime = 0;
+
+function getTouchDist(t1, t2) {
+  return Math.hypot(t1.clientX - t2.clientX, t1.clientY - t2.clientY);
+}
+
+function getTouchMid(t1, t2) {
+  return { x: (t1.clientX + t2.clientX) / 2, y: (t1.clientY + t2.clientY) / 2 };
+}
+
+function constrainPan() {
+  if (scale <= 1) { panX = 0; panY = 0; return; }
+  const vw = heroViewport.offsetWidth;
+  const vh = heroViewport.offsetHeight;
+  const maxX = (scale - 1) * vw / 2;
+  const maxY = (scale - 1) * vh / 2;
+  panX = clamp(panX, -maxX, maxX);
+  panY = clamp(panY, -maxY, maxY);
+}
+
+function applyTransform(animate) {
+  constrainPan();
+  if (animate) heroScene.style.transition = 'transform 0.3s ease-out';
+  else heroScene.style.transition = 'none';
+  heroScene.style.transform = `translate(${panX}px, ${panY}px) scale(${scale})`;
+}
+
+let pinchJustEnded = false;
+
+heroViewport.addEventListener('touchstart', e => {
+  heroScene.style.transition = 'none';
+  if (e.touches.length === 2) {
+    isPinching = true;
+    isDragging = false;
+    pinchJustEnded = false;
+    pinchStartDist = getTouchDist(e.touches[0], e.touches[1]);
+    pinchStartScale = scale;
+    const mid = getTouchMid(e.touches[0], e.touches[1]);
+    pinchMidX = mid.x;
+    pinchMidY = mid.y;
+    dragStartPanX = panX;
+    dragStartPanY = panY;
+    e.preventDefault();
+  } else if (e.touches.length === 1) {
+    // Ignore single touch right after pinch (finger lift)
+    if (pinchJustEnded) {
+      e.preventDefault();
+      return;
+    }
+
+    // Double-tap to reset
+    const now = Date.now();
+    if (now - lastTapTime < 300) {
+      if (scale > 1.05) {
+        scale = 1; panX = 0; panY = 0;
+      } else {
+        scale = 2.5;
+        const rect = heroViewport.getBoundingClientRect();
+        const tx = e.touches[0].clientX - rect.left - rect.width / 2;
+        const ty = e.touches[0].clientY - rect.top - rect.height / 2;
+        panX = -tx * (scale - 1) / scale;
+        panY = -ty * (scale - 1) / scale;
+      }
+      applyTransform(true);
+      e.preventDefault();
+      lastTapTime = 0;
+      return;
+    }
+    lastTapTime = now;
+
+    if (scale > 1.05) {
+      isDragging = true;
+      dragStartX = e.touches[0].clientX;
+      dragStartY = e.touches[0].clientY;
+      dragStartPanX = panX;
+      dragStartPanY = panY;
+      e.preventDefault();
+    }
+  }
+}, { passive: false });
+
+heroViewport.addEventListener('touchmove', e => {
+  if (isPinching && e.touches.length === 2) {
+    const dist = getTouchDist(e.touches[0], e.touches[1]);
+    const mid = getTouchMid(e.touches[0], e.touches[1]);
+    scale = clamp(pinchStartScale * (dist / pinchStartDist), 0.8, 5);
+    // Pan follows midpoint movement
+    panX = dragStartPanX + (mid.x - pinchMidX);
+    panY = dragStartPanY + (mid.y - pinchMidY);
+    applyTransform(false);
+    e.preventDefault();
+  } else if (isDragging && e.touches.length === 1) {
+    panX = dragStartPanX + (e.touches[0].clientX - dragStartX);
+    panY = dragStartPanY + (e.touches[0].clientY - dragStartY);
+    applyTransform(false);
+    e.preventDefault();
+  }
+}, { passive: false });
+
+heroViewport.addEventListener('touchend', e => {
+  if (e.touches.length < 2 && isPinching) {
+    // One finger lifted from pinch — block drag from remaining finger
+    isPinching = false;
+    isDragging = false;
+    pinchJustEnded = true;
+    setTimeout(() => { pinchJustEnded = false; }, 300);
+  }
+  if (e.touches.length === 0) {
+    isPinching = false;
+    isDragging = false;
+    if (scale < 1.05) {
+      scale = 1; panX = 0; panY = 0;
+      applyTransform(true);
+    } else {
+      constrainPan();
+      applyTransform(true);
+    }
+  }
+  document.getElementById('zoomHint').style.opacity = '0';
+});
+
+// Mouse wheel zoom for desktop
+heroViewport.addEventListener('wheel', e => {
+  e.preventDefault();
+  const delta = e.deltaY > 0 ? -0.3 : 0.3;
+  scale = clamp(scale + delta, 1, 5);
+  if (scale <= 1) { panX = 0; panY = 0; }
+  applyTransform(true);
+}, { passive: false });
+
+// ========== HOTSPOTS ==========
+const popup = document.getElementById('hotspotPopup');
+let activeHotspot = null;
+
+document.querySelectorAll('.hotspot').forEach(hs => {
+  hs.addEventListener('click', e => {
+    e.stopPropagation();
+    const zone = hs.dataset.zone;
+    if (activeHotspot === zone) { popup.classList.remove('show'); activeHotspot = null; return; }
+    activeHotspot = zone;
+
+    const info = {
+      swaleX: { title: 'SWALE X', getValue: () => Math.round(SIM.swaleX) + '%', detail: 'Ecowitt WH51 · Channel 1' },
+      swaleY: { title: 'SWALE Y', getValue: () => Math.round(SIM.swaleY) + '%', detail: 'Ecowitt WH51 · Channel 2' },
+    }[zone];
+
+    document.getElementById('popupTitle').textContent = info.title;
+    document.getElementById('popupValue').textContent = info.getValue();
+    document.getElementById('popupDetail').textContent = info.detail;
+
+    // Position popup near hotspot
+    const hsRect = hs.getBoundingClientRect();
+    const heroRect = document.getElementById('heroContainer').getBoundingClientRect();
+    popup.style.left = Math.min(hsRect.left - heroRect.left, window.innerWidth - 180) + 'px';
+    popup.style.top = (hsRect.bottom - heroRect.top + 8) + 'px';
+    popup.classList.add('show');
+  });
+});
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('.hotspot') && !e.target.closest('.hotspot-popup')) {
+    popup.classList.remove('show');
+    activeHotspot = null;
+  }
+});
+
+// ========== WEATHER ==========
+async function fetchWeather() {
+  try {
+    const res = await fetch('https://api.open-meteo.com/v1/forecast?latitude=47.7185&longitude=-122.2930&current=temperature_2m,weathercode,windspeed_10m&temperature_unit=fahrenheit&timezone=America/Los_Angeles');
+    const data = await res.json();
+    const temp = Math.round(data.current.temperature_2m);
+    const code = data.current.weathercode;
+    document.getElementById('weatherTemp').textContent = temp + '°';
+    let condition, desc;
+    if (code <= 1) { condition = 'sun'; desc = 'Clear'; }
+    else if (code === 2) { condition = 'partly-cloudy'; desc = 'Partly Cloudy'; }
+    else if (code === 3) { condition = 'overcast'; desc = 'Overcast'; }
+    else if (code >= 45 && code <= 48) { condition = 'fog'; desc = 'Foggy'; }
+    else if (code >= 51 && code <= 57) { condition = 'drizzle'; desc = 'Drizzle'; }
+    else if (code >= 61 && code <= 65) { condition = 'rain'; desc = 'Rain'; }
+    else if (code >= 66 && code <= 67) { condition = 'rain'; desc = 'Freezing Rain'; }
+    else if (code >= 71 && code <= 77) { condition = 'snow'; desc = 'Snow'; }
+    else if (code >= 80 && code <= 82) { condition = 'rain'; desc = 'Showers'; }
+    else if (code >= 85 && code <= 86) { condition = 'snow'; desc = 'Snow Showers'; }
+    else if (code >= 95) { condition = 'thunder'; desc = 'Thunderstorm'; }
+    else { condition = 'overcast'; desc = 'Cloudy'; }
+    document.getElementById('weatherDesc').textContent = desc + ' · Seattle';
+    setWeather(condition);
+  } catch (e) {
+    document.getElementById('weatherDesc').textContent = 'Rain · Seattle';
+    document.getElementById('weatherTemp').textContent = '48°';
+    setWeather('rain');
+  }
+}
+
+function setWeather(condition) {
+  const old = document.querySelector('.weather-fx');
+  if (old) old.remove();
+  const fx = document.createElement('div');
+  fx.className = 'weather-fx ' + condition;
+  document.getElementById('heroScene').appendChild(fx);
+
+  if (condition === 'rain') {
+    for (let i = 0; i < 60; i++) {
+      const d = document.createElement('div'); d.className = 'drop';
+      d.style.left = Math.random()*100+'%';
+      d.style.animationDuration = (0.6+Math.random()*0.4)+'s';
+      d.style.animationDelay = Math.random()*2+'s';
+      d.style.opacity = 0.3+Math.random()*0.5;
+      fx.appendChild(d);
+    }
+  } else if (condition === 'drizzle') {
+    // Lighter, sparser drops
+    for (let i = 0; i < 30; i++) {
+      const d = document.createElement('div'); d.className = 'drop';
+      d.style.left = Math.random()*100+'%';
+      d.style.animationDuration = (1+Math.random()*0.6)+'s';
+      d.style.animationDelay = Math.random()*3+'s';
+      d.style.opacity = 0.2+Math.random()*0.3;
+      fx.appendChild(d);
+    }
+  } else if (condition === 'thunder') {
+    // Heavy rain + lightning flashes
+    for (let i = 0; i < 80; i++) {
+      const d = document.createElement('div'); d.className = 'drop';
+      d.style.left = Math.random()*100+'%';
+      d.style.animationDuration = (0.4+Math.random()*0.3)+'s';
+      d.style.animationDelay = Math.random()*1.5+'s';
+      d.style.opacity = 0.4+Math.random()*0.5;
+      fx.appendChild(d);
+    }
+    // Multiple lightning flashes at different intervals
+    for (let i = 0; i < 3; i++) {
+      const l = document.createElement('div'); l.className = 'lightning';
+      l.style.animationDelay = (i * 1.7) + 's';
+      l.style.animationDuration = (3 + Math.random()*3) + 's';
+      fx.appendChild(l);
+    }
+  } else if (condition === 'snow') {
+    for (let i = 0; i < 40; i++) {
+      const f = document.createElement('div'); f.className = 'flake';
+      f.style.left = Math.random()*100+'%';
+      const sz = 2+Math.random()*4;
+      f.style.width = sz+'px'; f.style.height = sz+'px';
+      f.style.animationDuration = (3+Math.random()*4)+'s';
+      f.style.animationDelay = Math.random()*5+'s';
+      fx.appendChild(f);
+    }
+  } else if (condition === 'sun') {
+    const g = document.createElement('div'); g.className = 'glow'; fx.appendChild(g);
+    for (let i = 0; i < 6; i++) {
+      const r = document.createElement('div'); r.className = 'ray';
+      r.style.left = (20+i*10)+'%';
+      r.style.transform = 'rotate('+(-15+i*5)+'deg)';
+      r.style.animationDelay = i*0.5+'s';
+      r.style.height = (150+Math.random()*100)+'px';
+      fx.appendChild(r);
+    }
+  } else if (condition === 'partly-cloudy') {
+    // Gentle sun glow + drifting cloud wisps
+    const g = document.createElement('div'); g.className = 'glow'; fx.appendChild(g);
+    for (let i = 0; i < 4; i++) {
+      const c = document.createElement('div'); c.className = 'cloud';
+      c.style.top = (15+i*18)+'%';
+      c.style.animationDuration = (20+i*10)+'s';
+      c.style.animationDelay = (i*5)+'s';
+      c.style.width = (80+Math.random()*80)+'px';
+      fx.appendChild(c);
+    }
+  } else if (condition === 'fog') {
+    for (let i = 0; i < 4; i++) {
+      const b = document.createElement('div'); b.className = 'mist-band';
+      b.style.top = (30+i*20)+'%';
+      b.style.animationDuration = (15+i*8)+'s';
+      b.style.animationDelay = i*3+'s';
+      fx.appendChild(b);
+    }
+  }
+}
+
+// Weather is real-time only — no demo cycling
+
+// ========== TOAST ==========
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2000);
+}
+
+// ========== SERVICE WORKER ==========
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+
+// ========== INIT ==========
+window.addEventListener('DOMContentLoaded', () => {
+  const splash = document.getElementById('splash');
+  const heroImg = document.getElementById('heroImage');
+
+  // Hero image fade-in when loaded
+  heroImg.onload = function() {
+    // Dismiss splash
+    splash.classList.add('fade-out');
+    setTimeout(() => splash.remove(), 700);
+    // Fade in hero with slight delay for drama
+    setTimeout(() => heroImg.classList.add('loaded'), 100);
+  };
+  heroImg.onerror = function() {
+    // No image — still dismiss splash, show gradient fallback
+    this.style.height = '280px';
+    this.style.background = 'linear-gradient(135deg, #1a2a15, #0f1a2a)';
+    this.classList.add('loaded');
+    splash.classList.add('fade-out');
+    setTimeout(() => splash.remove(), 700);
+  };
+  // If image was cached and already loaded
+  if (heroImg.complete && heroImg.naturalWidth > 0) {
+    splash.classList.add('fade-out');
+    setTimeout(() => splash.remove(), 700);
+    setTimeout(() => heroImg.classList.add('loaded'), 100);
+  }
+
+  // Fallback: dismiss splash after 4s max (slow network)
+  setTimeout(() => {
+    if (document.getElementById('splash')) {
+      splash.classList.add('fade-out');
+      setTimeout(() => { if (splash.parentNode) splash.remove(); }, 700);
+      heroImg.classList.add('loaded');
+    }
+  }, 4000);
+
+  updateDashboard();
+  renderIrrigation();
+  drawMainChart('moisture');
+  fetchWeather();
+  setInterval(fetchWeather, 15 * 60 * 1000);
+});
+</script>
+</body>
+</html>
