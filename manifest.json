@@ -1,0 +1,22 @@
+{
+  "name": "Swale Intelligence",
+  "short_name": "Swale",
+  "description": "Bioswale monitoring, irrigation control & property intelligence",
+  "start_url": "./swale-app.html",
+  "display": "standalone",
+  "background_color": "#0f1117",
+  "theme_color": "#0f1117",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
