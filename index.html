@@ -1801,6 +1801,7 @@ document.getElementById('wlf').addEventListener('submit', async e => {
   if (typeof gtag === 'function') {
     gtag('event', 'waitlist_signup', { form_location: 'homepage' });
     gtag('event', 'generate_lead', { form_id: 'waitlist', value: 50, currency: 'USD' });
+    gtag('event', 'conversion', { send_to: 'AW-18065104449/3YvsCLbmh7AcEMG8jqZD', value: 50, currency: 'USD' });
   }
   e.target.style.display = 'none';
   document.getElementById('wlsuccess').style.display = 'block';
