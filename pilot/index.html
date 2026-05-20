@@ -407,14 +407,7 @@ async function submitForm(e) {
   const data = new FormData(form);
   data.append('_subject', 'Pilot Program Application - ' + data.get('fname') + ' ' + data.get('lname') + ' - ' + data.get('neighborhood'));
 
-  try {
-    const obj = {};
-    data.forEach((v,k) => obj[k] = v);
-    await fetch('https://formsubmit.co/ajax/jack@swale.bio', {
-      method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(obj)
-    });
-  } catch(err) { console.error('Formspree error:', err); }
-
+  // Fire conversion/analytics BEFORE the email send so a slow formsubmit.co can never block it
   const nbhd = data.get('neighborhood') || 'Unknown';
   const watershed = WATERSHED_MAP[nbhd] || 'Other';
   if (typeof gtag === 'function') {
@@ -422,6 +415,14 @@ async function submitForm(e) {
     gtag('event', 'generate_lead', { form_id: 'pilot_application', neighborhood: nbhd, watershed: watershed, value: 200, currency: 'USD' });
     gtag('event', 'conversion', { send_to: 'AW-18065104449/sfIoCK-GiLAcEMG8jqZD', value: 200, currency: 'USD' });
   }
+
+  try {
+    const obj = {};
+    data.forEach((v,k) => obj[k] = v);
+    await fetch('https://formsubmit.co/ajax/jack@swale.bio', {
+      method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(obj)
+    });
+  } catch(err) { console.error('Formspree error:', err); }
 
   // Show success state
   form.style.display = 'none';
