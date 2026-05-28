@@ -1772,15 +1772,17 @@ document.getElementById('lf').addEventListener('submit', async e => {
   obj._subject = 'Site Assessment Request';
   const leads = JSON.parse(localStorage.getItem('swale_leads')||'[]');
   leads.push(obj); localStorage.setItem('swale_leads', JSON.stringify(leads));
+  // Fire conversion/analytics BEFORE the email send so a slow formsubmit.co can never block it
+  if (typeof gtag === 'function') {
+    gtag('event', 'site_assessment_request', { form_location: 'homepage' });
+    gtag('event', 'generate_lead', { form_id: 'site_assessment', value: 200, currency: 'USD' });
+    gtag('event', 'conversion', { send_to: 'AW-18065104449/LsejCJuLgLUcEMG8jqZD', value: 200, currency: 'USD' });
+  }
   try {
     await fetch('https://formsubmit.co/ajax/jack@swale.bio', {
       method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(obj)
     });
   } catch(err) { console.error('Form error:', err); }
-  if (typeof gtag === 'function') {
-    gtag('event', 'site_assessment_request', { form_location: 'homepage' });
-    gtag('event', 'generate_lead', { form_id: 'site_assessment', value: 200, currency: 'USD' });
-  }
   e.target.style.display = 'none';
   document.getElementById('fsuccess').style.display = 'block';
   showToast('Application submitted!');
@@ -1797,7 +1799,7 @@ document.getElementById('wlf').addEventListener('submit', async e => {
   if (typeof gtag === 'function') {
     gtag('event', 'waitlist_signup', { form_location: 'homepage' });
     gtag('event', 'generate_lead', { form_id: 'waitlist', value: 50, currency: 'USD' });
-    gtag('event', 'conversion', { send_to: 'AW-18065104449/3YvsCLbmh7AcEMG8jqZD', value: 50, currency: 'USD' });
+    gtag('event', 'conversion', { send_to: 'AW-18065104449/LsejCJuLgLUcEMG8jqZD', value: 50, currency: 'USD' });
   }
   try {
     await fetch('https://formsubmit.co/ajax/jack@swale.bio', {
