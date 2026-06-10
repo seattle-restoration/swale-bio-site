@@ -1763,6 +1763,19 @@ document.querySelectorAll('input[name="assess_type"]').forEach(r => {
   });
 });
 
+// Dual-capture: two endpoints on different mailbox infrastructure so one silent failure can't eat a lead.
+// Privacy-hash aliases, no naked addresses in source.
+const SWALE_FORM_ENDPOINTS = [
+  'https://formsubmit.co/ajax/cf50a233fc499e84f20525b6edb0a2a3',
+  'https://formsubmit.co/ajax/5df880dde81d8beab39bd66f00927249'
+];
+function swaleSend(payload) {
+  const body = JSON.stringify(payload);
+  return Promise.allSettled(SWALE_FORM_ENDPOINTS.map(u =>
+    fetch(u, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body })
+  ));
+}
+
 // Lead form — formsubmit.co + localStorage backup
 document.getElementById('lf').addEventListener('submit', async e => {
   e.preventDefault();
@@ -1779,9 +1792,7 @@ document.getElementById('lf').addEventListener('submit', async e => {
     gtag('event', 'conversion', { send_to: 'AW-18065104449/LsejCJuLgLUcEMG8jqZD', value: 200, currency: 'USD' });
   }
   try {
-    await fetch('https://formsubmit.co/ajax/jack@swale.bio', {
-      method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(obj)
-    });
+    await swaleSend(obj);
   } catch(err) { console.error('Form error:', err); }
   e.target.style.display = 'none';
   document.getElementById('fsuccess').style.display = 'block';
@@ -1802,9 +1813,7 @@ document.getElementById('wlf').addEventListener('submit', async e => {
     gtag('event', 'conversion', { send_to: 'AW-18065104449/LsejCJuLgLUcEMG8jqZD', value: 50, currency: 'USD' });
   }
   try {
-    await fetch('https://formsubmit.co/ajax/jack@swale.bio', {
-      method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ email, _subject: 'Residential Waitlist Signup' })
-    });
+    await swaleSend({ email, _subject: 'Residential Waitlist Signup' });
   } catch(err) { console.error('Form error:', err); }
   e.target.style.display = 'none';
   document.getElementById('wlsuccess').style.display = 'block';

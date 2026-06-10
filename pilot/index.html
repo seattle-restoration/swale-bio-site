@@ -419,10 +419,13 @@ async function submitForm(e) {
   try {
     const obj = {};
     data.forEach((v,k) => obj[k] = v);
-    await fetch('https://formsubmit.co/ajax/jack@swale.bio', {
-      method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(obj)
-    });
-  } catch(err) { console.error('Formspree error:', err); }
+    // Dual-capture: two endpoints on different mailbox infrastructure, privacy-hash aliases.
+    const body = JSON.stringify(obj);
+    await Promise.allSettled([
+      'https://formsubmit.co/ajax/cf50a233fc499e84f20525b6edb0a2a3',
+      'https://formsubmit.co/ajax/5df880dde81d8beab39bd66f00927249'
+    ].map(u => fetch(u, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body })));
+  } catch(err) { console.error('Form error:', err); }
 
   // Show success state
   form.style.display = 'none';
